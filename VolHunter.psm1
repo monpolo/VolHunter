@@ -483,7 +483,7 @@ Function Remove-VHMemDump{
         $cleanBlock = {
             Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
             "`nTarget is $target"
-            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$target.edb" -Force}
+            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {$hostname = hostname; Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$hostname.edb" -Force}
             "`nMemDump deleted`n"
         }
         Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
@@ -506,6 +506,7 @@ Function Run-VHRemote{
 
     Process{
         try{
+            $XYZ = 0
             Get-Job | Remove-Job
             $volPath = $env:VolPath
             $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
@@ -515,7 +516,8 @@ Function Run-VHRemote{
                     Start-Sleep -Milliseconds 10
                 }
                 Start-Job -ScriptBlock $block -ArgumentList $target, $env:DumpMemory, $env:VolPath, $env:Plugins, $env:HumanReadable, $env:Artifacts, $cred 1>$null
-                Write-It -msg "Starting job against $target" -type "Other"
+                $XYZ++
+                Write-It -msg "Starting job against $target # $XYZ / $lineCount" -type "Other"
             }
             Write-It -msg "All jobs started. Waiting for them to finish." -type "Information"
             $lastX = $MaxThreads

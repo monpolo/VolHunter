@@ -40,8 +40,8 @@ your host will gather all output files from each intermediary
 
 .NOTES
     Author: Michael "FUMBLES" Russell
-    Date:   11 February 2019
-    Version: 1.0.6
+    Date:   15 February 2019
+    Version: 1.0.7
 #>
 
 [CmdletBinding()]
@@ -71,7 +71,8 @@ if($RunVH){
         Set-VHEnvironment -DumpMemory $True -Plugins "all" -cred $cred -MaxThreads 50
         Start-VHInvestigation
     }
-
+    
+    Remove-Item ".\targetset*.txt"
     $NumberOfHosts = (Get-Content $Intermediaries | Measure-Object -Line).Lines
     $NewArrays = @{}; $i = 0;  Get-Content $MasterTarget | %{$NewArrays[$i % $NumberOfHosts] += @($_); $i++}; 
     for($i=0;$i -lt $NewArrays.count;$i++){
@@ -102,34 +103,7 @@ if($RunVH){
         Invoke-Command -ComputerName $target -ScriptBlock $scriptBlock -ArgumentList $credName 2>$null
     }
 }
-<# DO THESE WHILE ON THOSE SYSTEMS, OR DO IT FROM YOUR MAIN HOST. DEBUG THIS!
-if($GatherOutput){
-    $ScriptBlock = { 
-        cd C:\VH
-        Import-Module .\VolHunter.psm1
-        Set-VHEnvironment -cred $cred -MaxThreads 50
-        Get-VHOutput
-    }
 
-    foreach($target in (Get-Content $Intermediaries)){
-        #Invoke-Command -ComputerName $target -InDisconnectedSession -ScriptBlock $ScriptBlock 2>$null
-        Invoke-Command -ComputerName $target -ScriptBlock $ScriptBlock -ArgumentList $credName 2>$null
-    }
-}
-
-if($CleanUp){
-    $ScriptBlock = { 
-        cd C:\VH
-        Import-Module .\VolHunter.psm1
-        Set-VHEnvironment -cred $cred -MaxThreads 50
-        Remove-VHRemote
-    }
-
-    foreach($target in (Get-Content $Intermediaries)){
-        Invoke-Command -ComputerName $target -InDisconnectedSession -ScriptBlock $ScriptBlock 2>$null
-    }
-}
-#>
 if($GatherAll){
     foreach($host in (Get-Content $Intermediaries)){
         Write-Host "Grabbing outputs from intermediary $host" -BackgroundColor White -ForegroundColor Black
@@ -137,17 +111,3 @@ if($GatherAll){
         Copy-Item -Path "\\$host\C$\VH\VHLogs\*" -Destination .\VHLogs\
     }
 }
-
-#POSSIBLE FIX for double hop. If we pass -Credential $Using:cred to the $credName arg of Set-VHEnvironment, will this work with only 1 auth?
-<#
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
-}
-#https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/
-#https://stackoverflow.com/questions/6239647/using-powershell-credentials-without-being-prompted-for-a-password
-#http://web.archive.org/web/20160822030847/http://geekswithblogs.net/Lance/archive/2007/02/16/106518.aspx
-#>

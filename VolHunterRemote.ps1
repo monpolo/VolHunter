@@ -200,6 +200,7 @@ if($volProfile -eq "ERROR"){
 ### Run memory dumping tool ###
 ###############################
 if($dumpFlag -eq "True"){
+    Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
     $dumpCommand = "C:\VolH\Tools\DumpIt.exe"
     Add-Content -Path "$logLocation" -Value "Starting memory dump`n"
     $start = Get-Date
@@ -207,6 +208,9 @@ if($dumpFlag -eq "True"){
     $end = Get-Date
     $dumpDone = "DumpIt Completed"
     Out-File -FilePath "C:\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
+    Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
+    Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
+    Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
     Add-Content -Path "$logLocation" -Value "Memory dump completed in $($end-$start) H:M:S.MS`n"
 }
 
@@ -322,20 +326,29 @@ if($dumpFlag -eq "True"){
 
     try{
         Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
+        Start-Sleep -Seconds 2
         $oldYear = (Get-Date).AddYears(-3)
         $first = Get-RandomDate -Min $oldYear
         $second = Get-RandomDate -Min $oldYear
         if($first -lt $second){
+            Add-Content -Path $logLocation -Value "Timestomping FIRST $first SECOND $second"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($first)
+            Add-Content -Path $logLocation -Value "FIRST CREATION"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($second)
+            Add-Content -Path $logLocation -Value "FIRST WRITE"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($first)
+            Add-Content -Path $logLocation -Value "FIRST ACCESS"
         }
         else{
+            Add-Content -Path $logLocation -Value "Timestomping SECOND $second FIRST $first"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($second)
+            Add-Content -Path $logLocation -Value "SECOND CREATION"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($first)
+            Add-Content -Path $logLocation -Value "SECOND WRITE"
             (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($second)
+            Add-Content -Path $logLocation -Value "SECOND ACCESS"
         }
-        Add-Content -Path "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" 
+        Add-Content -Path $logLocation -Value "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" 
     }
     catch{
         Add-Content -Path $logLocation -Value "$_ hiding & timestomping failed"
