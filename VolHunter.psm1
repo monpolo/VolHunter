@@ -165,15 +165,15 @@ PS> Get-VHMemDump -Target "Computer3"
 
     Process{
         try{
-            New-PSDrive -Name "V" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
-            if(Test-Path "V:\VolH\VolDone.txt"){
+            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
+            if(Test-Path "$env:shareName\VolH\VolDone.txt"){
                 Write-It -msg "Grabbing memory dump from $Target" -type "Information"
-                Copy-File -from "V:\Windows\SoftwareDistribution\DataStore\$Target.edb" -to "$env:VolPath\GatheredLogs\$Target.bin"
+                Copy-File -from "$env:shareName\Windows\SoftwareDistribution\DataStore\$Target.edb" -to "$env:VolPath\GatheredLogs\$Target.bin"
             }
             else{
                 Write-It -msg "VolHunter not complete on $Target" -type "Warning"
             }
-            Remove-PSDrive -Name "V"
+            Remove-PSDrive -Name "$env:shareLetter"
         }
         catch{
             Write-Error -Message "$_ Get-VHMemDump failed"
@@ -206,13 +206,13 @@ PS> Get-VHOutput
     Process{
         foreach($target in get-content $TargetList){    
             try{
-                New-PSDrive -Name "V" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$target\C$" 1>$null
-                if(Test-Path "V:\VolH\VolDone.txt"){
+                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$target\C$" 1>$null
+                if(Test-Path "$env:shareName\VolH\VolDone.txt"){
                     Write-It -msg "Grabbing parsed output from $target`n" -type "Information"
-                    Copy-Item -Path "V:\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
-                    Copy-Item -Path "V:\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
+                    Copy-Item -Path "$env:shareName\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
+                    Copy-Item -Path "$env:shareName\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
 
-                    if(Test-Path "V:\VolH\ArtsGathered.txt"){
+                    if(Test-Path "$env:shareName\VolH\ArtsGathered.txt"){
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target") -ErrorAction SilentlyContinue >$null
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Prefetch") -ErrorAction SilentlyContinue >$null
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\EventLogs") -ErrorAction SilentlyContinue >$null
@@ -221,41 +221,41 @@ PS> Get-VHOutput
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Other") -ErrorAction SilentlyContinue >$null
 
                         Write-It -msg "Grabbing prefetch files from $target`n" -type "Information"
-                        $files = (Get-ChildItem V:\VolH\Output\Prefetch\*.pf).Name
+                        $files = (Get-ChildItem $env:shareName\VolH\Output\Prefetch\*.pf).Name
                         foreach($image in $files){    
-                            $src = "V:\VolH\Output\Prefetch\$image"
+                            $src = "$env:shareName\VolH\Output\Prefetch\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\Prefetch\$image"
                             Copy-File -from $src -to $dest
                         }
                 
                         Write-It -msg "Grabbing event logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem V:\VolH\Output\EventLogs\).Name
+                        $files = (Get-ChildItem $env:shareName\VolH\Output\EventLogs\).Name
                         foreach($image in $files){    
-                            $src = "V:\VolH\Output\EventLogs\$image"
+                            $src = "$env:shareName\VolH\Output\EventLogs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\EventLogs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing firewall logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem V:\VolH\Output\FWLogs\).Name
+                        $files = (Get-ChildItem $env:shareName\VolH\Output\FWLogs\).Name
                         foreach($image in $files){    
-                            $src = "V:\VolH\Output\FWLogs\$image"
+                            $src = "$env:shareName\VolH\Output\FWLogs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\FWLogs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing DAT files from $target`n" -type "Information"
-                        $files = (Get-ChildItem V:\VolH\Output\DATs\).Name
+                        $files = (Get-ChildItem $env:shareName\VolH\Output\DATs\).Name
                         foreach($image in $files){    
-                            $src = "V:\VolH\Output\DATs\$image"
+                            $src = "$env:shareName\VolH\Output\DATs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\DATs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing other files from $target`n" -type "Information"
-                        $files = (Get-ChildItem V:\VolH\Output\Other\).Name
+                        $files = (Get-ChildItem $env:shareName\VolH\Output\Other\).Name
                         foreach($image in $files){    
-                            $src = "V:\VolH\Output\Other\$image"
+                            $src = "$env:shareName\VolH\Output\Other\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\Other\$image"
                             Copy-File -from $src -to $dest
                         }
@@ -264,7 +264,7 @@ PS> Get-VHOutput
                 else{
                     Write-It -msg "Volatility not complete on $target" -type "Warning"
                 }
-                Remove-PSDrive -Name "V"
+                Remove-PSDrive -Name "$env:shareLetter"
             }
             catch{
                 Write-Error -Message "$_ Get-VHOutput failed"
@@ -291,9 +291,9 @@ PS> Get-VHStatus -Target [hostname]
 
     Process{
         try{
-            New-PSDrive -Name "V" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 1>$null
-            Get-Content -Tail 5 "V:\VolH\VHLog-$Target.txt"
-            Remove-PSDrive -Name "V"
+            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 1>$null
+            Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt"
+            Remove-PSDrive -Name "$env:shareLetter"
         }
         catch{
             Write-Error -Message "$_ Get-VHStatus failed"
@@ -321,12 +321,12 @@ PS> Get-VHStatus -Target [hostname]
         try{
             foreach($Target in (Get-Content $TargetList)){
                 Write-It -msg "Status of $Target" -type "Information"
-                New-PSDrive -Name "V" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
-                Get-Content -Tail 5 "V:\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
+                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
                 if($errOut){
                     Write-It -msg "$target has no files" -type "Warning"
                 }
-                Remove-PSDrive -Name "V"
+                Remove-PSDrive -Name "$env:shareLetter"
             }
         }
         catch{
@@ -360,17 +360,17 @@ Function Move-VHFiles{
                         New-Item -ItemType directory -Path ("C:\VolH\Artifacts\")
                     }
                 } >$null 2>&1
-                New-PSDrive -Name "V" -Credential $cred -Persist -PSProvider "FileSystem" -Root "\\$target\C$"
+                New-PSDrive -Name "$env:shareLetter" -Credential $cred -Persist -PSProvider "FileSystem" -Root "\\$target\C$"
                 if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "V:\VolH\Tools\DumpIt-64.exe"
-                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "V:\VolH\Tools\volatility.exe"
+                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "$env:shareName\VolH\Tools\DumpIt-64.exe"
+                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
                 }
                 else{
-                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "V:\VolH\Tools\DumpIt-86.exe"
-                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "V:\VolH\Tools\volatility.exe"
+                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "$env:shareName\VolH\Tools\DumpIt-86.exe"
+                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
                 }
-                Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "V:\VolH\Tools\VolHunterRemote.ps1"
-                Remove-PSDrive -Name "V"
+                Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "$env:shareName\VolH\Tools\VolHunterRemote.ps1"
+                Remove-PSDrive -Name "$env:shareLetter"
                 Write-It -msg "`nFolders & tools moved to $target" -type "Information"
             }
         }
@@ -734,6 +734,8 @@ Sets environment variables, each with a default value listed in the parameters s
             $env:OnList = ".\OnList.txt"
             $env:OffList = ".\OffList.txt"
             $global:Credential = Get-Credential $credName
+            $env:shareLetter = Test-VHShareName
+            $env:shareName = $env:shareLetter + ":"
         }
         catch{
             Write-Error -Message "$_ Set-VHEnvironment failed"
@@ -867,6 +869,17 @@ PS> Test-VHConnection -TargetList ".\path\to\targets.txt"
     }
 }
 
+Function Test-VHShareName{
+    $shareList = net share
+    for($test = 0; $test -lt 26; $test++){
+        $testChar = [char](65 + $test)
+        [string]$testCharString = "*" + $testChar + ":\*"
+        if(!($shareList -like "$testCharString")){
+            return "$testChar"
+        }
+    }
+}
+
 Function Watch-VHStatus{
 <#
 .SYNOPSIS
@@ -911,8 +924,8 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                         #If first time thru, check if VHLog exists, otherwise VHR failed
                         if($firstRun -lt $targetLength){
                             $firstRun += 1
-                            New-PSDrive -Name "V" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
-                            if(!(Test-Path -Path "V:\VolH\VHLog*")){
+                            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                            if(!(Test-Path -Path "$env:shareName\VolH\VHLog*")){
                             Write-It -msg "FAILURE: $target has failed to start VolHunterRemote" -type "Error"
                                 $array[$index] = $True
                                 $doneCount++
@@ -921,17 +934,17 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                             else{
                                 Write-It -msg "SUCCESS: $target started VolHunterRemote" -type "Success"
                             }
-                            Remove-PSDrive -Name "V"
+                            Remove-PSDrive -Name "$env:shareLetter"
                         }
-                        New-PSDrive -Name "V" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
-                        if(Test-Path "V:\VolH\VolDone.txt"){
+                        New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                        if(Test-Path "$env:shareName\VolH\VolDone.txt"){
                             $date = Get-Date
                             Write-It -msg "$target completed $date" -type "Other"
                             $array[$index] = $True
                             $doneCount++
                             Write-It -msg "$doneCount of $targetLength targets complete." -type "Information"
                         }
-                        Remove-PSDrive -Name "V"
+                        Remove-PSDrive -Name "$env:shareLetter"
                     }
                     $index++
                 }
@@ -991,4 +1004,5 @@ Export-ModuleMember -Function Convert-VHElastic
 Export-ModuleMember -Function Start-VHInvestigation
 Export-ModuleMember -Function Send-VHResults
 Export-ModuleMember -Function Test-VHConnection
+Export-ModuleMember -Function Test-VHShareName
 Export-ModuleMember -Function Watch-VHStatus
