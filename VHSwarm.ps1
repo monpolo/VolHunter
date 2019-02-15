@@ -107,11 +107,13 @@ if($GatherOutput){
     $ScriptBlock = { 
         cd C:\VH
         Import-Module .\VolHunter.psm1
+        Set-VHEnvironment -cred $cred -MaxThreads 50
         Get-VHOutput
     }
 
     foreach($target in (Get-Content $Intermediaries)){
-        Invoke-Command -ComputerName $target -InDisconnectedSession -ScriptBlock $ScriptBlock 2>$null
+        #Invoke-Command -ComputerName $target -InDisconnectedSession -ScriptBlock $ScriptBlock 2>$null
+        Invoke-Command -ComputerName $target -ScriptBlock $ScriptBlock -ArgumentList $credName 2>$null
     }
 }
 
@@ -119,6 +121,7 @@ if($CleanUp){
     $ScriptBlock = { 
         cd C:\VH
         Import-Module .\VolHunter.psm1
+        Set-VHEnvironment -cred $cred -MaxThreads 50
         Remove-VHRemote
     }
 
@@ -134,3 +137,15 @@ if($GatherAll){
         Copy-Item -Path "\\$host\C$\VH\VHLogs\*" -Destination .\VHLogs\
     }
 }
+
+#POSSIBLE FIX for double hop. If we pass -Credential $Using:cred to the $credName arg of Set-VHEnvironment, will this work with only 1 auth?
+<#
+# This works without delegation, passing fresh creds            
+# Note $Using:Cred in nested request            
+$cred = Get-Credential Contoso\Administrator            
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
+    hostname            
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+}
+#https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/
+#>
