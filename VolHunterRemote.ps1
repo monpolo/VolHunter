@@ -68,34 +68,6 @@ Function Get-RandomDate {
     New-Object DateTime($randomTicks)
 }
 
-Function Convert-VHElastic{
-    param([string]$logLocation)
-    foreach($excelFile in (Get-ChildItem C:\VolH\Output\*.xlsx).FullName){
-        $csvName = ((($excelFile.Replace("Output\","~")).Split("~"))[1]).Replace(".xlsx","")
-        Add-Content -Path $logLocation -Value "Processing $csvName"
-        $Excel = New-Object -ComObject Excel.Application
-        $Excel.Visible = $false
-        $Excel.DisplayAlerts = $false
-        $wb = $Excel.Workbooks.Open($excelFile)
-        $wd = "C:\VolH\Output"
-        foreach($ws in $wb.Worksheets){
-            $ws.SaveAs("$wd\$csvName-WORKINGFILE.csv",6)
-        }
-        $Excel.Quit()
-    }
-
-    foreach($csvFile in (Get-ChildItem C:\VolH\Output\*.csv).FullName){
-        $compName = ((($csvFile.Replace("Output\","~")).Replace("-WORKINGFILE.csv","~")).Split("~"))[1]
-        $splitter = $compName.IndexOf("-") + 1
-        $compName2 = $compName.substring($splitter)
-        Import-Csv $csvFile | Select-Object *,@{Name='Hostname';Expression={"$compName2"}} | Export-Csv "C:\VolH\Output\$compName-WORKING2.csv" -NoTypeInformation
-        Import-Csv "C:\VolH\Output\$compName-WORKING2.csv" | Select-Object *,@{Name='Investigated';Expression={'false'}} | Export-Csv "C:\VolH\Output\$compName.csv" -NoTypeInformation
-    }
-    
-    Remove-Item "C:\VolH\Output\*-WORKING*.csv"
-    Remove-Item "C:\VolH\Output\*.xlsx"
-}
-
 ##################
 ### Initialize ###
 ##################
@@ -122,7 +94,6 @@ Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
 ###################################################################
 ### QUERY SYSTEM DETAILS TO DETERMINE --PROFILE= FOR VOLATILITY ###
 ###################################################################
-
 Add-Content -Path "$logLocation" -Value "Determining x86 vs x64`n"
 ### Determine 32 vs 64 bit architecture
 if([intptr]::size -eq 4){
@@ -152,10 +123,6 @@ Add-Content -Path "$logLocation" -Value "$sysInfo `n"
 switch ($sysInfo){
     # Windows 10 Ver 10586/14393/15063+/none x86/64 #
     {$_ -like "*Windows 10*"} { 
-        <#if( ($osVersi.Build -eq 10586) -or ($osVersi.Build -eq 14393) ){$volProfile = "Win10x"+$Architecture+"_"+$OSVersi.Build}
-        elseif($OSVersi.Build -ge 15063) {$volProfile = "Win10x"+$Architecture+"_15063"}
-        else{$volProfile = "Win10x"+$Architecture}
-        #>
         if(($osVersi.Build -ge 10586) -and ($osVersi.Build -lt 14393)){$volProfile = "Win10x"+$Architecture+"_10586"}
         elseif(($osVersi.Build -ge 14393) -and ($osVersi.Build -lt 15063)){$volProfile = "Win10x"+$Architecture+"_14393"}
         elseif(($osVersi.Build -ge 15063) -and ($osVersi.Build -lt 16299)){$volProfile = "Win10x"+$Architecture+"_15063"}
@@ -164,59 +131,49 @@ switch ($sysInfo){
         elseif($osVersi.Build -eq 17763){$volProfile = "Win10x"+$Architecture+"_17763"}
         else{$volProfile = "Win10x"+$Architecture}
     }
-
     # Server 2016 Ver 14393 #
     {$_ -like "*Server 2016*"} { $volProfile = "Win2016x64_14393" } #End Server2016 switch
-
     # Server 2012 #
     {$_ -like "*Server 2012 *"} { $volProfile = "Win2012x64" }
-
     # Server 2012R2, Ver 18340 #
     {$_ -like "*Server 2012 R2*"} {
         if($osVersion -like "*18340*"){ $volProfile = "Win2012R2x64_18340" }
         else{ $volProfile = "Win2012R2x64" }
     }
-
     # Server 2008, SP1/2, x86/64 #
     {$_ -like "*Server*2008 Standard*"} {
         if($osVersion -like "*Service*Pack*1*"){ $volProfile = "Win2008SP1x"+$Architecture }
         else{ $volProfile = "Win2008SP2x"+$Architecture }
     }
-
     # Server 2008 R2 SP0/1 & SP1_23418 #
     {$_ -like "*Server 2008 R2*"} {
         if( !($osVersion -like "*Service Pack 1*") ){ $volProfile = "Win2008R2SP0x64" }
         elseif($osVersion -like "*23418*"){ $volProfile = "Win2008R2SP1x64_23418" }
         else{ $volProfile = "Win2008R2SP1x64" }
     }
-
     # Server 2003 SP0x86, SP1x86/64, SP2x86/64 #
     {$_ -like "Server 2003*"} {
         if($osVersion -like "*Service Pack 1*"){ $volProfile = "Win2003SP1x"+$Architecture }
         elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "Win2003SP2x"+$Architecture }
         else{ $volProfile = "Win2003SP0x86" }
     }
-
     # Vista SP0/1/2 x86/x64 #
     {$_ -like "*Vista*"} {
         if($osVersion -like "*Service Pack 1*"){ $volProfile = "VistaSP1x"+$Architecture }
         elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "VistaSP2x"+$Architecture }
         else{ $volProfile = "VistaSP0x"+$Architecture }
     }
-
     # Windows 7 SP0x64/86, SP1x64/86, SP1_23418x64/86 #
     {$_ -like "*Windows 7*"} {
         if( !($osVersion -like "*Service Pack*") ){ $volProfile = "Win7SP0x"+$Architecture }
         elseif($osVersion -like "*23418*"){ $volProfile = "Win7SP1x"+$Architecture + "_23418" }
         else{ $volProfile = "Win7SP1x"+$Architecture }
     }
-
     # Windows 8.1 #
     {$_ -like "*Windows 8.1*"} {
         if($osVersion -like "*18340*"){ $volProfile = "Win8SP1x64_18340" }
         else{ $volProfile = "Win8SP1x"+$Architecture }
     }
-
     # Windows 8 #
     {$_ -like "*Windows 8 *"} { $volProfile = "Win8SP0x"+$Architecture }
 
@@ -228,13 +185,14 @@ Add-Content -Path "$logLocation" -Value "Volatility Profile = $volProfile `n"
 
 if($volProfile -eq "ERROR"){ 
     Out-File -FilePath "C:\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
+    $volDone = "VHRemote failed due to unrecognized profile"
+    Out-File -FilePath "C:\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
     exit
 }
 
 ###############################
 ### Run memory dumping tool ###
 ###############################
-### Dump Memory ###
 if($dumpFlag -eq "True"){
     
     if($Architecture -eq "64"){
@@ -294,7 +252,6 @@ if( ($Artifacts -like "all") -or ($Artifacts -like "*pf*") -or ($Artifacts -like
             }
         }
     }
-    
     ### Gather Shimcache and/or stateful info
     if( ($Artifacts -like "all") -or ($Artifacts -like "*shim*") -or ($Artifacts -like "*state*") ){
         New-Item -ItemType directory -Path ("C:\VolH\Output\Other")
@@ -308,13 +265,6 @@ if( ($Artifacts -like "all") -or ($Artifacts -like "*pf*") -or ($Artifacts -like
     }
     "Done" > "C:\VolH\ArtsGathered.txt"
 }
-
-    ############################################
-    ### Use for testing sample memory images ###
-    ############################################
-    #$hostName = "conficker"
-    #$imgLocation = "C:\VolH\Image\$hostName.img"
-    #$volProfile = "WinXPSP2x86"
 
 Add-Content -Path $logLocation -Value "Plugins are $Plugins`n"
 
@@ -341,9 +291,6 @@ if($Plugins){
     if( ($Plugins -like "*mutantscan*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "mutantscan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
-    #if( ($Plugins -like "*apihooks*") -or ($Plugins -like "all") ){
-    #    Run-Vol -plugin "apihooks" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-    #}
     if( ($Plugins -like "*dlllist*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "dlllist" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
@@ -359,12 +306,6 @@ if($Plugins){
     if( ($Plugins -like "*timers*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "timers" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
-    if( ($Plugins -like "*gditimers*") -or ($Plugins -like "all") ){
-        Run-Vol -plugin "gditimers" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-    }
-    #if( ($Plugins -like "*filescan*") -or ($Plugins -like "all") ){
-    #    Run-Vol -plugin "filescan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-    #}
 
     ### FIX TEMP FOLDER CHANGE ###
     $env:temp = $backupTemp
@@ -375,32 +316,30 @@ if($Plugins){
 #############################################
 ### Finalize VolHunter, Record Total Time ###
 #############################################
-[string]$hash = (Get-FileHash -Algorithm SHA256 C:\VolH\Image\*.bin).Hash
+
+[string]$hash = (Get-FileHash -Algorithm SHA256 C:\VolH\Image\$hostName.bin).Hash
 Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
 
-if($HumanReadable -eq "False"){
-    Add-Content -Path "$logLocation" -Value "Converting outputfiles"
-    $start = Get-Date
-    Convert-VHElastic -logLocation $logLocation
-    $end = Get-Date
-    Add-Content -Path $logLocation -Value "Output conversions completed in $($end-$start) H:M:S.MS`n"
+try{
+    Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
+    $first = Get-RandomDate -Min "01/01/2015 00:00:00.000"
+    $second = Get-RandomDate -Min "01/01/2015 00:00:00.000"
+    if($first -lt $second){
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($first)
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($second)
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($second)
+    }
+    else{
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($second)
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($first)
+        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($first)
+    }
+    Add-Content -Path "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" 
+}
+catch{
+    Add-Content -Path $logLocation -Value "$_ hiding & timestomping failed"
 }
 
-Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
-$first = Get-RandomDate -Min "01/01/2015 00:00:00.000"
-$second = Get-RandomDate -Min "01/01/2015 00:00:00.000"
-if($first -lt $second){
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($first)
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($second)
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($second)
-}
-else{
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($second)
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($first)
-    (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($first)
-}
-
-Add-Content -Path "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
 $GLOBALEND = Get-Date
 Add-Content -Path "$logLocation" -Value "TOTAL RUNTIME $($GLOBALEND-$GLOBALSTART) H:M:S.MS`n"
 Add-Content -Path "$logLocation" -Value "VolHunter is now complete!`n"
