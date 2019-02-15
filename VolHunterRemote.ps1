@@ -26,7 +26,7 @@ will run all currently VolHunter usable volatility plugins
 
 .NOTES
     Author: Michael "FUMBLES" Russell
-    Date:   11 February 2019
+    Date:   14 February 2019
     Version: 1.0.6
 #>
 
@@ -44,20 +44,26 @@ Param(
 
 function Run-Vol{
     param( [string]$plugin, [string]$HR, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
-    $command = "C:\VolH\Tools\volatility.exe"
-    $hn = hostname
-    Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
-    $start = Get-Date
-    if($HR -eq "True"){
-        $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
-        Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -wait
+    try{
+        $command = "C:\VolH\Tools\volatility.exe"
+        $hn = hostname
+        Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
+        $start = Get-Date
+        if($HR -eq "True"){
+            $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
+            Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -wait
+        }
+        else{
+            $outFile = $outputDir + $plugin + "-" + $hn + ".xlsx"
+            Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -wait
+        }
+        $end = Get-Date
+        Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n" 
     }
-    else{
-        $outFile = $outputDir + $plugin + "-" + $hn + ".xlsx"
-        Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -wait
+    catch{
+        Add-Content -Path $logLocation -Value "$_ $plugin failed"
+        continue
     }
-    $end = Get-Date
-    Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n" 
 }
 
 Function Get-RandomDate {
@@ -88,7 +94,7 @@ $Architecture = 64
 $OSVersi = [System.Environment]::OSVersion.Version
 $logLocation = "C:\VolH\VHLog-$hostname.txt"
 
-$vhlog = "Starting VolHunter`n"
+$vhlog = "Starting VolHunter at $time `n"
 Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
 
 ###################################################################
@@ -194,13 +200,7 @@ if($volProfile -eq "ERROR"){
 ### Run memory dumping tool ###
 ###############################
 if($dumpFlag -eq "True"){
-    
-    if($Architecture -eq "64"){
-        $dumpCommand = "C:\VolH\Tools\DumpIt-64.exe"
-    }
-    else{
-        $dumpCommand = "C:\VolH\Tools\DumpIt-86.exe"
-    }
+    $dumpCommand = "C:\VolH\Tools\DumpIt.exe"
     Add-Content -Path "$logLocation" -Value "Starting memory dump`n"
     $start = Get-Date
     Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
@@ -316,28 +316,30 @@ if($Plugins){
 #############################################
 ### Finalize VolHunter, Record Total Time ###
 #############################################
+if($dumpFlag -eq "True"){
+    [string]$hash = (Get-FileHash -Algorithm SHA256 C:\VolH\Image\$hostName.bin).Hash
+    Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
 
-[string]$hash = (Get-FileHash -Algorithm SHA256 C:\VolH\Image\$hostName.bin).Hash
-Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
-
-try{
-    Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
-    $first = Get-RandomDate -Min "01/01/2015 00:00:00.000"
-    $second = Get-RandomDate -Min "01/01/2015 00:00:00.000"
-    if($first -lt $second){
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($first)
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($second)
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($second)
+    try{
+        Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
+        $oldYear = (Get-Date).AddYears(-3)
+        $first = Get-RandomDate -Min $oldYear
+        $second = Get-RandomDate -Min $oldYear
+        if($first -lt $second){
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($first)
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($second)
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($first)
+        }
+        else{
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($second)
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($first)
+            (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($second)
+        }
+        Add-Content -Path "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" 
     }
-    else{
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").CreationTime=($second)
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastWriteTime=($first)
-        (Get-Item "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb").LastAccessTime=($first)
+    catch{
+        Add-Content -Path $logLocation -Value "$_ hiding & timestomping failed"
     }
-    Add-Content -Path "Moved bin file to C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" 
-}
-catch{
-    Add-Content -Path $logLocation -Value "$_ hiding & timestomping failed"
 }
 
 $GLOBALEND = Get-Date

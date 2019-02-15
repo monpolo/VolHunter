@@ -362,11 +362,11 @@ Function Move-VHFiles{
                 } >$null 2>&1
                 New-PSDrive -Name "$env:shareLetter" -Credential $cred -Persist -PSProvider "FileSystem" -Root "\\$target\C$"
                 if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "$env:shareName\VolH\Tools\DumpIt-64.exe"
+                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "$env:shareName\VolH\Tools\DumpIt.exe"
                     Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
                 }
                 else{
-                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "$env:shareName\VolH\Tools\DumpIt-86.exe"
+                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "$env:shareName\VolH\Tools\DumpIt.exe"
                     Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
                 }
                 Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "$env:shareName\VolH\Tools\VolHunterRemote.ps1"
