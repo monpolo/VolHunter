@@ -148,4 +148,6 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
     Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
 }
 #https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/
+#https://stackoverflow.com/questions/6239647/using-powershell-credentials-without-being-prompted-for-a-password
+#http://web.archive.org/web/20160822030847/http://geekswithblogs.net/Lance/archive/2007/02/16/106518.aspx
 #>
