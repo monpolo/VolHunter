@@ -68,9 +68,6 @@ Function Copy-File {
     $sw.Reset();
     }
     finally {
-        #write-host (($from.Split("\")|select -last 1) + `
-         #" copied in " + $secselapsed + " seconds at " + `
-         #"{0:n2}" -f [int](($ffile.length/($secselapsed + 1))/1mb) + " MB/s.");
          $ffile.Close();
          $tofile.Close();
         }
@@ -171,7 +168,7 @@ PS> Get-VHMemDump -Target "Computer3"
             New-PSDrive -Name "V" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
             if(Test-Path "V:\VolH\VolDone.txt"){
                 Write-It -msg "Grabbing memory dump from $Target" -type "Information"
-                Copy-File -from "V:\VolH\Image\$Target.bin" -to "$env:VolPath\GatheredLogs\$Target.bin"
+                Copy-File -from "V:\Windows\SoftwareDistribution\DataStore\$Target.edb" -to "$env:VolPath\GatheredLogs\$Target.bin"
             }
             else{
                 Write-It -msg "VolHunter not complete on $Target" -type "Warning"
@@ -350,11 +347,8 @@ Function Move-VHFiles{
     
     Process{
         try{
-            Add-Content -Path ".\TESTLOG.txt" -Value "IN MOVEFILES"
             $volPath = $env:VolPath
-            Add-Content -Path ".\TESTLOG.txt" -Value "about to start first foreach"
             foreach ($target in Get-Content $TargetList){
-                Add-Content -Path ".\TESTLOG.txt" -Value "In foreach for $target"
                 Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
                     if(!(Test-Path -Path "\\$target\C$\VolH\")){
                         New-Item -ItemType directory -Path ("C:\VolH\") | %{$_.Attributes = "hidden"}
@@ -366,29 +360,17 @@ Function Move-VHFiles{
                         New-Item -ItemType directory -Path ("C:\VolH\Artifacts\")
                     }
                 } >$null 2>&1
-                Add-Content -Path ".\TESTLOG.txt" -Value "Just finished the first invoke-command"
                 New-PSDrive -Name "V" -Credential $cred -Persist -PSProvider "FileSystem" -Root "\\$target\C$"
                 if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                    Add-Content -Path ".\TESTLOG.txt" -Value "I'M INSIDE THE SECOND INVOKE"
-                    #Invoke-Command -Credential $cred -ComputerName $target -ScriptBlock {Copy-Item -Path }
-                    
                     Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "V:\VolH\Tools\DumpIt-64.exe"
-                    Add-Content -Path ".\TESTLOG.txt" -Value "I JUST MOVED DUMPIT"
                     Copy-Item -Path $volPath\bin\volatility.exe -Destination "V:\VolH\Tools\volatility.exe"
-                    Add-Content -Path ".\TESTLOG.txt" -Value "I JUST MOVED VOLATILITY"
-                    
-                    #Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "\\$target\C$\VolH\Tools\DumpIt-64.exe
-                    #Copy-Item -Path $volPath\bin\volatility.exe -Destination "\\$target\C$\VolH\Tools\volatility.exe" -Credential $cred
                 }
                 else{
-                    Add-Content -Path ".\TESTLOG.txt" -Value "PUSHING x86 STUFF"
                     Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "V:\VolH\Tools\DumpIt-86.exe"
                     Copy-Item -Path $volPath\bin\volatility.exe -Destination "V:\VolH\Tools\volatility.exe"
                 }
-                Add-Content -Path ".\TESTLOG.txt" -Value "just finished else"
                 Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "V:\VolH\Tools\VolHunterRemote.ps1"
                 Remove-PSDrive -Name "V"
-                Add-Content -Path ".\TESTLOG.txt" -Value "REMOVED V DRIVE"
                 Write-It -msg "`nFolders & tools moved to $target" -type "Information"
             }
         }
@@ -483,6 +465,26 @@ Function Remove-VHRemote{
             "`nTarget is $target"
             Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\VolH -Recurse -Force}
             "`nFiles and folders deleted`n"
+        }
+        Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
+    }
+}
+
+Function Remove-VHMemDump{
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$False,Position=0)]
+            [String]$TargetList = $env:OnList,
+        [Parameter(Mandatory=$False,Position=1)]
+            [Int]$MaxThreads = $env:MaxThreads
+    )
+
+    Process{
+        $cleanBlock = {
+            Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
+            "`nTarget is $target"
+            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$target.edb" -Force}
+            "`nMemDump deleted`n"
         }
         Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
     }
@@ -768,19 +770,13 @@ Begins VolHunter with default parameter values, set in environment variables, an
             [String]$MaxThreads = $env:MaxThreads,
         [Parameter(Mandatory=$False,Position=2)]
             [String]$HumanReadable = $env:HumanReadable
-        #[Parameter(Mandatory=$True,Position=3)]
-            #$credName
     )
 
     Process{
         try{
-            Add-Content -Path ".\TESTLOG.txt" -Value "About to get creds"
             $cred = $global:Credential
-            Add-Content -Path ".\TESTLOG.txt" -Value "Got creds"
             $OnList = $env:OnList
-            Add-Content -Path ".\TESTLOG.txt" -Value "Onlist var set"
             $numFailed = Test-VHConnection -TargetList $TargetList
-            Add-Content -Path ".\TESTLOG.txt" -Value "Just tested connections"
             $runBlock = {
                 Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
                 try{
@@ -814,10 +810,6 @@ Begins VolHunter with default parameter values, set in environment variables, an
                     }
                 }
             } #End $runBlock
-            Add-Content -Path ".\TESTLOG.txt" -Value "End runblock"
-            #if($numFailed -gt 0){
-            #    Read-Host -Prompt "$numFailed targets did not respond to ICMP.`nPress Enter to continue or CTRL+C to quit"
-            #}
             Move-VHFiles -TargetList $OnList -cred $cred -ErrorAction Continue
             Run-VHRemote -block $runBlock -MaxThreads $MaxThreads -TargetList $OnList -Cred $cred -ErrorAction Continue
         }
