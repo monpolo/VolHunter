@@ -69,6 +69,7 @@ Function Get-RandomDate {
 }
 
 Function Convert-VHElastic{
+    param([string]$logLocation)
     foreach($excelFile in (Get-ChildItem C:\VolH\Output\*.xlsx).FullName){
         $csvName = ((($excelFile.Replace("Output\","~")).Split("~"))[1]).Replace(".xlsx","")
         Add-Content -Path $logLocation -Value "Processing $csvName"
@@ -380,7 +381,7 @@ Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
 if($HumanReadable -eq "False"){
     Add-Content -Path "$logLocation" -Value "Converting outputfiles"
     $start = Get-Date
-    Convert-VHElastic
+    Convert-VHElastic -logLocation $logLocation
     $end = Get-Date
     Add-Content -Path $logLocation -Value "Output conversions completed in $($end-$start) H:M:S.MS`n"
 }
