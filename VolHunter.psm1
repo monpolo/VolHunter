@@ -421,6 +421,7 @@ Function Move-VHParallel{
             Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\VolH\Tools\volatility.exe" -ToSession $Session
             Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
             Disconnect-PSSession $Session
+            Remove-PSSession $Session
         } #End moveBlock
 
         ###################################################################
