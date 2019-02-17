@@ -1,3 +1,7 @@
+# VolHunter #
+
+A tool for volatility analysis at scale.
+
 # Logstash filters #
 
 A Logstash filter configuration is located in the `filters` directory.  To use
@@ -52,3 +56,5 @@ filebeat.inputs:
 output.logstash:
   hosts: ["localhost:5044"]
 ```
+
+5C!
