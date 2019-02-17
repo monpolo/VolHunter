@@ -1,4 +1,4 @@
-*Logstash filters*
+# Logstash filters #
 
 A Logstash filter configuration is located in the `filters` directory.  To use
 the filters you must supply a config for input and output plugins appropriate
@@ -10,9 +10,9 @@ Messages that are correctly parsed by the filters will be tagged with
 `valid-volhunter`.  This can be used to make sure only correctly parsed
 data is sent to the output.
 
-**Example Input/Output Configs**
+## Example Input/Output Configs ##
 
-***Input***
+### Input ###
 ```
 input {
   # recommended input is filebeats
@@ -22,7 +22,7 @@ input {
 }
 ```
 
-***Output***
+### Output ###
 ```
 output {
   if "valid-volhunter" in [tags] {
@@ -32,7 +32,7 @@ output {
 }
 ```
 
-**Example Filebeat Config**
+## Example Filebeat Config ##
 This filebeat config can be used to ingest VolHunter output and send to
 logstash.  The location of the VolHunter output files is set by the 
 `INPUT_PATH` environment variable.
