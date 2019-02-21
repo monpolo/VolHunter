@@ -391,14 +391,14 @@ Function Move-VHParallel{
         [Parameter(Mandatory=$False,Position=2)]
             [String]$TargetList = $env:TargetList,
         [Parameter(Mandatory=$False,Position=3)]
-            [Credential]$cred = $global:Credential,
+            $cred = $global:Credential,
         [Parameter(Mandatory=$False,Position=4)]
             [String]$artifacts = $global:Artifacts
     )
 
     Process{
         $moveBlock = {
-            Param([Credential]$cred,[String]$target,[String]$artifacts,[String]$volPath)
+            Param($cred,[String]$target,[String]$artifacts,[String]$volPath)
             "`nTarget is $target"
             Invoke-Command -ComputerName $target -Credential $cred -ArgumentList $artifacts -ScriptBlock{
                 if(!(Test-Path -Path "C:\VolH\")){
