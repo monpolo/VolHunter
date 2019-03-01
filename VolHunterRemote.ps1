@@ -51,11 +51,29 @@ function Run-Vol{
         $start = Get-Date
         if($HR -eq "True"){
             $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
-            Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -wait
+            #Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -wait
+            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
+            $timeouted = $null
+            $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
+
+            if($timeouted){
+                $proc | kill
+                remove-item $outFile -Force
+                Add-Content -Path $logLocation -Value "$plugin plugin timed-out`n"
+            }
         }
         else{
             $outFile = $outputDir + $plugin + "-" + $hn + ".xlsx"
-            Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -wait
+            #Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -wait
+            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -PassThru
+            $timeouted = $null
+            $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
+
+            if($timeouted){
+                $proc | kill
+                remove-item $outFile -Force
+                Add-Content -Path $logLocation -Value "$plugin plugin timed-out`n" 
+            }
         }
         $end = Get-Date
         Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n" 
@@ -199,6 +217,7 @@ if($volProfile -eq "ERROR"){
 ###############################
 ### Run memory dumping tool ###
 ###############################
+Add-Content -Path $logLocation -Value "dumpFlag is $dumpFlag"
 if($dumpFlag -eq "True"){
     Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
     $dumpCommand = "C:\VolH\Tools\DumpIt.exe"
@@ -289,12 +308,12 @@ if($Plugins){
     if( ($Plugins -like "*cmdline*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "cmdline" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
-    if( ($Plugins -like "*psscan*") -or ($Plugins -like "all") ){
-        Run-Vol -plugin "psscan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-    }
-    if( ($Plugins -like "*mutantscan*") -or ($Plugins -like "all") ){
-        Run-Vol -plugin "mutantscan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-    }
+    #if( ($Plugins -like "*psscan*") -or ($Plugins -like "all") ){
+    #    Run-Vol -plugin "psscan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+    #}
+    #if( ($Plugins -like "*mutantscan*") -or ($Plugins -like "all") ){
+    #    Run-Vol -plugin "mutantscan" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+    #}
     if( ($Plugins -like "*dlllist*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "dlllist" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
@@ -325,7 +344,7 @@ if($dumpFlag -eq "True"){
     Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
 
     try{
-        Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb"
+        Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" -Force
         Start-Sleep -Seconds 2
         $oldYear = (Get-Date).AddYears(-3)
         $first = Get-RandomDate -Min $oldYear
