@@ -204,11 +204,18 @@ PS> Get-VHOutput
     )
 
     Process{
+        $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
+        $currLine = 0
         foreach($target in get-content $TargetList){    
             try{
+                $currLine++
+                if(!(Test-Connection -ComputerName $target -BufferSize 16 -Count 1 -Quiet)){
+                    Write-It -msg "$target appears offline" -type "Warning"
+                    continue
+                }
                 New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$target\C$" 1>$null
                 if(Test-Path "$env:shareName\VolH\VolDone.txt"){
-                    Write-It -msg "Grabbing parsed output from $target`n" -type "Information"
+                    Write-It -msg "Grabbing parsed output from $target # $currLine / $lineCount`n" -type "Information"
                     Copy-Item -Path "$env:shareName\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
                     Copy-Item -Path "$env:shareName\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
 
@@ -291,7 +298,7 @@ PS> Get-VHStatus -Target [hostname]
 
     Process{
         try{
-            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 1>$null
+            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 2>$null
             Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt"
             Remove-PSDrive -Name "$env:shareLetter"
         }
@@ -321,7 +328,7 @@ PS> Get-VHStatus -Target [hostname]
         try{
             foreach($Target in (Get-Content $TargetList)){
                 Write-It -msg "Status of $Target" -type "Information"
-                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 2>$null
                 Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
                 if($errOut){
                     Write-It -msg "$target has no files" -type "Warning"
@@ -389,16 +396,22 @@ Function Move-VHParallel{
         [Parameter(Mandatory=$False,Position=1)]
             [Int]$MaxThreads = 10,
         [Parameter(Mandatory=$False,Position=2)]
-            [String]$TargetList = $env:TargetList,
+            [String]$TargetList = $env:OnList,
         [Parameter(Mandatory=$False,Position=3)]
             $cred = $global:Credential,
         [Parameter(Mandatory=$False,Position=4)]
-            [String]$artifacts = $global:Artifacts
+            [String]$artifacts = $global:Artifacts,
+        [Parameter(Mandatory=$False,Position=5)]
+            $DumpMem = $env:DumpMemory,
+        [Parameter(Mandatory=$False,Position=6)]
+            $Plugins = $env:Plugins,
+        [Parameter(Mandatory=$False,Position=7)]
+            $HumanReadable = $env:HumanReadable
     )
 
     Process{
         $moveBlock = {
-            Param($cred,[String]$target,[String]$artifacts,[String]$volPath)
+            Param($cred,[String]$target,[String]$artifacts,[String]$volPath,$DumpMem,$Plugins,$HumanReadable)
             "`nTarget is $target"
             Invoke-Command -ComputerName $target -Credential $cred -ArgumentList $artifacts -ScriptBlock{
                 if(!(Test-Path -Path "C:\VolH\")){
@@ -422,23 +435,46 @@ Function Move-VHParallel{
             Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
             Disconnect-PSSession $Session
             Remove-PSSession $Session
+
+            try{
+                $scriptBlock = {
+                    Param([string]$dump,[string]$plugin,[string]$human,[string]$arts)
+                    Start-Process powershell.exe -ArgumentList "-c C:\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
+                }
+                #Write-Host "Plugins are $Plugins and dump is $DumpMem"
+                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -ScriptBlock $scriptBlock -ArgumentList $DumpMem,$Plugins,$HumanReadable,$Artifacts -ErrorVariable results 2>$null
+                if($results -like "*Disconnected sessions are supported only*"){
+                    throw 'PS less than v3'
+                }
+            }
+            catch{
+                "`nTarget running < PSv3, trying WMIC`n"
+                Get-WmiObject -List -Class Win32_OperatingSystem -Computer $target -ErrorVariable results 1>$null 2>$null
+                if($results -like "*Could not get*"){
+                    return
+                }
+                else{
+                    $targIP = [Net.Dns]::GetHostAddresses("$target") | select-object IPAddressToString -expandproperty IPAddressToString
+                    WMIC /node:"$targIP" process call create "powershell.exe -c C:\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
+                }
+            }
         } #End moveBlock
 
-        ###################################################################
-        ### NOTE: If copy-item places a lock on a file, use robocopy /B ###
-        ###################################################################
+
+
 
         try{
             $XYZ = 0
             Get-Job | Remove-Job
             $volPath = $env:VolPath
             $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
+            #Write-It -msg "DumpMem is $DumpMem" -type "Information"
             Write-It -msg "Moving files to $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
             foreach ($target in Get-Content $TargetList){
                 While (@(Get-Job -state running).count -ge $MaxThreads){
                     Start-Sleep -Milliseconds 10
                 }
-                Start-Job -ScriptBlock $moveBlock -ArgumentList $cred, $target, $artifacts, $volPath 1>$null
+                Start-Job -ScriptBlock $moveBlock -Name $target -ArgumentList $cred, $target, $artifacts, $volPath, $DumpMem, $Plugins, $HumanReadable 1>$null
                 $XYZ++
                 Write-It -msg "Copying files to $target   # $XYZ / $lineCount" -type "Other"
             }
@@ -448,6 +484,11 @@ Function Move-VHParallel{
                 $x = @(Get-Job -State running).count
                 if($lastX -ne $x){
                     Write-It -msg "Still copying to $x systems" -type "Information"
+                    foreach($job in Get-Job){
+                        if($job.State -eq "Running"){
+                            Write-Host $job.Name
+                        }
+                    }
                     $lastX = $x
                 }
                 Start-Sleep 1
@@ -460,7 +501,8 @@ Function Move-VHParallel{
                 $jobPath = ".\JobLogs\" + $filename + "-" + $job.Id + ".txt"
                 Out-File -FilePath "$jobPath" -InputObject $info -Encoding ASCII 
             }
-            Write-It -msg "All copies finished. Cleaning up." -type "Information"
+            $time = Get-Date
+            Write-It -msg "All copies finished. Cleaning up. $time" -type "Information"
             Get-Job | Remove-Job
         }
         catch{
@@ -554,7 +596,7 @@ Function Remove-VHRemote{
         $cleanBlock = {
             Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
             "`nTarget is $target"
-            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\VolH -Recurse -Force}
+            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\VolH -Recurse -Force} -ErrorAction SilentlyContinue
             "`nFiles and folders deleted`n"
         }
         Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
@@ -574,7 +616,7 @@ Function Remove-VHMemDump{
         $cleanBlock = {
             Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
             "`nTarget is $target"
-            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {$hostname = hostname; Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$hostname.edb" -Force}
+            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {$hostname = hostname; Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$hostname.edb" -Force} -ErrorAction SilentlyContinue
             "`nMemDump deleted`n"
         }
         Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
@@ -606,7 +648,7 @@ Function Run-VHRemote{
                 While (@(Get-Job -state running).count -ge $MaxThreads){
                     Start-Sleep -Milliseconds 10
                 }
-                Start-Job -ScriptBlock $block -ArgumentList $target, $env:DumpMemory, $env:VolPath, $env:Plugins, $env:HumanReadable, $env:Artifacts, $cred 1>$null
+                Start-Job -ScriptBlock $block -Name $target -ArgumentList $target, $env:DumpMemory, $env:VolPath, $env:Plugins, $env:HumanReadable, $env:Artifacts, $cred 1>$null
                 $XYZ++
                 Write-It -msg "Starting job against $target # $XYZ / $lineCount" -type "Other"
             }
@@ -616,6 +658,11 @@ Function Run-VHRemote{
                 $x = @(Get-Job -State running).count
                 if($lastX -ne $x){
                     Write-It -msg "Still running $x jobs" -type "Information"
+                    foreach($job in Get-Job){
+                        if($job.State -eq "Running"){
+                            Write-Host $job.Name
+                        }
+                    }
                     $lastX = $x
                 }
                 Start-Sleep 1
@@ -628,7 +675,8 @@ Function Run-VHRemote{
                 $jobPath = ".\JobLogs\" + $filename + "-" + $job.Id + ".txt"
                 Out-File -FilePath "$jobPath" -InputObject $info -Encoding ASCII 
             }
-            Write-It -msg "All jobs finished. Cleaning up." -type "Information"
+            $time = Get-Date
+            Write-It -msg "All jobs finished. Cleaning up. $time" -type "Information"
             Get-Job | Remove-Job
         }
         catch{
@@ -905,9 +953,10 @@ Begins VolHunter with default parameter values, set in environment variables, an
                     }
                 }
             } #End $runBlock
-            Move-VHParallel -volPath $env:VolPath -TargetList $TargetList -cred $global:Credential -artifacts $env:Artifacts
+            #Write-Host "IN STARTINV dump is $env:DumpMemory and plug is $env:Plugins" -BackgroundColor Red -ForegroundColor White
+            Move-VHParallel -volPath $env:VolPath -TargetList $env:OnList -cred $global:Credential -artifacts $env:Artifacts -DumpMem $env:DumpMemory -Plugins $env:Plugins -HumanReadable $env:HumanReadable
             #Move-VHFiles -TargetList $OnList -cred $cred -ErrorAction Continue
-            Run-VHRemote -block $runBlock -MaxThreads $MaxThreads -TargetList $OnList -Cred $cred -ErrorAction Continue
+            #Run-VHRemote -block $runBlock -MaxThreads $MaxThreads -TargetList $OnList -Cred $cred -ErrorAction Continue
         }
         catch{
             Write-Error -Message "$_ Run-VHRemote failed"
@@ -959,6 +1008,8 @@ PS> Test-VHConnection -TargetList ".\path\to\targets.txt"
                 Write-Error -Message "$_ Test-VHConnection failed"
             }
         }
+        $time = Get-Date
+        Write-It -msg "On/Off checks done at $time" -type "Information"
         return $failPing
     }
 }
@@ -1013,12 +1064,13 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
             $firstRun = 0
             $numFailed = 0
             while($notDone){
-                foreach($target in get-content $TargetList){
+                foreach($target in get-content $TargetList){  
                     if( !($array[$index]) ){
                         #If first time thru, check if VHLog exists, otherwise VHR failed
                         if($firstRun -lt $targetLength){
                             $firstRun += 1
-                            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
+                            #write-host "priortoif"
                             if(!(Test-Path -Path "$env:shareName\VolH\VHLog*")){
                             Write-It -msg "FAILURE: $target has failed to start VolHunterRemote" -type "Error"
                                 $array[$index] = $True
@@ -1028,9 +1080,9 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                             else{
                                 Write-It -msg "SUCCESS: $target started VolHunterRemote" -type "Success"
                             }
-                            Remove-PSDrive -Name "$env:shareLetter"
+                            Remove-PSDrive -Name "$env:shareLetter" -ErrorAction SilentlyContinue
                         }
-                        New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 1>$null
+                        New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
                         if(Test-Path "$env:shareName\VolH\VolDone.txt"){
                             $date = Get-Date
                             Write-It -msg "$target completed $date" -type "Other"
@@ -1038,7 +1090,7 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                             $doneCount++
                             Write-It -msg "$doneCount of $targetLength targets complete." -type "Information"
                         }
-                        Remove-PSDrive -Name "$env:shareLetter"
+                        Remove-PSDrive -Name "$env:shareLetter" -ErrorAction SilentlyContinue
                     }
                     $index++
                 }
@@ -1091,11 +1143,39 @@ Internal function used to template Write-Host formats
     }
 }
 
+Function Stop-VHRemote{
+<#
+.SYNOPSIS
+Force kills powershell & volatility on remote targets
+Warning, blunt instrument, may interrupt other's powershell
+#>
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$False,Position=0)]
+            [String]$TargetList = $env:TargetList
+    )
+
+    Process{
+        try{
+            foreach($comp in (Get-Content $TargetList)){
+                taskkill /IM powershell.exe /S $comp
+                taskkill /IM volatility.exe /S $comp
+            }
+        }
+        catch{
+            Write-Error -Message "$_ Stop-VHRemote failed."
+        }
+    }
+}
+<# 
+#>
+
 Export-ModuleMember -Function Get-*
 Export-ModuleMember -Function Remove-*
 Export-ModuleMember -Function Set-*
 Export-ModuleMember -Function Convert-VHElastic
 Export-ModuleMember -Function Start-VHInvestigation
+Export-ModuleMember -Function Stop-VHRemote
 Export-ModuleMember -Function Send-VHResults
 Export-ModuleMember -Function Test-VHConnection
 Export-ModuleMember -Function Test-VHShareName

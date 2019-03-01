@@ -59,7 +59,13 @@ Param(
     [Parameter(Mandatory=$False,Position=5)]
         [Switch]$GatherAll = $False,
     [Parameter(Mandatory=$True,Position=6)]
-        $credName
+        $credName,
+    [Parameter(Mandatory=$False,Position=7)]
+        [Switch]$RemoveInt = $False,
+    [Parameter(Mandatory=$False,Position=8)]
+        [Switch]$GetOnLists = $False,
+    [Parameter(Mandatory=$False,Position=9)]
+        [Switch]$CheckStatus = $False
 )
 
 if($RunVH){
@@ -99,9 +105,59 @@ if($RunVH){
         Copy-Item -Path ".\bin\DumpIt-86.exe" -Destination "\\$target\C$\VH\bin\DumpIt-86.exe"
         Copy-Item -Path ".\bin\volatility.exe" -Destination "\\$target\C$\VH\bin\volatility.exe"
         Copy-Item -Path ".\bin\VolHunterRemote.ps1" -Destination "\\$target\C$\VH\bin\VolHunterRemote.ps1"
-        Write-Host "All items sent to $target" -BackgroundColor Green -ForegroundColor Black
-        Invoke-Command -ComputerName $target -ScriptBlock $scriptBlock -ArgumentList $credName 2>$null
+        $time = Get-Date
+        Write-Host "All items sent to intermediary $target at $time" -BackgroundColor Green -ForegroundColor Black
+
+        #$s = New-PSSession -ComputerName $target -Credential $credName
+        #Invoke-Command -Session $s -AsJob -JobName $target -ScriptBlock $scriptBlock -ArgumentList $credName 2>$null
+        Invoke-Command -ComputerName $target -AsJob -JobName $target -ScriptBlock $scriptBlock -ArgumentList $credName 2>$null
     }
+    start-sleep 5
+    Get-Job | Receive-Job -Keep
+}
+
+if($CheckStatus){
+
+
+    if(@(Get-Job -State running).count -gt 0){
+        $x = @(Get-Job -State running).count
+        Write-Host "Still running $x jobs on:" -BackgroundColor Yellow -ForegroundColor Black
+        foreach($job in Get-Job){
+            $Inter = $job.Location
+            if($job.State -eq "Running"){
+                Write-Host "$Inter"
+            }
+            Out-File -FilePath .\InterLogs\Inter-$Inter.txt -InputObject $job.ChildJobs.Information
+            Out-File -FilePath .\InterLogs\Errors-Inter-$Inter.txt -InputObject $job.ChildJobs.Error
+        }
+    }
+    elseif(@(Get-Job -State running).count -eq 0){
+        Write-Host "All jobs completed" -BackgroundColor DarkGreen -ForegroundColor White
+        foreach($job in Get-Job){
+            $Inter = $job.Location
+            Out-File -FilePath .\InterLogs\Inter-$Inter.txt -InputObject $job.ChildJobs.Information
+            Out-File -FilePath .\InterLogs\Errors-Inter-$Inter.txt -InputObject $job.ChildJobs.Error
+        }
+        Get-Job | Remove-Job
+        Get-PSSession | Remove-PSSession
+    }
+
+    <#
+    foreach($job in Get-Job){
+        if($job.State -eq "Completed"){
+            $Inter = $job.Location
+            Write-Host "$Inter is complete" -BackgroundColor DarkGreen -ForegroundColor White
+        }
+        if($job.HasMoreData){
+            $Inter = $job.Location
+            #$JobData = Receive-Job -Job $job
+            #Receive-Job -Job $job -Keep >> .\Inter-$Inter.txt
+            #"JOB DATA IS $JobData for $Inter"
+            Out-File -FilePath .\Inter-$Inter.txt -InputObject $job.ChildJobs.Information
+            Out-File -FilePath .\Inter-$Inter-Errors.txt -InputObject $job.ChildJobs.Error
+            Write-Host "Updated $Inter log"
+        }
+    }#>
 }
 
 if($GatherAll){
@@ -109,5 +165,30 @@ if($GatherAll){
         Write-Host "Grabbing outputs from intermediary $host" -BackgroundColor White -ForegroundColor Black
         Copy-Item -Path "\\$host\C$\VH\GatheredLogs\*" -Destination .\GatheredLogs\
         Copy-Item -Path "\\$host\C$\VH\VHLogs\*" -Destination .\VHLogs\
+    }
+}
+
+if($RemoveInt){
+    foreach($inter in (Get-Content $Intermediaries)){
+        try{
+            Write-Host "Cleaning $inter"
+            Invoke-Command -Computer $inter -ScriptBlock {Remove-Item -path C:\VH -Recurse -Force} -ErrorAction SilentlyContinue
+        }
+        catch{
+            Write-Error -Message "$_ RemoveInt failed"
+        }
+    }
+}
+
+if($GetOnLists){
+    Remove-Item .\masteron.txt -ErrorAction SilentlyContinue
+    foreach($comp in (Get-Content $Intermediaries)){
+        try{
+            Write-Host "Grabbing OnList from $comp"
+            Get-Content \\$comp\C$\VH\OnList.txt | Add-Content -Path .\masteron.txt
+        }
+        catch{
+            Write-Error -Message "$_ RemoveInt failed"
+        }
     }
 }
