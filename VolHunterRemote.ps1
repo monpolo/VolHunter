@@ -1,36 +1,4 @@
-﻿<#
-.SYNOPSIS
-
-VolHunter aims to grab an image of live system memory, automate relevant 
-volatility scans to gather initial triage datapoints, then send them to
-an ElasticStack node for analysis via the Kicker script.
-
-VolHunter can be run locally on a host system, to enable remote/mass scans,
-utilize Kicker.ps1 to push VolHunter and relevant executables. 
-Volatility and DumpIt (or chosen memory capturing tool such as Winpmem) 
-need to be placed into C:\VolH\Tools
-
-Outline of VolHunter Folder Structure:
-C:\VolH\Image\     Stores memory dump file
-C:\VolH\Output\    Stores raw & parsed volatility output
-C:\VolH\Tools\     Stores volatility, VolHunterRemote, and DumpIt
-
-
-.PARAMETER dumpFlag
-An optional parameter, default value of false. When set to true
-will run memory dumping utility and save in C:VolH\Image\
-
-.PARAMETER volFlag
-An optional parameter, default value of false. When set to true
-will run all currently VolHunter usable volatility plugins
-
-.NOTES
-    Author: Michael "FUMBLES" Russell
-    Date:   14 February 2019
-    Version: 1.0.6
-#>
-
-[CmdletBinding()]
+﻿[CmdletBinding()]
 Param(
     [Parameter(Mandatory=$False,Position=0)]
         [String]$dumpFlag = $null,
@@ -45,34 +13,35 @@ Param(
 function Run-Vol{
     param( [string]$plugin, [string]$HR, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
     try{
-        $command = "C:\VolH\Tools\volatility.exe"
+        $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
         $hn = hostname
         Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
         $start = Get-Date
         if($HR -eq "True"){
             $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
-            #Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -wait
-            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
             $timeouted = $null
+            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
             $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
 
             if($timeouted){
                 $proc | kill
-                remove-item $outFile -Force
-                Add-Content -Path $logLocation -Value "$plugin plugin timed-out`n"
+                #remove-item $outFile -Force
+                $end = Get-Date
+                Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n"
+                continue
             }
         }
         else{
             $outFile = $outputDir + $plugin + "-" + $hn + ".xlsx"
-            #Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -wait
-            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -PassThru
             $timeouted = $null
+            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin --output=xlsx --output-file=$outFile" -PassThru
             $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
 
             if($timeouted){
                 $proc | kill
-                remove-item $outFile -Force
-                Add-Content -Path $logLocation -Value "$plugin plugin timed-out`n" 
+                $end = Get-Date
+                Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n" 
+                continue
             }
         }
         $end = Get-Date
@@ -92,25 +61,22 @@ Function Get-RandomDate {
     New-Object DateTime($randomTicks)
 }
 
-##################
-### Initialize ###
-##################
 $GLOBALSTART = Get-Date
 
 ### Static Variables ###
 $hostName = hostname
 $hostImg = $hostName + ".bin"
-$baseDir = "C:\VolH\"
-$imageDir = "C:\VolH\Image\"
-$outputDir = "C:\VolH\Output\"
-$toolDir = "C:\VolH\Tools\"
-$imgLocation = "C:\VolH\Image\$hostImg"
+$baseDir = "C:\Windows\CCM\Perf\VolH\"
+$imageDir = "C:\Windows\CCM\Perf\VolH\Image\"
+$outputDir = "C:\Windows\CCM\Perf\VolH\Output\"
+$toolDir = "C:\Windows\CCM\Perf\VolH\Tools\"
+$imgLocation = "C:\Windows\CCM\Perf\VolH\Image\$hostImg"
 $time = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd"+"T"+"HH:mm:ss.fff"+"Z")
 $outer = 0
 $inner = 0
 $Architecture = 64
 $OSVersi = [System.Environment]::OSVersion.Version
-$logLocation = "C:\VolH\VHLog-$hostname.txt"
+$logLocation = "C:\Windows\CCM\Perf\VolH\VHLog-$hostname.txt"
 
 $vhlog = "Starting VolHunter at $time `n"
 Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
@@ -135,9 +101,9 @@ $sysInfo = $sysInfo | select-string "OS Name"
 Add-Content -Path "$logLocation" -Value "$hostname has $ram MB of RAM`n"
 Add-Content -Path "$logLocation" -Value "$hostname has $diskSpace MB of free space on C:`n"
 if($diskSpace -lt ([int]$freeRam + 2000) ){
-    Add-Content -Path "C:VolH\VHLog.txt" -Value "Not enough free disk space`n"
+    Add-Content -Path "C:\Windows\CCM\Perf\VolH\VHLog.txt" -Value "Not enough free disk space`n"
     $volDone = "Not enough freespace on C:\ to run`n"
-    Out-File -FilePath "C:\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
     return
 }
 Add-Content -Path "$logLocation" -Value "$osVersion `n"
@@ -204,13 +170,13 @@ switch ($sysInfo){
     default {$volProfile = "ERROR"}
 }
 
-Out-File -FilePath "C:\VolH\VolProfile.txt" -InputObject $volProfile -Encoding ASCII
+Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolProfile.txt" -InputObject $volProfile -Encoding ASCII
 Add-Content -Path "$logLocation" -Value "Volatility Profile = $volProfile `n"
 
 if($volProfile -eq "ERROR"){ 
-    Out-File -FilePath "C:\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
+    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
     $volDone = "VHRemote failed due to unrecognized profile"
-    Out-File -FilePath "C:\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
     exit
 }
 
@@ -220,13 +186,13 @@ if($volProfile -eq "ERROR"){
 Add-Content -Path $logLocation -Value "dumpFlag is $dumpFlag"
 if($dumpFlag -eq "True"){
     Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
-    $dumpCommand = "C:\VolH\Tools\DumpIt.exe"
+    $dumpCommand = "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe"
     Add-Content -Path "$logLocation" -Value "Starting memory dump`n"
     $start = Get-Date
     Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
     $end = Get-Date
     $dumpDone = "DumpIt Completed"
-    Out-File -FilePath "C:\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
+    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
     Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
     Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
     Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
@@ -239,65 +205,65 @@ if($dumpFlag -eq "True"){
 if( ($Artifacts -like "all") -or ($Artifacts -like "*pf*") -or ($Artifacts -like "*events*") -or ($Artifacts -like "*firewall*") -or ($Artifacts -like "*DAT*") -or ($Artifacts -like "*LNK*") -or ($Artifacts -like "*shim*") -or ($Artifacts -like "*state*") ){
     ### Gather Prefetch
     if( ($Artifacts -like "all") -or ($Artifacts -like "*pf*") ){
-        New-Item -ItemType directory -Path ("C:\VolH\Output\Prefetch")
-        Copy-Item -Path "C:\Windows\Prefetch\*.pf" -Destination "C:\VolH\Output\Prefetch\"
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\Prefetch")
+        Copy-Item -Path "C:\Windows\Prefetch\*.pf" -Destination "C:\Windows\CCM\Perf\VolH\Output\Prefetch\"
     }
     ### Gather Event Logs
     if( ($Artifacts -like "all") -or ($Artifacts -like "*events*") ){
-        New-Item -ItemType directory -Path ("C:\VolH\Output\EventLogs")
-        Copy-Item -Path "C:\Windows\System32\Winevt\Logs\*" -Destination "C:\VolH\Output\EventLogs\"
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\EventLogs")
+        Copy-Item -Path "C:\Windows\System32\Winevt\Logs\*" -Destination "C:\Windows\CCM\Perf\VolH\Output\EventLogs\"
     }
     ### Gather Firewall Logs
     if( ($Artifacts -like "all") -or ($Artifacts -like "*firewall*") ){
-        New-Item -ItemType directory -Path ("C:\VolH\Output\FWLogs")
-        Copy-Item -Path "C:\Windows\System32\LogFiles\Firewall\*" -Destination "C:\VolH\Output\FWLogs\"
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\FWLogs")
+        Copy-Item -Path "C:\Windows\System32\LogFiles\Firewall\*" -Destination "C:\Windows\CCM\Perf\VolH\Output\FWLogs\"
     }
     ### Gather NTUSER.DATs, won't work for currently logged in users
     if( ($Artifacts -like "all") -or ($Artifacts -like "*DAT*") ){   
-        New-Item -ItemType directory -Path ("C:\VolH\Output\DATs") 
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\DATs") 
         $Users = Get-ChildItem C:\Users\
         foreach ($name in $Users.Name){
-            Copy-Item -Path "C:\Users\$name\NTUSER.DAT" -Force -Destination "C:\VolH\Output\DATs\$name-NTUSER.DAT"
-            Copy-Item -Path "C:\Users\$name\AppData\Local\Microsoft\Windows\UsrClass.dat" -Force -Destination "C:\VolH\Output\DATs\$name-UsrClass.dat"
+            Copy-Item -Path "C:\Users\$name\NTUSER.DAT" -Force -Destination "C:\Windows\CCM\Perf\VolH\Output\DATs\$name-NTUSER.DAT"
+            Copy-Item -Path "C:\Users\$name\AppData\Local\Microsoft\Windows\UsrClass.dat" -Force -Destination "C:\Windows\CCM\Perf\VolH\Output\DATs\$name-UsrClass.dat"
         }
         ### Unhide the gathered DAT files
-        $h = Get-ChildItem C:\VolH\Output\DATs -Force
+        $h = Get-ChildItem C:\Windows\CCM\Perf\VolH\Output\DATs -Force
         foreach($thing in $h){
             $thing.Attributes = $thing.Attributes -bxor [System.IO.FileAttributes]::Hidden
         }
     }
     ### Gather recent execution
     if( ($Artifacts -like "all") -or ($Artifacts -like "*LNK*") ){
-        New-Item -ItemType directory -Path ("C:\VolH\Output\LNKs")
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\LNKs")
         foreach ($name in $Users.Name){
             foreach($fileName in (Get-ChildItem C:\Users\$name\AppData\Roaming\Microsoft\Windows\Recent).Name){
-                Copy-Item -Path "C:\Users\$name\AppData\Roaming\Microsoft\Windows\Recent\$fileName" -Force -Destination "C:\VolH\Output\LNKs\$name-$fileName"
+                Copy-Item -Path "C:\Users\$name\AppData\Roaming\Microsoft\Windows\Recent\$fileName" -Force -Destination "C:\Windows\CCM\Perf\VolH\Output\LNKs\$name-$fileName"
             }
         }
     }
     ### Gather Shimcache and/or stateful info
     if( ($Artifacts -like "all") -or ($Artifacts -like "*shim*") -or ($Artifacts -like "*state*") ){
-        New-Item -ItemType directory -Path ("C:\VolH\Output\Other")
+        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\Other")
         if( ($Artifacts -like "all") -or ($Artifacts -like "*shim*") ){
-            reg export "HKLM:\System\CurrentControlSet\Control\Session Manager\AppCompatCache\AppCompatCache" "C:\VolH\Output\Other\shim.reg"
+            reg export "HKLM:\System\CurrentControlSet\Control\Session Manager\AppCompatCache\AppCompatCache" "C:\Windows\CCM\Perf\VolH\Output\Other\shim.reg"
         }
         if( ($Artifacts -like "all") -or ($Artifacts -like "*state*") ){
-            netstat -ano > "C:\VolH\Output\Other\netstat.txt"
-            tasklist /V > "C:\VolH\Output\Other\tasklist.txt"
+            netstat -ano > "C:\Windows\CCM\Perf\VolH\Output\Other\netstat.txt"
+            tasklist /V > "C:\Windows\CCM\Perf\VolH\Output\Other\tasklist.txt"
         }
     }
-    "Done" > "C:\VolH\ArtsGathered.txt"
+    "Done" > "C:\Windows\CCM\Perf\VolH\ArtsGathered.txt"
 }
 
 Add-Content -Path $logLocation -Value "Plugins are $Plugins`n"
 
 if($Plugins){
-    $command = "C:\VolH\Tools\volatility.exe"
+    $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
     ### TEMPORARILY CHANGE $env:temp TO BYPASS BLOCKED TEMP FOLDER EXECUTION ###
     Add-Content -Path "$logLocation" -Value "Changing temp environment variables`n"
     $backupTemp = $env:temp
-    $env:temp = "C:\VolH\"
-    $env:tmp = "C:\VolH\"
+    $env:temp = "C:\Windows\CCM\Perf\VolH\"
+    $env:tmp = "C:\Windows\CCM\Perf\VolH\"
 
     if( ($Plugins -like "*malfind*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "malfind" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
@@ -340,11 +306,11 @@ if($Plugins){
 ### Finalize VolHunter, Record Total Time ###
 #############################################
 if($dumpFlag -eq "True"){
-    [string]$hash = (Get-FileHash -Algorithm SHA256 C:\VolH\Image\$hostName.bin).Hash
+    [string]$hash = (Get-FileHash -Algorithm SHA256 C:\Windows\CCM\Perf\VolH\Image\$hostName.bin).Hash
     Add-Content -Path "$logLocation" -Value "Memory dump sha256 hash is $hash"
 
     try{
-        Move-Item "C:\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" -Force
+        Move-Item "C:\Windows\CCM\Perf\VolH\Image\*.bin" -Destination "C:\Windows\SoftwareDistribution\DataStore\$hostName.edb" -Force
         Start-Sleep -Seconds 2
         $oldYear = (Get-Date).AddYears(-3)
         $first = Get-RandomDate -Min $oldYear
@@ -378,4 +344,4 @@ $GLOBALEND = Get-Date
 Add-Content -Path "$logLocation" -Value "TOTAL RUNTIME $($GLOBALEND-$GLOBALSTART) H:M:S.MS`n"
 Add-Content -Path "$logLocation" -Value "VolHunter is now complete!`n"
 $volDone = "Volatility completed"
-Out-File -FilePath "C:\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII

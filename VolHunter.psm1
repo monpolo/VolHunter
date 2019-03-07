@@ -1,9 +1,4 @@
 Function Convert-VHElastic{
-<#
-.SYNOPSIS
-Function used to modify non "human readable" output from VolHunterRemote (XLSX format) for ingestion into Elastic
-Simply adds a column that includes the hostname and changes to CSV format
-#>
     foreach($excelFile in (Get-ChildItem .\GatheredLogs\*.xlsx).FullName){
         $csvName = ((($excelFile.Replace("GatheredLogs\","~")).Split("~"))[1]).Replace(".xlsx","")
         Write-It -msg "Processing $csvName" -type Information #PUT ME OUT TO VHLOG
@@ -22,10 +17,129 @@ Simply adds a column that includes the hostname and changes to CSV format
         $compName = ((($csvFile.Replace("GatheredLogs\","~")).Replace("-WORKINGFILE.csv","~")).Split("~"))[1]
         $splitter = $compName.IndexOf("-") + 1
         $compName2 = $compName.substring($splitter)
-        Import-Csv $csvFile | Select-Object *,@{Name='Hostname';Expression={"$compName2"}} | Export-Csv ".\GatheredLogs\$compName-WORKING2.csv" -NoTypeInformation
-        Import-Csv ".\GatheredLogs\$compName-WORKING2.csv" | Select-Object *,@{Name='Investigated';Expression={'false'}} | Export-Csv .\GatheredLogs\$compName.csv -NoTypeInformation
+        Import-Csv $csvFile | Select-Object *,@{Name='Hostname';Expression={"$compName2"}},@{Name='Investigated';Expression={'false'}} | Export-Csv ".\GatheredLogs\$compName.csv" -NoTypeInformation
     }
     Remove-Item .\GatheredLogs\*-WORKING*.csv
+}
+
+Function Format-VHReport{
+    try{
+        $path = (pwd).Path
+        $reportName = Read-Host -Prompt "Enter report name to run:"
+        $fullpath = $path + "\$reportName.xlsx"
+
+        $excelFile = $fullpath
+        $Excel = New-Object -ComObject Excel.Application
+        $Excel.Visible = $false
+        $Excel.DisplayAlerts = $false
+        $wb = $Excel.Workbooks.Open($excelFile)
+        [int]$i = 2
+        $bob = ($wb.Sheets.Item("Sheet1").Cells.Item($i,1).Text)
+
+        while($bob -notlike $null){
+            $bob = ($wb.Sheets.Item("Sheet1").Cells.Item($i,1).Text)
+
+            #malfind
+            if((test-path "$path\GatheredLogs\malfind-$bob.xlsx") -and ((get-item "$path\GatheredLogs\malfind-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\malfind-$bob.xlsx") -and ((get-item "$path\GatheredLogs\malfind-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 3
+            }
+
+            #ssdt
+            if((test-path "$path\GatheredLogs\ssdt-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ssdt-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\ssdt-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ssdt-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 3
+            }
+
+            #cmdline
+            if((test-path "$path\GatheredLogs\cmdline-$bob.xlsx") -and ((get-item "$path\GatheredLogs\cmdline-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\cmdline-$bob.xlsx") -and ((get-item "$path\GatheredLogs\cmdline-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 3
+            }
+
+            #dlllist
+            if((test-path "$path\GatheredLogs\dlllist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\dlllist-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\dlllist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\dlllist-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 3
+            }
+
+            #ldrmodules
+            if((test-path "$path\GatheredLogs\ldrmodules-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ldrmodules-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\ldrmodules-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ldrmodules-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 3
+            }
+
+            #netscan
+            if((test-path "$path\GatheredLogs\netscan-$bob.xlsx") -and ((get-item "$path\GatheredLogs\netscan-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\netscan-$bob.xlsx") -and ((get-item "$path\GatheredLogs\netscan-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 3
+            }
+
+            #psxview
+            if((test-path "$path\GatheredLogs\psxview-$bob.xlsx") -and ((get-item "$path\GatheredLogs\psxview-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\psxview-$bob.xlsx") -and ((get-item "$path\GatheredLogs\psxview-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 3
+            }
+
+            #timers
+            if((test-path "$path\GatheredLogs\timers-$bob.xlsx") -and ((get-item "$path\GatheredLogs\timers-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\timers-$bob.xlsx") -and ((get-item "$path\GatheredLogs\timers-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 3
+            }
+    
+            $bob
+            $bob = ($wb.Sheets.Item("Sheet1").Cells.Item(($i + 1),1).Text)
+            if($bob -like $null){ break}
+            $i++
+        }#>
+
+        $wb.SaveAs("$fullpath")
+        $wb.Close()
+        $Excel.Quit()
+    }
+    catch{
+        Write-Error -Message "$_ Format-VHReport failed"
+    }
 }
 
 ###Not to be exposed by module
@@ -145,18 +259,6 @@ PS> Get-VHCreator
 }
 
 Function Get-VHMemDump{
-<#
-.SYNOPSIS
-Copies memory dump file from target system specified to your host for further analysis.
-.DESCRIPTION
-Retrieves memory dump from target system.
-Will only run against one host at a time.
-.EXAMPLE
-PS> Get-VHMemDump -Target "Computer3"
-.PARAMETER Target
-    Mandatory parameter
-    [String] Name of host to retrieve memory dump from
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,Position=0)]
@@ -166,7 +268,7 @@ PS> Get-VHMemDump -Target "Computer3"
     Process{
         try{
             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
-            if(Test-Path "$env:shareName\VolH\VolDone.txt"){
+            if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
                 Write-It -msg "Grabbing memory dump from $Target" -type "Information"
                 Copy-File -from "$env:shareName\Windows\SoftwareDistribution\DataStore\$Target.edb" -to "$env:VolPath\GatheredLogs\$Target.bin"
             }
@@ -182,21 +284,6 @@ PS> Get-VHMemDump -Target "Computer3"
 }
 
 Function Get-VHOutput{
-<#
-.SYNOPSIS
-Gathers VHR output and, if gathered, artifacts to your host
-.DESCRIPTION
-After validating all systems have completed with Get-VHStatus, run this command to gather the output to your local system.
-Will place all VHLog-* files into your VHLogs folder, and volatility output into your GatheredLogs folder
-If artifacts were gathered on targets, will copy them back to GatheredLogs\$target\$ArtifactType folders which are created on running this command.
-NOTE: If a target system has not completed execution of VHR, this will print a warning message informing you which systems have not finished.
-.EXAMPLE
-PS> Get-VHOutput
-.PARAMETER TargetList
-    Default: $env:TargetList
-    [String] The path, relative or absolute, to your targetlist file.
-    File must contain a list of targets, one per line, with no more than one blank line at the end
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -214,12 +301,12 @@ PS> Get-VHOutput
                     continue
                 }
                 New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$target\C$" 1>$null
-                if(Test-Path "$env:shareName\VolH\VolDone.txt"){
+                if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
                     Write-It -msg "Grabbing parsed output from $target # $currLine / $lineCount`n" -type "Information"
-                    Copy-Item -Path "$env:shareName\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
-                    Copy-Item -Path "$env:shareName\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
+                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
+                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
 
-                    if(Test-Path "$env:shareName\VolH\ArtsGathered.txt"){
+                    if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\ArtsGathered.txt"){
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target") -ErrorAction SilentlyContinue >$null
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Prefetch") -ErrorAction SilentlyContinue >$null
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\EventLogs") -ErrorAction SilentlyContinue >$null
@@ -228,41 +315,41 @@ PS> Get-VHOutput
                         New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Other") -ErrorAction SilentlyContinue >$null
 
                         Write-It -msg "Grabbing prefetch files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\VolH\Output\Prefetch\*.pf).Name
+                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\Prefetch\*.pf).Name
                         foreach($image in $files){    
-                            $src = "$env:shareName\VolH\Output\Prefetch\$image"
+                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\Prefetch\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\Prefetch\$image"
                             Copy-File -from $src -to $dest
                         }
                 
                         Write-It -msg "Grabbing event logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\VolH\Output\EventLogs\).Name
+                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\EventLogs\).Name
                         foreach($image in $files){    
-                            $src = "$env:shareName\VolH\Output\EventLogs\$image"
+                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\EventLogs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\EventLogs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing firewall logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\VolH\Output\FWLogs\).Name
+                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\FWLogs\).Name
                         foreach($image in $files){    
-                            $src = "$env:shareName\VolH\Output\FWLogs\$image"
+                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\FWLogs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\FWLogs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing DAT files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\VolH\Output\DATs\).Name
+                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\DATs\).Name
                         foreach($image in $files){    
-                            $src = "$env:shareName\VolH\Output\DATs\$image"
+                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\DATs\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\DATs\$image"
                             Copy-File -from $src -to $dest
                         }
 
                         Write-It -msg "Grabbing other files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\VolH\Output\Other\).Name
+                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\Other\).Name
                         foreach($image in $files){    
-                            $src = "$env:shareName\VolH\Output\Other\$image"
+                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\Other\$image"
                             $dest = "$env:VolPath\GatheredLogs\$target\Other\$image"
                             Copy-File -from $src -to $dest
                         }
@@ -281,15 +368,6 @@ PS> Get-VHOutput
 }
 
 Function Get-VHStatus{
-<#
-.SYNOPSIS
-Tails last 5 lines of VHLog on one target
-.DESCRIPTION
-.EXAMPLE
-PS> Get-VHStatus -Target [hostname]
-.PARAMETER Target
-    [String] The name of the system you want to get a status on
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,Position=0)]
@@ -299,7 +377,7 @@ PS> Get-VHStatus -Target [hostname]
     Process{
         try{
             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 2>$null
-            Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt"
+            Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-$Target.txt"
             Remove-PSDrive -Name "$env:shareLetter"
         }
         catch{
@@ -309,15 +387,6 @@ PS> Get-VHStatus -Target [hostname]
 }
 
 Function Get-VHStatusAll{
-<#
-.SYNOPSIS
-Tails last 5 lines of VHLog on all targets
-.DESCRIPTION
-.EXAMPLE
-PS> Get-VHStatus -Target [hostname]
-.PARAMETER Target
-    [String] The name of the system you want to get a status on
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -329,7 +398,7 @@ PS> Get-VHStatus -Target [hostname]
             foreach($Target in (Get-Content $TargetList)){
                 Write-It -msg "Status of $Target" -type "Information"
                 New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 2>$null
-                Get-Content -Tail 5 "$env:shareName\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
+                Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
                 if($errOut){
                     Write-It -msg "$target has no files" -type "Warning"
                 }
@@ -342,6 +411,7 @@ PS> Get-VHStatus -Target [hostname]
     }
 }
 
+<# ###OBSOLETE FUNCTION - TO BE DELETED
 ###Not to be exposed by module
 Function Move-VHFiles{
     [CmdletBinding()]
@@ -386,7 +456,7 @@ Function Move-VHFiles{
             continue
         }
     }
-}
+}#>
 
 Function Move-VHParallel{
     [CmdletBinding()]
@@ -414,32 +484,32 @@ Function Move-VHParallel{
             Param($cred,[String]$target,[String]$artifacts,[String]$volPath,$DumpMem,$Plugins,$HumanReadable)
             "`nTarget is $target"
             Invoke-Command -ComputerName $target -Credential $cred -ArgumentList $artifacts -ScriptBlock{
-                if(!(Test-Path -Path "C:\VolH\")){
-                    New-Item -ItemType directory -Path ("C:\VolH\") | %{$_.Attributes = "hidden"}
-                    New-Item -ItemType directory -Path ("C:\VolH\Image\")
-                    New-Item -ItemType directory -Path ("C:\VolH\Output\")
-                    New-Item -ItemType directory -Path ("C:\VolH\Tools\")
+                if(!(Test-Path -Path "C:\Windows\CCM\Perf\VolH\")){
+                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\") | %{$_.Attributes = "hidden"}
+                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Image\")
+                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\")
+                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Tools\")
                 }
                 if($artifacts){
-                    New-Item -ItemType Directory -Path ("C:\VolH\Artifacts\")
+                    New-Item -ItemType Directory -Path ("C:\Windows\CCM\Perf\VolH\Artifacts\")
                 }
             } #End Invoke-Command
             $Session = New-PSSession -ComputerName $target -Credential $cred
             if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "C:\VolH\Tools\DumpIt.exe" -ToSession $Session
+                Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
             }
             else{
-                Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "C:\VolH\Tools\DumpIt.exe" -ToSession $Session
+                Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
             }
-            Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\VolH\Tools\volatility.exe" -ToSession $Session
-            Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
+            Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe" -ToSession $Session
+            Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
             Disconnect-PSSession $Session
             Remove-PSSession $Session
 
             try{
                 $scriptBlock = {
                     Param([string]$dump,[string]$plugin,[string]$human,[string]$arts)
-                    Start-Process powershell.exe -ArgumentList "-c C:\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
+                    Start-Process powershell.exe -ArgumentList "-c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
                 }
                 #Write-Host "Plugins are $Plugins and dump is $DumpMem"
                 Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -ScriptBlock $scriptBlock -ArgumentList $DumpMem,$Plugins,$HumanReadable,$Artifacts -ErrorVariable results 2>$null
@@ -455,20 +525,16 @@ Function Move-VHParallel{
                 }
                 else{
                     $targIP = [Net.Dns]::GetHostAddresses("$target") | select-object IPAddressToString -expandproperty IPAddressToString
-                    WMIC /node:"$targIP" process call create "powershell.exe -c C:\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
+                    WMIC /node:"$targIP" process call create "powershell.exe -c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
                 }
             }
         } #End moveBlock
-
-
-
 
         try{
             $XYZ = 0
             Get-Job | Remove-Job
             $volPath = $env:VolPath
             $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
-            #Write-It -msg "DumpMem is $DumpMem" -type "Information"
             Write-It -msg "Moving files to $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
             foreach ($target in Get-Content $TargetList){
                 While (@(Get-Job -state running).count -ge $MaxThreads){
@@ -515,21 +581,6 @@ Function Move-VHParallel{
 }
 
 Function Remove-VHIndices{
-<#
-.SYNOPSIS
-Removes all VolHunter entries from Elastic
-.DESCRIPTION
-Will delete each VolHunter related index from your Elastic stack.
-Be sure you do not have any other relevant data in those indices prior to running this command.
-.EXAMPLE
-PS> Remove-VHIndices
-.PARAMETER ElasticIP
-    Default: $env:ElasticIP
-    [String] IP address of your Elastic ingest node
-.PARAMETER ElasticPort
-    Default: $env:ElasticPort
-    [Int] Listening port of your Elastic ingest node
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -567,23 +618,6 @@ PS> Remove-VHIndices
 }
 
 Function Remove-VHRemote{
-<#
-.SYNOPSIS
-    Remove all VolHunter related artifacts from targeted hosts
-.DESCRIPTION
-    Calls Run-VHRemote to delete files and folder structure related to VolHunter from target hosts.
-    Will run against $env:MaxThreads simultaneously if no -MaxThreads is provided.
-.EXAMPLE
-    PS> Remove-VHRemote -TargetList .\path\to\targets.txt -MaxThreads 25
-    Will delete VolHunter from all systems listed in targets.txt, 25 simultaneously
-.PARAMETER TargetList
-    Takes input file of hosts you want to remove VolHunter from
-    Each host must be on its own line with no more than 1 blank line at the end of the file
-    Defaults to $env:TargetList
-.PARAMETER MaxThreads
-    Integer value for the max simultaneous targets you wish to interact with
-    Defaults to $env:MaxThreads
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -596,7 +630,7 @@ Function Remove-VHRemote{
         $cleanBlock = {
             Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
             "`nTarget is $target"
-            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\VolH -Recurse -Force} -ErrorAction SilentlyContinue
+            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\Windows\CCM\Perf\VolH -Recurse -Force} -ErrorAction SilentlyContinue
             "`nFiles and folders deleted`n"
         }
         Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
@@ -689,22 +723,6 @@ Function Run-VHRemote{
 }
 
 Function Send-VHResults{
-<#
-.SYNOPSIS
-Puts VHR output into Elastic
-.DESCRIPTION
-$env:HumanReadable must have been set to $False when executing Run-VHInvestigation
-Will then post each file in GatheredLogs to $ElasticIP:$ElasticPort/_bulk
-NOTE: After successfully pushing a file into Elastic, this function will delete that file from your host to avoid duplicate entries in Elastic.
-.EXAMPLE
-PS> Send-VHResults
-.PARAMETER ElasticIP
-    Default: $env:ElasticIP
-    [String] IP address of your Elastic ingest node
-.PARAMETER ElasticPort
-    Default: $env:ElasticPort
-    [Int] Listening port of your Elastic ingest node
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -771,70 +789,6 @@ Reads in list of Elastic entries that are no longer items of interest
 }
 
 Function Set-VHEnvironment{
-<#
-.SYNOPSIS
-Sets environment variables necessary for proper execution. Must be ran prior to any investigations.
-.DESCRIPTION
-VolHunter module relies upon local environment variables to simplify command execution. Though each cmdlet allows for custom input to each parameter, they default to the related environment variables that are set by this command.
-.EXAMPLE
-PS> Set-VHEnvironment -ElasticIP "10.10.10.1" -TargetList = ".\path\to\targetlist.txt"
-Sets environment variables, each with a default value listed in the parameters section unless otherwise defined.
-.PARAMETER ElasticIP
-    Default: "192.168.35.133"
-    [String] IP address of your Elastic ingest node
-.PARAMETER ElasticPort
-    Default: 9200
-    [Int] Listening port of your Elastic ingest node. Default installs listen on 9200
-.PARAMETER TargetList
-    Default: ".\targetlist.txt"
-    [String] The path, relative or absolute, to your targetlist file.
-    File must contain a list of targets, one per line, with no more than one blank line at the end
-.PARAMETER Investigated
-    Default: ".\inv.txt"
-    [String] The path, relative or absolute, to your investigated file.
-    File must contain a list of Elastic indices and entries, one per line, with no more than one blank line at the end.
-    Format is:   [plugin]:[_id value]
-.PARAMETER MaxThreads
-    Default: 10
-    [Int] Number of simultaneous connections to run VolHunter against. All execution is handled on remote end after passing files.
-    Recommend testing with lightweight commands when determining safe max. Testing has shown 75+ to work without issue.
-.PARAMETER Plugins
-    Default: "all"
-    [String] The list of supported plugins to run against remote images. "all" will run all supported plugins.
-    If using multiple, but not all, list each plugin separated by /
-    EXAMPLE: cmdline/malfind/ssdt
-    Supported plugins:  cmdline
-                        malfind
-                        mutantscan
-                        psscan
-                        ssdt
-                        apihooks
-                        dlllist
-                        ldrmodules
-                        netscan
-                        psxview
-.PARAMETER HumanReadable
-    Default: $False
-    [Switch] Instructs VolHunterRemote whether or not output should be json format (for Elastic ingestion) or human readable for operator analysis.
-.PARAMETER Artifacts
-    Default: "none"
-    [String] Instructs VolHunterRemote which artifact files to gather, if any.
-    If using multiple, but not all, list each artifact separated by /
-    EXAMPLE: fw/pf/DAT
-    Supported artifact files:   pf   (Prefetch files)
-                                firewall   (Firewall logs)
-                                events (Event logs)
-                                DAT (ntuser.dat and usrclass.dat for each non-logged in user)
-                                LNK (Gathers .LNK files, recently accessed file links)
-                                shim (Exports appcompatcache registry keys)
-                                state (Captures tasklist and netstat)
-.PARAMETER DumpMemory
-    Default: $False
-    [Switch] Instructs VolHunterRemote whether or not to create a memory dump
-.PARAMETER VolPath
-    Default: (Get-Location).Path
-    [String] The path VolHunter should reference when moving files to and from targets. If you plan to run module functions outside of your VolHunter folder, this should be explicitly set to avoid incorrect references.
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -885,26 +839,6 @@ Sets environment variables, each with a default value listed in the parameters s
 }
 
 Function Start-VHInvestigation{
-<#
-.SYNOPSIS
-Begins the investigation against targeted hosts.
-.DESCRIPTION
-Starts execution of VolHunter, will warn you if any targets aren't responding to ping, move necessary files, then start VolHunterRemote.
-.EXAMPLE
-PS> Run-VHInvestigation -MaxThreads 30
-Begins VolHunter with default parameter values, set in environment variables, and explicitly allows 30 simultaneous connections.
-.PARAMETER TargetList
-    Default: $env:TargetList
-    [String] The path, relative or absolute, to your targetlist file.
-    File must contain a list of targets, one per line, with no more than one blank line at the end
-.PARAMETER MaxThreads
-    Default: $env:MaxThreads
-    [Int] Number of simultaneous connections to run VolHunter against. All execution is handled on remote end after passing files.
-    Recommend testing with lightweight commands when determining safe max. Testing has shown 75+ to work without issue.
-.PARAMETER HumanReadable
-    Default: $env:HumanReadable
-    [String] Instructs VolHunterRemote whether or not output should be json format (for Elastic ingestion) or human readable for operator analysis.
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -930,7 +864,7 @@ Begins VolHunter with default parameter values, set in environment variables, an
                     "`n$target MUST be running PSv3 or greater!`n"
                     $scriptBlock = {
                         Param([string]$dump,[string]$plugin,[string]$human,[string]$arts)
-                        Start-Process powershell.exe -ArgumentList "-c C:\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
+                        Start-Process powershell.exe -ArgumentList "-c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
                     }
                     Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -ScriptBlock $scriptBlock -ArgumentList $DumpMem,$Plugins,$HumanReadable,$Artifacts -ErrorVariable results 2>$null
                     if($results -like "*Disconnected sessions are supported only*"){
@@ -949,14 +883,11 @@ Begins VolHunter with default parameter values, set in environment variables, an
                         "`nWMIC enabled on $target `n"
                         "`nStarting VolHunter on $target via WMIC`n"
                         $targIP = [Net.Dns]::GetHostAddresses("$target") | select-object IPAddressToString -expandproperty IPAddressToString
-                        WMIC /node:"$targIP" process call create "powershell.exe -c C:\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
+                        WMIC /node:"$targIP" process call create "powershell.exe -c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
                     }
                 }
             } #End $runBlock
-            #Write-Host "IN STARTINV dump is $env:DumpMemory and plug is $env:Plugins" -BackgroundColor Red -ForegroundColor White
             Move-VHParallel -volPath $env:VolPath -TargetList $env:OnList -cred $global:Credential -artifacts $env:Artifacts -DumpMem $env:DumpMemory -Plugins $env:Plugins -HumanReadable $env:HumanReadable
-            #Move-VHFiles -TargetList $OnList -cred $cred -ErrorAction Continue
-            #Run-VHRemote -block $runBlock -MaxThreads $MaxThreads -TargetList $OnList -Cred $cred -ErrorAction Continue
         }
         catch{
             Write-Error -Message "$_ Run-VHRemote failed"
@@ -964,21 +895,7 @@ Begins VolHunter with default parameter values, set in environment variables, an
     }
 }
 
-###Returns number of targets not responding to ICMP
 Function Test-VHConnection{
-<#
-.SYNOPSIS
-Informs you if target system(s) are not communicating, possibly offline.
-.DESCRIPTION
-Sends a small ICMP ping packet to each listed target, informs you which systems do not respond.
-.EXAMPLE
-PS> Test-VHConnection -TargetList ".\path\to\targets.txt"
-.PARAMETER TargetList
-    Default: $env:TargetList
-    [String] The path, relative or absolute, to your targetlist file.
-    File must contain a list of targets, one per line, with no more than one blank line at the end
-.OUTPUTS [Int] Number of systems that did not respond.
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -1026,21 +943,6 @@ Function Test-VHShareName{
 }
 
 Function Watch-VHStatus{
-<#
-.SYNOPSIS
-Informs you which target systems have completed running VolHunterRemote
-.DESCRIPTION
-Reads in list of targets, waits 2 seconds, validates the existence of \\$target\C$\VolH\VHLog* to ensure VHR started properly.
-Then every 30 seconds will search for \\$target\C$\VolH\VolDone.txt to validate execution of VHR completed.
-NOTE: Will not recheck systems once they have completed, success or failure.
-Upon final target finishing, will report how many successes and failures occurred.
-.EXAMPLE
-PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
-.PARAMETER TargetList
-    Default: $env:TargetList
-    [String] The path, relative or absolute, to your targetlist file.
-    File must contain a list of targets, one per line, with no more than one blank line at the end
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
@@ -1069,9 +971,16 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                         #If first time thru, check if VHLog exists, otherwise VHR failed
                         if($firstRun -lt $targetLength){
                             $firstRun += 1
+                            if(!(Test-Connection -ComputerName $target -BufferSize 16 -Count 1 -Quiet)){
+                               Write-It -msg "$target appears to be offline" -type "Error"
+                               $array[$index] = $True
+                               $doneCount++
+                               $numFailed += 1
+                               continue
+                            }
                             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
                             #write-host "priortoif"
-                            if(!(Test-Path -Path "$env:shareName\VolH\VHLog*")){
+                            if(!(Test-Path -Path "$env:shareName\Windows\CCM\Perf\VolH\VHLog*")){
                             Write-It -msg "FAILURE: $target has failed to start VolHunterRemote" -type "Error"
                                 $array[$index] = $True
                                 $doneCount++
@@ -1083,7 +992,7 @@ PS> Watch-VHStatus -TargetList ".\path\to\targets.txt"
                             Remove-PSDrive -Name "$env:shareLetter" -ErrorAction SilentlyContinue
                         }
                         New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
-                        if(Test-Path "$env:shareName\VolH\VolDone.txt"){
+                        if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
                             $date = Get-Date
                             Write-It -msg "$target completed $date" -type "Other"
                             $array[$index] = $True
@@ -1167,13 +1076,12 @@ Warning, blunt instrument, may interrupt other's powershell
         }
     }
 }
-<# 
-#>
 
 Export-ModuleMember -Function Get-*
 Export-ModuleMember -Function Remove-*
 Export-ModuleMember -Function Set-*
 Export-ModuleMember -Function Convert-VHElastic
+Export-ModuleMember -Function Format-VHReport
 Export-ModuleMember -Function Start-VHInvestigation
 Export-ModuleMember -Function Stop-VHRemote
 Export-ModuleMember -Function Send-VHResults
