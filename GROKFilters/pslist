@@ -1,1 +1,1 @@
-%{BASE16NUM:offset} %{USERNAME:proc}\s*%{NUMBER:pid}\s*%{NUMBER:ppid}\s*%{NUMBER:threads}\s*%{NUMBER:handles}\s*%{USERNAME:session}\s*%{NUMBER:syswow}\s*%{TIMESTAMP_ISO8601:start}
+%{BASE16NUM:offset} %{USERNAME:proc}\s*%{NUMBER:pid}\s*%{NUMBER:ppid}\s*%{NUMBER:threads}\s*%{NUMBER:handles}\s*%{USERNAME:session}\s*%{NUMBER:syswow}\s*%{TIMESTAMP_ISO8601:start}\s*%{GREEDYDATA:exit}
