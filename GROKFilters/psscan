@@ -1,0 +1,1 @@
+%{BASE16NUM:offset}\s%{DATA:proc}\s*%{USERNAME:proc}\s*%{NUMBER:pid}\s*%{NUMBER:ppid}\s*%{BASE16NUM:pdb} (%{TIMESTAMP_ISO8601:start} UTC%{DATA:timezone})? \s*(%{TIMESTAMP_ISO8601:exit} UTC%{DATA:timezone2})?
