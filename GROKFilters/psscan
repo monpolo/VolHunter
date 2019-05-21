@@ -1,1 +1,8 @@
+#NOTE: Consider using filebeat to strip first 2 lines of each file for this to work
+Offset(P)          Name                PID   PPID PDB        Time created                   Time exited                   
+------------------ ---------------- ------ ------ ---------- ------------------------------ ------------------------------
+if [message] =~ /^#/ {
+  drop { }
+}
+
 %{BASE16NUM:offset}\s%{DATA:proc}\s*%{USERNAME:proc}\s*%{NUMBER:pid}\s*%{NUMBER:ppid}\s*%{BASE16NUM:pdb} (%{TIMESTAMP_ISO8601:start} UTC%{DATA:timezone})? \s*(%{TIMESTAMP_ISO8601:exit} UTC%{DATA:timezone2})?
