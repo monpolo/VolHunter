@@ -1,8 +1,14 @@
 #NOTE: Consider using filebeat to strip first 2 lines of each file for this to work
+#All output files will have these opening 2 lines (need to be deleted)
 Offset(P)          Name                PID   PPID PDB        Time created                   Time exited                   
 ------------------ ---------------- ------ ------ ---------- ------------------------------ ------------------------------
+
+
+#Possible filebeat filtering setting
 if [message] =~ /^#/ {
   drop { }
 }
 
+
+#Grok filter for sample data
 %{BASE16NUM:offset}\s%{DATA:proc}\s*%{USERNAME:proc}\s*%{NUMBER:pid}\s*%{NUMBER:ppid}\s*%{BASE16NUM:pdb} (%{TIMESTAMP_ISO8601:start} UTC%{DATA:timezone})? \s*(%{TIMESTAMP_ISO8601:exit} UTC%{DATA:timezone2})?
