@@ -2,6 +2,12 @@
 
 A tool for volatility analysis at scale.
 
+# TO-DOs #
+
+- Create filebeat and/or logstash filters to ingest .txt format output
+- Add netscan sample output to txt_outputs folder
+- Create logstash config files to test pipelines
+
 # Logstash filters #
 
 A Logstash filter configuration is located in the `filters` directory.  To use
