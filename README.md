@@ -12,6 +12,7 @@ A tool for volatility analysis at scale.
      - Can we have "backup" intermediaries?
      - Add functions to utilize intermediares to collect outputs, log files, monitor targets, and delete output from targets
      - Add graceful "abort" function to kill VolHunter on all targets if execution is borked
+- Create visualizations and dashboards for properly tagged txt data. See FUMBLES for FOR526 inputs on what to look for
 
 # Logstash filters #
 
