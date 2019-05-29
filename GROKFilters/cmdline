@@ -1,0 +1,3 @@
+Not sure if stripping *** lines with filebeat will help, or if using those as multiline delimiters in logstash is better.
+
+%{DATA:proc} pid:\s*%{NUMBER:pid}((.|\r|\n)Command line :\s*%{GREEDYDATA:cmd})?
