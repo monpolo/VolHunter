@@ -1,0 +1,3 @@
+Consider using filebeat to strip first two lines from the output file before processing
+
+%{BASE16NUM:offset} %{DATA:proc}\s*%{NUMBER:pid}\s*%{WORD:pslist}\s*%{WORD:psscan}\s*%{WORD:thrdproc}\s*%{WORD:pspcid}\s*%{WORD:csrss}\s*%{WORD:session}\s*%{WORD:deskthrd}\s*(%{TIMESTAMP_ISO8601:exittime} UTC%{GREEDYDATA:timezone})?
