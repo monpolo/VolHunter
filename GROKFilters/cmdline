@@ -1,3 +1,7 @@
-Not sure if stripping *** lines with filebeat will help, or if using those as multiline delimiters in logstash is better.
+This assumes the following filebeat multiline filter
+  multiline.pattern: '^\*'
+  multiline.negate: true
+  multiline.match: after
 
-%{DATA:proc} pid:\s*%{NUMBER:pid}((.|\r|\n)Command line :\s*%{GREEDYDATA:cmd})?
+
+[\*]*%{DATA:proc} pid:\s*%{NUMBER:pid}((.|\r|\n)Command line :\s*%{GREEDYDATA:cmd})?
