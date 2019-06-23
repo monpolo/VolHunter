@@ -1,7 +1,7 @@
 # VolHunter #
 
 A tool for volatility analysis at scale.
-
+https://user-images.githubusercontent.com/39749344/59982884-6ae23a00-95de-11e9-815b-25443e51b24c.JPG
 # TO-DOs #
 
 - Update VHSwarm to add error handling
