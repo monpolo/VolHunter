@@ -4,15 +4,11 @@ A tool for volatility analysis at scale.
 
 # TO-DOs #
 
-- Create filebeat and/or logstash filters to ingest .txt format output
-- Add netscan sample output to txt_outputs folder
-- Create logstash config files to test pipelines
 - Update VHSwarm to add error handling
      - What if 1+ of intermediaries is offline or doesn't respond?
      - Can we have "backup" intermediaries?
      - Add functions to utilize intermediares to collect outputs, log files, monitor targets, and delete output from targets
      - Add graceful "abort" function to kill VolHunter on all targets if execution is borked
-- Create visualizations and dashboards for properly tagged txt data. See FUMBLES for FOR526 inputs on what to look for
 
 # Logstash filters #
 
