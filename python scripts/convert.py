@@ -74,7 +74,7 @@ def ssdt(input_path, output_path):
 	return;
 
 def malfind(input_path, output_path):
-	d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : "null"}
+	d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : []}
 	tracktwo = "null"
 	trackthree = "null"
 	tagarray = []
@@ -112,7 +112,7 @@ def malfind(input_path, output_path):
 					tracktwo = "null"
 					trackthree = "null"
 
-					d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : "null"}
+					d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : []}
 					continue
 			else:
 				if group_track == 0:
@@ -181,7 +181,7 @@ def psxview(input_path, output_path):
 	f.close()
 
 def pslist(input_path, output_path):
-	d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null"}
+	d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
 
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -216,7 +216,7 @@ def pslist(input_path, output_path):
 					d['process.exittime'] = "null"
 				output_file.write(json.dumps(d))
 				output_file.write("\n")
-				d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null"}
+				d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
 				continue
 	f.close()
 
@@ -236,7 +236,7 @@ def dlllist(input_path, output_path):
 	patharray = []
 	tagarray = []
 
-	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : "null"}
+	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : []}
 
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -269,7 +269,7 @@ def dlllist(input_path, output_path):
 				groupcount = 0
 				output_file.write(json.dumps(d))
 				output_file.write("\n")
-				d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : "null"}
+				d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : []}
 				basearray = []
 				sizearray = []
 				loadcountarray = []
