@@ -9,9 +9,9 @@ A tool for volatility analysis at scale.
      - Can we have "backup" intermediaries?
      - Add functions to utilize intermediares to collect outputs, log files, monitor targets, and delete output from targets
      - Add graceful "abort" function to kill VolHunter on all targets if execution is borked
-- Add try/except to convert.py to handle malformed artifacts in "scan" type outputs
+- ~~Add try/except to convert.py to handle malformed artifacts in "scan" type outputs~~
 - Debug dlllist parsing that incorrectly tags dlllist addresses and process names
-- Gather sample data for netscan plugin in order to improve processing logic for different output cases
+- ~~Gather sample data for netscan plugin in order to improve processing logic for different output cases~~
 - Add function to include date/time field that sample was taken
 - Add further "known" and "unknown" items to tagger.py 
      - Process lineage standards
