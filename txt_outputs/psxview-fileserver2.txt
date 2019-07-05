@@ -1,0 +1,75 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000013eb57900 msdtc.exe              1068 True   True   True     True   True  True    True     
+0x000000013e16e300 DumpIt-64.exe          3948 True   True   True     True   True  True    True     
+0x000000013ed42b30 svchost.exe            1692 True   True   True     True   True  True    True     
+0x000000013f0b48e0 LogonUI.exe            3044 True   True   True     True   True  True    True     
+0x000000013ed44b30 vmtoolsd.exe           1304 True   True   True     True   True  True    False    
+0x000000013f5cc550 winlogon.exe           1844 True   True   True     True   True  True    True     
+0x000000013f1c79e0 svchost.exe             996 True   True   True     True   True  True    True     
+0x000000013e0b46d0 explorer.exe           2684 True   True   True     True   True  True    True     
+0x000000013e048b30 rdpclip.exe            2776 True   True   True     True   True  True    True     
+0x000000013f402b30 taskhost.exe           2004 True   True   True     True   True  True    False    
+0x000000013f1374a0 svchost.exe             708 True   True   True     True   True  True    True     
+0x000000000612d7b0 svchost.exe             952 True   True   True     True   True  True    False    
+0x000000013e148b30 powershell.exe         2136 True   True   True     True   True  True    False    
+0x000000013ed2ab30 svchost.exe            1208 True   True   True     True   True  True    False    
+0x000000013f12bb30 vmacthlp.exe            664 True   True   True     True   True  True    False    
+0x000000013f171b30 svchost.exe             804 True   True   True     True   True  True    True     
+0x000000013ebf7b30 WmiPrvSE.exe           2056 True   True   True     True   True  True    True     
+0x000000013c2f0270 taskmgr.exe            3056 True   True   True     True   True  True    False    
+0x000000013e0f0b30 vmtoolsd.exe           1744 True   True   True     True   True  True    False    
+0x000000013f0c85c0 services.exe            484 True   True   True     True   True  True    False    
+0x000000013f17b060 svchost.exe             844 True   True   True     True   True  True    True     
+0x000000013eb31b30 dllhost.exe             916 True   True   True     True   True  True    False    
+0x000000013e81b060 sppsvc.exe             2256 True   True   True     True   True  True    True     
+0x000000013ec74b30 svchost.exe            1808 True   True   True     True   True  True    True     
+0x000000013f197150 svchost.exe             896 True   True   True     True   True  True    True     
+0x000000013e10d570 conhost.exe            2320 True   True   True     True   True  True    False    
+0x000000013e0aab30 cmd.exe                2828 True   True   True     True   True  True    False    
+0x000000013d9bb060 conhost.exe            3736 True   True   True     True   True  True    True     
+0x000000013ed9b470 ManagementAgen         1400 True   True   True     True   True  True    False    
+0x000000013bfbc060 wsmprovhost.ex         2952 True   True   True     True   True  True    True     
+0x000000013fd30060 wininit.exe             388 True   True   True     True   True  True    True     
+0x000000013f6819d0 svchost.exe             344 True   True   True     True   True  True    True     
+0x000000013e43d060 winlogon.exe           2840 True   True   True     True   True  True    True     
+0x000000013ddbf060 conhost.exe             788 True   True   True     True   True  True    False    
+0x000000013e07cb30 dwm.exe                2872 True   True   True     True   True  True    False    
+0x000000013fd9c520 lsm.exe                 500 True   True   True     True   True  True    False    
+0x000000013fd9a370 lsass.exe               492 True   True   True     True   True  True    False    
+0x000000011533b060 mstsc.exe              3240 True   True   True     True   True  True    True     
+0x000000013f10d5a0 svchost.exe             604 True   True   True     True   True  True    False    
+0x000000013ec4fa30 esensor.exe            2108 True   True   True     True   True  True    False    
+0x000000013e98fa70 mmc.exe                 720 True   True   True     True   True  True    False    
+0x000000013ecc66e0 spoolsv.exe            1084 True   True   True     True   True  True    True     
+0x000000013e100b30 wscript.exe            2700 True   True   True     True   True  True    False    
+0x000000013ed62b30 VGAuthService.         1240 True   True   True     True   True  True    False    
+0x000000013c049060 volatility.exe         2884 True   True   False    True   False True    False    2019-06-26 14:10:25 UTC+0000
+0x000000013dd49650 volatility.exe         3484 True   True   False    True   False True    False    2019-06-26 14:12:11 UTC+0000
+0x000000013ea499d0 volatility.exe         3872 True   True   False    True   False True    False    2019-06-26 14:12:40 UTC+0000
+0x000000013e6784c0 csrss.exe               256 True   True   True     True   False True    True     
+0x000000013e5b0060 HOSTNAME.EXE           2212 True   True   False    True   False True    False    2019-06-26 14:12:11 UTC+0000
+0x000000013e012060 csrss.exe              2352 True   True   True     True   False True    True     
+0x000000013e52c760 volatility.exe         2324 True   True   False    True   False True    False    2019-06-26 14:11:29 UTC+0000
+0x000000013f7ca970 volatility.exe         4044 True   True   False    True   False True    False    2019-06-26 14:10:02 UTC+0000
+0x00000000060d9040 System                    4 True   True   True     True   False False   False    
+0x000000013db338e0 volatility.exe         3828 True   True   False    True   False True    False    2019-06-26 14:10:46 UTC+0000
+0x000000013e6b8b30 volatility.exe         1908 True   True   False    True   False True    False    2019-06-26 14:11:08 UTC+0000
+0x00000000061c7060 csrss.exe               328 True   True   True     True   False True    True     
+0x000000013f94e950 smss.exe                248 True   True   True     True   False False   False    
+0x000000013c404420 volatility.exe         3268 True   True   False    True   False True    False    2019-06-26 14:11:49 UTC+0000
+0x000000013e31f060 HOSTNAME.EXE           3172 True   True   False    True   False True    False    2019-06-26 14:11:49 UTC+0000
+0x000000013e70bb30 HOSTNAME.EXE           3592 True   True   False    True   False True    False    2019-06-26 14:12:31 UTC+0000
+0x000000013da35560 volatility.exe         3324 True   True   False    True   False True    False    2019-06-26 14:12:31 UTC+0000
+0x0000000001f5e580 smss.exe               3704 False  True   False    False  False False   False    2019-06-26 13:41:29 UTC+0000
+0x000000013ddf8860 conhost.exe            1548 False  True   False    False  False False   False    2019-06-26 14:12:11 UTC+0000
+0x000000013df1eb30 LogonUI.exe            3668 False  True   False    False  False False   False    2019-06-26 14:10:39 UTC+0000
+0x000000013f7f57d0 csrss.exe              3832 False  True   False    False  False False   False    2019-06-26 13:41:55 UTC+0000
+0x000000013e75e6c0 csrss.exe              3724 False  True   False    False  False False   False    2019-06-26 13:49:09 UTC+0000
+0x000000013dd48660 TSTheme.exe            3868 False  True   False    False  False False   False    2019-06-26 13:49:13 UTC+0000
+0x000000013d6141e0 TSTheme.exe            3676 False  True   False    False  False False   False    2019-06-26 13:42:00 UTC+0000
+0x000000013bfed060 winlogon.exe           2208 False  True   False    False  False False   False    2019-06-26 14:10:39 UTC+0000
+0x000000013df7e360 slui.exe               3564 False  True   False    False  False False   False    2019-06-26 13:42:48 UTC+0000
+0x000000013e242060 volatility.exe         3984 False  True   False    False  False False   False    2019-06-26 14:12:09 UTC+0000
+0x000000013c0ada30 mstsc.exe              3876 False  True   False    False  False False   False    2019-06-26 13:45:00 UTC+0000
+0x000000013c323b30 LogonUI.exe            3644 False  True   False    False  False False   False    2019-06-26 13:49:09 UTC+0000

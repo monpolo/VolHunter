@@ -1,0 +1,127 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    248
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    360
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+csrss.exe pid:    428
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    436
+Command line : wininit.exe
+************************************************************************
+winlogon.exe pid:    464
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    528
+Command line : C:\Windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    536
+Command line : C:\Windows\system32\lsass.exe
+************************************************************************
+svchost.exe pid:    692
+Command line : C:\Windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    740
+Command line : C:\Windows\system32\svchost.exe -k RPCSS
+************************************************************************
+LogonUI.exe pid:    824
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+dwm.exe pid:    832
+Command line : "dwm.exe"
+************************************************************************
+vmacthlp.exe pid:    852
+Command line : "C:\Program Files\VMware\VMware Tools\vmacthlp.exe"
+************************************************************************
+svchost.exe pid:    908
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    952
+Command line : C:\Windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    980
+Command line : C:\Windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    312
+Command line : C:\Windows\system32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:   1036
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+spoolsv.exe pid:   1372
+Command line : C:\Windows\System32\spoolsv.exe
+************************************************************************
+Microsoft.Acti pid:   1400
+Command line : C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe
+************************************************************************
+dfsrs.exe pid:   1440
+Command line : C:\Windows\system32\DFSRs.exe
+************************************************************************
+svchost.exe pid:   1472
+Command line : C:\Windows\System32\svchost.exe -k utcsvc
+************************************************************************
+dns.exe pid:   1492
+Command line : C:\Windows\system32\dns.exe
+************************************************************************
+esensor.exe pid:   1508
+Command line : "C:\Program Files\Endgame\esensor.exe" --config "C:\Program Files\Endgame\esensor.cfg"
+************************************************************************
+ismserv.exe pid:   1640
+Command line : C:\Windows\System32\ismserv.exe
+************************************************************************
+rubyw.exe pid:   1668
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+ruby.exe pid:   1804
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+VGAuthService. pid:   1948
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1968
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+dfssvc.exe pid:   2028
+Command line : C:\Windows\system32\dfssvc.exe
+************************************************************************
+WmiPrvSE.exe pid:   2124
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+svchost.exe pid:   2620
+Command line : C:\Windows\System32\svchost.exe -k termsvcs
+************************************************************************
+vds.exe pid:   2668
+Command line : C:\Windows\System32\vds.exe
+************************************************************************
+svchost.exe pid:   2748
+Command line : C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:   2792
+Command line : C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   2188
+Command line : C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   1800
+Command line : C:\Windows\System32\msdtc.exe
+************************************************************************
+WmiPrvSE.exe pid:   1344
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+TrustedInstall pid:   2992
+************************************************************************
+TiWorker.exe pid:   3360
+Command line : C:\Windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_6.3.9600.18384_none_fa1d93c39b41b41a\TiWorker.exe -Embedding
+************************************************************************
+wsmprovhost.ex pid:   3764
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+DumpIt-64.exe pid:   4124
+Command line : "C:\vh\DumpIt-64.exe" /Q /N /J /T RAW /OUTPUT .\image.bin 
+************************************************************************
+conhost.exe pid:   4756
+Command line : \??\C:\Windows\system32\conhost.exe 0x4

@@ -1,0 +1,224 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    252
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    352
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    408
+Command line : wininit.exe
+************************************************************************
+services.exe pid:    512
+Command line : C:\windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    520
+Command line : C:\windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    528
+Command line : C:\windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    632
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    708
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+************************************************************************
+svchost.exe pid:    808
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    852
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    888
+Command line : C:\windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    956
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    996
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:    588
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+spoolsv.exe pid:   1104
+Command line : C:\windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1156
+Command line : C:\windows\system32\svchost.exe -k apphost
+************************************************************************
+svchost.exe pid:   1180
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+************************************************************************
+inetinfo.exe pid:   1356
+Command line : C:\windows\system32\inetsrv\inetinfo.exe
+************************************************************************
+rubyw.exe pid:   1380
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+MSExchangeADTo pid:   1512
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeADTopologyService.exe"
+************************************************************************
+exfba.exe pid:   1556
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\ExFBA.exe"
+************************************************************************
+msftesql.exe pid:   1588
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\msftesql.exe" -Exchange -s:Exchange -f:Exchange
+************************************************************************
+SMSvcHost.exe pid:   1644
+Command line : C:\windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe
+************************************************************************
+ruby.exe pid:   1708
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+svchost.exe pid:   1832
+Command line : C:\windows\system32\svchost.exe -k regsvc
+************************************************************************
+VGAuthService. pid:   1876
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1900
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+svchost.exe pid:   1928
+Command line : C:\windows\system32\svchost.exe -k iissvcs
+************************************************************************
+winlogbeat.exe pid:   1948
+Command line : "C:\Program Files\Winlogbeat\winlogbeat.exe" -c "C:\Program Files\Winlogbeat\winlogbeat.yml" -path.home "C:\Program Files\Winlogbeat" -path.data "C:\ProgramData\winlogbeat" -path.logs "C:\ProgramData\winlogbeat\logs"
+************************************************************************
+Microsoft.Exch pid:   1736
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\Microsoft.Exchange.AddressBook.Service.exe"
+************************************************************************
+Microsoft.Exch pid:   2268
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\Microsoft.Exchange.AntispamUpdateSvc.exe"
+************************************************************************
+Microsoft.Exch pid:   2316
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\Microsoft.Exchange.EdgeSyncSvc.exe"
+************************************************************************
+WmiPrvSE.exe pid:   2412
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+************************************************************************
+MsExchangeFDS. pid:   2480
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeFDS.exe"
+************************************************************************
+MSExchangeMail pid:   2568
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeMailboxAssistants.exe"
+************************************************************************
+MSExchangeMail pid:   2676
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeMailboxReplication.exe"
+************************************************************************
+MSExchangeMail pid:   2764
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeMailSubmission.exe"
+************************************************************************
+Microsoft.Exch pid:   2864
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\Microsoft.Exchange.ProtectedServiceHost.exe"
+************************************************************************
+msexchangerepl pid:   2940
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\msexchangerepl.exe"
+************************************************************************
+Microsoft.Exch pid:   1176
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\Microsoft.Exchange.RpcClientAccess.Service.exe"
+************************************************************************
+Microsoft.Exch pid:   3080
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\Microsoft.Exchange.Search.ExSearch.exe"
+************************************************************************
+Microsoft.Exch pid:   3132
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\Microsoft.Exchange.ServiceHost.exe"
+************************************************************************
+MSExchangeThro pid:   3228
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeThrottling.exe"
+************************************************************************
+MSExchangeTran pid:   3336
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeTransport.exe"
+************************************************************************
+MSExchangeTran pid:   3556
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MSExchangeTransportLogSearch.exe"
+************************************************************************
+EdgeTransport. pid:   3780
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\edgetransport.exe" -pipe:1408 -stopkey:Global\ExchangeStopKey-7d078ef5-717f-4467-b907-5ccdab8c4510 -resetkey:Global\ExchangeResetKey-6a3fc3d9-5cbb-4359-97ae-cedfdd059d36 -readykey:Global\ExchangeReadyKey-f4cd5bc7-98b3-4996-88db-f3a1e73e666c -hangkey:Global\ExchangeHangKey-9250e4ef-7c74-43cd-b34a-64bb9715c742 -workerListening
+************************************************************************
+conhost.exe pid:   3792
+Command line : \??\C:\windows\system32\conhost.exe "-1929550522-2134444356-17537700701802751832-1850352686751207494-352975102-1217456278
+************************************************************************
+store.exe pid:   3896
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\store.exe"
+************************************************************************
+mad.exe pid:   3976
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\bin\mad.exe"
+************************************************************************
+svchost.exe pid:   4504
+Command line : C:\windows\System32\svchost.exe -k termsvcs
+************************************************************************
+svchost.exe pid:   4572
+Command line : C:\windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   4644
+Command line : C:\windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   4816
+Command line : C:\windows\System32\msdtc.exe
+************************************************************************
+w3wp.exe pid:   2396
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "MSExchangeAutodiscoverAppPool" -v "v2.0" -l "webengine4.dll" -a \\.\pipe\iisipm3c7fc83c-fd59-4d54-97e6-d2a25789fea0 -h "C:\inetpub\temp\apppools\MSExchangeAutodiscoverAppPool\MSExchangeAutodiscoverAppPool.config" -w "" -m 0
+************************************************************************
+w3wp.exe pid:   6048
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "MSExchangeServicesAppPool" -v "v2.0" -l "webengine4.dll" -a \\.\pipe\iisipmcbf2cf9d-4917-4737-9cdd-f809c9c76890 -h "C:\inetpub\temp\apppools\MSExchangeServicesAppPool\MSExchangeServicesAppPool.config" -w "" -m 0
+************************************************************************
+w3wp.exe pid:   5876
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "DefaultAppPool" -v "v2.0" -l "webengine4.dll" -a \\.\pipe\iisipm79b0603f-ce8b-42a4-8dce-3e6d642c8d41 -h "C:\inetpub\temp\apppools\DefaultAppPool\DefaultAppPool.config" -w "" -m 0
+************************************************************************
+w3wp.exe pid:    556
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "MSExchangeOWAAppPool" -v "v2.0" -l "webengine4.dll" -a \\.\pipe\iisipm0f568f6a-5698-4d79-9ddf-7976e951b1a4 -h "C:\inetpub\temp\apppools\MSExchangeOWAAppPool\MSExchangeOWAAppPool.config" -w "" -m 0
+************************************************************************
+esensor.exe pid:   3948
+Command line : "C:\Program Files\Endgame\esensor.exe" --config "C:\Program Files\Endgame\esensor.cfg"
+************************************************************************
+csrss.exe pid:   5520
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    924
+Command line : winlogon.exe
+************************************************************************
+taskhost.exe pid:   5312
+Command line : "taskhost.exe"
+************************************************************************
+rdpclip.exe pid:   5552
+Command line : rdpclip
+************************************************************************
+dwm.exe pid:   4616
+Command line : "C:\windows\system32\Dwm.exe"
+************************************************************************
+explorer.exe pid:   6856
+Command line : C:\windows\Explorer.EXE
+************************************************************************
+csrss.exe pid:   7796
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:   6924
+Command line : winlogon.exe
+************************************************************************
+LogonUI.exe pid:   5488
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+w3wp.exe pid:    508
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "MSExchangeECPAppPool" -v "v2.0" -l "webengine4.dll" -a \\.\pipe\iisipm18767629-7c8c-4370-8bcf-6b77668e9af4 -h "C:\inetpub\temp\apppools\MSExchangeECPAppPool\MSExchangeECPAppPool.config" -w "" -m 0
+************************************************************************
+msftefd.exe pid:   7328
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MsFTEFD.exe" "ExchangeAb75802e8ff701f46fff8849f0ff2e1b02b2efmab1f" "Exchange" "Exchange" "3" "200" "M" "0" "" "" ""  "Exchange"
+************************************************************************
+msftefd.exe pid:   4784
+Command line : "C:\Program Files\Microsoft\Exchange Server\V14\Bin\MsFTEFD.exe" "ExchangeE50e6672ef893bf4f58f8c1df2eb09247c003fnn3n9" "Exchange" "Exchange" "3" "200" "M" "0" "" "" ""  "Exchange"
+************************************************************************
+TrustedInstall pid:   7184
+Command line : C:\windows\servicing\TrustedInstaller.exe
+************************************************************************
+wsmprovhost.ex pid:   5260
+Command line : C:\windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+DumpIt-64.exe pid:   5032
+Command line : "C:\vh\DumpIt-64.exe" /Q /N /J /T RAW /OUTPUT .\image.bin 
+************************************************************************
+conhost.exe pid:   7980
+Command line : \??\C:\windows\system32\conhost.exe "1594162251882414272-435854841-1850539444-679164976121375635664068055-925945721

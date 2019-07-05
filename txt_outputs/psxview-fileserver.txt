@@ -1,0 +1,58 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000013f891780 svchost.exe             140 True   True   True     True   True  True    True     
+0x000000013f6c2340 lsass.exe               508 True   True   True     True   True  True    False    
+0x000000013ec81b30 tomcat8.exe            1276 True   True   True     True   True  True    True     
+0x000000013edf1b30 dfssvc.exe              340 True   True   True     True   True  True    True     
+0x000000013eb03b30 svchost.exe            2664 True   True   True     True   True  True    True     
+0x000000013ea6ab30 svchost.exe            2368 True   True   True     True   True  True    True     
+0x000000013fa35790 conhost.exe            1036 True   True   True     True   True  True    True     
+0x000000013f2e9060 dfsrs.exe              1380 True   True   True     True   True  True    True     
+0x000000013d5f69e0 wsmprovhost.ex         3044 True   True   True     True   True  True    True     
+0x000000013ed2a060 mysqld.exe             1652 True   True   True     True   True  True    True     
+0x000000013d479630 conhost.exe            3108 True   True   True     True   True  True    True     
+0x000000013ecac060 conhost.exe            1260 True   True   True     True   True  True    True     
+0x000000013f7c3920 wininit.exe             404 True   True   True     True   True  True    True     
+0x000000013fb04b30 svchost.exe             844 True   True   True     True   True  True    True     
+0x000000013e88db30 SearchIndexer.         1624 True   True   True     True   True  True    True     
+0x000000013eacab30 vds.exe                2428 True   True   True     True   True  True    True     
+0x000000013f934890 explorer.exe           1772 True   True   True     True   True  True    False    
+0x000000013e643060 DumpIt-64.exe          2340 True   True   True     True   True  True    True     
+0x000000013f3a7b30 spoolsv.exe            1188 True   True   True     True   True  True    True     
+0x000000013ecadb30 svchost.exe            1236 True   True   True     True   True  True    False    
+0x000000013dc7e600 vmtoolsd.exe           2980 True   True   True     True   True  True    False    
+0x000000013e69e060 DESKTO~1.EXE           2968 True   True   True     True   True  True    False    
+0x000000013f771b30 winlogon.exe            436 True   True   True     True   True  True    True     
+0x000000013ebc8b30 msdtc.exe              1784 True   True   True     True   True  True    True     
+0x000000013f414060 cmd.exe                 564 True   True   True     True   True  True    True     
+0x000000013e6719e0 notepad.exe            1952 True   True   True     True   True  True    False    
+0x000000013f677340 services.exe            500 True   True   True     True   True  True    False    
+0x000000013f6a3060 lsm.exe                 516 True   True   True     True   True  True    True     
+0x000000013e16c780 esensor.exe            4056 True   True   True     True   True  True    True     
+0x000000013ecbf060 ruby.exe               2324 True   True   True     True   True  True    True     
+0x000000013eb8fa30 svchost.exe            1740 True   True   True     True   True  True    True     
+0x000000013e411b30 dwm.exe                2748 True   True   True     True   True  True    False    
+0x000000013ec56120 svchost.exe             676 True   True   True     True   True  True    True     
+0x000000013fbd7550 taskeng.exe             392 True   True   True     True   True  True    True     
+0x000000013f895b30 svchost.exe             948 True   True   True     True   True  True    True     
+0x000000013ece6630 httpd.exe              1596 True   True   True     True   True  True    True     
+0x000000013f3b7b30 ruby.exe               1208 True   True   True     True   True  True    True     
+0x000000013ea28b30 httpd.exe              1580 True   True   True     True   True  True    True     
+0x000000013f448060 svchost.exe            1020 True   True   True     True   True  True    True     
+0x000000013dbd8360 taskhost.exe           3904 True   True   True     True   True  True    False    
+0x000000013fafab30 vmacthlp.exe            692 True   True   True     True   True  True    True     
+0x000000008fca0060 WmiPrvSE.exe           2880 False  True   True     True   True  False   False    
+0x000000013d55f670 wsmprovhost.ex         1444 True   True   True     True   True  True    True     
+0x000000013e802060 GoogleUpdate.e         2504 True   True   True     True   True  True    True     
+0x000000013fafeb30 svchost.exe             736 True   True   True     True   True  True    True     
+0x000000013f8a3060 svchost.exe             352 True   True   True     True   True  True    True     
+0x000000013f7ffb30 svchost.exe             620 True   True   True     True   True  True    True     
+0x000000013fb06b30 svchost.exe             888 True   True   True     True   True  True    True     
+0x000000013f77a880 csrss.exe               344 True   True   True     True   False True    True     
+0x00000000060d9890 System                    4 True   True   True     True   False False   False    
+0x000000013f7bb9e0 csrss.exe               396 True   True   True     True   False True    False    
+0x000000013fb1e7e0 smss.exe                248 True   True   True     True   False False   False    
+0x000000013e6a1b30 SearchProtocol         3544 False  True   False    False  False False   False    2019-06-25 22:45:01 UTC+0000
+0x000000013e691b30 GoogleUpdate.e          316 False  True   False    False  False False   False    2019-06-25 17:13:41 UTC+0000
+0x000000013e42e4d0 mpnotify.exe           2924 False  True   False    False  False False   False    2019-06-25 22:40:45 UTC+0000
+0x000000013e0a8b30                         504 False  False  True     False  False False   False    
