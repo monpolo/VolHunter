@@ -7,7 +7,7 @@ import volindexer
 import tagger
 from os import listdir
 from os.path import isfile, join
-
+#Test comment
 vhfilepath = "./VHdata/gatheredlogs"
 process_folder = "./VHdata/converted/"
 output_folder = "./VHdata/output/"
