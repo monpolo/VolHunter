@@ -209,20 +209,44 @@ def psxview(input_path, output_path):
 					openlines += 1
 				else:
 					data = line.split()
-					d['process.offset.physical'] = data[0]
-					d['process.name'] = data[1]
-					d['process.pid'] = data[2]
-					d['psxview.pslist'] = data[3]
-					d['psxview.psscan'] = data[4]
-					d['psxview.thrdproc'] = data[5]
-					d['psxview.pspcid'] = data[6]
-					d['psxview.csrss'] = data[7]
-					d['psxview.session'] = data[8]
-					d['psxview.deskthrd'] = data[9]
 					d['hostname'] = filename
 					if len(data) == 13:
+						d['process.offset.physical'] = data[0]
+						d['process.name'] = data[1]
+						d['process.pid'] = data[2]
+						d['psxview.pslist'] = data[3]
+						d['psxview.psscan'] = data[4]
+						d['psxview.thrdproc'] = data[5]
+						d['psxview.pspcid'] = data[6]
+						d['psxview.csrss'] = data[7]
+						d['psxview.session'] = data[8]
+						d['psxview.deskthrd'] = data[9]
 						d['psxview.exittime'] = data[10] + " " + data[11] + " " + data[12]
+					#Missing process.name and timestamp
+					elif len(data) == 9:
+						d['process.offset.physical'] = data[0]
+						#d['process.name'] = data[1]
+						d['process.pid'] = data[1]
+						d['psxview.pslist'] = data[2]
+						d['psxview.psscan'] = data[3]
+						d['psxview.thrdproc'] = data[4]
+						d['psxview.pspcid'] = data[5]
+						d['psxview.csrss'] = data[6]
+						d['psxview.session'] = data[7]
+						d['psxview.deskthrd'] = data[8]
+						d['psxview.exittime'] = "null"
+					#Missing timestamp
 					else:
+						d['process.offset.physical'] = data[0]
+						d['process.name'] = data[1]
+						d['process.pid'] = data[2]
+						d['psxview.pslist'] = data[3]
+						d['psxview.psscan'] = data[4]
+						d['psxview.thrdproc'] = data[5]
+						d['psxview.pspcid'] = data[6]
+						d['psxview.csrss'] = data[7]
+						d['psxview.session'] = data[8]
+						d['psxview.deskthrd'] = data[9]
 						d['psxview.exittime'] = "null"
 
 					output_file.write(json.dumps(d))
@@ -571,6 +595,10 @@ def netscan(input_path, output_path):
 						d['process.name'] = data[6]
 						if len(data) == 10:
 							d['net.starttime'] = data[7] + " " + data[8] + " " + data[9]
+					#No owner, no time
+					elif len(data) == 6:
+						d['net.state'] = data[4]
+						d['process.pid'] = data[5]
 					#No state, yes date/time
 					else:
 						d['net.state'] = "null"
