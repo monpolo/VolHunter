@@ -10,14 +10,14 @@ A tool for volatility analysis at scale.
      - Add functions to utilize intermediares to collect outputs, log files, monitor targets, and delete output from targets
      - Add graceful "abort" function to kill VolHunter on all targets if execution is borked
 - ~~Add try/except to convert.py to handle malformed artifacts in "scan" type outputs~~
-- Debug dlllist parsing that incorrectly tags dlllist addresses and process names
+- ~~Debug dlllist parsing that incorrectly tags dlllist addresses and process names~~
 - ~~Gather sample data for netscan plugin in order to improve processing logic for different output cases~~
 - Add function to include date/time field that sample was taken
-- Add further "known" and "unknown" items to tagger.py 
+- Add further "known" and "unknown" items to tagger.py
      - Process lineage standards
      - Tag non-standard DLLs per process
      - Rules for psxview output
-     - When tagging a "NonSys32DLL" include that path in the tags array
+     - ~~When tagging a "NonSys32DLL" include that path in the tags array~~
      - Improve "FuncPrologue" tag identification logic to include all three lines necessary for a function prologue
 - Consider additional plugins
      - Svcscan - To identify unique services across systems
