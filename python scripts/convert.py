@@ -43,7 +43,7 @@ def cmdline(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -92,7 +92,7 @@ def ssdt(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -174,7 +174,7 @@ def malfind(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -258,7 +258,7 @@ def psxview(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -314,7 +314,7 @@ def pslist(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -334,7 +334,7 @@ def nonblank_lines(f):
 			yield line
 
 def dlllist(input_path, output_path):
-	CL = "Command line : "
+	CL = "Command line :"
 	basearray = []
 	sizearray = []
 	loadcountarray = []
@@ -385,21 +385,29 @@ def dlllist(input_path, output_path):
 				else:
 					if groupcount == 0:
 						if line.startswith(CL):
+							#print "IN CL START"
 							args = line.replace(CL,'')
+							#print "CL is "
+							#print args
 							d['process.arguments'] = args.rstrip().replace('"',"'")
 							groupcount += 1
 						elif line.startswith("Unable to read PEB"):
+							#print "IN UNABLE"
 							continue
 						else:
 							proc = line.split()
+							#print "TEST 2: " + line
 							d['process.name'] = proc[0].rstrip()
 							d['process.pid'] = proc[2].rstrip()
 					else:
 						if line.startswith("Base"):
+							#print "IN START WITH BASE"
 							continue
 						elif line.startswith("-----"):
+							#print "IN -----"
 							continue
 						else:
+							#print "GC > 0, should be seeing DLLs"
 							data = line.split()
 							#print "data len ", len(data)
 							#print data
@@ -416,14 +424,14 @@ def dlllist(input_path, output_path):
 								ind = 6
 								pathval = ""
 								while(ind < len(data)):
-									pathval = pathval + data[ind]
+									pathval = pathval + " " + data[ind]
 									ind = ind + 1
 								patharray.append(pathval)
 							else: #3-end of array REST OF LENGTH GOES TO PATH
 								ind = 3
 								pathval = ""
 								while(ind < len(data)):
-									pathval = pathval + data[ind]
+									pathval = pathval + " " + data[ind]
 									ind = ind + 1
 								patharray.append(pathval)
 			except Exception as e:
@@ -431,7 +439,7 @@ def dlllist(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -495,7 +503,7 @@ def timers(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -551,7 +559,7 @@ def ldrmodules(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
@@ -614,7 +622,7 @@ def netscan(input_path, output_path):
 				correctChoice = 0
 				while correctChoice != 1:
 					print line
-					print d
+					#print d
 					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
 					if errorChoice == "d":
 						correctChoice = 1
