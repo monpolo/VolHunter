@@ -609,6 +609,9 @@ def netscan(input_path, output_path):
 						d['process.pid'] = data[5]
 					#No state, yes date/time
 					else:
+						#Likely a glitched scan result with no process.name
+						if data[4] == "CLOSED":
+							raise ValueError('Suspected bad scan result with false PID and no process name')
 						d['net.state'] = "null"
 						d['process.pid'] = data[4]
 						d['process.name'] = data[5]
