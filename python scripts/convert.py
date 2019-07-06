@@ -372,6 +372,10 @@ def dlllist(input_path, output_path):
 						#print "Non sys32"
 						tagarray.append("NonSys32DLL")
 						d['tags'] = tagarray
+					#Search for possible injected DLLs
+					if any("C:" not in s.upper() for s in d['dlllist.path']):
+						tagarray.append("InjectedDLL")
+						d['tags'] = tagarray
 					groupcount = 0
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
