@@ -36,6 +36,8 @@ def cmdline(input_path, output_path):
 						#print line
 						proc = line.split()
 						#print proc
+						if proc[0].rstrip() == "pid:":
+							raise ValueError('Suspected no process name found')
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
 			except Exception as e:
@@ -368,14 +370,15 @@ def dlllist(input_path, output_path):
 					d['dlllist.loadtime'] = loadtimearray
 					d['dlllist.path'] = patharray
 					#Search for non system32 paths
-					if any("SYSTEM32" not in s.upper() for s in d['dlllist.path']):
-						#print "Non sys32"
-						tagarray.append("NonSys32DLL")
-						d['tags'] = tagarray
-					#Search for possible injected DLLs
-					if any("C:" not in s.upper() for s in d['dlllist.path']):
-						tagarray.append("InjectedDLL")
-						d['tags'] = tagarray
+					for s in d['dlllist.path']:
+						if (("SYSTEM32" not in s.upper()) and ("NULL" not in s.upper()) and (".EXE" not in s.upper()) and (s != "") and ("WINSXS" not in s.upper())  and ("SYSWOW64" not in s.upper())  and ("WINDOWS\\MICROSOFT.NET" not in s.upper())  and ("WINDOWS\\ASSEMBLY" not in s.upper())):
+							tagarray.append("NonSys32DLL")
+							tagarray.append(s)
+							d['tags'] = tagarray
+						if (("C:" not in s.upper()) and (".EXE" not in s.upper()) and ("NULL" not in s.upper()) and (s != "")):
+							tagarray.append("InjectedDLL")
+							tagarray.append(s)
+							d['tags'] = tagarray
 					groupcount = 0
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
@@ -401,6 +404,10 @@ def dlllist(input_path, output_path):
 						else:
 							proc = line.split()
 							#print "TEST 2: " + line
+							if proc[0].rstrip() == "pid:":
+								raise ValueError('Suspected no process name found')
+							if (int(proc[2].rstrip()) > 400000):
+								raise ValueError('Non realistic PID value')
 							d['process.name'] = proc[0].rstrip()
 							d['process.pid'] = proc[2].rstrip()
 					else:
@@ -462,10 +469,15 @@ def dlllist(input_path, output_path):
 	d['dlllist.loadtime'] = loadtimearray
 	d['dlllist.path'] = patharray
 	#Search for non system32 paths
-	if any("SYSTEM32" not in s.upper() for s in d['dlllist.path']):
-		#print "Non sys32"
-		tagarray.append("NonSys32DLL")
-		d['tags'] = tagarray
+	for s in d['dlllist.path']:
+		if (("SYSTEM32" not in s.upper()) and ("NULL" not in s.upper()) and (".EXE" not in s.upper()) and (s != "") and ("WINSXS" not in s.upper())  and ("SYSWOW64" not in s.upper())  and ("WINDOWS\\MICROSOFT.NET" not in s.upper())  and ("WINDOWS\\ASSEMBLY" not in s.upper())):
+			tagarray.append("NonSys32DLL")
+			tagarray.append(s)
+			d['tags'] = tagarray
+		if (("C:" not in s.upper()) and (".EXE" not in s.upper()) and ("NULL" not in s.upper()) and (s != "")):
+			tagarray.append("InjectedDLL")
+			tagarray.append(s)
+			d['tags'] = tagarray
 	groupcount = 0
 	output_file.write(json.dumps(d))
 	output_file.write("\n")
@@ -620,6 +632,8 @@ def netscan(input_path, output_path):
 						d['process.pid'] = data[4]
 						d['process.name'] = data[5]
 						d['net.starttime'] = data[6] + " " + data[7] + " " + data[8]
+					if ((d['process.pid'] == "-1") or (d['process.pid'] == "0")):
+						raise ValueError('False PID found')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null" }
