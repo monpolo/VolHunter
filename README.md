@@ -11,6 +11,7 @@ A tool for volatility analysis at scale.
      - Add graceful "abort" function to kill VolHunter on all targets if execution is borked
 - ~~Add try/except to convert.py to handle malformed artifacts in "scan" type outputs~~
 - ~~Debug dlllist parsing that incorrectly tags dlllist addresses and process names~~
+- Psxview parsing has current bug for nonstandard #s of fields found (Wkstn-80 577936 found as a process.name)
 - ~~Gather sample data for netscan plugin in order to improve processing logic for different output cases~~
 - Add function to include date/time field that sample was taken
 - Add further "known" and "unknown" items to tagger.py
