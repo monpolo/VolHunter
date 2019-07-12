@@ -238,7 +238,7 @@ def psxview(input_path, output_path):
 						d['psxview.deskthrd'] = data[8]
 						d['psxview.exittime'] = "null"
 					#Missing timestamp
-					else:
+					elif len(data) == 10:
 						d['process.offset.physical'] = data[0]
 						d['process.name'] = data[1]
 						d['process.pid'] = data[2]
@@ -250,7 +250,8 @@ def psxview(input_path, output_path):
 						d['psxview.session'] = data[8]
 						d['psxview.deskthrd'] = data[9]
 						d['psxview.exittime'] = "null"
-
+					else:
+						raise ValueError('Suspected bad scan result with incorrect number of fields')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null"}
