@@ -2,6 +2,9 @@
 .HELP
 Version # 1.2
 #>
+
+<# DEPRECATED FUNCTION
+### No longer utilize XLSX or CSV outputs
 Function Convert-VHElastic{
     foreach($excelFile in (Get-ChildItem .\GatheredLogs\*.xlsx).FullName){
         $csvName = ((($excelFile.Replace("GatheredLogs\","~")).Split("~"))[1]).Replace(".xlsx","")
@@ -25,7 +28,7 @@ Function Convert-VHElastic{
     }
     Remove-Item .\GatheredLogs\*-WORKING*.csv
 }
-
+#>
 Function Format-VHReport{
     try{
         $path = (pwd).Path
