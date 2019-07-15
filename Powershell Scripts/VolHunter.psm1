@@ -1,3 +1,7 @@
+<#
+.HELP
+Version # 1.2
+#>
 Function Convert-VHElastic{
     foreach($excelFile in (Get-ChildItem .\GatheredLogs\*.xlsx).FullName){
         $csvName = ((($excelFile.Replace("GatheredLogs\","~")).Split("~"))[1]).Replace(".xlsx","")
