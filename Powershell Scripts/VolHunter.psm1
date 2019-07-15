@@ -133,6 +133,16 @@ Function Format-VHReport{
             else{
                 $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 3
             }
+            #pslist
+            if((test-path "$path\GatheredLogs\pslist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\pslist-$bob.xlsx").length -gt 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 4
+            }
+            elseif((test-path "$path\GatheredLogs\pslist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\pslist-$bob.xlsx").length -eq 0)){
+                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 6
+            }
+            else{
+                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 3
+            }
     
             $bob
             $bob = ($wb.Sheets.Item("Sheet1").Cells.Item(($i + 1),1).Text)
