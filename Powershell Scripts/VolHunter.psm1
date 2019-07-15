@@ -608,25 +608,25 @@ Function Remove-VHIndices{
 
     Process{
         try{
-            $URI = $ElasticIP + ":" + $ElasticPort + "/malfind"
+            $URI = $ElasticIP + ":" + $ElasticPort + "/VolHunter"
             curl -Method DELETE $URI >$null
             Write-It -msg "Malfind index cleared" -type "Information"
 
-            $URI = $ElasticIP + ":" + $ElasticPort + "/psscan"
-            curl -Method DELETE $URI >$null
-            Write-It -msg "PSScan index cleared" -type "Information"
+            #$URI = $ElasticIP + ":" + $ElasticPort + "/psscan"
+            #curl -Method DELETE $URI >$null
+            #Write-It -msg "PSScan index cleared" -type "Information"
 
-            $URI = $ElasticIP + ":" + $ElasticPort + "/ssdt"
-            curl -Method DELETE $URI >$null
-            Write-It -msg "SSDT index cleared" -type "Information"
+            #$URI = $ElasticIP + ":" + $ElasticPort + "/ssdt"
+            #curl -Method DELETE $URI >$null
+            #Write-It -msg "SSDT index cleared" -type "Information"
 
-            $URI = $ElasticIP + ":" + $ElasticPort + "/cmdline"
-            curl -Method DELETE $URI >$null
-            Write-It -msg "CMDLine index cleared" -type "Information"
+            #$URI = $ElasticIP + ":" + $ElasticPort + "/cmdline"
+            #curl -Method DELETE $URI >$null
+            #Write-It -msg "CMDLine index cleared" -type "Information"
 
-            $URI = $ElasticIP + ":" + $ElasticPort + "/mutantscan"
-            curl -Method DELETE $URI >$null
-            Write-It -msg "MutantScan index cleared" -type "Information"
+            #$URI = $ElasticIP + ":" + $ElasticPort + "/mutantscan"
+            #curl -Method DELETE $URI >$null
+            #Write-It -msg "MutantScan index cleared" -type "Information"
         }
         catch{
             Write-Error -Message "$_ Remove-VHIndices failed"
