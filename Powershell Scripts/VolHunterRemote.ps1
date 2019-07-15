@@ -295,6 +295,9 @@ if($Plugins){
     if( ($Plugins -like "*timers*") -or ($Plugins -like "all") ){
         Run-Vol -plugin "timers" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
     }
+    if( ($Plugins -like "*pslist*") -or ($Plugins -like "all") ){
+        Run-Vol -plugin "pslist" -HR $HumanReadable -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+    }
 
     ### FIX TEMP FOLDER CHANGE ###
     $env:temp = $backupTemp
