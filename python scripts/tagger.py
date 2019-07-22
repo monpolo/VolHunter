@@ -76,3 +76,48 @@ def lineageInv(host, port):
         if (doc['_source']['process.name'].lower() == "winlogon.exe"):
             if (doc['_source']['process.parent.name'].lower() == "smss.exe"):
                 es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc": {"investigated":"true"}})
+
+def carRules(host, port):
+    es = Elasticsearch([host], port=port)
+    ### Update investigated field for standard process lineage
+    print "Filtering standard process lineage"
+    pslistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "pslist"}}})
+
+    for doc in pslistres['hits']['hits']:
+        #CAR-2019-04-003: Multiple Simultaneous Logons
+        if (doc['_source']['process.session'] >= 3):
+            if ("CAR-2019-04-003-Multiple-Logons" not in doc['_source']['tags']):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2019-04-003-Multiple-Logons"]
+                        }
+                    }
+                })
+        #CAR-2013-02-003: Processes Spawning CMD
+        if (doc['_source']['process.name'].lower() == "cmd.exe" or doc['_source']['process.name'].lower() == "powershell.exe"):
+            if (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2013-02-003-Processes-Spawning-CMD"]
+                        }
+                    }
+                })
+
+        #CAR-2013-03-001: Reg.exe spawned from command shell
+        if (doc['_source']['process.name'].lower() == "reg.exe"):
+            if (doc['_source']['process.parent.name'].lower() == "cmd.exe" or doc['_source']['process.parent.name'].lower() == "powershell.exe"):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2013-03-001-CMD-Spawns-Reg"]
+                        }
+                    }
+                })
