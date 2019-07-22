@@ -372,14 +372,15 @@ def dlllist(input_path, output_path):
 					d['dlllist.path'] = patharray
 					#Search for non system32 paths
 					for s in d['dlllist.path']:
-						if (("SYSTEM32" not in s.upper()) and ("NULL" not in s.upper()) and (".EXE" not in s.upper()) and (s != "") and ("WINSXS" not in s.upper())  and ("SYSWOW64" not in s.upper())  and ("WINDOWS\\MICROSOFT.NET" not in s.upper())  and ("WINDOWS\\ASSEMBLY" not in s.upper())):
-							tagarray.append("NonSys32DLL")
-							tagarray.append(s)
-							d['tags'] = tagarray
-						if (("C:" not in s.upper()) and (".EXE" not in s.upper()) and ("NULL" not in s.upper()) and (s != "")):
+						if (("C:" not in s.upper()) and ("WINDOWS" not in s.upper()) and (".EXE" not in s.upper()) and ("NULL" not in s.upper()) and (s != "")):
 							tagarray.append("InjectedDLL")
 							tagarray.append(s)
 							d['tags'] = tagarray
+						elif (("SYSTEM32" not in s.upper()) and ("NULL" not in s.upper()) and (".EXE" not in s.upper()) and (s != "") and ("WINSXS" not in s.upper())  and ("SYSWOW64" not in s.upper())  and ("WINDOWS\\MICROSOFT.NET" not in s.upper())  and ("WINDOWS\\ASSEMBLY" not in s.upper())):
+							tagarray.append("NonSys32DLL")
+							tagarray.append(s)
+							d['tags'] = tagarray
+
 					groupcount = 0
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
