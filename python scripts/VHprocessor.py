@@ -104,13 +104,15 @@ def post_process(elasticIP, elasticPort):
 
 correct_paths = 0
 while correct_paths != 3:
-    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Quit\n")
+    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules (SLOW)\n4) Quit\n")
     correct_paths = int(correct_paths)
     if correct_paths == 1:
         format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort)
     elif correct_paths == 2:
         post_process(elasticIP, elasticPort)
     elif correct_paths == 3:
+        tagger.carRules(elasticIP, elasticPort)
+    elif correct_paths == 4:
         print "Goodbye"
         exit()
     else:

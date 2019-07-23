@@ -85,6 +85,7 @@ def carRules(host, port):
 
     for doc in pslistres['hits']['hits']:
         #CAR-2019-04-003: Multiple Simultaneous Logons
+        #NOTE: Will likely need heavy tuning to the environment!
         if (doc['_source']['process.session'] >= 3):
             if ("CAR-2019-04-003-Multiple-Logons" not in doc['_source']['tags']):
                 es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
@@ -97,7 +98,7 @@ def carRules(host, port):
                     }
                 })
         #CAR-2013-02-003: Processes Spawning CMD
-        if (doc['_source']['process.name'].lower() == "cmd.exe" or doc['_source']['process.name'].lower() == "powershell.exe"):
+        if (doc['_source']['process.name'].lower() == "cmd.exe"):
             if (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
                 es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
                     "script" : {
@@ -118,6 +119,19 @@ def carRules(host, port):
                         "lang": "painless",
                         "params" : {
                             "tags" : ["CAR-2013-03-001-CMD-Spawns-Reg"]
+                        }
+                    }
+                })
+
+        #CAR-2014-04-003: Processes Spawning Powershell
+        if (doc['_source']['process.name'].lower() == "powershell.exe"):
+            if (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2014-04-003-Processes-Spawning-Powershell"]
                         }
                     }
                 })
