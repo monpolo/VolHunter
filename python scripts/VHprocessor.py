@@ -43,41 +43,20 @@ def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elas
     jsonformat.jsonparsing(process_folder, output_folder)
     print "Files formatted in json. Pausing for your review..."
     raw_input()
-    folder = process_folder
-    for the_file in os.listdir(folder):
-        file_path = os.path.join(folder, the_file)
+    for the_file in os.listdir(process_folder):
+        file_path = os.path.join(process_folder, the_file)
         try:
             if os.path.isfile(file_path):
                 os.unlink(file_path)
         except Exception as e:
             print(e)
 
-    #Send to elasticsearch
-    #elasticIP = "192.168.35.133"
-    #elasticPort = "9200"
-    correct_paths = 0
-    while correct_paths != 1:
-        print "Elastic IP " + elasticIP
-        print "Elastic Port " + elasticPort
-        correct_paths = raw_input("Are these correct?\n1: Yes\n2: Update IP\n3: Update port\n")
-        correct_paths = int(correct_paths)
-        if correct_paths == 2:
-    		elasticIP = raw_input("Enter new IP: ")
-        elif correct_paths == 3:
-            elasticPort = raw_input("Enter new port #: ")
-        elif correct_paths == 1:
-    		break
-        else:
-    		print "You entered an invalid selection"
     volindexer.main(elasticIP, elasticPort)
     print "Files shipped. Pausing for your review..."
     print "### Ensure you have built the index in Kibana before proceeding ###"
     raw_input()
 
-def post_process(elasticIP, elasticPort):
-    #Send to elasticsearch
-    #elasticIP = "192.168.35.133"
-    #elasticPort = "9200"
+def validate_address(elasticIP, elasticPort):
     correct_paths = 0
     while correct_paths != 1:
         print "Elastic IP " + elasticIP
@@ -89,27 +68,24 @@ def post_process(elasticIP, elasticPort):
         elif correct_paths == 3:
             elasticPort = raw_input("Enter new port #: ")
         elif correct_paths == 1:
-    		break
+    		return elasticIP, elasticPort;
         else:
     		print "You entered an invalid selection"
-    #Post process tagging
-    tagger.parentname(elasticIP, elasticPort)
-    print "Parent process names updated. Pausing for your review..."
-    raw_input()
-    tagger.lineageInv(elasticIP, elasticPort)
-    print "Set investigated for standard lineage. Pausing for your review..."
-    raw_input()
-    print "All actions complete.\nHappy hunting!"
-    #curl -X DELETE "192.168.35.133:9200/volhunter"
 
 correct_paths = 0
-while correct_paths != 3:
+elasticIP, elasticPort = validate_address(elasticIP, elasticPort)
+while correct_paths != 4:
     correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules (SLOW)\n4) Quit\n")
     correct_paths = int(correct_paths)
     if correct_paths == 1:
         format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort)
     elif correct_paths == 2:
-        post_process(elasticIP, elasticPort)
+        tagger.parentname(elasticIP, elasticPort)
+        print "Parent process names updated. Pausing for your review..."
+        raw_input()
+        tagger.lineageInv(elasticIP, elasticPort)
+        print "Set investigated for standard lineage. Pausing for your review..."
+        raw_input()
     elif correct_paths == 3:
         tagger.carRules(elasticIP, elasticPort)
     elif correct_paths == 4:
@@ -117,3 +93,5 @@ while correct_paths != 3:
         exit()
     else:
         print "Invalid selection"
+
+#curl -X DELETE "192.168.35.133:9200/volhunter"

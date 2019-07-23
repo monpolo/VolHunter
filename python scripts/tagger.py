@@ -79,12 +79,12 @@ def lineageInv(host, port):
 
 def carRules(host, port):
     es = Elasticsearch([host], port=port)
-    ### Update investigated field for standard process lineage
-    print "Filtering standard process lineage"
+    # CAR Analytics based on PSLIST output
+    print "Running PSLIST Analytics"
     pslistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "pslist"}}})
 
     for doc in pslistres['hits']['hits']:
-        #CAR-2019-04-003: Multiple Simultaneous Logons
+        #CAR-2013-02-008: Multiple Simultaneous Logons
         #NOTE: Will likely need heavy tuning to the environment!
         if (doc['_source']['process.session'] >= 3):
             if ("CAR-2019-04-003-Multiple-Logons" not in doc['_source']['tags']):
@@ -93,7 +93,7 @@ def carRules(host, port):
                         "source": "ctx._source.tags.addAll(params.tags)",
                         "lang": "painless",
                         "params" : {
-                            "tags" : ["CAR-2019-04-003-Multiple-Logons"]
+                            "tags" : ["CAR-2013-02-008-Multiple-Logons"]
                         }
                     }
                 })
@@ -135,3 +135,140 @@ def carRules(host, port):
                         }
                     }
                 })
+
+        #CAR-2013-07-002: RDP Receiver
+        if (doc['_source']['process.name'].lower() == "rdpclip.exe"):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-07-002-RDP-Receiver"]
+                    }
+                }
+            })
+
+        #CAR-2014-11-004: Remote Powershell Sessions
+        if (doc['_source']['process.name'].lower() == "powershell.exe"):
+            if (doc['_source']['process.parent.name'].lower() == "svchost.exe"):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2014-11-004-Remote-PS-Session"]
+                        }
+                    }
+                })
+
+    # CAR Analytics based on DLLLIST output
+    print "Running DLLLIST Analytics"
+    dlllistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "dlllist"}}})
+
+    for doc in dlllistres['hits']['hits']:
+        #CAR-2019-04-003: Squiblydoo - COM Scriptlets
+        if (doc['_source']['process.name'].lower() == "regsvr32.exe"):
+            if ("scrobj.dll" in doc['_source']['dlllist.path'].lower()):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2019-04-003-COM-Scriptlets"]
+                        }
+                    }
+                })
+
+    # CAR Analytics based on CMDLINE output
+    print "Running CMDLINE Analytics"
+    cmdlineres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "cmdline"}}})
+
+    for doc in cmdlineres['hits']['hits']:
+        #CAR-2013-05-002: Suspicious Run Locations - Recycle Bin
+        if ("recycler" in doc['_source']['process.arguments'].lower()):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-05-002-RecycleBin-Execution"]
+                    }
+                }
+            })
+        #CAR-2013-05-002: Suspicious Run Locations - SystemVolumeInformation
+        if ("systemvolumeinformation" in doc['_source']['process.arguments'].lower()):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-05-002-systemvolumeinformation-Execution"]
+                    }
+                }
+            })
+        #CAR-2013-05-002: Suspicious Run Locations - Win/Tasks
+        if ("tasks" in doc['_source']['process.arguments'].lower()):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-05-002-Windows-Tasks-Execution"]
+                    }
+                }
+            })
+        #CAR-2013-05-002: Suspicious Run Locations - Win/Debug
+        if ("debug" in doc['_source']['process.arguments'].lower()):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-05-002-Windows-Debug-Execution"]
+                    }
+                }
+            })
+
+        #CAR-2013-05-004: Execution with AT Jobs
+        if ("\\at.exe" in doc['_source']['process.arguments'].lower()):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-05-004-AT-Job-Execution"]
+                    }
+                }
+            })
+
+        #CAR-2013-08-001: Schtasks
+        a = ['/create', '/run', '/query', '/delete', '/change', '/end']
+        if (doc['_source']['process.name'].lower() == "schtasks.exe"):
+            if any(x in doc['_source']['process.arguments'].lower() for x in a):
+            #if ("\\at.exe" in doc['_source']['process.arguments'].lower()):
+                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                    "script" : {
+                        "source": "ctx._source.tags.addAll(params.tags)",
+                        "lang": "painless",
+                        "params" : {
+                            "tags" : ["CAR-2013-08-001-schtasks"]
+                        }
+                    }
+                })
+
+    # CAR Analytics based on NETSCAN output
+    print "Running NETSCAN Analytics"
+    netscanres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "netscan"}}})
+
+    for doc in netscanres['hits']['hits']:
+        #CAR-2013-07-002: RDP Initiator
+        if (doc['_source']['process.name'].lower() == "mstsc.exe"):
+            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={
+                "script" : {
+                    "source": "ctx._source.tags.addAll(params.tags)",
+                    "lang": "painless",
+                    "params" : {
+                        "tags" : ["CAR-2013-07-002-RDP-Initiator"]
+                    }
+                }
+            })
