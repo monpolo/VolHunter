@@ -272,6 +272,8 @@ def pslist(input_path, output_path, autoDiscard):
 					openlines += 1
 				else:
 					data = line.split()
+					if(len(data) == 7):
+						raise ValueError('Suspected false EPROCESS artifact')
 					d['process.offset.virtual'] = data[0]
 					d['process.name'] = data[1]
 					d['process.pid'] = data[2]
@@ -573,6 +575,8 @@ def netscan(input_path, output_path, autoDiscard):
 						#Likely a glitched scan result with no process.name
 						if data[4] == "CLOSED":
 							raise ValueError('Suspected bad scan result with false PID and no process name')
+						elif data[4] == "-1":
+							raise ValueError('Suspected closed UDP artifact')
 						d['net.state'] = "null"
 						d['process.pid'] = data[4]
 						d['process.name'] = data[5]
