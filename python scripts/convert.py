@@ -2,7 +2,22 @@ from os import listdir
 import os.path
 import json
 
-def cmdline(input_path, output_path):
+def printError(errLine, errMessage, f):
+	print errMessage
+	correctChoice = 0
+	while correctChoice != 1:
+		print errLine
+		errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
+		if (errorChoice == "d"):
+			correctChoice = 1
+			return
+		elif (errorChoice == "a"):
+			f.close()
+			exit()
+		else:
+			print "Invalid Input"
+
+def cmdline(input_path, output_path, autoDiscard):
 	delin = "************************************************************************"
 	CL = "Command line : "
 	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false"}
@@ -41,21 +56,12 @@ def cmdline(input_path, output_path):
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 
 	d['hostname'] = filename
 	output_file.write(json.dumps(d))
@@ -65,7 +71,7 @@ def cmdline(input_path, output_path):
 	output_file.close()
 	return;
 
-def ssdt(input_path, output_path):
+def ssdt(input_path, output_path, autoDiscard):
 	d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false"}
 
 	#File to write to
@@ -90,26 +96,17 @@ def ssdt(input_path, output_path):
 					output_file.write("\n")
 					d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false"}
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 	return;
 
-def malfind(input_path, output_path):
+def malfind(input_path, output_path, autoDiscard):
 	d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : []}
 	tracktwo = "null"
 	trackthree = "null"
@@ -172,26 +169,17 @@ def malfind(input_path, output_path):
 						else:
 							trackthree = trackthree + line.replace('"',"'").replace("[","{").replace("]","}")
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 	return;
 
-def psxview(input_path, output_path):
+def psxview(input_path, output_path, autoDiscard):
 	d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null"}
 
 	#File to write to
@@ -257,24 +245,15 @@ def psxview(input_path, output_path):
 					d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null"}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 
-def pslist(input_path, output_path):
+def pslist(input_path, output_path, autoDiscard):
 	d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -313,21 +292,12 @@ def pslist(input_path, output_path):
 					d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 
 def nonblank_lines(f):
@@ -336,7 +306,7 @@ def nonblank_lines(f):
 		if line:
 			yield line
 
-def dlllist(input_path, output_path):
+def dlllist(input_path, output_path, autoDiscard):
 	CL = "Command line :"
 	basearray = []
 	sizearray = []
@@ -448,21 +418,12 @@ def dlllist(input_path, output_path):
 									ind = ind + 1
 								patharray.append(pathval)
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 
 	d['hostname'] = filename
 	d['dlllist.base'] = basearray
@@ -487,7 +448,7 @@ def dlllist(input_path, output_path):
 	f_in.close()
 	output_file.close()
 
-def timers(input_path, output_path):
+def timers(input_path, output_path, autoDiscard):
 	d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null"}
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -517,25 +478,16 @@ def timers(input_path, output_path):
 					d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null"}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 
-def ldrmodules(input_path, output_path):
+def ldrmodules(input_path, output_path, autoDiscard):
 	d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null"}
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -573,25 +525,16 @@ def ldrmodules(input_path, output_path):
 					d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null"}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 
-def netscan(input_path, output_path):
+def netscan(input_path, output_path, autoDiscard):
 	d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null" }
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -641,19 +584,10 @@ def netscan(input_path, output_path):
 					d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null" }
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
