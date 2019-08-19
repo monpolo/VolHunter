@@ -7,7 +7,7 @@ import volindexer
 import tagger
 from os import listdir
 from os.path import isfile, join
-#Test comment
+
 vhfilepath = "./VHdata/gatheredlogs"
 process_folder = "./VHdata/converted/"
 output_folder = "./VHdata/output/"
@@ -88,6 +88,8 @@ while correct_paths != 4:
         raw_input()
     elif correct_paths == 3:
         tagger.carRules(elasticIP, elasticPort)
+        print "CAR Rules complete. Pausing for your review..."
+        raw_input()
     elif correct_paths == 4:
         print "Goodbye"
         exit()
