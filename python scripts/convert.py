@@ -2,10 +2,25 @@ from os import listdir
 import os.path
 import json
 
-def cmdline(input_path, output_path):
+def printError(errLine, errMessage, f):
+	print errMessage
+	correctChoice = 0
+	while correctChoice != 1:
+		print errLine
+		errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
+		if (errorChoice == "d"):
+			correctChoice = 1
+			return
+		elif (errorChoice == "a"):
+			f.close()
+			exit()
+		else:
+			print "Invalid Input"
+
+def cmdline(input_path, output_path, autoDiscard):
 	delin = "************************************************************************"
 	CL = "Command line : "
-	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false"}
+	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
 
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -27,7 +42,7 @@ def cmdline(input_path, output_path):
 					d['hostname'] = filename
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false"}
+					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
 				else:
 					if line.startswith(CL):
 						args = line.replace(CL,'')
@@ -41,32 +56,23 @@ def cmdline(input_path, output_path):
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 
 	d['hostname'] = filename
 	output_file.write(json.dumps(d))
 	output_file.write("\n")
-	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false"}
+	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
 	f.close()
 	output_file.close()
 	return;
 
-def ssdt(input_path, output_path):
-	d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false"}
+def ssdt(input_path, output_path, autoDiscard):
+	d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false", "tags" : ""}
 
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -88,29 +94,20 @@ def ssdt(input_path, output_path):
 					d['hostname'] = filename
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false"}
+					d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false", "tags" : ""}
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 	return;
 
-def malfind(input_path, output_path):
-	d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : []}
+def malfind(input_path, output_path, autoDiscard):
+	d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : ""}
 	tracktwo = "null"
 	trackthree = "null"
 	tagarray = []
@@ -149,7 +146,7 @@ def malfind(input_path, output_path):
 						tracktwo = "null"
 						trackthree = "null"
 
-						d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : []}
+						d = {"process.name" : "null" , "process.pid" : "null" , "malfind.address" : "null" , "hostname" : "null" , "plugin" : "malfind" , "investigated" : "false" , "malfind.ascii" : "null" , "malfind.assembly" : "null" , "tags" : ""}
 						continue
 				else:
 					if group_track == 0:
@@ -172,27 +169,18 @@ def malfind(input_path, output_path):
 						else:
 							trackthree = trackthree + line.replace('"',"'").replace("[","{").replace("]","}")
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 	return;
 
-def psxview(input_path, output_path):
-	d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null"}
+def psxview(input_path, output_path, autoDiscard):
+	d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null", "tags" : ""}
 
 	#File to write to
 	output_file = open(output_path,"a+")
@@ -254,28 +242,19 @@ def psxview(input_path, output_path):
 						raise ValueError('Suspected bad scan result with incorrect number of fields')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null"}
+					d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null", "tags" : ""}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 
-def pslist(input_path, output_path):
-	d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
+def pslist(input_path, output_path, autoDiscard):
+	d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null", "tags" : ""}
 	#File to write to
 	output_file = open(output_path,"a+")
 	#Filename of input file
@@ -293,6 +272,8 @@ def pslist(input_path, output_path):
 					openlines += 1
 				else:
 					data = line.split()
+					if(len(data) == 7):
+						raise ValueError('Suspected false EPROCESS artifact')
 					d['process.offset.virtual'] = data[0]
 					d['process.name'] = data[1]
 					d['process.pid'] = data[2]
@@ -310,24 +291,15 @@ def pslist(input_path, output_path):
 						d['process.exittime'] = "null"
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null"}
+					d = {"process.offset.virtual" : "null" , "process.name" : "null" , "process.pid" : "null" , "process.ppid" : "null" , "hostname" : "null" , "plugin" : "pslist" , "investigated" : "false" , "process.threads" : "null" , "process.handles" : "null" , "process.session" : "null" , "process.wow64" : "null" , "process.starttime" : "null" , "process.exittime" : "null", "process.parent.name" : "null", "tags" : ""}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 
 def nonblank_lines(f):
@@ -336,7 +308,7 @@ def nonblank_lines(f):
 		if line:
 			yield line
 
-def dlllist(input_path, output_path):
+def dlllist(input_path, output_path, autoDiscard):
 	CL = "Command line :"
 	basearray = []
 	sizearray = []
@@ -345,7 +317,7 @@ def dlllist(input_path, output_path):
 	patharray = []
 	tagarray = []
 
-	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : []}
+	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : ""}
 	#File to write to
 	output_file = open(output_path,"a+")
 	#Filename of input file
@@ -384,7 +356,7 @@ def dlllist(input_path, output_path):
 					groupcount = 0
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : []}
+					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "dlllist" , "investigated" : "false" , "dlllist.base" : "null" , "dlllist.size" : "null" , "dlllist.loadcount" : "null" , "dlllist.loadtime" : "null" , "dlllist.path" : "null" , "tags" : ""}
 					basearray = []
 					sizearray = []
 					loadcountarray = []
@@ -448,21 +420,12 @@ def dlllist(input_path, output_path):
 									ind = ind + 1
 								patharray.append(pathval)
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 
 	d['hostname'] = filename
 	d['dlllist.base'] = basearray
@@ -487,8 +450,8 @@ def dlllist(input_path, output_path):
 	f_in.close()
 	output_file.close()
 
-def timers(input_path, output_path):
-	d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null"}
+def timers(input_path, output_path, autoDiscard):
+	d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null", "tags" : ""}
 	#File to write to
 	output_file = open(output_path,"a+")
 	#Filename of input file
@@ -514,29 +477,20 @@ def timers(input_path, output_path):
 					d['hostname'] = filename
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null"}
+					d = {"timer.offset.virtual" : "null" , "timer.duetime" : "null" , "timer.period" : "null" , "timer.signaled" : "null" , "hostname" : "null" , "plugin" : "timers" , "investigated" : "false" , "timer.routine" : "null" , "timer.module" : "null", "tags" : ""}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 
-def ldrmodules(input_path, output_path):
-	d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null"}
+def ldrmodules(input_path, output_path, autoDiscard):
+	d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null", "tags" : ""}
 	#File to write to
 	output_file = open(output_path,"a+")
 	#Filename of input file
@@ -570,29 +524,20 @@ def ldrmodules(input_path, output_path):
 
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null"}
+					d = {"process.pid" : "null" , "process.name" : "null" , "module.address.virtual" : "null" , "module.inload" : "null" , "hostname" : "null" , "plugin" : "ldrmodules" , "investigated" : "false" , "module.ininit" : "null" , "module.inmem" : "null" , "module.path" : "null", "tags" : ""}
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
 	output_file.close()
 
-def netscan(input_path, output_path):
-	d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null" }
+def netscan(input_path, output_path, autoDiscard):
+	d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null", "tags" : "" }
 	#File to write to
 	output_file = open(output_path,"a+")
 	#Filename of input file
@@ -630,6 +575,8 @@ def netscan(input_path, output_path):
 						#Likely a glitched scan result with no process.name
 						if data[4] == "CLOSED":
 							raise ValueError('Suspected bad scan result with false PID and no process name')
+						elif data[4] == "-1":
+							raise ValueError('Suspected closed UDP artifact')
 						d['net.state'] = "null"
 						d['process.pid'] = data[4]
 						d['process.name'] = data[5]
@@ -638,22 +585,13 @@ def netscan(input_path, output_path):
 						raise ValueError('False PID found')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
-					d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null" }
+					d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null", "tags" : "" }
 					continue
 			except Exception as e:
-				print (e)
-				correctChoice = 0
-				while correctChoice != 1:
+				if(autoDiscard == 1):
+					print e
 					print line
-					#print d
-					errorChoice = raw_input("Error, [d]iscard data and continue, [a]bort: ")
-					if errorChoice == "d":
-						correctChoice = 1
-						continue
-					elif errorChoice == "a":
-						correctChoice = 1
-						f.close()
-						exit()
-					else:
-						print "Invalid Input"
+					continue
+				else:
+					printError(line, e, f)
 	f.close()
