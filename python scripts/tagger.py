@@ -77,6 +77,17 @@ def lineageInv(host, port):
             if (doc['_source']['process.parent.name'].lower() == "smss.exe"):
                 es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc": {"investigated":"true"}})
 
+def carUpdate(tag, es, doc):
+    #print "Found " + tag
+    tagArray = []
+    tagArray.append(tag)
+    if(doc['_source']['tags'] != ""):
+        tagArray.append(doc['_source']['tags'])
+    if tag not in doc['_source']['tags']:
+        #print "Adding tag " + tag
+        es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
+        es.indices.refresh(index="volhunter")
+
 def carRules(host, port):
     es = Elasticsearch([host], port=port)
     # CAR Analytics based on PSLIST output
@@ -85,53 +96,24 @@ def carRules(host, port):
 
     for doc in pslistres['hits']['hits']:
         #CAR-2013-02-003: Processes Spawning CMD
-        if (doc['_source']['process.name'].lower() == "cmd.exe"):
-            if (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
-                tagArray = []
-                tagArray.append("CAR-2013-02-003-Processes-Spawning-CMD")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+        if (doc['_source']['process.name'].lower() == "cmd.exe") and (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
+            carUpdate("CAR-2013-02-003-Processes-Spawning-CMD", es, doc)
 
         #CAR-2013-03-001: Reg.exe spawned from command shell
-        if (doc['_source']['process.name'].lower() == "reg.exe"):
-            if (doc['_source']['process.parent.name'].lower() == "cmd.exe" or doc['_source']['process.parent.name'].lower() == "powershell.exe"):
-                tagArray = []
-                tagArray.append("CAR-2013-03-001-CMD-Spawns-Reg")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+        if (doc['_source']['process.name'].lower() == "reg.exe") and (doc['_source']['process.parent.name'].lower() == "cmd.exe" or doc['_source']['process.parent.name'].lower() == "powershell.exe"):
+            carUpdate("CAR-2013-03-001-CMD-Spawns-Reg", es, doc)
 
         #CAR-2014-04-003: Processes Spawning Powershell
-        if (doc['_source']['process.name'].lower() == "powershell.exe"):
-            if (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
-                tagArray = []
-                tagArray.append("CAR-2014-04-003-Processes-Spawning-Powershell")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+        if (doc['_source']['process.name'].lower() == "powershell.exe") and (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
+            carUpdate("CAR-2014-04-003-Processes-Spawning-Powershell", es, doc)
 
         #CAR-2013-07-002: RDP Receiver
         if (doc['_source']['process.name'].lower() == "rdpclip.exe"):
-            tagArray = []
-            tagArray.append("CAR-2013-07-002-RDP-Receiver")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-07-002-RDP-Receiver", es, doc)
 
         #CAR-2014-11-004: Remote Powershell Sessions
-        if (doc['_source']['process.name'].lower() == "powershell.exe"):
-            if (doc['_source']['process.parent.name'].lower() == "svchost.exe"):
-                tagArray = []
-                tagArray.append("CAR-2014-11-004-Remote-PS-Session")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+        if (doc['_source']['process.name'].lower() == "powershell.exe") and (doc['_source']['process.parent.name'].lower() == "svchost.exe"):
+            carUpdate("CAR-2014-11-004-Remote-PS-Session", es, doc)
 
     # CAR Analytics based on DLLLIST output
     print "Running DLLLIST Analytics"
@@ -139,14 +121,8 @@ def carRules(host, port):
 
     for doc in dlllistres['hits']['hits']:
         #CAR-2019-04-003: Squiblydoo - COM Scriptlets
-        if (doc['_source']['process.name'].lower() == "regsvr32.exe"):
-            if ("scrobj.dll" in doc['_source']['dlllist.path'].lower()):
-                tagArray = []
-                tagArray.append("CAR-2019-04-003-COM-Scriptlets")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+        if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in doc['_source']['dlllist.path'].lower()):
+            carUpdate("CAR-2019-04-003-COM-Scriptlets", es, doc)
 
     # CAR Analytics based on CMDLINE output
     print "Running CMDLINE Analytics"
@@ -155,59 +131,29 @@ def carRules(host, port):
     for doc in cmdlineres['hits']['hits']:
         #CAR-2013-05-002: Suspicious Run Locations - Recycle Bin
         if ("recycler" in doc['_source']['process.arguments'].lower()):
-            tagArray = []
-            tagArray.append("CAR-2013-05-002-RecycleBin-Execution")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-05-002-RecycleBin-Execution", es, doc)
 
         #CAR-2013-05-002: Suspicious Run Locations - SystemVolumeInformation
         if ("systemvolumeinformation" in doc['_source']['process.arguments'].lower()):
-            tagArray = []
-            tagArray.append("CAR-2013-05-002-systemvolumeinformation-Execution")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-05-002-systemvolumeinformation-Execution", es, doc)
 
         #CAR-2013-05-002: Suspicious Run Locations - Win/Tasks
         if ("tasks" in doc['_source']['process.arguments'].lower()):
-            tagArray = []
-            tagArray.append("CAR-2013-05-002-Windows-Tasks-Execution")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-05-002-Windows-Tasks-Execution", es, doc)
 
         #CAR-2013-05-002: Suspicious Run Locations - Win/Debug
         if ("debug" in doc['_source']['process.arguments'].lower()):
-            tagArray = []
-            tagArray.append("CAR-2013-05-002-Windows-Debug-Execution")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-05-002-Windows-Debug-Execution", es, doc)
 
         #CAR-2013-05-004: Execution with AT Jobs
         if ("\\at.exe" in doc['_source']['process.arguments'].lower()):
-            tagArray = []
-            tagArray.append("CAR-2013-05-004-AT-Job-Execution")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-05-004-AT-Job-Execution", es, doc)
 
         #CAR-2013-08-001: Schtasks
         a = ['/create', '/run', '/query', '/delete', '/change', '/end']
         if (doc['_source']['process.name'].lower() == "schtasks.exe"):
             if any(x in doc['_source']['process.arguments'].lower() for x in a):
-                tagArray = []
-                tagArray.append("CAR-2013-08-001-schtasks")
-                if (doc['_source']['tags'] != ""):
-                    tagArray.append(doc['_source']['tags'])
-                es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-                es.indices.refresh(index="volhunter")
+                carUpdate("CAR-2013-08-001-schtasks", es, doc)
 
     # CAR Analytics based on NETSCAN output
     print "Running NETSCAN Analytics"
@@ -216,9 +162,4 @@ def carRules(host, port):
     for doc in netscanres['hits']['hits']:
         #CAR-2013-07-002: RDP Initiator
         if (doc['_source']['process.name'].lower() == "mstsc.exe"):
-            tagArray = []
-            tagArray.append("CAR-2013-07-002-RDP-Initiator")
-            if (doc['_source']['tags'] != ""):
-                tagArray.append(doc['_source']['tags'])
-            es.update(index="volhunter", doc_type="doc", id=doc['_id'], body={"doc" : {"tags":tagArray} })
-            es.indices.refresh(index="volhunter")
+            carUpdate("CAR-2013-07-002-RDP-Initiator", es, doc)

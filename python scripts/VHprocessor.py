@@ -11,7 +11,7 @@ from os.path import isfile, join
 vhfilepath = "./VHdata/gatheredlogs"
 process_folder = "./VHdata/converted/"
 output_folder = "./VHdata/output/"
-elasticIP = "192.168.35.133"
+elasticIP = "192.168.131.128"
 elasticPort = "9200"
 
 def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort):
