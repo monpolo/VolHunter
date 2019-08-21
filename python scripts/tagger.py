@@ -20,6 +20,16 @@ def parentname(host, port):
                 es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name":bob['_source']['process.name']}})
             if (ppidres['hits']['total'] == 0):
                 es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": "NULL"}})
+            #Add this tag into cmdline documents
+            searchpid = doc['_source']['process.pid']
+            cmdres = es.search(index="volhunter", body={ "query": {"bool": {"must": [{"match": {"plugin": "cmdline"} }, {"match": {"process.pid": searchpid} }, {"match":{"hostname": searchedhostname}} ]} } })
+            safetycount = 0
+            for cmddoc in cmdres['hits']['hits']:
+                if safetycount == 0:
+                    es.update(index="volhunter", doc_type="doc", id=cmddoc["_id"], body={"doc": {"process.parent.name": doc['_source']['process.parent.name']}})
+                    safetycount += 1
+
+
 
 def lineageInv(host, port):
     es = Elasticsearch([host], port=port)
@@ -115,6 +125,10 @@ def carRules(host, port):
         if (doc['_source']['process.name'].lower() == "powershell.exe") and (doc['_source']['process.parent.name'].lower() == "svchost.exe"):
             carUpdate("CAR-2014-11-004-Remote-PS-Session", es, doc)
 
+        #CAR-2014-12-001: Remotely Launched EXE via WMI
+        if (doc['_source']['process.parent.name'].lower() == "wmiprvse.exe"):
+            carUpdate("CAR-2014-12-001-Remote-Execution-via-WMI", es, doc)
+
     # CAR Analytics based on DLLLIST output
     print "Running DLLLIST Analytics"
     dlllistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "dlllist"}}})
@@ -155,6 +169,13 @@ def carRules(host, port):
             if any(x in doc['_source']['process.arguments'].lower() for x in a):
                 carUpdate("CAR-2013-08-001-schtasks", es, doc)
 
+        #CAR-2019-04-002.1 Generic Regsvr32
+        if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("regsvr32.exe" not in (doc['_source']['process.arguments']).lower()):
+            carUpdate("CAR-2019-04-002.1-Generic-Regsvr32", es, doc)
+        #CAR-2019-04-002.2 Regsvr32 odd children
+        if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() != "regsvr32.exe") and (doc['_source']['process.name'].lower() != "werfault.exe") and (doc['_source']['process.name'].lower() != "wevtutil.exe"):
+            carUpdate("CAR-2019-04-002.2-Regsvr32-Odd-Children", es, doc)
+
     # CAR Analytics based on NETSCAN output
     print "Running NETSCAN Analytics"
     netscanres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "netscan"}}})
@@ -163,3 +184,12 @@ def carRules(host, port):
         #CAR-2013-07-002: RDP Initiator
         if (doc['_source']['process.name'].lower() == "mstsc.exe"):
             carUpdate("CAR-2013-07-002-RDP-Initiator", es, doc)
+
+    # CAR Analytics based on LDRMODULES output
+    print "Running LDRMODULES Analytics"
+    ldrmodulesres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "ldrmodules"}}})
+
+    for doc in ldrmodulesres['hits']['hits']:
+            #CAR-2019-04-002.3 Regsvr32 unsigned DLLs
+            if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("program files" not in doc['_source']['module.path'].lower()) and ("windows" not in doc['_source']['module.path'].lower()):
+                carUpdate("CAR-2019-04-002.3-Regsvr32-Unsigned-DLLs", es, doc)
