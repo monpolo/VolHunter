@@ -7,6 +7,7 @@ import volindexer
 import tagger
 from os import listdir
 from os.path import isfile, join
+from elasticsearch import Elasticsearch
 
 vhfilepath = "./VHdata/gatheredlogs"
 process_folder = "./VHdata/converted/"
@@ -75,7 +76,7 @@ def validate_address(elasticIP, elasticPort):
 correct_paths = 0
 elasticIP, elasticPort = validate_address(elasticIP, elasticPort)
 while correct_paths != 4:
-    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules (SLOW)\n4) Quit\n")
+    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules (SLOW)\n4) Quit\n999) Delete data from VolHunter Index CAN'T UNDO\n")
     correct_paths = int(correct_paths)
     if correct_paths == 1:
         format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort)
@@ -93,7 +94,8 @@ while correct_paths != 4:
     elif correct_paths == 4:
         print "Goodbye"
         exit()
+    elif correct_paths == 999:
+        es = Elasticsearch([elasticIP], port=elasticPort)
+        es.indices.delete(index='volhunter', ignore=[400, 404])
     else:
         print "Invalid selection"
-
-#curl -X DELETE "192.168.35.133:9200/volhunter"
