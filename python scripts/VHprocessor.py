@@ -76,7 +76,7 @@ def validate_address(elasticIP, elasticPort):
 correct_paths = 0
 elasticIP, elasticPort = validate_address(elasticIP, elasticPort)
 while correct_paths != 4:
-    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules (SLOW)\n4) Quit\n999) Delete data from VolHunter Index CAN'T UNDO\n")
+    correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules\n4) Quit\n999) Delete data from VolHunter Index CAN'T UNDO\n")
     correct_paths = int(correct_paths)
     if correct_paths == 1:
         format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort)

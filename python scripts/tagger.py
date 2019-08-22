@@ -1,13 +1,15 @@
 import json
 from elasticsearch import Elasticsearch
+import elasticsearch.helpers
 
 def parentname(host, port):
     es = Elasticsearch([host], port=port)
 
     ### Update parent.process.name to pslist items
-    res = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "pslist"}}})
-    print("%d PSLIST entries to update parent.process.name" % res['hits']['total'])
-    for doc in res['hits']['hits']:
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "pslist"}}})
+    res = list(results)
+    print("%d PSLIST entries to update parent.process.name" % len(res))
+    for doc in res:
         if (doc['_source']['process.name'] != "System"):
             searchedppid = doc['_source']['process.ppid']
             searchedhostname = doc['_source']['hostname']
@@ -18,9 +20,10 @@ def parentname(host, port):
             if (ppidres['hits']['total'] == 0):
                 es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": "NULL"}})
 
-    res = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "cmdline"}}})
-    print("%d CMDLINE entries to update parent.process.name" % res['hits']['total'])
-    for doc in res['hits']['hits']:
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "cmdline"}}})
+    res = list(results)
+    print("%d CMDLINE entries to update parent.process.name" % len(res))
+    for doc in res:
         searchedpid = doc['_source']['process.pid']
         searchedhostname = doc['_source']['hostname']
         searchedname = doc['_source']['process.name']
@@ -32,9 +35,10 @@ def lineageInv(host, port):
     es = Elasticsearch([host], port=port)
     ### Update investigated field for standard process lineage
     print "Filtering standard process lineage"
-    res = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "pslist"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "pslist"}}})
+    res = list(results)
 
-    for doc in res['hits']['hits']:
+    for doc in res:
         #Userinit -> Explorer
         if (doc['_source']['process.name'].lower() == "explorer.exe"):
             if (doc['_source']['process.parent.name'].lower() == "userinit.exe"):
@@ -97,9 +101,10 @@ def carRules(host, port):
     es = Elasticsearch([host], port=port)
     # CAR Analytics based on PSLIST output
     print "Running PSLIST Analytics"
-    pslistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "pslist"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "pslist"}}})
+    pslistres = list(results)
 
-    for doc in pslistres['hits']['hits']:
+    for doc in pslistres:
         #CAR-2013-02-003: Processes Spawning CMD
         if (doc['_source']['process.name'].lower() == "cmd.exe") and (doc['_source']['process.parent.name'].lower() != "explorer.exe"):
             carUpdate("CAR-2013-02-003-Processes-Spawning-CMD", es, doc)
@@ -126,18 +131,20 @@ def carRules(host, port):
 
     # CAR Analytics based on DLLLIST output
     print "Running DLLLIST Analytics"
-    dlllistres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "dlllist"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "dlllist"}}})
+    dlllistres = list(results)
 
-    for doc in dlllistres['hits']['hits']:
+    for doc in dlllistres:
         #CAR-2019-04-003: Squiblydoo - COM Scriptlets
         if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in doc['_source']['dlllist.path'].lower()):
             carUpdate("CAR-2019-04-003-COM-Scriptlets", es, doc)
 
     # CAR Analytics based on CMDLINE output
     print "Running CMDLINE Analytics"
-    cmdlineres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "cmdline"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "cmdline"}}})
+    cmdlineres = list(results)
 
-    for doc in cmdlineres['hits']['hits']:
+    for doc in cmdlineres:
         #CAR-2013-05-002: Suspicious Run Locations - Recycle Bin
         if ("recycler" in doc['_source']['process.arguments'].lower()):
             carUpdate("CAR-2013-05-002-RecycleBin-Execution", es, doc)
@@ -174,18 +181,20 @@ def carRules(host, port):
 
     # CAR Analytics based on NETSCAN output
     print "Running NETSCAN Analytics"
-    netscanres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "netscan"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "netscan"}}})
+    netscanres = list(results)
 
-    for doc in netscanres['hits']['hits']:
+    for doc in netscanres:
         #CAR-2013-07-002: RDP Initiator
         if (doc['_source']['process.name'].lower() == "mstsc.exe"):
             carUpdate("CAR-2013-07-002-RDP-Initiator", es, doc)
 
     # CAR Analytics based on LDRMODULES output
     print "Running LDRMODULES Analytics"
-    ldrmodulesres = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "ldrmodules"}}})
+    results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "ldrmodules"}}})
+    ldrmodulesres = list(results)
 
-    for doc in ldrmodulesres['hits']['hits']:
+    for doc in ldrmodulesres:
             #CAR-2019-04-002.3 Regsvr32 unsigned DLLs
             if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("program files" not in doc['_source']['module.path'].lower()) and ("windows" not in doc['_source']['module.path'].lower()):
                 carUpdate("CAR-2019-04-002.3-Regsvr32-Unsigned-DLLs", es, doc)
