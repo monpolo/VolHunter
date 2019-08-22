@@ -18,7 +18,7 @@ A tool for volatility analysis at scale.
 - ~~Gather sample data for netscan plugin in order to improve processing logic for different output cases~~
 - Add function to include date/time field that sample was taken
 - Add further "known" and "unknown" items to tagger.py
-     - ~~Process lineage standards
+     - ~~Process lineage standards~~
      - Tag non-standard DLLs per process
      - Rules for psxview output
      - ~~When tagging a "NonSys32DLL" include that path in the tags array~~
