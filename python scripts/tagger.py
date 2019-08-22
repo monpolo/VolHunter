@@ -32,7 +32,20 @@ def parentname(host, port):
             #        es.update(index="volhunter", doc_type="doc", id=cmddoc["_id"], body={"doc": {"process.parent.name": bob['_source']['process.name']}})
             #        safetycount += 1
 
-
+    res = es.search(index="volhunter", body={'size' : 10000, "query": {"match": {"plugin": "cmdline"}}})
+    print("%d CMDLINE entries to update parent.process.name" % res['hits']['total'])
+    for doc in res['hits']['hits']:
+        searchedpid = doc['_source']['process.pid']
+        searchedhostname = doc['_source']['hostname']
+        searchedname = doc['_source']['process.name']
+        ppidres = es.search(index="volhunter", body={"query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedpid} }, {"match":{"hostname": searchedhostname}}, {"match":{"process.name": searchedname}} ] } } })
+        #print("%d TOTAL HITS" % ppidres['hits']['total'])
+        safetycount = 0
+        for psdoc in ppidres['hits']['hits']:
+            if safetycount == 0:
+                #print "ADD PPID TO CMDLINE"
+                es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": psdoc['_source']['process.parent.name']}})
+                safetycount += 1
 
 def lineageInv(host, port):
     es = Elasticsearch([host], port=port)
@@ -175,11 +188,12 @@ def carRules(host, port):
         #CAR-2019-04-002.1 Generic Regsvr32
         #print "checking pid " + doc['_source']['process.pid']
         #print "hostname " + doc['_source']['hostname']
-        #if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("regsvr32.exe" not in (doc['_source']['process.arguments']).lower()):
-        #    carUpdate("CAR-2019-04-002.1-Generic-Regsvr32", es, doc)
-        #CAR-2019-04-002.2 Regsvr32 odd children
-        #if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() != "regsvr32.exe") and (doc['_source']['process.name'].lower() != "werfault.exe") and (doc['_source']['process.name'].lower() != "wevtutil.exe"):
-        #    carUpdate("CAR-2019-04-002.2-Regsvr32-Odd-Children", es, doc)
+        if (doc['_source']['process.pid'].lower() != "null"):
+            if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("regsvr32.exe" not in (doc['_source']['process.arguments']).lower()):
+                carUpdate("CAR-2019-04-002.1-Generic-Regsvr32", es, doc)
+                #CAR-2019-04-002.2 Regsvr32 odd children
+            if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() != "regsvr32.exe") and (doc['_source']['process.name'].lower() != "werfault.exe") and (doc['_source']['process.name'].lower() != "wevtutil.exe"):
+                carUpdate("CAR-2019-04-002.2-Regsvr32-Odd-Children", es, doc)
 
     # CAR Analytics based on NETSCAN output
     print "Running NETSCAN Analytics"

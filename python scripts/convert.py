@@ -67,9 +67,10 @@ def cmdline(input_path, output_path, autoDiscard):
 					printError(line, e, f)
 
 	d['hostname'] = filename
-	output_file.write(json.dumps(d))
-	output_file.write("\n")
-	d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
+	if d['process.pid'] != "null":
+		output_file.write(json.dumps(d))
+		output_file.write("\n")
+		d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
 	f.close()
 	output_file.close()
 	return;
@@ -277,6 +278,8 @@ def pslist(input_path, output_path, autoDiscard):
 					data = line.split()
 					if(len(data) == 7):
 						raise ValueError('Suspected false EPROCESS artifact')
+					if not (data[2].isdigit()):
+						raise ValueError('Corrupted entry')
 					d['process.offset.virtual'] = data[0]
 					d['process.name'] = data[1]
 					d['process.pid'] = data[2]
