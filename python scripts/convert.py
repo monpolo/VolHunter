@@ -53,6 +53,9 @@ def cmdline(input_path, output_path, autoDiscard):
 						#print proc
 						if proc[0].rstrip() == "pid:":
 							raise ValueError('Suspected no process name found')
+						if int(proc[2].rstrip()) > 1000000:
+							print "TOO HIGH OF PID " + proc[2].rstrip()
+							raise ValueError('PID too high')
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
 			except Exception as e:
