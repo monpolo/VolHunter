@@ -11,7 +11,7 @@ def parentname(host, port):
         if (doc['_source']['process.name'] != "System"):
             searchedppid = doc['_source']['process.ppid']
             searchedhostname = doc['_source']['hostname']
-            ppidres = es.search(index="volhunter", body={ "query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedppid} }, {"match":{"hostname": searchedhostname}} ] } } })
+            ppidres = es.search(index="volhunter", body={ "query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedppid} }, {"match":{"hostname.keyword": searchedhostname}} ] } } })
             #bob['_source']['process.name'] is now our doc['_source']['parent.process.name']
             for bob in ppidres['hits']['hits']:
                 es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name":bob['_source']['process.name']}})
@@ -24,13 +24,9 @@ def parentname(host, port):
         searchedpid = doc['_source']['process.pid']
         searchedhostname = doc['_source']['hostname']
         searchedname = doc['_source']['process.name']
-        ppidres = es.search(index="volhunter", body={"query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedpid} }, {"match":{"hostname": searchedhostname}}, {"match":{"process.name": searchedname}} ] } } })
-        safetycount = 0
+        ppidres = es.search(index="volhunter", body={"query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedpid} }, {"match":{"hostname.keyword": searchedhostname}}, {"match":{"process.name.keyword": searchedname}} ] } } })
         for psdoc in ppidres['hits']['hits']:
-            if safetycount == 0:
-                #print "ADD PPID TO CMDLINE"
-                es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": psdoc['_source']['process.parent.name']}})
-                safetycount += 1
+            es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": psdoc['_source']['process.parent.name']}})
 
 def lineageInv(host, port):
     es = Elasticsearch([host], port=port)
