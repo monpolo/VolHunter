@@ -30,6 +30,8 @@ def parentname(host, port):
         ppidres = es.search(index="volhunter", body={"query": {"bool": {"must": [{"match": {"plugin": "pslist"} }, {"match": {"process.pid": searchedpid} }, {"match":{"hostname.keyword": searchedhostname}}, {"match":{"process.name.keyword": searchedname}} ] } } })
         for psdoc in ppidres['hits']['hits']:
             es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": psdoc['_source']['process.parent.name']}})
+        if ppidres['hits']['total'] == 0:
+            es.update(index="volhunter", doc_type="doc", id=doc["_id"], body={"doc": {"process.parent.name": "NULL"}})
 
 def lineageInv(host, port):
     es = Elasticsearch([host], port=port)
@@ -136,7 +138,7 @@ def carRules(host, port):
 
     for doc in dlllistres:
         #CAR-2019-04-003: Squiblydoo - COM Scriptlets
-        if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in doc['_source']['dlllist.path'].lower()):
+        if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in (name.lower() for name in doc['_source']['dlllist.path'])):
             carUpdate("CAR-2019-04-003-COM-Scriptlets", es, doc)
 
     # CAR Analytics based on CMDLINE output

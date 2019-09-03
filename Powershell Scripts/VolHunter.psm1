@@ -3,32 +3,6 @@
 Version # 1.2
 #>
 
-<# DEPRECATED FUNCTION
-### No longer utilize XLSX or CSV outputs
-Function Convert-VHElastic{
-    foreach($excelFile in (Get-ChildItem .\GatheredLogs\*.xlsx).FullName){
-        $csvName = ((($excelFile.Replace("GatheredLogs\","~")).Split("~"))[1]).Replace(".xlsx","")
-        Write-It -msg "Processing $csvName" -type Information #PUT ME OUT TO VHLOG
-        $Excel = New-Object -ComObject Excel.Application
-        $Excel.Visible = $false
-        $Excel.DisplayAlerts = $false
-        $wb = $Excel.Workbooks.Open($excelFile)
-        $wd = (pwd).Path
-        foreach($ws in $wb.Worksheets){
-            $ws.SaveAs("$wd\GatheredLogs\$csvName-WORKINGFILE.csv",6)
-        }
-        $Excel.Quit()
-    }
-
-    foreach($csvFile in (Get-ChildItem .\GatheredLogs\*.csv).FullName){
-        $compName = ((($csvFile.Replace("GatheredLogs\","~")).Replace("-WORKINGFILE.csv","~")).Split("~"))[1]
-        $splitter = $compName.IndexOf("-") + 1
-        $compName2 = $compName.substring($splitter)
-        Import-Csv $csvFile | Select-Object *,@{Name='Hostname';Expression={"$compName2"}},@{Name='Investigated';Expression={'false'}} | Export-Csv ".\GatheredLogs\$compName.csv" -NoTypeInformation
-    }
-    Remove-Item .\GatheredLogs\*-WORKING*.csv
-}
-#>
 Function Format-VHReport{
     try{
         $path = (pwd).Path
@@ -143,7 +117,7 @@ Function Format-VHReport{
             else{
                 $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 3
             }
-    
+
             $bob
             $bob = ($wb.Sheets.Item("Sheet1").Cells.Item(($i + 1),1).Text)
             if($bob -like $null){ break}
@@ -214,60 +188,60 @@ Just for fun. Credit where credit is due.
 PS> Get-VHCreator
 #>
     Process{
-        Write-Host "                                                                                                                       
-                                                                                     .,*//((((//**..                   
-                                                                                .,/(((/***,,,,,**/(((/,                
-                                                  .,*/((######(//*,.       .,((/**,,.,,,,,,......,...,,/(/             
-                                           .,(#%%%%%%%%%#*,,,,,,,*/(#%%((((/*,,,,,,,,*/(##%%%%%#((*,,..,.,/(*          
-                                      ./(%%%%%%%%%%%%%%%#*,,,,,,,.,,.,,,,,,,,,,,*(%%%%%%%%%%%%%%%%%%%#(,,..,,(*        
-                                    ,(#%%%%%%%%%%%%%%%%%#(***,,,,,,,...,,,,,,*/#%%%%%#%%%%%%###%%%%%#%%(*,...*(,       
-                                .*%%%%%%%%%%%%%%%%###(/#%%%%%%%%%%%##/*,,,(#%%###%%%%%%%%%%###%%%%%####%%%*,..,(/.     
-                             ,/%%%%%%%%%%%%%#//******(#%%%%%%%%%%%%%%%%%%%%##((**,......,*((#%%%%%##%%%%%%%(*..,((     
-                          ./#%%%%%%%%%%#(/**********/%%%%%%%%%%%%%%%%%%#(/.             .*,  .,%&%%%%%%%%%%%#,,.,(*    
-                         ,%%%%%%%%%%%(/*************/#%%%%%%%##%%%%%###,            ...,**.    ./#%%###%%%##%*,.,*(.   
-                      .#%%%##%%%%%(/****************/#%%%%%%%#%%%###(.       */*,..      .*,.     #%%##%%###%/,..,#*   
-                    .#%%%###%%%#/********************#############(,                        .,.   .*#%#######(,...(/.  
-                  *#%%%%%%#%%(/****************///(/(#############,                           .,.   *%%######(,...(/.  
-                 ,%%#%%%%%%#(***************/####%%#############%#     .*,                     .,,  .%%#####%/,..,(/.  
-               /#%%%%%%%%%(***************(#%%%%%%%%##%%%%%%%%%##/   .*###.                         .%%#####%*...,(*   
-             ,(%%%%%%%%%(/****************#%%%%%%%%##%%%%%%%#####*   (%####/,                       ,%#####%#,..,(/.   
-            ,%%%%%%%%%#******************/##%%%%##%%%%%%%%%%%##%#(#(/,,(##%%#(*.                   ,(%####%(*..,(#.    
-           *#%%%%%%%%(/*******************#%%%%%%%%%%%%%%%%%%%%%##%%%%#//**(####((//*,.           ./%###%%(,...(#(     
-          (%%%%%%%%#(*********************/(#%%%%%%%%%%%%%%%%%%%#((#%#####/. ,*(((///#%(,        ,%%%##%%(,..,*#*      
-        ,(%%%%%%%%/**************************/(%%%%%%%%%%%%%%%%%%%*.,(#%%%%(,        ,(#/.    ./#%%##%%(*,..,(#.       
-       /%%%%%%%%#(****************************(%%%%%%%%%%%%%%%%###,   *%%#/*,.    ,*(%%%(,,/(%%%%%##%%(,..,*((,        
-      .%%%%%%%%#/****************************/(%%%%#####%%%%%%%%##(/.  /(##%%#####%%%%%%%%%%%#####%%%*,.../##.         
-     ,(%%%%%%%#************************/(#####(((((((###%%%%%%%###%%#.   .(#########//##%%%%%%%#%%(*,,.,*#(,           
-     #%%%%%%%(***************************/(##(#####%%%%%%%%%%%%#%###/         .%%###/ ,#%%%%%###/,...,*#(,             
-   ./%%%%%%%#**********************//((#####(/****(#%%%%%%%%%%%%%##(,    .,*(((%%%%#/  .,(%%####/,,.,##                
-   *#%%%%%%#/******************/((#####((/*******/#%#%%%%%%%%%%%%%#(,.,//#%%%%%%%&%#(     #%###%#*,.,#/                
-  *#%%%%%%%(************//(#######//************/(%%%%%%%%%%%%%%%%#(/(*#%%%%%%%%%%%##.    ,(#%%%#(,.,#/                
-  #%%%%%%%(********//##%##((/********************/%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(((*     *(#%%%%(,.,#(                
- .%%%%%%%%*****(####(//************************/((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%##/.    *(#%%%%%%%(,,,##                
- ,%%%%%%%#*****///***************************/(%%%%%%%%%%%%%%%%%%%%##%%%%%%%%%#/,     *%%%%%%%%%%(..,##                
- ,%%%%%%%(***********************************#%%%%%%%%%%%%%%%%%###%%%%%%%#(#(/*     .#%%%%%####%#/,.,#(                
- *%%%%%%#(******************,,***************#%%%%%%%%%%%%%%######%%%%%###/.       *#%%%%%%%%###/,,.,#(                
- ,%%%%%%#(*******************************/(##%%%%%%%%%%%#######%%%%%%%%%%%%#/     /#%%%%%%%%%#%(,,..*#*                
- .%%%%%%%#*****************************/(#%%%%%%%%%%%%%%%%###%%%%%%%%%%%%%%%#*..,/%%%%%%%%%%%%%*,..,//.                
- .%%%%%%%#****************************/#%%%%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(,,.,/#.                 
-  (%%%%%%%/**************************/(%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#%%*,...(#/                  
-  ,#%%%%%%#/*************************(#%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(*,,.,/(,                   
-   *#%%%%%%#/************************/#%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/,,,.*(#,                    
-    *%%%%%%%#*************************/%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/*,,.,*%(,                     
-     #%%%%%%%(**********************/#%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/,,,,,,##.                       
-     .(%%%%%%%#******************/###%#/**(##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(/,,,,,*(#,                         
-      .%%%%%%%%(***************(##%%%(/******/(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*,,,,,,/#(,                          
-       ,(%%%%%%%%(**********/#%%%#************(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(,,,,..,/%#/                             
-         .%%%%%%%%#(/*****###(/****************#%%%%%%%%%%%%%%%%%%%%%%%%%%(/*,.,,,,/((/.                               
-          .*#%%%%%%%%(/************************/(#%%%%%%%%%%%%%%%%%%%%#*,,....,/(#/,.                                  
-            .%%%%%%%%%%/************************(#%%%%%%%%%%%%%%%%%#(*,,,,..,/((/,                                     
-              .#%&%%%%%%%%(/*******************(#%%%%%%%%%%%%%%(/*.....,,*##(,.                                        
-                 ,#%%%%%%%%%%%%((//************#%%%%%%%%%#(/*,....,,*/((/,                                             
-                    ,#%%%%%%%%%%%%%%%%%%%%%%%%%%#//**,,.......,/(((/*                                                  
-                      ,#%%%%%%%%%%%%%%%%%%%%%%###/........,*/(#/*,                                                     
-                          ,*(%%%%%%%%#############*,*/(((/*,.                                                          
-                                ..,**////((((///**,..                                 
-         
+        Write-Host "
+                                                                                     .,*//((((//**..
+                                                                                .,/(((/***,,,,,**/(((/,
+                                                  .,*/((######(//*,.       .,((/**,,.,,,,,,......,...,,/(/
+                                           .,(#%%%%%%%%%#*,,,,,,,*/(#%%((((/*,,,,,,,,*/(##%%%%%#((*,,..,.,/(*
+                                      ./(%%%%%%%%%%%%%%%#*,,,,,,,.,,.,,,,,,,,,,,*(%%%%%%%%%%%%%%%%%%%#(,,..,,(*
+                                    ,(#%%%%%%%%%%%%%%%%%#(***,,,,,,,...,,,,,,*/#%%%%%#%%%%%%###%%%%%#%%(*,...*(,
+                                .*%%%%%%%%%%%%%%%%###(/#%%%%%%%%%%%##/*,,,(#%%###%%%%%%%%%%###%%%%%####%%%*,..,(/.
+                             ,/%%%%%%%%%%%%%#//******(#%%%%%%%%%%%%%%%%%%%%##((**,......,*((#%%%%%##%%%%%%%(*..,((
+                          ./#%%%%%%%%%%#(/**********/%%%%%%%%%%%%%%%%%%#(/.             .*,  .,%&%%%%%%%%%%%#,,.,(*
+                         ,%%%%%%%%%%%(/*************/#%%%%%%%##%%%%%###,            ...,**.    ./#%%###%%%##%*,.,*(.
+                      .#%%%##%%%%%(/****************/#%%%%%%%#%%%###(.       */*,..      .*,.     #%%##%%###%/,..,#*
+                    .#%%%###%%%#/********************#############(,                        .,.   .*#%#######(,...(/.
+                  *#%%%%%%#%%(/****************///(/(#############,                           .,.   *%%######(,...(/.
+                 ,%%#%%%%%%#(***************/####%%#############%#     .*,                     .,,  .%%#####%/,..,(/.
+               /#%%%%%%%%%(***************(#%%%%%%%%##%%%%%%%%%##/   .*###.                         .%%#####%*...,(*
+             ,(%%%%%%%%%(/****************#%%%%%%%%##%%%%%%%#####*   (%####/,                       ,%#####%#,..,(/.
+            ,%%%%%%%%%#******************/##%%%%##%%%%%%%%%%%##%#(#(/,,(##%%#(*.                   ,(%####%(*..,(#.
+           *#%%%%%%%%(/*******************#%%%%%%%%%%%%%%%%%%%%%##%%%%#//**(####((//*,.           ./%###%%(,...(#(
+          (%%%%%%%%#(*********************/(#%%%%%%%%%%%%%%%%%%%#((#%#####/. ,*(((///#%(,        ,%%%##%%(,..,*#*
+        ,(%%%%%%%%/**************************/(%%%%%%%%%%%%%%%%%%%*.,(#%%%%(,        ,(#/.    ./#%%##%%(*,..,(#.
+       /%%%%%%%%#(****************************(%%%%%%%%%%%%%%%%###,   *%%#/*,.    ,*(%%%(,,/(%%%%%##%%(,..,*((,
+      .%%%%%%%%#/****************************/(%%%%#####%%%%%%%%##(/.  /(##%%#####%%%%%%%%%%%#####%%%*,.../##.
+     ,(%%%%%%%#************************/(#####(((((((###%%%%%%%###%%#.   .(#########//##%%%%%%%#%%(*,,.,*#(,
+     #%%%%%%%(***************************/(##(#####%%%%%%%%%%%%#%###/         .%%###/ ,#%%%%%###/,...,*#(,
+   ./%%%%%%%#**********************//((#####(/****(#%%%%%%%%%%%%%##(,    .,*(((%%%%#/  .,(%%####/,,.,##
+   *#%%%%%%#/******************/((#####((/*******/#%#%%%%%%%%%%%%%#(,.,//#%%%%%%%&%#(     #%###%#*,.,#/
+  *#%%%%%%%(************//(#######//************/(%%%%%%%%%%%%%%%%#(/(*#%%%%%%%%%%%##.    ,(#%%%#(,.,#/
+  #%%%%%%%(********//##%##((/********************/%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(((*     *(#%%%%(,.,#(
+ .%%%%%%%%*****(####(//************************/((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%##/.    *(#%%%%%%%(,,,##
+ ,%%%%%%%#*****///***************************/(%%%%%%%%%%%%%%%%%%%%##%%%%%%%%%#/,     *%%%%%%%%%%(..,##
+ ,%%%%%%%(***********************************#%%%%%%%%%%%%%%%%%###%%%%%%%#(#(/*     .#%%%%%####%#/,.,#(
+ *%%%%%%#(******************,,***************#%%%%%%%%%%%%%%######%%%%%###/.       *#%%%%%%%%###/,,.,#(
+ ,%%%%%%#(*******************************/(##%%%%%%%%%%%#######%%%%%%%%%%%%#/     /#%%%%%%%%%#%(,,..*#*
+ .%%%%%%%#*****************************/(#%%%%%%%%%%%%%%%%###%%%%%%%%%%%%%%%#*..,/%%%%%%%%%%%%%*,..,//.
+ .%%%%%%%#****************************/#%%%%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(,,.,/#.
+  (%%%%%%%/**************************/(%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#%%*,...(#/
+  ,#%%%%%%#/*************************(#%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(*,,.,/(,
+   *#%%%%%%#/************************/#%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/,,,.*(#,
+    *%%%%%%%#*************************/%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/*,,.,*%(,
+     #%%%%%%%(**********************/#%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/,,,,,,##.
+     .(%%%%%%%#******************/###%#/**(##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(/,,,,,*(#,
+      .%%%%%%%%(***************(##%%%(/******/(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*,,,,,,/#(,
+       ,(%%%%%%%%(**********/#%%%#************(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(,,,,..,/%#/
+         .%%%%%%%%#(/*****###(/****************#%%%%%%%%%%%%%%%%%%%%%%%%%%(/*,.,,,,/((/.
+          .*#%%%%%%%%(/************************/(#%%%%%%%%%%%%%%%%%%%%#*,,....,/(#/,.
+            .%%%%%%%%%%/************************(#%%%%%%%%%%%%%%%%%#(*,,,,..,/((/,
+              .#%&%%%%%%%%(/*******************(#%%%%%%%%%%%%%%(/*.....,,*##(,.
+                 ,#%%%%%%%%%%%%((//************#%%%%%%%%%#(/*,....,,*/((/,
+                    ,#%%%%%%%%%%%%%%%%%%%%%%%%%%#//**,,.......,/(((/*
+                      ,#%%%%%%%%%%%%%%%%%%%%%%###/........,*/(#/*,
+                          ,*(%%%%%%%%#############*,*/(((/*,.
+                                ..,**////((((///**,..
+
          The Skulls Present
              VolHunter
              -FUMBLES"
@@ -287,12 +261,12 @@ Function Get-VHMemDump{
             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
             if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
                 Write-It -msg "Grabbing memory dump from $Target" -type "Information"
-                Copy-File -from "$env:shareName\Windows\SoftwareDistribution\DataStore\$Target.edb" -to "$env:VolPath\GatheredLogs\$Target.bin"
+                Copy-File -from "$env:shareName\Windows\CCM\Perf\VolH\Image\$Target.bin" -to "$env:VolPath\GatheredLogs\$Target.bin"
             }
             else{
                 Write-It -msg "VolHunter not complete on $Target" -type "Warning"
             }
-            Remove-PSDrive -Name "$env:shareLetter"
+            Remove-PSDrive -Name "$env:shareLetter" -force
         }
         catch{
             Write-Error -Message "$_ Get-VHMemDump failed"
@@ -310,7 +284,7 @@ Function Get-VHOutput{
     Process{
         $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
         $currLine = 0
-        foreach($target in get-content $TargetList){    
+        foreach($target in get-content $TargetList){
             try{
                 $currLine++
                 if(!(Test-Connection -ComputerName $target -BufferSize 16 -Count 1 -Quiet)){
@@ -322,60 +296,12 @@ Function Get-VHOutput{
                     Write-It -msg "Grabbing parsed output from $target # $currLine / $lineCount`n" -type "Information"
                     Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
                     Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
-
-                    if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\ArtsGathered.txt"){
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target") -ErrorAction SilentlyContinue >$null
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Prefetch") -ErrorAction SilentlyContinue >$null
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\EventLogs") -ErrorAction SilentlyContinue >$null
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\FWLogs") -ErrorAction SilentlyContinue >$null
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\DATs") -ErrorAction SilentlyContinue >$null
-                        New-Item -ItemType directory -Path ("$env:VolPath\GatheredLogs\$target\Other") -ErrorAction SilentlyContinue >$null
-
-                        Write-It -msg "Grabbing prefetch files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\Prefetch\*.pf).Name
-                        foreach($image in $files){    
-                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\Prefetch\$image"
-                            $dest = "$env:VolPath\GatheredLogs\$target\Prefetch\$image"
-                            Copy-File -from $src -to $dest
-                        }
-                
-                        Write-It -msg "Grabbing event logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\EventLogs\).Name
-                        foreach($image in $files){    
-                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\EventLogs\$image"
-                            $dest = "$env:VolPath\GatheredLogs\$target\EventLogs\$image"
-                            Copy-File -from $src -to $dest
-                        }
-
-                        Write-It -msg "Grabbing firewall logs from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\FWLogs\).Name
-                        foreach($image in $files){    
-                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\FWLogs\$image"
-                            $dest = "$env:VolPath\GatheredLogs\$target\FWLogs\$image"
-                            Copy-File -from $src -to $dest
-                        }
-
-                        Write-It -msg "Grabbing DAT files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\DATs\).Name
-                        foreach($image in $files){    
-                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\DATs\$image"
-                            $dest = "$env:VolPath\GatheredLogs\$target\DATs\$image"
-                            Copy-File -from $src -to $dest
-                        }
-
-                        Write-It -msg "Grabbing other files from $target`n" -type "Information"
-                        $files = (Get-ChildItem $env:shareName\Windows\CCM\Perf\VolH\Output\Other\).Name
-                        foreach($image in $files){    
-                            $src = "$env:shareName\Windows\CCM\Perf\VolH\Output\Other\$image"
-                            $dest = "$env:VolPath\GatheredLogs\$target\Other\$image"
-                            Copy-File -from $src -to $dest
-                        }
-                    }
+                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\VolProfile.txt" -Destination "$env:VolPath\VHLogs\$target-profile.txt"
                 }
                 else{
                     Write-It -msg "Volatility not complete on $target" -type "Warning"
                 }
-                Remove-PSDrive -Name "$env:shareLetter"
+                Remove-PSDrive -Name "$env:shareLetter" -force
             }
             catch{
                 Write-Error -Message "$_ Get-VHOutput failed"
@@ -388,14 +314,14 @@ Function Get-VHStatus{
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,Position=0)]
-            [String]$Target
+            [String]$Target2
     )
 
     Process{
         try{
-            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target\C$" 2>$null
-            Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-$Target.txt"
-            Remove-PSDrive -Name "$env:shareLetter"
+            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target2\C$" 2>$null
+            Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt"
+            Remove-PSDrive -Name "$env:shareLetter" -force
         }
         catch{
             Write-Error -Message "$_ Get-VHStatus failed"
@@ -413,187 +339,19 @@ Function Get-VHStatusAll{
     Process{
         try{
             foreach($Target in (Get-Content $TargetList)){
-                Write-It -msg "Status of $Target" -type "Information"
                 New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 2>$null
-                Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-$Target.txt" -ErrorAction SilentlyContinue -ErrorVariable errOut
-                if($errOut){
-                    Write-It -msg "$target has no files" -type "Warning"
+                if(test-path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
+                    write-host "$target is done" -BackgroundColor DarkGreen -ForegroundColor White
                 }
-                Remove-PSDrive -Name "$env:shareLetter"
+                else{
+                    write-host "$target is still working" -BackgroundColor Red -ForegroundColor Black
+                }
+                Remove-PSDrive -Name "$env:shareLetter" -force
             }
         }
         catch{
             Write-Error -Message "$_ Get-VHStatus failed"
         }
-    }
-}
-
-<# ###OBSOLETE FUNCTION - TO BE DELETED
-###Not to be exposed by module
-Function Move-VHFiles{
-    [CmdletBinding()]
-    Param(
-        [Parameter(Mandatory=$False,Position=0)]
-            [String]$TargetList = $env:TargetList,
-        [Parameter(Mandatory=$True,Position=1)]
-            $cred
-    )
-    
-    Process{
-        try{
-            $volPath = $env:VolPath
-            foreach ($target in Get-Content $TargetList){
-                Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
-                    if(!(Test-Path -Path "\\$target\C$\VolH\")){
-                        New-Item -ItemType directory -Path ("C:\VolH\") | %{$_.Attributes = "hidden"}
-                        New-Item -ItemType directory -Path ("C:\VolH\Image\")
-                        New-Item -ItemType directory -Path ("C:\VolH\Output\")
-                        New-Item -ItemType directory -Path ("C:\VolH\Tools\")
-                    }
-                    if($env:Artifacts){
-                        New-Item -ItemType directory -Path ("C:\VolH\Artifacts\")
-                    }
-                } >$null 2>&1
-                New-PSDrive -Name "$env:shareLetter" -Credential $cred -Persist -PSProvider "FileSystem" -Root "\\$target\C$"
-                if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "$env:shareName\VolH\Tools\DumpIt.exe"
-                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
-                }
-                else{
-                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "$env:shareName\VolH\Tools\DumpIt.exe"
-                    Copy-Item -Path $volPath\bin\volatility.exe -Destination "$env:shareName\VolH\Tools\volatility.exe"
-                }
-                Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "$env:shareName\VolH\Tools\VolHunterRemote.ps1"
-                Remove-PSDrive -Name "$env:shareLetter"
-                Write-It -msg "`nFolders & tools moved to $target" -type "Information"
-            }
-        }
-        catch{
-            Write-Error -Message "$_ Move-VHFiles failed on $target"
-            continue
-        }
-    }
-}#>
-
-Function Move-VHParallel{
-    [CmdletBinding()]
-    Param(
-        [Parameter(Mandatory=$False,Position=0)]
-            [String]$volPath = $env:VolPath,
-        [Parameter(Mandatory=$False,Position=1)]
-            [Int]$MaxThreads = 10,
-        [Parameter(Mandatory=$False,Position=2)]
-            [String]$TargetList = $env:OnList,
-        [Parameter(Mandatory=$False,Position=3)]
-            $cred = $global:Credential,
-        [Parameter(Mandatory=$False,Position=4)]
-            [String]$artifacts = $global:Artifacts,
-        [Parameter(Mandatory=$False,Position=5)]
-            $DumpMem = $env:DumpMemory,
-        [Parameter(Mandatory=$False,Position=6)]
-            $Plugins = $env:Plugins,
-        [Parameter(Mandatory=$False,Position=7)]
-            $HumanReadable = $env:HumanReadable
-    )
-
-    Process{
-        $moveBlock = {
-            Param($cred,[String]$target,[String]$artifacts,[String]$volPath,$DumpMem,$Plugins,$HumanReadable)
-            "`nTarget is $target"
-            Invoke-Command -ComputerName $target -Credential $cred -ArgumentList $artifacts -ScriptBlock{
-                if(!(Test-Path -Path "C:\Windows\CCM\Perf\VolH\")){
-                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\") | %{$_.Attributes = "hidden"}
-                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Image\")
-                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\")
-                    New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Tools\")
-                }
-                if($artifacts){
-                    New-Item -ItemType Directory -Path ("C:\Windows\CCM\Perf\VolH\Artifacts\")
-                }
-            } #End Invoke-Command
-            $Session = New-PSSession -ComputerName $target -Credential $cred
-            if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
-                Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
-            }
-            else{
-                Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
-            }
-            Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe" -ToSession $Session
-            Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
-            Disconnect-PSSession $Session
-            Remove-PSSession $Session
-
-            try{
-                $scriptBlock = {
-                    Param([string]$dump,[string]$plugin,[string]$human,[string]$arts)
-                    Start-Process powershell.exe -ArgumentList "-c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
-                }
-                #Write-Host "Plugins are $Plugins and dump is $DumpMem"
-                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -ScriptBlock $scriptBlock -ArgumentList $DumpMem,$Plugins,$HumanReadable,$Artifacts -ErrorVariable results 2>$null
-                if($results -like "*Disconnected sessions are supported only*"){
-                    throw 'PS less than v3'
-                }
-            }
-            catch{
-                "`nTarget running < PSv3, trying WMIC`n"
-                Get-WmiObject -List -Class Win32_OperatingSystem -Computer $target -ErrorVariable results 1>$null 2>$null
-                if($results -like "*Could not get*"){
-                    return
-                }
-                else{
-                    $targIP = [Net.Dns]::GetHostAddresses("$target") | select-object IPAddressToString -expandproperty IPAddressToString
-                    WMIC /node:"$targIP" process call create "powershell.exe -c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
-                }
-            }
-        } #End moveBlock
-
-        try{
-            $XYZ = 0
-            Get-Job | Remove-Job
-            $volPath = $env:VolPath
-            $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
-            Write-It -msg "Moving files to $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
-            foreach ($target in Get-Content $TargetList){
-                While (@(Get-Job -state running).count -ge $MaxThreads){
-                    Start-Sleep -Milliseconds 10
-                }
-                Start-Job -ScriptBlock $moveBlock -Name $target -ArgumentList $cred, $target, $artifacts, $volPath, $DumpMem, $Plugins, $HumanReadable 1>$null
-                $XYZ++
-                Write-It -msg "Copying files to $target   # $XYZ / $lineCount" -type "Other"
-            }
-            Write-It -msg "All jobs started. Waiting for them to finish." -type "Information"
-            $lastX = $MaxThreads
-            While (@(Get-Job -State running).count -gt 0){
-                $x = @(Get-Job -State running).count
-                if($lastX -ne $x){
-                    Write-It -msg "Still copying to $x systems" -type "Information"
-                    foreach($job in Get-Job){
-                        if($job.State -eq "Running"){
-                            Write-Host $job.Name
-                        }
-                    }
-                    $lastX = $x
-                }
-                Start-Sleep 1
-            }
-            foreach($job in Get-Job){
-                $info = (Receive-Job -Id ($job.Id))
-                [string]$jobOut = $info | Select-String -Pattern "Target is "
-                $filename = $jobOut.Replace("Target is ","")
-                $filename = $filename.Replace("`n","")
-                $jobPath = ".\JobLogs\" + $filename + "-" + $job.Id + ".txt"
-                Out-File -FilePath "$jobPath" -InputObject $info -Encoding ASCII 
-            }
-            $time = Get-Date
-            Write-It -msg "All copies finished. Cleaning up. $time" -type "Information"
-            Get-Job | Remove-Job
-        }
-        catch{
-            Write-Error -Message "$_ Move-VHParallel failed"
-        }
-    }
-    End{
-
     }
 }
 
@@ -611,22 +369,6 @@ Function Remove-VHIndices{
             $URI = $ElasticIP + ":" + $ElasticPort + "/VolHunter"
             curl -Method DELETE $URI >$null
             Write-It -msg "Malfind index cleared" -type "Information"
-
-            #$URI = $ElasticIP + ":" + $ElasticPort + "/psscan"
-            #curl -Method DELETE $URI >$null
-            #Write-It -msg "PSScan index cleared" -type "Information"
-
-            #$URI = $ElasticIP + ":" + $ElasticPort + "/ssdt"
-            #curl -Method DELETE $URI >$null
-            #Write-It -msg "SSDT index cleared" -type "Information"
-
-            #$URI = $ElasticIP + ":" + $ElasticPort + "/cmdline"
-            #curl -Method DELETE $URI >$null
-            #Write-It -msg "CMDLine index cleared" -type "Information"
-
-            #$URI = $ElasticIP + ":" + $ElasticPort + "/mutantscan"
-            #curl -Method DELETE $URI >$null
-            #Write-It -msg "MutantScan index cleared" -type "Information"
         }
         catch{
             Write-Error -Message "$_ Remove-VHIndices failed"
@@ -638,14 +380,14 @@ Function Remove-VHRemote{
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
-            [String]$TargetList = $env:OnList,
+            [String]$TargetList = $env:TargetList,
         [Parameter(Mandatory=$False,Position=1)]
             [Int]$MaxThreads = $env:MaxThreads
     )
 
     Process{
         $cleanBlock = {
-            Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
+            Param([string]$target, $cred)
             "`nTarget is $target"
             Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\Windows\CCM\Perf\VolH -Recurse -Force} -ErrorAction SilentlyContinue
             "`nFiles and folders deleted`n"
@@ -654,27 +396,6 @@ Function Remove-VHRemote{
     }
 }
 
-Function Remove-VHMemDump{
-    [CmdletBinding()]
-    Param(
-        [Parameter(Mandatory=$False,Position=0)]
-            [String]$TargetList = $env:OnList,
-        [Parameter(Mandatory=$False,Position=1)]
-            [Int]$MaxThreads = $env:MaxThreads
-    )
-
-    Process{
-        $cleanBlock = {
-            Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
-            "`nTarget is $target"
-            Invoke-Command -Computer $target -Credential $cred -ScriptBlock {$hostname = hostname; Remove-Item -path "C:\Windows\SoftwareDistribution\DataStore\$hostname.edb" -Force} -ErrorAction SilentlyContinue
-            "`nMemDump deleted`n"
-        }
-        Run-VHRemote -block $cleanBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
-    }
-}
-
-###Not to be exposed by module
 Function Run-VHRemote{
     [CmdletBinding()]
     Param(
@@ -691,15 +412,15 @@ Function Run-VHRemote{
     Process{
         try{
             $XYZ = 0
-            Get-Job | Remove-Job
+            Get-Job | Remove-Job -force
             $volPath = $env:VolPath
             $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
             Write-It -msg "Running commands against $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
             foreach ($target in Get-Content $TargetList){
-                While (@(Get-Job -state running).count -ge $MaxThreads){
+                While (@(Get-Job -State running).count -ge $MaxThreads){
                     Start-Sleep -Milliseconds 10
                 }
-                Start-Job -ScriptBlock $block -Name $target -ArgumentList $target, $env:DumpMemory, $env:VolPath, $env:Plugins, $env:HumanReadable, $env:Artifacts, $cred 1>$null
+                Start-Job -ScriptBlock $block -Name $target -ArgumentList $target, $cred 1>$null
                 $XYZ++
                 Write-It -msg "Starting job against $target # $XYZ / $lineCount" -type "Other"
             }
@@ -718,14 +439,6 @@ Function Run-VHRemote{
                 }
                 Start-Sleep 1
             }
-            foreach($job in Get-Job){
-                $info = (Receive-Job -Id ($job.Id))
-                [string]$jobOut = $info | Select-String -Pattern "Target is "
-                $filename = $jobOut.Replace("Target is ","")
-                $filename = $filename.Replace("`n","")
-                $jobPath = ".\JobLogs\" + $filename + "-" + $job.Id + ".txt"
-                Out-File -FilePath "$jobPath" -InputObject $info -Encoding ASCII 
-            }
             $time = Get-Date
             Write-It -msg "All jobs finished. Cleaning up. $time" -type "Information"
             Get-Job | Remove-Job
@@ -736,33 +449,6 @@ Function Run-VHRemote{
     }
     End{
 
-    }
-}
-
-Function Send-VHResults{
-    [CmdletBinding()]
-    Param(
-        [Parameter(Mandatory=$False,Position=0)]
-            [String]$ElasticIP = $env:ElasticIP,
-        [Parameter(Mandatory=$False,Position=1)]
-            [Int]$ElasticPort = $env:ElasticPort
-    )
-
-    Process{
-        try{
-            $testURI = $ElasticIP + ":" + $ElasticPort
-            if( !((curl -Method GET $testURI) -like "*tagline*") ){ throw 'Not PSv5' }
-            $URI = $ElasticIP + ":" + $ElasticPort + "/" + '_bulk'
-            $files = Get-ChildItem $env:VolPath\GatheredLogs\*.txt
-            foreach($file in $files) {
-                curl -Method POST $URI -ContentType: application/json -InFile $file >$null 2>&1
-                Write-It -msg "Shipped $file to Elastic" -type "Success"
-                Remove-Item -path $file -force
-            }
-        }
-        catch{
-            Write-Error "You're not running PSv5, you can't curl"
-        }
     }
 }
 
@@ -819,16 +505,8 @@ Function Set-VHEnvironment{
         [Parameter(Mandatory=$False,Position=4)]
             [Int]$MaxThreads = 10,
         [Parameter(Mandatory=$False,Position=5)]
-            [String]$Plugins = $null,
-        [Parameter(Mandatory=$False,Position=6)]
-            [Switch]$HumanReadable = $False,
-        [Parameter(Mandatory=$False,Position=7)]
-            [String]$Artifacts = "none",
-        [Parameter(Mandatory=$False,Position=8)]
-            [Switch]$DumpMemory = $False,
-        [Parameter(Mandatory=$False,Position=9)]
             [String]$VolPath = (Get-Location).Path,
-        [Parameter(Mandatory=$True,Position=10)]
+        [Parameter(Mandatory=$True,Position=6)]
             [String]$credName
     )
     Process{
@@ -859,7 +537,7 @@ Function Start-VHInvestigation{
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
-            [String]$TargetList = $env:TargetList,
+            [String]$TargetList = ".\OnList.txt",
         [Parameter(Mandatory=$False,Position=1)]
             [String]$MaxThreads = $env:MaxThreads,
         [Parameter(Mandatory=$False,Position=2)]
@@ -868,46 +546,265 @@ Function Start-VHInvestigation{
 
     Process{
         try{
-            $cred = $global:Credential
-            $OnList = $env:OnList
-            $numFailed = Test-VHConnection -TargetList $TargetList
-            $runBlock = {
-                Param([string]$target, [string]$DumpMem, [string]$volPath, [string]$Plugins, [string]$HumanReadable, [string]$Artifacts, $cred)
-                try{
-                    "`nTarget is $target"
-                    "`nPlugins are $Plugins"
-                    "`nDump is $DumpMem"
-                    "`nAttempting to run on $target via Invoke-Command -InDisconnectedSession`n"
-                    "`n$target MUST be running PSv3 or greater!`n"
-                    $scriptBlock = {
-                        Param([string]$dump,[string]$plugin,[string]$human,[string]$arts)
-                        Start-Process powershell.exe -ArgumentList "-c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 $dump $plugin $human $arts"
+            $numOff = Test-VHConnection
+            Write-Host "$numOff systems offline"
+            $miniBlock = {
+                function Run-Vol{
+                    param( [string]$plugin, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
+                    try{
+                        $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
+                        $hn = hostname
+                        Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
+                        $start = Get-Date
+
+                        $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
+                        $timeouted = $null
+                        $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
+                        $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
+
+                        if($timeouted){
+                            $proc | kill
+                            $end = Get-Date
+                            Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n"
+                            continue
+                        }
+
+                        $end = Get-Date
+                        Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n"
                     }
-                    Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -ScriptBlock $scriptBlock -ArgumentList $DumpMem,$Plugins,$HumanReadable,$Artifacts -ErrorVariable results 2>$null
-                    if($results -like "*Disconnected sessions are supported only*"){
-                        throw 'PS less than v3'
-                    }
-                    else{ "`nStarting VolHunter on $target via Invoke-Command -InDisconnectedSession`n" }
-                }
-                catch{
-                    "`nTarget running < PSv3, trying WMIC`n"
-                    Get-WmiObject -List -Class Win32_OperatingSystem -Computer $target -ErrorVariable results 1>$null 2>$null
-                    if($results -like "*Could not get*"){
-                        "`nWMIC is NOT enabled on $target `n"
-                        return
-                    }
-                    else{
-                        "`nWMIC enabled on $target `n"
-                        "`nStarting VolHunter on $target via WMIC`n"
-                        $targIP = [Net.Dns]::GetHostAddresses("$target") | select-object IPAddressToString -expandproperty IPAddressToString
-                        WMIC /node:"$targIP" process call create "powershell.exe -c C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1 -dumpFlag $DumpMem $Plugins $HumanReadable $Artifacts" 2>$null
+                    catch{
+                        Add-Content -Path $logLocation -Value "$_ $plugin failed"
+                        continue
                     }
                 }
-            } #End $runBlock
-            Move-VHParallel -volPath $env:VolPath -TargetList $env:OnList -cred $global:Credential -artifacts $env:Artifacts -DumpMem $env:DumpMemory -Plugins $env:Plugins -HumanReadable $env:HumanReadable
+
+                Set-ExecutionPolicy unrestricted
+                $hostName = hostname
+                $hostImg = $hostName + ".bin"
+                $baseDir = "C:\Windows\CCM\Perf\VolH\"
+                $imageDir = "C:\Windows\CCM\Perf\VolH\Image\"
+                $outputDir = "C:\Windows\CCM\Perf\VolH\Output\"
+                $toolDir = "C:\Windows\CCM\Perf\VolH\Tools\"
+                $imgLocation = "C:\Windows\CCM\Perf\VolH\Image\$hostImg"
+                $logLocation = "C:\Windows\CCM\Perf\VolH\VHLog-$hostname.txt"
+                $time = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd"+"T"+"HH:mm:ss.fff"+"Z")
+                $volProfile = Get-Content "C:\Windows\CCM\Perf\VolH\VolProfile.txt"
+                $OSVersi = [System.Environment]::OSVersion.Version
+
+                $vhlog = "Starting VolHunter at $time `n"
+                Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
+
+                ### DETERMINE VOLATILITY PROFILE ###
+                Add-Content -Path "$logLocation" -Value "Determining x86 vs x64`n"
+                ### Determine 32 vs 64 bit architecture
+                $Architecture = 64
+                if([intptr]::size -eq 4){
+                    $Architecture = 86
+                }
+                Add-Content -Path "$logLocation" -Value "$hostname is x$Architecture`n"
+
+                ### Get systeminfo ###
+                Add-Content -Path "$logLocation" -Value "Determining OS & Revision for Volatility profile`n"
+                $sysInfo = systeminfo.exe
+                $ram = (($sysinfo | select-string 'Total Physical Memory:').ToString().Split(':')[1].Trim()).Replace(" MB","")
+                $diskSpace = ( gwmi Win32_LogicalDisk -filter "deviceid='C:'" | Select DeviceID, @{Name="FreeMB";Expression={[math]::Round($_.Freespace/1MB,2)}} ).FreeMB
+                $osVersion = $sysInfo | select-string "OS Version"
+                $sysInfo = $sysInfo | select-string "OS Name"
+                Add-Content -Path "$logLocation" -Value "$hostname has $ram MB of RAM`n"
+                Add-Content -Path "$logLocation" -Value "$hostname has $diskSpace MB of free space on C:`n"
+                if($diskSpace -lt ([int]$freeRam + 2000) ){
+                    Add-Content -Path "C:\Windows\CCM\Perf\VolH\VHLog.txt" -Value "Not enough free disk space`n"
+                    $volDone = "Not enough freespace on C:\ to run`n"
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+                    return
+                }
+                Add-Content -Path "$logLocation" -Value "$osVersion `n"
+                Add-Content -Path "$logLocation" -Value "$sysInfo `n"
+
+                ### Build Volatility --profile variable based on OSVersion.Version and systeminfo output ###
+                switch ($sysInfo){
+                    # Windows 10 Ver 10586/14393/15063+/none x86/64 #
+                    {$_ -like "*Windows 10*"} {
+                        if(($osVersi.Build -ge 10586) -and ($osVersi.Build -lt 14393)){$volProfile = "Win10x"+$Architecture+"_10586"}
+                        elseif(($osVersi.Build -ge 14393) -and ($osVersi.Build -lt 15063)){$volProfile = "Win10x"+$Architecture+"_14393"}
+                        elseif(($osVersi.Build -ge 15063) -and ($osVersi.Build -lt 16299)){$volProfile = "Win10x"+$Architecture+"_15063"}
+                        elseif(($osVersi.Build -ge 16299) -and ($osVersi.Build -lt 17134)){$volProfile = "Win10x"+$Architecture+"_16299"}
+                        elseif(($osVersi.Build -ge 17134) -and ($osVersi.Build -lt 17763)){$volProfile = "Win10x"+$Architecture+"_17134"}
+                        elseif($osVersi.Build -eq 17763){$volProfile = "Win10x"+$Architecture+"_17763"}
+                        else{$volProfile = "Win10x"+$Architecture}
+                    }
+                    # Server 2016 Ver 14393 #
+                    {$_ -like "*Server 2016*"} { $volProfile = "Win2016x64_14393" } #End Server2016 switch
+                    # Server 2012 #
+                    {$_ -like "*Server 2012 *"} { $volProfile = "Win2012x64" }
+                    # Server 2012R2, Ver 18340 #
+                    {$_ -like "*Server 2012 R2*"} {
+                        if($osVersion -like "*18340*"){ $volProfile = "Win2012R2x64_18340" }
+                        else{ $volProfile = "Win2012R2x64" }
+                    }
+                    # Server 2008, SP1/2, x86/64 #
+                    {$_ -like "*Server*2008 Standard*"} {
+                        if($osVersion -like "*Service*Pack*1*"){ $volProfile = "Win2008SP1x"+$Architecture }
+                        else{ $volProfile = "Win2008SP2x"+$Architecture }
+                    }
+                    # Server 2008 R2 SP0/1 & SP1_23418 #
+                    {$_ -like "*Server 2008 R2*"} {
+                        if( !($osVersion -like "*Service Pack 1*") ){ $volProfile = "Win2008R2SP0x64" }
+                        elseif($osVersion -like "*23418*"){ $volProfile = "Win2008R2SP1x64_23418" }
+                        else{ $volProfile = "Win2008R2SP1x64" }
+                    }
+                    # Server 2003 SP0x86, SP1x86/64, SP2x86/64 #
+                    {$_ -like "Server 2003*"} {
+                        if($osVersion -like "*Service Pack 1*"){ $volProfile = "Win2003SP1x"+$Architecture }
+                        elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "Win2003SP2x"+$Architecture }
+                        else{ $volProfile = "Win2003SP0x86" }
+                    }
+                    # Vista SP0/1/2 x86/x64 #
+                    {$_ -like "*Vista*"} {
+                        if($osVersion -like "*Service Pack 1*"){ $volProfile = "VistaSP1x"+$Architecture }
+                        elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "VistaSP2x"+$Architecture }
+                        else{ $volProfile = "VistaSP0x"+$Architecture }
+                    }
+                    # Windows 7 SP0x64/86, SP1x64/86, SP1_23418x64/86 #
+                    {$_ -like "*Windows 7*"} {
+                        if( !($osVersion -like "*Service Pack*") ){ $volProfile = "Win7SP0x"+$Architecture }
+                        elseif($osVersion -like "*23418*"){ $volProfile = "Win7SP1x"+$Architecture + "_23418" }
+                        else{ $volProfile = "Win7SP1x"+$Architecture }
+                    }
+                    # Windows 8.1 #
+                    {$_ -like "*Windows 8.1*"} {
+                        if($osVersion -like "*18340*"){ $volProfile = "Win8SP1x64_18340" }
+                        else{ $volProfile = "Win8SP1x"+$Architecture }
+                    }
+                    # Windows 8 #
+                    {$_ -like "*Windows 8 *"} { $volProfile = "Win8SP0x"+$Architecture }
+
+                    default {$volProfile = "ERROR"}
+                }
+
+                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolProfile.txt" -InputObject $volProfile -Encoding ASCII
+                Add-Content -Path "$logLocation" -Value "Volatility Profile = $volProfile `n"
+
+                if($volProfile -eq "ERROR"){
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
+                    $volDone = "VHRemote failed due to unrecognized profile"
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+                    exit
+                }
+
+                ###############################
+                ### Run memory dumping tool ###
+                ###############################
+                Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
+                $dumpCommand = "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe"
+                Add-Content -Path "$logLocation" -Value "Starting memory dump"
+                $start = Get-Date
+                Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
+                $end = Get-Date
+                $dumpDone = "DumpIt Completed"
+                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
+                Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
+                Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
+                Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
+                Add-Content -Path "$logLocation" -Value "Memory dump completed in $($end-$start) H:M:S.MS`n"
+
+
+                $backupTemp = $env:temp
+                $env:temp = "C:\Windows\CCM\Perf\VolH\"
+                $env:tmp = "C:\Windows\CCM\Perf\VolH\"
+                rm "C:\Windows\CCM\Perf\VolH\VolDone.txt"
+                Run-Vol -plugin "malfind" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "ssdt" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "cmdline" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "dlllist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "ldrmodules" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "netscan" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "psxview" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "timers" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                Run-Vol -plugin "pslist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+
+                $vhlog = "DONE"
+                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $vhlog -Encoding ASCII
+
+                ### FIX TEMP FOLDER CHANGE ###
+                $env:temp = $backupTemp
+                $env:tmp = $backupTemp
+                Add-Content -Path "$logLocation" -Value "Temp environment variables restored`n"
+            } #End miniBlock
+            $moveBlock = {
+                Param($cred,[String]$target,[String]$volPath)
+                "`nTarget is $target"
+                Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
+                    if(!(Test-Path -Path "C:\Windows\CCM\Perf\VolH\")){
+                        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\") | %{$_.Attributes = "hidden"}
+                        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Image\")
+                        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Output\")
+                        New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Tools\")
+                    }
+                } #End Invoke-Command
+                $Session = New-PSSession -ComputerName $target -Credential $cred -Authentication Kerberos
+                if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
+                    Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
+                }
+                else{
+                    Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
+                }
+                Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe" -ToSession $Session
+                #Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
+                Disconnect-PSSession $Session
+                Remove-PSSession $Session
+            } #End moveBlock
+
+            ### MOVE ALL FILES
+            try{
+                $XYZ = 0
+                Get-Job | Remove-Job
+                $volPath = $env:VolPath
+                $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
+                Write-It -msg "Moving files to $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
+                foreach ($target in Get-Content $TargetList){
+                    While (@(Get-Job -state running).count -ge $MaxThreads){
+                        Start-Sleep -Milliseconds 10
+                    }
+                    Start-Job -ScriptBlock $moveBlock -Name $target -ArgumentList $cred, $target, $volPath 1>$null
+                    $XYZ++
+                    Write-It -msg "Copying files to $target   # $XYZ / $lineCount" -type "Other"
+                }
+                Write-It -msg "All jobs started. Waiting for them to finish." -type "Information"
+                $lastX = $MaxThreads
+                While (@(Get-Job -State running).count -gt 0){
+                    $x = @(Get-Job -State running).count
+                    if($lastX -ne $x){
+                        Write-It -msg "Still copying to $x systems" -type "Information"
+                        foreach($job in Get-Job){
+                            if($job.State -eq "Running"){
+                                Write-Host $job.Name
+                            }
+                        }
+                        $lastX = $x
+                    }
+                    Start-Sleep 1
+                }
+                $time = Get-Date
+                Write-It -msg "All copies finished. Cleaning up. $time" -type "Information"
+                Get-Job | Remove-Job
+            }
+            catch{
+                Write-Error -Message "$_ Start-VHInvestigation MOVING failed"
+            }
+
+            ### EXECUTE ###
+            foreach($target in Get-Content $TargetList){
+                $blockBypass = {
+                    set-executionpolicy unrestricted
+                }
+                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -Authentication Kerberos -ScriptBlock $blockBypass
+                Start-Sleep -Seconds 1
+                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -Authentication Kerberos -ScriptBlock $miniBlock
+            }
         }
         catch{
-            Write-Error -Message "$_ Run-VHRemote failed"
+            Write-Error -Message "$_ Start-VHInvestigation overall failed"
         }
     }
 }
@@ -925,7 +822,7 @@ Function Test-VHConnection{
     Process{
         if((Test-Path -Path ".\OnList.txt")){Remove-Item -Path ".\OnList.txt"}
         if((Test-Path -Path ".\OffList.txt")){Remove-Item -Path ".\OffList.txt"}
-        
+
         foreach ($target in Get-Content $TargetList){
             try{
                 if(Test-Connection -ComputerName $target -BufferSize 16 -Count 1 -Quiet){
@@ -983,7 +880,7 @@ Function Watch-VHStatus{
             $firstRun = 0
             $numFailed = 0
             while($notDone){
-                foreach($target in get-content $TargetList){  
+                foreach($target in get-content $TargetList){
                     if( !($array[$index]) ){
                         #If first time thru, check if VHLog exists, otherwise VHR failed
                         if($firstRun -lt $targetLength){
@@ -1006,7 +903,7 @@ Function Watch-VHStatus{
                             else{
                                 Write-It -msg "SUCCESS: $target started VolHunterRemote" -type "Success"
                             }
-                            Remove-PSDrive -Name "$env:shareLetter" -ErrorAction SilentlyContinue
+                            Remove-PSDrive -Name "$env:shareLetter" -force
                         }
                         New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
                         if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
@@ -1016,7 +913,7 @@ Function Watch-VHStatus{
                             $doneCount++
                             Write-It -msg "$doneCount of $targetLength targets complete." -type "Information"
                         }
-                        Remove-PSDrive -Name "$env:shareLetter" -ErrorAction SilentlyContinue
+                        Remove-PSDrive -Name "$env:shareLetter" -force
                     }
                     $index++
                 }
@@ -1058,7 +955,7 @@ Internal function used to template Write-Host formats
                 {$_ -like "Information"} { $back = "White"; $fore = "Black"}
                 {$_ -like "Warning"} { $back = "Yellow"; $fore = "Red"}
                 {$_ -like "Error"} { $back = "Red"; $fore = "White"}
-                {$_ -like "Success"} { $back = "DarkGreen"; $fore = "White"} 
+                {$_ -like "Success"} { $back = "DarkGreen"; $fore = "White"}
                 default { Write-Host $msg; return }
             }
             Write-Host $msg -ForegroundColor $fore -BackgroundColor $back
