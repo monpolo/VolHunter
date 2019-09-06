@@ -25,6 +25,6 @@ A tool for volatility analysis at scale.
      - Improve "FuncPrologue" tag identification logic to include all three lines necessary for a function prologue
 - Consider additional plugins
      - Svcscan - To identify unique services across systems
-- Include a .zip file with all scripts & folder structures laid out (minus memory dumping tool for copyright reasons)
+- ~~Include a .zip file with all scripts & folder structures laid out (minus memory dumping tool for copyright reasons)~~
 
 5C!
