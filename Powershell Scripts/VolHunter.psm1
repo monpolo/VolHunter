@@ -360,7 +360,7 @@ Function Remove-VHIndices{
         try{
             $URI = $ElasticIP + ":" + $ElasticPort + "/VolHunter"
             curl -Method DELETE $URI >$null
-            Write-It -msg "Malfind index cleared" -type "Information"
+            Write-It -msg "VolHunter index cleared" -type "Information"
         }
         catch{
             Write-Error -Message "$_ Remove-VHIndices failed"
@@ -445,19 +445,6 @@ Function Run-VHRemote{
 }
 
 Function Set-VHInvestigated{
-<#
-.SYNOPSIS
-Removes items from Kibana dashboards
-.DESCRIPTION
-Sets the "Investigated" flag for each input item in Elastic so that it no longer shows in visualizations
-.EXAMPLE
-PS> Set-VHInvestigated -Investigated .\path\to\list.txt
-Reads in list of Elastic entries that are no longer items of interest
-.PARAMETER Investigated
-    [String] File should consist of list of items that have been deemed false positives
-    Format for file is one entry per line as follows
-    [plugin]:[_id value]
-#>
     [CmdletBinding()]
     Param(
         [ValidateScript({Test-Path $_})]
@@ -929,10 +916,6 @@ Function Watch-VHStatus{
 
 ###Not to be exposed by module
 Function Write-It{
-<#
-.SYNOPSIS
-Internal function used to template Write-Host formats
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,Position=0)]
@@ -959,11 +942,6 @@ Internal function used to template Write-Host formats
 }
 
 Function Stop-VHRemote{
-<#
-.SYNOPSIS
-Force kills powershell & volatility on remote targets
-Warning, blunt instrument, may interrupt other's powershell
-#>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
