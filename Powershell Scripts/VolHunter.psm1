@@ -179,14 +179,6 @@ Function Copy-File {
 }
 
 Function Get-VHCreator{
-<#
-.SYNOPSIS
-Just for fun. Credit where credit is due.
-.DESCRIPTION
-Just for fun. Credit where credit is due.
-.EXAMPLE
-PS> Get-VHCreator
-#>
     Process{
         Write-Host "
                                                                                      .,*//((((//**..
