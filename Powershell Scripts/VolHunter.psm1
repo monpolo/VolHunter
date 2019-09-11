@@ -1,6 +1,6 @@
 <#
 .HELP
-Version # 1.2
+Version # 1.4
 #>
 
 Function Format-VHReport{
@@ -8,7 +8,6 @@ Function Format-VHReport{
         $path = (pwd).Path
         $reportName = Read-Host -Prompt "Enter report name to run:"
         $fullpath = $path + "\$reportName.xlsx"
-
         $excelFile = $fullpath
         $Excel = New-Object -ComObject Excel.Application
         $Excel.Visible = $false
@@ -16,121 +15,39 @@ Function Format-VHReport{
         $wb = $Excel.Workbooks.Open($excelFile)
         [int]$i = 2
         $bob = ($wb.Sheets.Item("Sheet1").Cells.Item($i,1).Text)
-
+        function genReport{
+          Param([String]$path,[String]$plugin,[String]$hostname,$workbook,$row,$column)
+          if((test-path "$path\GatheredLogs\$plugin-$hostname.txt") -and ((get-item "$path\GatheredLogs\$plugin-$hostname.txt").length -gt 0)){
+              $workbook.worksheets.Item(1).Cells.Item($row,$column).Interior.ColorIndex = 4
+          }
+          elseif((test-path "$path\GatheredLogs\$plugin-$hostname.txt") -and ((get-item "$path\GatheredLogs\$plugin-$hostname.txt").length -eq 0)){
+              $workbook.worksheets.Item(1).Cells.Item($row,$column).Interior.ColorIndex = 6
+          }
+          else{
+              $workbook.worksheets.Item(1).Cells.Items($row,$column).Interior.ColorIndex = 3
+          }
+        }
         while($bob -notlike $null){
             $bob = ($wb.Sheets.Item("Sheet1").Cells.Item($i,1).Text)
-
-            #malfind
-            if((test-path "$path\GatheredLogs\malfind-$bob.xlsx") -and ((get-item "$path\GatheredLogs\malfind-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\malfind-$bob.xlsx") -and ((get-item "$path\GatheredLogs\malfind-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,2).Interior.ColorIndex = 3
-            }
-
-            #ssdt
-            if((test-path "$path\GatheredLogs\ssdt-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ssdt-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\ssdt-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ssdt-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,3).Interior.ColorIndex = 3
-            }
-
-            #cmdline
-            if((test-path "$path\GatheredLogs\cmdline-$bob.xlsx") -and ((get-item "$path\GatheredLogs\cmdline-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\cmdline-$bob.xlsx") -and ((get-item "$path\GatheredLogs\cmdline-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,4).Interior.ColorIndex = 3
-            }
-
-            #dlllist
-            if((test-path "$path\GatheredLogs\dlllist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\dlllist-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\dlllist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\dlllist-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,5).Interior.ColorIndex = 3
-            }
-
-            #ldrmodules
-            if((test-path "$path\GatheredLogs\ldrmodules-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ldrmodules-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\ldrmodules-$bob.xlsx") -and ((get-item "$path\GatheredLogs\ldrmodules-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,6).Interior.ColorIndex = 3
-            }
-
-            #netscan
-            if((test-path "$path\GatheredLogs\netscan-$bob.xlsx") -and ((get-item "$path\GatheredLogs\netscan-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\netscan-$bob.xlsx") -and ((get-item "$path\GatheredLogs\netscan-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,7).Interior.ColorIndex = 3
-            }
-
-            #psxview
-            if((test-path "$path\GatheredLogs\psxview-$bob.xlsx") -and ((get-item "$path\GatheredLogs\psxview-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\psxview-$bob.xlsx") -and ((get-item "$path\GatheredLogs\psxview-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,8).Interior.ColorIndex = 3
-            }
-
-            #timers
-            if((test-path "$path\GatheredLogs\timers-$bob.xlsx") -and ((get-item "$path\GatheredLogs\timers-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\timers-$bob.xlsx") -and ((get-item "$path\GatheredLogs\timers-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,9).Interior.ColorIndex = 3
-            }
-            #pslist
-            if((test-path "$path\GatheredLogs\pslist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\pslist-$bob.xlsx").length -gt 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 4
-            }
-            elseif((test-path "$path\GatheredLogs\pslist-$bob.xlsx") -and ((get-item "$path\GatheredLogs\pslist-$bob.xlsx").length -eq 0)){
-                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 6
-            }
-            else{
-                $wb.worksheets.Item(1).Cells.Item($i,10).Interior.ColorIndex = 3
-            }
-
+            genReport -path $path -plugin "malfind" -hostname $bob -workbook $wb -row $i -column 2
+            genReport -path $path -plugin "ssdt" -hostname $bob -workbook $wb -row $i -column 3
+            genReport -path $path -plugin "cmdline" -hostname $bob -workbook $wb -row $i -column 4
+            genReport -path $path -plugin "dlllist" -hostname $bob -workbook $wb -row $i -column 5
+            genReport -path $path -plugin "ldrmodules" -hostname $bob -workbook $wb -row $i -column 6
+            genReport -path $path -plugin "netscan" -hostname $bob -workbook $wb -row $i -column 7
+            genReport -path $path -plugin "psxview" -hostname $bob -workbook $wb -row $i -column 8
+            genReport -path $path -plugin "timers" -hostname $bob -workbook $wb -row $i -column 9
+            genReport -path $path -plugin "pslist" -hostname $bob -workbook $wb -row $i -column 10
             $bob
             $bob = ($wb.Sheets.Item("Sheet1").Cells.Item(($i + 1),1).Text)
             if($bob -like $null){ break}
             $i++
-        }#>
-
+        }
         $wb.SaveAs("$fullpath")
         $wb.Close()
         $Excel.Quit()
     }
-    catch{
-        Write-Error -Message "$_ Format-VHReport failed"
-    }
+    catch{Write-Error -Message "$_ Format-VHReport failed"}
 }
 
 ###Not to be exposed by module
@@ -178,76 +95,12 @@ Function Copy-File {
         }
 }
 
-Function Get-VHCreator{
-    Process{
-        Write-Host "
-                                                                                     .,*//((((//**..
-                                                                                .,/(((/***,,,,,**/(((/,
-                                                  .,*/((######(//*,.       .,((/**,,.,,,,,,......,...,,/(/
-                                           .,(#%%%%%%%%%#*,,,,,,,*/(#%%((((/*,,,,,,,,*/(##%%%%%#((*,,..,.,/(*
-                                      ./(%%%%%%%%%%%%%%%#*,,,,,,,.,,.,,,,,,,,,,,*(%%%%%%%%%%%%%%%%%%%#(,,..,,(*
-                                    ,(#%%%%%%%%%%%%%%%%%#(***,,,,,,,...,,,,,,*/#%%%%%#%%%%%%###%%%%%#%%(*,...*(,
-                                .*%%%%%%%%%%%%%%%%###(/#%%%%%%%%%%%##/*,,,(#%%###%%%%%%%%%%###%%%%%####%%%*,..,(/.
-                             ,/%%%%%%%%%%%%%#//******(#%%%%%%%%%%%%%%%%%%%%##((**,......,*((#%%%%%##%%%%%%%(*..,((
-                          ./#%%%%%%%%%%#(/**********/%%%%%%%%%%%%%%%%%%#(/.             .*,  .,%&%%%%%%%%%%%#,,.,(*
-                         ,%%%%%%%%%%%(/*************/#%%%%%%%##%%%%%###,            ...,**.    ./#%%###%%%##%*,.,*(.
-                      .#%%%##%%%%%(/****************/#%%%%%%%#%%%###(.       */*,..      .*,.     #%%##%%###%/,..,#*
-                    .#%%%###%%%#/********************#############(,                        .,.   .*#%#######(,...(/.
-                  *#%%%%%%#%%(/****************///(/(#############,                           .,.   *%%######(,...(/.
-                 ,%%#%%%%%%#(***************/####%%#############%#     .*,                     .,,  .%%#####%/,..,(/.
-               /#%%%%%%%%%(***************(#%%%%%%%%##%%%%%%%%%##/   .*###.                         .%%#####%*...,(*
-             ,(%%%%%%%%%(/****************#%%%%%%%%##%%%%%%%#####*   (%####/,                       ,%#####%#,..,(/.
-            ,%%%%%%%%%#******************/##%%%%##%%%%%%%%%%%##%#(#(/,,(##%%#(*.                   ,(%####%(*..,(#.
-           *#%%%%%%%%(/*******************#%%%%%%%%%%%%%%%%%%%%%##%%%%#//**(####((//*,.           ./%###%%(,...(#(
-          (%%%%%%%%#(*********************/(#%%%%%%%%%%%%%%%%%%%#((#%#####/. ,*(((///#%(,        ,%%%##%%(,..,*#*
-        ,(%%%%%%%%/**************************/(%%%%%%%%%%%%%%%%%%%*.,(#%%%%(,        ,(#/.    ./#%%##%%(*,..,(#.
-       /%%%%%%%%#(****************************(%%%%%%%%%%%%%%%%###,   *%%#/*,.    ,*(%%%(,,/(%%%%%##%%(,..,*((,
-      .%%%%%%%%#/****************************/(%%%%#####%%%%%%%%##(/.  /(##%%#####%%%%%%%%%%%#####%%%*,.../##.
-     ,(%%%%%%%#************************/(#####(((((((###%%%%%%%###%%#.   .(#########//##%%%%%%%#%%(*,,.,*#(,
-     #%%%%%%%(***************************/(##(#####%%%%%%%%%%%%#%###/         .%%###/ ,#%%%%%###/,...,*#(,
-   ./%%%%%%%#**********************//((#####(/****(#%%%%%%%%%%%%%##(,    .,*(((%%%%#/  .,(%%####/,,.,##
-   *#%%%%%%#/******************/((#####((/*******/#%#%%%%%%%%%%%%%#(,.,//#%%%%%%%&%#(     #%###%#*,.,#/
-  *#%%%%%%%(************//(#######//************/(%%%%%%%%%%%%%%%%#(/(*#%%%%%%%%%%%##.    ,(#%%%#(,.,#/
-  #%%%%%%%(********//##%##((/********************/%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(((*     *(#%%%%(,.,#(
- .%%%%%%%%*****(####(//************************/((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%##/.    *(#%%%%%%%(,,,##
- ,%%%%%%%#*****///***************************/(%%%%%%%%%%%%%%%%%%%%##%%%%%%%%%#/,     *%%%%%%%%%%(..,##
- ,%%%%%%%(***********************************#%%%%%%%%%%%%%%%%%###%%%%%%%#(#(/*     .#%%%%%####%#/,.,#(
- *%%%%%%#(******************,,***************#%%%%%%%%%%%%%%######%%%%%###/.       *#%%%%%%%%###/,,.,#(
- ,%%%%%%#(*******************************/(##%%%%%%%%%%%#######%%%%%%%%%%%%#/     /#%%%%%%%%%#%(,,..*#*
- .%%%%%%%#*****************************/(#%%%%%%%%%%%%%%%%###%%%%%%%%%%%%%%%#*..,/%%%%%%%%%%%%%*,..,//.
- .%%%%%%%#****************************/#%%%%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(,,.,/#.
-  (%%%%%%%/**************************/(%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#%%*,...(#/
-  ,#%%%%%%#/*************************(#%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(*,,.,/(,
-   *#%%%%%%#/************************/#%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/,,,.*(#,
-    *%%%%%%%#*************************/%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/*,,.,*%(,
-     #%%%%%%%(**********************/#%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/,,,,,,##.
-     .(%%%%%%%#******************/###%#/**(##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(/,,,,,*(#,
-      .%%%%%%%%(***************(##%%%(/******/(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*,,,,,,/#(,
-       ,(%%%%%%%%(**********/#%%%#************(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(,,,,..,/%#/
-         .%%%%%%%%#(/*****###(/****************#%%%%%%%%%%%%%%%%%%%%%%%%%%(/*,.,,,,/((/.
-          .*#%%%%%%%%(/************************/(#%%%%%%%%%%%%%%%%%%%%#*,,....,/(#/,.
-            .%%%%%%%%%%/************************(#%%%%%%%%%%%%%%%%%#(*,,,,..,/((/,
-              .#%&%%%%%%%%(/*******************(#%%%%%%%%%%%%%%(/*.....,,*##(,.
-                 ,#%%%%%%%%%%%%((//************#%%%%%%%%%#(/*,....,,*/((/,
-                    ,#%%%%%%%%%%%%%%%%%%%%%%%%%%#//**,,.......,/(((/*
-                      ,#%%%%%%%%%%%%%%%%%%%%%%###/........,*/(#/*,
-                          ,*(%%%%%%%%#############*,*/(((/*,.
-                                ..,**////((((///**,..
-
-         The Skulls Present
-             VolHunter
-             -FUMBLES"
-    Return
-    }
-}
-
 Function Get-VHMemDump{
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$True,Position=0)]
             [String]$Target
     )
-
     Process{
         try{
             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
@@ -260,9 +113,7 @@ Function Get-VHMemDump{
             }
             Remove-PSDrive -Name "$env:shareLetter" -force
         }
-        catch{
-            Write-Error -Message "$_ Get-VHMemDump failed"
-        }
+        catch{Write-Error -Message "$_ Get-VHMemDump failed"}
     }
 }
 
@@ -272,7 +123,6 @@ Function Get-VHOutput{
         [Parameter(Mandatory=$False,Position=0)]
             [String]$TargetList = $env:OnList
     )
-
     Process{
         $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
         $currLine = 0
@@ -295,9 +145,7 @@ Function Get-VHOutput{
                 }
                 Remove-PSDrive -Name "$env:shareLetter" -force
             }
-            catch{
-                Write-Error -Message "$_ Get-VHOutput failed"
-            }
+            catch{Write-Error -Message "$_ Get-VHOutput failed"}
         }
     }
 }
@@ -308,16 +156,13 @@ Function Get-VHStatus{
         [Parameter(Mandatory=$True,Position=0)]
             [String]$Target2
     )
-
     Process{
         try{
             New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target2\C$" 2>$null
             Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt"
             Remove-PSDrive -Name "$env:shareLetter" -force
         }
-        catch{
-            Write-Error -Message "$_ Get-VHStatus failed"
-        }
+        catch{Write-Error -Message "$_ Get-VHStatus failed"}
     }
 }
 
@@ -327,7 +172,6 @@ Function Get-VHStatusAll{
         [Parameter(Mandatory=$False,Position=0)]
             [String]$TargetList = $env:OnList
     )
-
     Process{
         try{
             foreach($Target in (Get-Content $TargetList)){
@@ -341,9 +185,7 @@ Function Get-VHStatusAll{
                 Remove-PSDrive -Name "$env:shareLetter" -force
             }
         }
-        catch{
-            Write-Error -Message "$_ Get-VHStatus failed"
-        }
+        catch{Write-Error -Message "$_ Get-VHStatus failed"}
     }
 }
 
@@ -355,16 +197,13 @@ Function Remove-VHIndices{
         [Parameter(Mandatory=$False,Position=1)]
             [Int]$ElasticPort = $env:ElasticPort
     )
-
     Process{
         try{
             $URI = $ElasticIP + ":" + $ElasticPort + "/VolHunter"
             curl -Method DELETE $URI >$null
             Write-It -msg "VolHunter index cleared" -type "Information"
         }
-        catch{
-            Write-Error -Message "$_ Remove-VHIndices failed"
-        }
+        catch{Write-Error -Message "$_ Remove-VHIndices failed"}
     }
 }
 
@@ -376,7 +215,6 @@ Function Remove-VHRemote{
         [Parameter(Mandatory=$False,Position=1)]
             [Int]$MaxThreads = $env:MaxThreads
     )
-
     Process{
         $cleanBlock = {
             Param([string]$target, $cred, $volPath)
@@ -402,7 +240,6 @@ Function Run-VHRemote{
         [Parameter(Mandatory=$False,Position=4)]
             $volPath = $env:VolPath
     )
-
     Process{
         try{
             $XYZ = 0
@@ -437,12 +274,7 @@ Function Run-VHRemote{
             Write-It -msg "All jobs finished. Cleaning up. $time" -type "Information"
             Get-Job | Remove-Job
         }
-        catch{
-            Write-Error -Message "$_ Run-VHRemote failed"
-        }
-    }
-    End{
-
+        catch{Write-Error -Message "$_ Run-VHRemote failed"}
     }
 }
 
@@ -524,7 +356,6 @@ Function Start-VHInvestigation{
         [Parameter(Mandatory=$False,Position=2)]
             [String]$HumanReadable = $env:HumanReadable
     )
-
     Process{
         try{
             $numOff = Test-VHConnection
@@ -739,14 +570,11 @@ Function Start-VHInvestigation{
             ### MOVE ALL FILES
             Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor Black -BackgroundColor White
             Run-VHRemote -block $moveBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
-
             ### EXECUTE ###
             Write-Host "BEGINNING EXECUTION" -ForegroundColor Black -BackgroundColor Green
             Run-VHRemote -block $exeBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
         }
-        catch{
-            Write-Error -Message "$_ Start-VHInvestigation overall failed"
-        }
+        catch{Write-Error -Message "$_ Start-VHInvestigation overall failed"}
     }
 }
 
@@ -756,7 +584,6 @@ Function Test-VHConnection{
         [Parameter(Mandatory=$False,Position=0)]
             [String]$TargetList = $env:TargetList
     )
-
     Begin{$failPing = 0}
     Process{
         if((Test-Path -Path ".\OnList.txt")){Remove-Item -Path ".\OnList.txt"}
@@ -801,7 +628,6 @@ Function Watch-VHStatus{
         [Parameter(Mandatory=$False,Position=0)]
             [String]$TargetList = $env:OnList
     )
-
     Process{
         try{
             $notDone = $True
@@ -868,9 +694,7 @@ Function Watch-VHStatus{
                 Write-It -msg "$numFailed target failed to start VHR, check your output" -type "Error"
             }
         }
-        catch{
-            Write-Error -Message "$_ Get-VHStatus failed"
-        }
+        catch{Write-Error -Message "$_ Watch-VHStatus failed"}
     }
 }
 
@@ -883,7 +707,6 @@ Function Write-It{
         [Parameter(Mandatory=$True,Position=0)]
             [String]$type
     )
-
     Process{
         try{
             switch ($type){
@@ -895,9 +718,7 @@ Function Write-It{
             }
             Write-Host $msg -ForegroundColor $fore -BackgroundColor $back
         }
-        catch{
-            Write-Error -Message "$_ Write-It failed... I'm not sure how you managed this."
-        }
+        catch{Write-Error -Message "$_ Write-It failed... I'm not sure how you managed this."}
     }
 }
 
@@ -907,7 +728,6 @@ Function Stop-VHRemote{
         [Parameter(Mandatory=$False,Position=0)]
             [String]$TargetList = $env:TargetList
     )
-
     Process{
         try{
             foreach($comp in (Get-Content $TargetList)){
@@ -915,9 +735,7 @@ Function Stop-VHRemote{
                 taskkill /IM volatility.exe /S $comp
             }
         }
-        catch{
-            Write-Error -Message "$_ Stop-VHRemote failed."
-        }
+        catch{Write-Error -Message "$_ Stop-VHRemote failed."}
     }
 }
 
