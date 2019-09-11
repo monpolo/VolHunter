@@ -379,7 +379,7 @@ Function Remove-VHRemote{
 
     Process{
         $cleanBlock = {
-            Param([string]$target, $cred)
+            Param([string]$target, $cred, $volPath)
             "`nTarget is $target"
             Invoke-Command -Computer $target -Credential $cred -ScriptBlock {Remove-Item -path C:\Windows\CCM\Perf\VolH -Recurse -Force} -ErrorAction SilentlyContinue
             "`nFiles and folders deleted`n"
@@ -398,7 +398,9 @@ Function Run-VHRemote{
         [Parameter(Mandatory=$False,Position=2)]
             [String]$TargetList = $env:TargetList,
         [Parameter(Mandatory=$False,Position=3)]
-            $cred = $global:Credential
+            $cred = $global:Credential,
+        [Parameter(Mandatory=$False,Position=4)]
+            $volPath = $env:VolPath
     )
 
     Process{
@@ -412,7 +414,7 @@ Function Run-VHRemote{
                 While (@(Get-Job -State running).count -ge $MaxThreads){
                     Start-Sleep -Milliseconds 10
                 }
-                Start-Job -ScriptBlock $block -Name $target -ArgumentList $target, $cred 1>$null
+                Start-Job -ScriptBlock $block -Name $target -ArgumentList $target, $cred, $volPath 1>$null
                 $XYZ++
                 Write-It -msg "Starting job against $target # $XYZ / $lineCount" -type "Other"
             }
@@ -527,191 +529,192 @@ Function Start-VHInvestigation{
         try{
             $numOff = Test-VHConnection
             Write-Host "$numOff systems offline"
-            $miniBlock = {
-                function Run-Vol{
-                    param( [string]$plugin, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
-                    try{
-                        $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
-                        $hn = hostname
-                        Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
-                        $start = Get-Date
+            $exeBlock = {
+                Param([String]$target,$cred,[String]$volPath)
+                Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
+                    function Run-Vol{
+                        param( [string]$plugin, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
+                        try{
+                            $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
+                            $hn = hostname
+                            Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
+                            $start = Get-Date
 
-                        $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
-                        $timeouted = $null
-                        $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
-                        $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
+                            $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
+                            $timeouted = $null
+                            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
+                            $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
 
-                        if($timeouted){
-                            $proc | kill
+                            if($timeouted){
+                                $proc | kill
+                                $end = Get-Date
+                                Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n"
+                                continue
+                            }
+
                             $end = Get-Date
-                            Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n"
+                            Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n"
+                        }
+                        catch{
+                            Add-Content -Path $logLocation -Value "$_ $plugin failed"
                             continue
                         }
+                    }
 
-                        $end = Get-Date
-                        Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n"
+                    $hostName = hostname
+                    $hostImg = $hostName + ".bin"
+                    $baseDir = "C:\Windows\CCM\Perf\VolH\"
+                    $imageDir = "C:\Windows\CCM\Perf\VolH\Image\"
+                    $outputDir = "C:\Windows\CCM\Perf\VolH\Output\"
+                    $toolDir = "C:\Windows\CCM\Perf\VolH\Tools\"
+                    $imgLocation = "C:\Windows\CCM\Perf\VolH\Image\$hostImg"
+                    $logLocation = "C:\Windows\CCM\Perf\VolH\VHLog-$hostname.txt"
+                    $time = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd"+"T"+"HH:mm:ss.fff"+"Z")
+                    $volProfile = Get-Content "C:\Windows\CCM\Perf\VolH\VolProfile.txt"
+                    $OSVersi = [System.Environment]::OSVersion.Version
+
+                    $vhlog = "Starting VolHunter at $time `n"
+                    Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
+
+                    ### DETERMINE VOLATILITY PROFILE ###
+                    Add-Content -Path "$logLocation" -Value "Determining x86 vs x64`n"
+                    ### Determine 32 vs 64 bit architecture
+                    $Architecture = 64
+                    if([intptr]::size -eq 4){
+                        $Architecture = 86
                     }
-                    catch{
-                        Add-Content -Path $logLocation -Value "$_ $plugin failed"
-                        continue
+                    Add-Content -Path "$logLocation" -Value "$hostname is x$Architecture`n"
+
+                    ### Get systeminfo ###
+                    Add-Content -Path "$logLocation" -Value "Determining OS & Revision for Volatility profile`n"
+                    $sysInfo = systeminfo.exe
+                    $ram = (($sysinfo | select-string 'Total Physical Memory:').ToString().Split(':')[1].Trim()).Replace(" MB","")
+                    $diskSpace = ( gwmi Win32_LogicalDisk -filter "deviceid='C:'" | Select DeviceID, @{Name="FreeMB";Expression={[math]::Round($_.Freespace/1MB,2)}} ).FreeMB
+                    $osVersion = $sysInfo | select-string "OS Version"
+                    $sysInfo = $sysInfo | select-string "OS Name"
+                    Add-Content -Path "$logLocation" -Value "$hostname has $ram MB of RAM`n"
+                    Add-Content -Path "$logLocation" -Value "$hostname has $diskSpace MB of free space on C:`n"
+                    if($diskSpace -lt ([int]$freeRam + 2000) ){
+                        Add-Content -Path "C:\Windows\CCM\Perf\VolH\VHLog.txt" -Value "Not enough free disk space`n"
+                        $volDone = "Not enough freespace on C:\ to run`n"
+                        Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+                        return
                     }
+                    Add-Content -Path "$logLocation" -Value "$osVersion `n"
+                    Add-Content -Path "$logLocation" -Value "$sysInfo `n"
+
+                    ### Build Volatility --profile variable based on OSVersion.Version and systeminfo output ###
+                    switch ($sysInfo){
+                        # Windows 10 Ver 10586/14393/15063+/none x86/64 #
+                        {$_ -like "*Windows 10*"} {
+                            if(($osVersi.Build -ge 10586) -and ($osVersi.Build -lt 14393)){$volProfile = "Win10x"+$Architecture+"_10586"}
+                            elseif(($osVersi.Build -ge 14393) -and ($osVersi.Build -lt 15063)){$volProfile = "Win10x"+$Architecture+"_14393"}
+                            elseif(($osVersi.Build -ge 15063) -and ($osVersi.Build -lt 16299)){$volProfile = "Win10x"+$Architecture+"_15063"}
+                            elseif(($osVersi.Build -ge 16299) -and ($osVersi.Build -lt 17134)){$volProfile = "Win10x"+$Architecture+"_16299"}
+                            elseif(($osVersi.Build -ge 17134) -and ($osVersi.Build -lt 17763)){$volProfile = "Win10x"+$Architecture+"_17134"}
+                            elseif($osVersi.Build -eq 17763){$volProfile = "Win10x"+$Architecture+"_17763"}
+                            else{$volProfile = "Win10x"+$Architecture}
+                        }
+                        # Server 2016 Ver 14393 #
+                        {$_ -like "*Server 2016*"} { $volProfile = "Win2016x64_14393" } #End Server2016 switch
+                        # Server 2012 #
+                        {$_ -like "*Server 2012 *"} { $volProfile = "Win2012x64" }
+                        # Server 2012R2, Ver 18340 #
+                        {$_ -like "*Server 2012 R2*"} {
+                            if($osVersion -like "*18340*"){ $volProfile = "Win2012R2x64_18340" }
+                            else{ $volProfile = "Win2012R2x64" }
+                        }
+                        # Server 2008, SP1/2, x86/64 #
+                        {$_ -like "*Server*2008 Standard*"} {
+                            if($osVersion -like "*Service*Pack*1*"){ $volProfile = "Win2008SP1x"+$Architecture }
+                            else{ $volProfile = "Win2008SP2x"+$Architecture }
+                        }
+                        # Server 2008 R2 SP0/1 & SP1_23418 #
+                        {$_ -like "*Server 2008 R2*"} {
+                            if( !($osVersion -like "*Service Pack 1*") ){ $volProfile = "Win2008R2SP0x64" }
+                            elseif($osVersion -like "*23418*"){ $volProfile = "Win2008R2SP1x64_23418" }
+                            else{ $volProfile = "Win2008R2SP1x64" }
+                        }
+                        # Server 2003 SP0x86, SP1x86/64, SP2x86/64 #
+                        {$_ -like "Server 2003*"} {
+                            if($osVersion -like "*Service Pack 1*"){ $volProfile = "Win2003SP1x"+$Architecture }
+                            elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "Win2003SP2x"+$Architecture }
+                            else{ $volProfile = "Win2003SP0x86" }
+                        }
+                        # Vista SP0/1/2 x86/x64 #
+                        {$_ -like "*Vista*"} {
+                            if($osVersion -like "*Service Pack 1*"){ $volProfile = "VistaSP1x"+$Architecture }
+                            elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "VistaSP2x"+$Architecture }
+                            else{ $volProfile = "VistaSP0x"+$Architecture }
+                        }
+                        # Windows 7 SP0x64/86, SP1x64/86, SP1_23418x64/86 #
+                        {$_ -like "*Windows 7*"} {
+                            if( !($osVersion -like "*Service Pack*") ){ $volProfile = "Win7SP0x"+$Architecture }
+                            elseif($osVersion -like "*23418*"){ $volProfile = "Win7SP1x"+$Architecture + "_23418" }
+                            else{ $volProfile = "Win7SP1x"+$Architecture }
+                        }
+                        # Windows 8.1 #
+                        {$_ -like "*Windows 8.1*"} {
+                            if($osVersion -like "*18340*"){ $volProfile = "Win8SP1x64_18340" }
+                            else{ $volProfile = "Win8SP1x"+$Architecture }
+                        }
+                        # Windows 8 #
+                        {$_ -like "*Windows 8 *"} { $volProfile = "Win8SP0x"+$Architecture }
+
+                        default {$volProfile = "ERROR"}
+                    }
+
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolProfile.txt" -InputObject $volProfile -Encoding ASCII
+                    Add-Content -Path "$logLocation" -Value "Volatility Profile = $volProfile `n"
+
+                    if($volProfile -eq "ERROR"){
+                        Out-File -FilePath "C:\Windows\CCM\Perf\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
+                        $volDone = "VHRemote failed due to unrecognized profile"
+                        Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
+                        exit
+                    }
+
+                    ###############################
+                    ### Run memory dumping tool ###
+                    ###############################
+                    Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
+                    $dumpCommand = "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe"
+                    Add-Content -Path "$logLocation" -Value "Starting memory dump"
+                    $start = Get-Date
+                    Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
+                    $end = Get-Date
+                    $dumpDone = "DumpIt Completed"
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
+                    Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
+                    Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
+                    Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
+                    Add-Content -Path "$logLocation" -Value "Memory dump completed in $($end-$start) H:M:S.MS`n"
+
+                    $backupTemp = $env:temp
+                    $env:temp = "C:\Windows\CCM\Perf\VolH\"
+                    $env:tmp = "C:\Windows\CCM\Perf\VolH\"
+                    rm "C:\Windows\CCM\Perf\VolH\VolDone.txt"
+                    Run-Vol -plugin "malfind" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "ssdt" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "cmdline" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "dlllist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "ldrmodules" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "netscan" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "psxview" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "timers" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    Run-Vol -plugin "pslist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+
+                    $vhlog = "DONE"
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $vhlog -Encoding ASCII
+
+                    ### FIX TEMP FOLDER CHANGE ###
+                    $env:temp = $backupTemp
+                    $env:tmp = $backupTemp
+                    Add-Content -Path "$logLocation" -Value "Temp environment variables restored`n"
                 }
-
-                Set-ExecutionPolicy unrestricted
-                $hostName = hostname
-                $hostImg = $hostName + ".bin"
-                $baseDir = "C:\Windows\CCM\Perf\VolH\"
-                $imageDir = "C:\Windows\CCM\Perf\VolH\Image\"
-                $outputDir = "C:\Windows\CCM\Perf\VolH\Output\"
-                $toolDir = "C:\Windows\CCM\Perf\VolH\Tools\"
-                $imgLocation = "C:\Windows\CCM\Perf\VolH\Image\$hostImg"
-                $logLocation = "C:\Windows\CCM\Perf\VolH\VHLog-$hostname.txt"
-                $time = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd"+"T"+"HH:mm:ss.fff"+"Z")
-                $volProfile = Get-Content "C:\Windows\CCM\Perf\VolH\VolProfile.txt"
-                $OSVersi = [System.Environment]::OSVersion.Version
-
-                $vhlog = "Starting VolHunter at $time `n"
-                Out-File -FilePath "$logLocation" -InputObject $vhlog -Encoding ASCII
-
-                ### DETERMINE VOLATILITY PROFILE ###
-                Add-Content -Path "$logLocation" -Value "Determining x86 vs x64`n"
-                ### Determine 32 vs 64 bit architecture
-                $Architecture = 64
-                if([intptr]::size -eq 4){
-                    $Architecture = 86
-                }
-                Add-Content -Path "$logLocation" -Value "$hostname is x$Architecture`n"
-
-                ### Get systeminfo ###
-                Add-Content -Path "$logLocation" -Value "Determining OS & Revision for Volatility profile`n"
-                $sysInfo = systeminfo.exe
-                $ram = (($sysinfo | select-string 'Total Physical Memory:').ToString().Split(':')[1].Trim()).Replace(" MB","")
-                $diskSpace = ( gwmi Win32_LogicalDisk -filter "deviceid='C:'" | Select DeviceID, @{Name="FreeMB";Expression={[math]::Round($_.Freespace/1MB,2)}} ).FreeMB
-                $osVersion = $sysInfo | select-string "OS Version"
-                $sysInfo = $sysInfo | select-string "OS Name"
-                Add-Content -Path "$logLocation" -Value "$hostname has $ram MB of RAM`n"
-                Add-Content -Path "$logLocation" -Value "$hostname has $diskSpace MB of free space on C:`n"
-                if($diskSpace -lt ([int]$freeRam + 2000) ){
-                    Add-Content -Path "C:\Windows\CCM\Perf\VolH\VHLog.txt" -Value "Not enough free disk space`n"
-                    $volDone = "Not enough freespace on C:\ to run`n"
-                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
-                    return
-                }
-                Add-Content -Path "$logLocation" -Value "$osVersion `n"
-                Add-Content -Path "$logLocation" -Value "$sysInfo `n"
-
-                ### Build Volatility --profile variable based on OSVersion.Version and systeminfo output ###
-                switch ($sysInfo){
-                    # Windows 10 Ver 10586/14393/15063+/none x86/64 #
-                    {$_ -like "*Windows 10*"} {
-                        if(($osVersi.Build -ge 10586) -and ($osVersi.Build -lt 14393)){$volProfile = "Win10x"+$Architecture+"_10586"}
-                        elseif(($osVersi.Build -ge 14393) -and ($osVersi.Build -lt 15063)){$volProfile = "Win10x"+$Architecture+"_14393"}
-                        elseif(($osVersi.Build -ge 15063) -and ($osVersi.Build -lt 16299)){$volProfile = "Win10x"+$Architecture+"_15063"}
-                        elseif(($osVersi.Build -ge 16299) -and ($osVersi.Build -lt 17134)){$volProfile = "Win10x"+$Architecture+"_16299"}
-                        elseif(($osVersi.Build -ge 17134) -and ($osVersi.Build -lt 17763)){$volProfile = "Win10x"+$Architecture+"_17134"}
-                        elseif($osVersi.Build -eq 17763){$volProfile = "Win10x"+$Architecture+"_17763"}
-                        else{$volProfile = "Win10x"+$Architecture}
-                    }
-                    # Server 2016 Ver 14393 #
-                    {$_ -like "*Server 2016*"} { $volProfile = "Win2016x64_14393" } #End Server2016 switch
-                    # Server 2012 #
-                    {$_ -like "*Server 2012 *"} { $volProfile = "Win2012x64" }
-                    # Server 2012R2, Ver 18340 #
-                    {$_ -like "*Server 2012 R2*"} {
-                        if($osVersion -like "*18340*"){ $volProfile = "Win2012R2x64_18340" }
-                        else{ $volProfile = "Win2012R2x64" }
-                    }
-                    # Server 2008, SP1/2, x86/64 #
-                    {$_ -like "*Server*2008 Standard*"} {
-                        if($osVersion -like "*Service*Pack*1*"){ $volProfile = "Win2008SP1x"+$Architecture }
-                        else{ $volProfile = "Win2008SP2x"+$Architecture }
-                    }
-                    # Server 2008 R2 SP0/1 & SP1_23418 #
-                    {$_ -like "*Server 2008 R2*"} {
-                        if( !($osVersion -like "*Service Pack 1*") ){ $volProfile = "Win2008R2SP0x64" }
-                        elseif($osVersion -like "*23418*"){ $volProfile = "Win2008R2SP1x64_23418" }
-                        else{ $volProfile = "Win2008R2SP1x64" }
-                    }
-                    # Server 2003 SP0x86, SP1x86/64, SP2x86/64 #
-                    {$_ -like "Server 2003*"} {
-                        if($osVersion -like "*Service Pack 1*"){ $volProfile = "Win2003SP1x"+$Architecture }
-                        elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "Win2003SP2x"+$Architecture }
-                        else{ $volProfile = "Win2003SP0x86" }
-                    }
-                    # Vista SP0/1/2 x86/x64 #
-                    {$_ -like "*Vista*"} {
-                        if($osVersion -like "*Service Pack 1*"){ $volProfile = "VistaSP1x"+$Architecture }
-                        elseif($osVersion -like "*Service Pack 2*"){ $volProfile = "VistaSP2x"+$Architecture }
-                        else{ $volProfile = "VistaSP0x"+$Architecture }
-                    }
-                    # Windows 7 SP0x64/86, SP1x64/86, SP1_23418x64/86 #
-                    {$_ -like "*Windows 7*"} {
-                        if( !($osVersion -like "*Service Pack*") ){ $volProfile = "Win7SP0x"+$Architecture }
-                        elseif($osVersion -like "*23418*"){ $volProfile = "Win7SP1x"+$Architecture + "_23418" }
-                        else{ $volProfile = "Win7SP1x"+$Architecture }
-                    }
-                    # Windows 8.1 #
-                    {$_ -like "*Windows 8.1*"} {
-                        if($osVersion -like "*18340*"){ $volProfile = "Win8SP1x64_18340" }
-                        else{ $volProfile = "Win8SP1x"+$Architecture }
-                    }
-                    # Windows 8 #
-                    {$_ -like "*Windows 8 *"} { $volProfile = "Win8SP0x"+$Architecture }
-
-                    default {$volProfile = "ERROR"}
-                }
-
-                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolProfile.txt" -InputObject $volProfile -Encoding ASCII
-                Add-Content -Path "$logLocation" -Value "Volatility Profile = $volProfile `n"
-
-                if($volProfile -eq "ERROR"){
-                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\UNRECOGNIZEDPROFILE.txt" -InputObject $volProfile -Enocding ASCII
-                    $volDone = "VHRemote failed due to unrecognized profile"
-                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $volDone -Encoding ASCII
-                    exit
-                }
-
-                ###############################
-                ### Run memory dumping tool ###
-                ###############################
-                Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
-                $dumpCommand = "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe"
-                Add-Content -Path "$logLocation" -Value "Starting memory dump"
-                $start = Get-Date
-                Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
-                $end = Get-Date
-                $dumpDone = "DumpIt Completed"
-                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
-                Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
-                Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
-                Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
-                Add-Content -Path "$logLocation" -Value "Memory dump completed in $($end-$start) H:M:S.MS`n"
-
-
-                $backupTemp = $env:temp
-                $env:temp = "C:\Windows\CCM\Perf\VolH\"
-                $env:tmp = "C:\Windows\CCM\Perf\VolH\"
-                rm "C:\Windows\CCM\Perf\VolH\VolDone.txt"
-                Run-Vol -plugin "malfind" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "ssdt" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "cmdline" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "dlllist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "ldrmodules" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "netscan" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "psxview" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "timers" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-                Run-Vol -plugin "pslist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
-
-                $vhlog = "DONE"
-                Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $vhlog -Encoding ASCII
-
-                ### FIX TEMP FOLDER CHANGE ###
-                $env:temp = $backupTemp
-                $env:tmp = $backupTemp
-                Add-Content -Path "$logLocation" -Value "Temp environment variables restored`n"
-            } #End miniBlock
+            }
             $moveBlock = {
-                Param($cred,[String]$target,[String]$volPath)
+                Param([String]$target,$cred,[String]$volPath)
                 "`nTarget is $target"
                 Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
                     if(!(Test-Path -Path "C:\Windows\CCM\Perf\VolH\")){
@@ -729,58 +732,17 @@ Function Start-VHInvestigation{
                     Copy-Item -Path $volPath\bin\DumpIt-86.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
                 }
                 Copy-Item -Path $volPath\bin\volatility.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe" -ToSession $Session
-                #Copy-Item -Path $volPath\bin\VolHunterRemote.ps1 -Destination "C:\Windows\CCM\Perf\VolH\Tools\VolHunterRemote.ps1" -ToSession $Session
                 Disconnect-PSSession $Session
                 Remove-PSSession $Session
             } #End moveBlock
 
             ### MOVE ALL FILES
-            try{
-                $XYZ = 0
-                Get-Job | Remove-Job
-                $volPath = $env:VolPath
-                $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
-                Write-It -msg "Moving files to $lineCount targets - Max of $MaxThreads simultaneously" -type "Information"
-                foreach ($target in Get-Content $TargetList){
-                    While (@(Get-Job -state running).count -ge $MaxThreads){
-                        Start-Sleep -Milliseconds 10
-                    }
-                    Start-Job -ScriptBlock $moveBlock -Name $target -ArgumentList $cred, $target, $volPath 1>$null
-                    $XYZ++
-                    Write-It -msg "Copying files to $target   # $XYZ / $lineCount" -type "Other"
-                }
-                Write-It -msg "All jobs started. Waiting for them to finish." -type "Information"
-                $lastX = $MaxThreads
-                While (@(Get-Job -State running).count -gt 0){
-                    $x = @(Get-Job -State running).count
-                    if($lastX -ne $x){
-                        Write-It -msg "Still copying to $x systems" -type "Information"
-                        foreach($job in Get-Job){
-                            if($job.State -eq "Running"){
-                                Write-Host $job.Name
-                            }
-                        }
-                        $lastX = $x
-                    }
-                    Start-Sleep 1
-                }
-                $time = Get-Date
-                Write-It -msg "All copies finished. Cleaning up. $time" -type "Information"
-                Get-Job | Remove-Job
-            }
-            catch{
-                Write-Error -Message "$_ Start-VHInvestigation MOVING failed"
-            }
+            Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor Black -BackgroundColor White
+            Run-VHRemote -block $moveBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
 
             ### EXECUTE ###
-            foreach($target in Get-Content $TargetList){
-                $blockBypass = {
-                    set-executionpolicy unrestricted
-                }
-                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -Authentication Kerberos -ScriptBlock $blockBypass
-                Start-Sleep -Seconds 1
-                Invoke-Command -ComputerName $target -Credential $cred -InDisconnectedSession -Authentication Kerberos -ScriptBlock $miniBlock
-            }
+            Write-Host "BEGINNING EXECUTION" -ForegroundColor Black -BackgroundColor Green
+            Run-VHRemote -block $exeBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
         }
         catch{
             Write-Error -Message "$_ Start-VHInvestigation overall failed"
@@ -795,9 +757,7 @@ Function Test-VHConnection{
             [String]$TargetList = $env:TargetList
     )
 
-    Begin{
-        $failPing = 0
-    }
+    Begin{$failPing = 0}
     Process{
         if((Test-Path -Path ".\OnList.txt")){Remove-Item -Path ".\OnList.txt"}
         if((Test-Path -Path ".\OffList.txt")){Remove-Item -Path ".\OffList.txt"}
