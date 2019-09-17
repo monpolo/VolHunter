@@ -272,7 +272,7 @@ Function Run-VHRemote{
             }
             $time = Get-Date
             Write-It -msg "All jobs finished. Cleaning up. $time" -type "Information"
-            Get-Job | Remove-Job
+            Get-Job | Remove-Job -ErrorAction SilentlyContinue
         }
         catch{Write-Error -Message "$_ Run-VHRemote failed"}
     }
@@ -358,11 +358,12 @@ Function Start-VHInvestigation{
     )
     Process{
         try{
+            $cred = $global:Credential
             $numOff = Test-VHConnection
             Write-Host "$numOff systems offline"
             $exeBlock = {
                 Param([String]$target,$cred,[String]$volPath)
-                Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock{
+                Invoke-Command -InDisconnectedSession -ComputerName $target -Credential $cred -ScriptBlock{
                     function Run-Vol{
                         param( [string]$plugin, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
                         try{
@@ -568,11 +569,11 @@ Function Start-VHInvestigation{
             } #End moveBlock
 
             ### MOVE ALL FILES
-            Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor Black -BackgroundColor White
-            Run-VHRemote -block $moveBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
+            Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor White -BackgroundColor Black
+            Run-VHRemote -block $moveBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
             ### EXECUTE ###
             Write-Host "BEGINNING EXECUTION" -ForegroundColor Black -BackgroundColor Green
-            Run-VHRemote -block $exeBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $env:Credential -ErrorAction Continue
+            Run-VHRemote -block $exeBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
         }
         catch{Write-Error -Message "$_ Start-VHInvestigation overall failed"}
     }
