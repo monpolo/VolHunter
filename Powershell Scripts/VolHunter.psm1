@@ -103,15 +103,17 @@ Function Get-VHMemDump{
     )
     Process{
         try{
-            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$Target\C$"
-            if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
-                Write-It -msg "Grabbing memory dump from $Target" -type "Information"
-                Copy-File -from "$env:shareName\Windows\CCM\Perf\VolH\Image\$Target.bin" -to "$env:VolPath\GatheredLogs\$Target.bin"
+            $status = invoke-command -computerName $Target -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VolDone.txt}
+            if($status){
+                Write-Host "Copying memory dump from $target" -BackgroundColor White -ForegroundColor Black
+                $session = New-PSSession -ComputerName $target -Credential $global:Credential
+                Copy-Item -path C:\Windows\CCM\Perf\VolH\Image\*.bin -Destination $env:VolPath\GatheredLogs\ -FromSession $session
+                Disconnect-PSSession $session
+                Remove-PSSession $session
             }
             else{
-                Write-It -msg "VolHunter not complete on $Target" -type "Warning"
+                Write-Host "$Target is still working" -BackgroundColor Red -ForegroundColor Black
             }
-            Remove-PSDrive -Name "$env:shareLetter" -force
         }
         catch{Write-Error -Message "$_ Get-VHMemDump failed"}
     }
@@ -121,7 +123,9 @@ Function Get-VHOutput{
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$False,Position=0)]
-            [String]$TargetList = $env:OnList
+            [String]$TargetList = $env:OnList,
+        [Parameter(Mandatory=$False,Position=1)]
+            [Switch]$skipOfflines
     )
     Process{
         $lineCount = (Get-Content $TargetList | Measure-Object -Line).Lines
@@ -131,19 +135,21 @@ Function Get-VHOutput{
                 $currLine++
                 if(!(Test-Connection -ComputerName $target -BufferSize 16 -Count 1 -Quiet)){
                     Write-It -msg "$target appears offline" -type "Warning"
-                    continue
+                    if($skipOfflines){continue}
                 }
-                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -PSProvider "FileSystem" -Persist -Root "\\$target\C$" 1>$null
-                if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
-                    Write-It -msg "Grabbing parsed output from $target # $currLine / $lineCount`n" -type "Information"
-                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\Output\*" -Destination $env:VolPath\GatheredLogs\
-                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt" -Destination $env:VolPath\VHLogs\
-                    Copy-Item -Path "$env:shareName\Windows\CCM\Perf\VolH\VolProfile.txt" -Destination "$env:VolPath\VHLogs\$target-profile.txt"
+                $status = invoke-command -computerName $Target -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VolDone.txt}
+                if($status){
+                    Write-Host "Copying output from $target" -BackgroundColor White -ForegroundColor Black
+                    $session = New-PSSession -ComputerName $target -Credential $global:Credential
+                    Copy-Item -path C:\Windows\CCM\Perf\VolH\Output\* -Destination $env:VolPath\GatheredLogs\ -FromSession $session
+                    Copy-Item -path C:\Windows\CCM\Perf\VolH\VHLog-*.txt -Destination $env:VolPath\VHLogs\ -FromSession $session
+                    Copy-Item -path C:\Windows\CCM\Perf\VolH\VolProfile.txt -Destination $env:VolPath\VHLogs\$target-profile.txt -FromSession $session
+                    Disconnect-PSSession $session
+                    Remove-PSSession $session
                 }
                 else{
-                    Write-It -msg "Volatility not complete on $target" -type "Warning"
+                    Write-Host "$Target is still working" -BackgroundColor Red -ForegroundColor Black
                 }
-                Remove-PSDrive -Name "$env:shareLetter" -force
             }
             catch{Write-Error -Message "$_ Get-VHOutput failed"}
         }
@@ -158,9 +164,13 @@ Function Get-VHStatus{
     )
     Process{
         try{
-            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$Target2\C$" 2>$null
-            Get-Content -Tail 5 "$env:shareName\Windows\CCM\Perf\VolH\VHLog-*.txt"
-            Remove-PSDrive -Name "$env:shareLetter" -force
+            $status = invoke-command -computerName $Target2 -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VolDone.txt}
+            if($status){
+                Write-Host "$Target2 is done" -backgroundColor DarkGreen -ForegroundColor White
+            }
+            else{
+                Write-Host "$Target2 is still working" -BackgroundColor Red -ForegroundColor Black
+            }
         }
         catch{Write-Error -Message "$_ Get-VHStatus failed"}
     }
@@ -175,14 +185,14 @@ Function Get-VHStatusAll{
     Process{
         try{
             foreach($Target in (Get-Content $TargetList)){
-                New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" 2>$null
-                if(test-path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
-                    write-host "$target is done" -BackgroundColor DarkGreen -ForegroundColor White
+
+                $status = invoke-command -computerName $Target -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VolDone.txt}
+                if($status){
+                    Write-Host "$Target is done" -backgroundColor DarkGreen -ForegroundColor White
                 }
                 else{
-                    write-host "$target is still working" -BackgroundColor Red -ForegroundColor Black
+                    Write-Host "$Target is still working" -BackgroundColor Red -ForegroundColor Black
                 }
-                Remove-PSDrive -Name "$env:shareLetter" -force
             }
         }
         catch{Write-Error -Message "$_ Get-VHStatus failed"}
@@ -343,6 +353,133 @@ Function Set-VHEnvironment{
         catch{
             Write-Error -Message "$_ Set-VHEnvironment failed"
         }
+    }
+}
+
+Function Start-VHExecutionCleanup{
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$False,Position=0)]
+            [String]$TargetList = ".\OnList.txt",
+        [Parameter(Mandatory=$False,Position=1)]
+            [String]$MaxThreads = $env:MaxThreads
+    )
+    Process{
+        try{
+            $cred = $global:Credential
+            $rerunBlock = {
+                Param([String]$target,$cred,[String]$volPath)
+                Invoke-Command -InDisconnectedSession -ComputerName $target -Credential $cred -ScriptBlock{
+                    function Run-Vol{
+                        param( [string]$plugin, [string]$logLocation, [string]$outputDir, [string]$imgLocation, [string]$volProfile )
+                        try{
+                            $command = "C:\Windows\CCM\Perf\VolH\Tools\volatility.exe"
+                            $hn = hostname
+                            Add-Content -Path $logLocation -Value "Running $plugin plugin`n"
+                            $start = Get-Date
+
+                            $outFile = $outputDir + $plugin + "-" + $hn + ".txt"
+                            $timeouted = $null
+                            $proc = Start-Process -FilePath $command -ArgumentList "-f $imgLocation --profile=$volProfile $plugin" -RedirectStandardOutput $outFile -PassThru
+                            $proc | Wait-Process -Timeout 3600 -ErrorAction SilentlyContinue -ErrorVariable timeouted
+
+                            if($timeouted){
+                                $proc | kill
+                                $end = Get-Date
+                                Add-Content -Path $logLocation -Value "$plugin plugin timed-out in $($end-$start)`n"
+                                continue
+                            }
+
+                            $end = Get-Date
+                            Add-Content -Path $logLocation -Value "$plugin plugin completed in $($end-$start) H:M:S.MS`n"
+                        }
+                        catch{
+                            Add-Content -Path $logLocation -Value "$_ $plugin failed"
+                            continue
+                        }
+                    } #End RunVol
+
+                    $hostName = hostname
+                    $hostImg = $hostName + ".bin"
+                    $baseDir = "C:\Windows\CCM\Perf\VolH\"
+                    $imageDir = "C:\Windows\CCM\Perf\VolH\Image\"
+                    $outputDir = "C:\Windows\CCM\Perf\VolH\Output\"
+                    $toolDir = "C:\Windows\CCM\Perf\VolH\Tools\"
+                    $imgLocation = "C:\Windows\CCM\Perf\VolH\Image\$hostImg"
+                    $logLocation = "C:\Windows\CCM\Perf\VolH\VHLog-$hostname.txt"
+                    $time = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd"+"T"+"HH:mm:ss.fff"+"Z")
+                    $volProfile = Get-Content "C:\Windows\CCM\Perf\VolH\VolProfile.txt"
+                    $OSVersi = [System.Environment]::OSVersion.Version
+
+                    if( !(Test-Path $imgLocation) ){
+                        Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 comae.io"
+                        $dumpCommand = "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe"
+                        Add-Content -Path "$logLocation" -Value "Starting memory dump"
+                        $start = Get-Date
+                        Start-Process -Filepath $dumpCommand -ArgumentList "/Q /N /J /T RAW /OUTPUT $imgLocation" -wait
+                        $end = Get-Date
+                        $dumpDone = "DumpIt Completed"
+                        Out-File -FilePath "C:\Windows\CCM\Perf\VolH\DumpDone.txt" -InputObject $dumpDone -Encoding ASCII
+                        Get-Content "C:\Windows\System32\drivers\etc\hosts" | Where-Object {$_ -notmatch 'comae'} | Set-Content "C:\Windows\System32\drivers\etc\hosts2"
+                        Get-Content "C:\Windows\System32\drivers\etc\hosts2" | Set-Content "C:\Windows\System32\drivers\etc\hosts"
+                        Remove-Item "C:\Windows\System32\drivers\etc\hosts2"
+                        Add-Content -Path "$logLocation" -Value "Memory dump completed in $($end-$start) H:M:S.MS`n"
+                    }
+
+                    $backupTemp = $env:temp
+                    $env:temp = "C:\Windows\CCM\Perf\VolH\"
+                    $env:tmp = "C:\Windows\CCM\Perf\VolH\"
+                    if( !(Test-Path "$outputDir\malfind-*") -or ((Get-ItemProperty "$outputDir\malfind-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "malfind" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\ssdt-*") -or ((Get-ItemProperty "$outputDir\ssdt-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "ssdt" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\cmdline-*") -or ((Get-ItemProperty "$outputDir\cmdline-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "cmdline" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\dlllist-*") -or ((Get-ItemProperty "$outputDir\dlllist-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "dlllist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\ldrmodules-*") -or ((Get-ItemProperty "$outputDir\ldrmodules-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "ldrmodules" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\netscan-*") -or ((Get-ItemProperty "$outputDir\netscan-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "netscan" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\psxview-*") -or ((Get-ItemProperty "$outputDir\psxview-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "psxview" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\timers-*") -or ((Get-ItemProperty "$outputDir\timers-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "timers" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+                    if( !(Test-Path "$outputDir\pslist-*") -or ((Get-ItemProperty "$outputDir\pslist-*").length -eq 0) ){
+                        taskkill /F /IM volatility.exe
+                        Run-Vol -plugin "pslist" -logLocation $logLocation -outputDir $outputDir -imgLocation $imgLocation -volProfile $volProfile
+                    }
+
+                    $vhlog = "DONE"
+                    Out-File -FilePath "C:\Windows\CCM\Perf\VolH\VolDone.txt" -InputObject $vhlog -Encoding ASCII
+
+                    ### FIX TEMP FOLDER CHANGE ###
+                    $env:temp = $backupTemp
+                    $env:tmp = $backupTemp
+                    Add-Content -Path "$logLocation" -Value "Temp environment variables restored`n"
+                }
+            }
+
+            Write-Host "SENDING RERUN COMMANDS" -ForegroundColor Black -BackgroundColor Green
+            Run-VHRemote -block $rerunBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
+        }
+        catch{Write-Error -Message "$_ Start-VHExecutionCleanup failed"}
     }
 }
 
@@ -556,7 +693,7 @@ Function Start-VHInvestigation{
                         New-Item -ItemType directory -Path ("C:\Windows\CCM\Perf\VolH\Tools\")
                     }
                 } #End Invoke-Command
-                $Session = New-PSSession -ComputerName $target -Credential $cred -Authentication Kerberos
+                $Session = New-PSSession -ComputerName $target -Credential $cred -Authentication Negotiate
                 if( (Invoke-Command -ComputerName $target -Credential $cred -ScriptBlock {[intptr]::size}) -ne 4){
                     Copy-Item -Path $volPath\bin\DumpIt-64.exe -Destination "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" -ToSession $Session
                 }
@@ -569,7 +706,7 @@ Function Start-VHInvestigation{
             } #End moveBlock
 
             ### MOVE ALL FILES
-            Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor White -BackgroundColor Black
+            Write-Host "BEGINNING SIMULTANEOUS FILE MOVES" -ForegroundColor Black -BackgroundColor White
             Run-VHRemote -block $moveBlock -MaxThreads $MaxThreads -TargetList $TargetList -cred $global:Credential -ErrorAction Continue
             ### EXECUTE ###
             Write-Host "BEGINNING EXECUTION" -ForegroundColor Black -BackgroundColor Green
@@ -658,10 +795,9 @@ Function Watch-VHStatus{
                                $numFailed += 1
                                continue
                             }
-                            New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
-                            #write-host "priortoif"
-                            if(!(Test-Path -Path "$env:shareName\Windows\CCM\Perf\VolH\VHLog*")){
-                            Write-It -msg "FAILURE: $target has failed to start VolHunterRemote" -type "Error"
+                            $status = invoke-command -computerName $Target -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VHLog*}
+                            if(!($status)){
+                                Write-It -msg "FAILURE: $target has failed to start VolHunterRemote" -type "Error"
                                 $array[$index] = $True
                                 $doneCount++
                                 $numFailed += 1
@@ -669,17 +805,15 @@ Function Watch-VHStatus{
                             else{
                                 Write-It -msg "SUCCESS: $target started VolHunterRemote" -type "Success"
                             }
-                            Remove-PSDrive -Name "$env:shareLetter" -force
                         }
-                        New-PSDrive -Name "$env:shareLetter" -Credential $global:Credential -Persist -PSProvider "FileSystem" -Root "\\$target\C$" -ErrorAction SilentlyContinue 1>$null
-                        if(Test-Path "$env:shareName\Windows\CCM\Perf\VolH\VolDone.txt"){
+                        $status = invoke-command -computerName $Target -Credential $global:Credential -ScriptBlock{Test-path C:\Windows\CCM\Perf\VolH\VolDone.txt}
+                        if($status){
                             $date = Get-Date
                             Write-It -msg "$target completed $date" -type "Other"
                             $array[$index] = $True
                             $doneCount++
                             Write-It -msg "$doneCount of $targetLength targets complete." -type "Information"
                         }
-                        Remove-PSDrive -Name "$env:shareLetter" -force
                     }
                     $index++
                 }
@@ -746,6 +880,7 @@ Export-ModuleMember -Function Set-*
 Export-ModuleMember -Function Convert-VHElastic
 Export-ModuleMember -Function Format-VHReport
 Export-ModuleMember -Function Start-VHInvestigation
+Export-ModuleMember -Function Start-VHExecutionCleanup
 Export-ModuleMember -Function Stop-VHRemote
 Export-ModuleMember -Function Send-VHResults
 Export-ModuleMember -Function Test-VHConnection
