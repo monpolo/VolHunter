@@ -29,21 +29,17 @@ def cmdline(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("cmdline-","").replace(".txt","")
-	print "CMDLINE Processing " + input_file
+	#print "CMDLINE Processing " + input_file
 	firstline = 1
 
 	with open(input_path,"r") as f:
 		for line in f:
 			try:
-				#print line
 				if (firstline == 1):
 					firstline = 0
 					continue
 				if line.startswith(delin):
 					d['hostname'] = filename
-					#alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))
-					#if not alphaCheck:
-					#	raise ValueError('NonAlphaNumeric characters in process name')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
@@ -52,20 +48,18 @@ def cmdline(input_path, output_path, autoDiscard):
 						args = line.replace(CL,'')
 						d['process.arguments'] = args.rstrip().replace('"',"'")
 					else:
-						#print line
 						proc = line.split()
-						#print proc
 						if proc[0].rstrip() == "pid:":
 							raise ValueError('Suspected no process name found')
 						if int(proc[2].rstrip()) > 1000000:
-							print "TOO HIGH OF PID " + proc[2].rstrip()
 							raise ValueError('PID too high')
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
+						alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))
+						if not alphaCheck:
+							raise ValueError('222 NonAlphaNumeric characters in process name')
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
 					continue
 				else:
 					printError(line, e, f)
@@ -86,7 +80,7 @@ def ssdt(input_path, output_path, autoDiscard):
 	output_file = open(output_path,"a+")
 	input_file = os.path.basename(input_path)
 	filename = input_file.replace("ssdt-","").replace(".txt","")
-	print "SSDT Processing " + input_file
+	#print "SSDT Processing " + input_file
 
 	with open(input_path,"r") as f:
 		for line in f:
@@ -105,8 +99,8 @@ def ssdt(input_path, output_path, autoDiscard):
 					d = {"ssdt.function" : "null" , "ssdt.owner" : "null" , "ssdt.entry" : "null" , "ssdt.address" : "null" , "hostname" : "null" , "plugin" : "ssdt" , "investigated" : "false", "tags" : ""}
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -124,7 +118,7 @@ def malfind(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("malfind-","").replace(".txt","")
-	print "MALFIND Processing " + input_file
+	#print "MALFIND Processing " + input_file
 	group_track = 0
 
 	with open(input_path,"r") as f:
@@ -178,8 +172,8 @@ def malfind(input_path, output_path, autoDiscard):
 							trackthree = trackthree + line.replace('"',"'").replace("[","{").replace("]","}")
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -197,7 +191,7 @@ def psxview(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("psxview-","").replace(".txt","")
-	print "PSXVIEW Processing " + input_file
+	#print "PSXVIEW Processing " + input_file
 	openlines = 0
 
 	with open(input_path,"r") as f:
@@ -263,8 +257,8 @@ def psxview(input_path, output_path, autoDiscard):
 					continue
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -279,7 +273,7 @@ def pslist(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("pslist-","").replace(".txt","")
-	print "PSLIST Processing " + input_file
+	#print "PSLIST Processing " + input_file
 	openlines = 0
 
 	with open(input_path,"r") as f:
@@ -314,8 +308,8 @@ def pslist(input_path, output_path, autoDiscard):
 					continue
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -343,7 +337,7 @@ def dlllist(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("dlllist-","").replace(".txt","")
-	print "DLLLIST Processing " + input_file
+	#print "DLLLIST Processing " + input_file
 	firstline = 1
 	groupcount = 0
 
@@ -440,8 +434,8 @@ def dlllist(input_path, output_path, autoDiscard):
 								patharray.append(pathval)
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -477,7 +471,7 @@ def timers(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("timers-","").replace(".txt","")
-	print "TIMERS Processing " + input_file
+	#print "TIMERS Processing " + input_file
 	openlines = 0
 
 	with open(input_path,"r") as f:
@@ -500,8 +494,8 @@ def timers(input_path, output_path, autoDiscard):
 					continue
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -516,7 +510,7 @@ def ldrmodules(input_path, output_path, autoDiscard):
 	input_file = os.path.basename(input_path)
 
 	filename = input_file.replace("ldrmodules-","").replace(".txt","")
-	print "LDRMODULES Processing " + input_file
+	#print "LDRMODULES Processing " + input_file
 	openlines = 0
 
 	with open(input_path,"r") as f:
@@ -547,8 +541,8 @@ def ldrmodules(input_path, output_path, autoDiscard):
 					continue
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)
@@ -562,7 +556,7 @@ def netscan(input_path, output_path, autoDiscard):
 	#Filename of input file
 	input_file = os.path.basename(input_path)
 	filename = input_file.replace("netscan-","").replace(".txt","")
-	print "NETSCAN Processing " + input_file
+	#print "NETSCAN Processing " + input_file
 	openlines = 0
 
 	with open(input_path,"r") as f:
@@ -611,8 +605,8 @@ def netscan(input_path, output_path, autoDiscard):
 					continue
 			except Exception as e:
 				if(autoDiscard == 1):
-					print e
-					print line
+					#print e
+					#print line
 					continue
 				else:
 					printError(line, e, f)

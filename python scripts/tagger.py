@@ -136,10 +136,20 @@ def carRules(host, port):
     results = elasticsearch.helpers.scan(es, index="volhunter", query={"query": {"match": {"plugin": "dlllist"}}})
     dlllistres = list(results)
 
-    for doc in dlllistres:
+    for docdll in dlllistres:
         #CAR-2019-04-003: Squiblydoo - COM Scriptlets
-        if (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in (name.lower() for name in doc['_source']['dlllist.path'])):
-            carUpdate("CAR-2019-04-003-COM-Scriptlets", es, doc)
+        if (docdll['_source']['process.name'].lower() == "regsvr32.exe") and ("scrobj.dll" in (name.lower() for name in docdll['_source']['dlllist.path'])):
+            carUpdate("CAR-2019-04-003-COM-Scriptlets", es, docdll)
+
+        #CAR-20XX-XX-XXX: Powerpick
+        #if ( ("system.management.automation.ni.dll" in (name.lower() for name in doc['_source']['dlllist.path'])) ): #and ("powershell" not in doc['_source']['process.name'].lower()) and ("wsmprovhost" not in doc['_source']['process.name'].lower()) ):
+            #carUpdate("CAR-20XX-XX-XXX-Powerpick", es, doc)
+            #print "POWERPICK"
+        for name in docdll['_source']['dlllist.path']:
+            if "system.management.automation.ni.dll" in name.lower():
+                if "powershell" not in docdll['_source']['process.name']:
+                    if "wsmprovhost" not in docdll['_source']['process.name']:
+                        carUpdate("CAR-20XX-XX-XXX-Powerpick", es, docdll)
 
     # CAR Analytics based on CMDLINE output
     print "Running CMDLINE Analytics"
