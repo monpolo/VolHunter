@@ -1,6 +1,7 @@
 from os import listdir
 import os.path
 import json
+import re
 
 def printError(errLine, errMessage, f):
 	print errMessage
@@ -40,6 +41,9 @@ def cmdline(input_path, output_path, autoDiscard):
 					continue
 				if line.startswith(delin):
 					d['hostname'] = filename
+					#alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))
+					#if not alphaCheck:
+					#	raise ValueError('NonAlphaNumeric characters in process name')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"process.name" : "null" , "process.pid" : "null" , "process.arguments" : "null" , "hostname" : "null" , "plugin" : "cmdline" , "investigated" : "false", "tags" : ""}
@@ -244,6 +248,15 @@ def psxview(input_path, output_path, autoDiscard):
 						d['psxview.exittime'] = "null"
 					else:
 						raise ValueError('Suspected bad scan result with incorrect number of fields')
+
+					alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))
+					if not alphaCheck:
+						raise ValueError('NonAlphaNumeric characters in process name')
+					numCheck = bool(re.match('^[0-9]+$', d['process.pid']))
+					if not numCheck:
+						#print numCheck
+						#print d['process.pid']
+						raise ValueError('NonNumeric characters in process pid')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"process.offset.physical" : "null" , "process.name" : "null" , "process.pid" : "null" , "psxview.pslist" : "null" , "hostname" : "null" , "plugin" : "psxview" , "investigated" : "false" , "psxview.psscan" : "null" , "psxview.thrdproc" : "null" , "psxview.pspcid" : "null" , "psxview.csrss" : "null" , "psxview.session" : "null" , "psxview.deskthrd" : "null" , "psxview.exittime" : "null", "tags" : ""}
@@ -589,6 +602,9 @@ def netscan(input_path, output_path, autoDiscard):
 						d['net.starttime'] = data[6] + " " + data[7] + " " + data[8]
 					if ((d['process.pid'] == "-1") or (d['process.pid'] == "0")):
 						raise ValueError('False PID found')
+					alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))
+					if not alphaCheck:
+						raise ValueError('NonAlphaNumeric characters in process name')
 					output_file.write(json.dumps(d))
 					output_file.write("\n")
 					d = {"net.offset.physical" : "null" , "net.protocol" : "null" , "net.local" : "null" , "net.foreign" : "null" , "hostname" : "null" , "plugin" : "netscan" , "investigated" : "false" , "net.state" : "null" , "process.pid" : "null" , "process.name" : "null" , "net.starttime" : "null", "tags" : "" }
