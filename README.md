@@ -4,7 +4,7 @@ A tool for volatility analysis at scale.
 ![alt text](https://user-images.githubusercontent.com/39749344/59982884-6ae23a00-95de-11e9-815b-25443e51b24c.JPG)
 # TO-DOs #
 
-- Update VolHunter.psm1 Format-VHReport to reflect new plugins in use
+- ~~Update VolHunter.psm1 Format-VHReport to reflect new plugins in use~~
 - Provide example report prior to formatting
 - Update VHSwarm to add error handling
      - What if 1+ of intermediaries is offline or doesn't respond?
