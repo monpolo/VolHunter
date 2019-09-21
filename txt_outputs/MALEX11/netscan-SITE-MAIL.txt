@@ -1,0 +1,582 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0x23b02fcf0        TCPv4    172.115.4.9:53214              172.115.4.4:3268     ESTABLISHED      3744     store.exe      
+0x23b232a20        TCPv4    172.115.4.9:27775              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23b285010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:16527 ESTABLISHED      3744     store.exe      
+0x23b29ccf0        TCPv6    fe80::5576:5284:67a5:3da9:27741 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      1692     msexchangerepl 
+0x23b2b6010        TCPv4    172.115.4.9:53216              172.115.4.4:389      ESTABLISHED      11652    w3wp.exe       
+0x23b2e8250        TCPv4    172.115.4.9:27772              172.115.4.4:88       CLOSED           548      lsass.exe      
+0x23b2f09d0        TCPv4    172.115.4.9:45875              172.115.4.4:389      ESTABLISHED      10884    MSExchangeMail 
+0x23b310010        TCPv6    fe80::5576:5284:67a5:3da9:16525 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      8940     w3wp.exe       
+0x23b314010        TCPv4    -:0                            104.0.204.97:0       CLOSED           1692     msexchangerepl 
+0x23b338450        TCPv6    fe80::5576:5284:67a5:3da9:39230 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      11652    w3wp.exe       
+0x23b346880        TCPv4    172.115.4.9:16664              172.115.4.4:3268     CLOSED           2948     Microsoft.Exch 
+0x23b346ba0        TCPv6    -:0                            9832:c862:80fa:ffff:58fc:7f61:80fa:ffff:0 CLOSED           4540     MSExchangeMail 
+0x23b3b1680        TCPv4    172.115.4.9:27760              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23b3f4800        TCPv4    172.115.4.9:53211              172.115.4.4:389      ESTABLISHED      1692     msexchangerepl 
+0x23b75a810        UDPv4    127.0.0.1:61346                *:*                                   8940     w3wp.exe       2019-08-22 15:08:26 UTC+0000
+0x23b7613b0        UDPv4    127.0.0.1:51934                *:*                                   11652    w3wp.exe       2019-08-27 16:17:33 UTC+0000
+0x23b7a21d0        UDPv4    0.0.0.0:0                      *:*                                   3876     mmc.exe        2019-08-22 15:49:24 UTC+0000
+0x23b4f67d0        TCPv4    0.0.0.0:587                    0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23b415cf0        TCPv4    172.115.4.9:53319              172.115.4.4:389      ESTABLISHED      4876     MSExchangeMail 
+0x23b42f230        TCPv4    172.115.4.9:27779              172.115.4.7:17472    ESTABLISHED      10824    TaniumClient.e 
+0x23b4717e0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:31300 ESTABLISHED      3744     store.exe      
+0x23b4c8010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54720 ESTABLISHED      3744     store.exe      
+0x23b4dd7e0        TCPv4    172.115.4.9:32405              172.115.4.4:389      ESTABLISHED      2948     Microsoft.Exch 
+0x23b4ebcf0        TCPv6    fe80::5576:5284:67a5:3da9:15049 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      10320    EdgeTransport. 
+0x23b54ccf0        TCPv6    fe80::5576:5284:67a5:3da9:45924 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23b5b0630        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33584 ESTABLISHED      3744     store.exe      
+0x23b5ddcf0        TCPv6    fe80::5576:5284:67a5:3da9:62042 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      11652    w3wp.exe       
+0x23b637800        TCPv6    fe80::5576:5284:67a5:3da9:15176 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b649cf0        TCPv4    172.115.4.9:16495              172.115.4.12:17472   ESTABLISHED      10824    TaniumClient.e 
+0x23b6bfcf0        TCPv6    fe80::5576:5284:67a5:3da9:15056 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b6cb010        TCPv6    fe80::5576:5284:67a5:3da9:15097 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b6ec010        TCPv6    fe80::5576:5284:67a5:3da9:15111 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b6fb010        TCPv4    172.115.4.9:45377              172.115.4.4:389      ESTABLISHED      4540     MSExchangeMail 
+0x23b6ff010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15091 ESTABLISHED      3744     store.exe      
+0x23b732010        TCPv4    172.115.4.9:53225              172.115.4.4:389      ESTABLISHED      3744     store.exe      
+0x23b732b60        TCPv4    -:0                            24.27.17.99:0        CLOSED           548      lsass.exe      
+0x23b74ecf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15157 ESTABLISHED      3744     store.exe      
+0x23b75e490        TCPv6    fe80::5576:5284:67a5:3da9:15162 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b75f240        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:9624 ESTABLISHED      3744     store.exe      
+0x23b761b70        TCPv6    fe80::5576:5284:67a5:3da9:33579 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23b7648f0        TCPv6    fe80::5576:5284:67a5:3da9:15093 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b766510        TCPv6    fe80::5576:5284:67a5:3da9:15050 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23b77d3f0        TCPv4    172.115.4.9:27748              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23b786010        TCPv4    172.115.4.9:42482              172.115.4.4:389      ESTABLISHED      2616     mad.exe        
+0x23b7893b0        TCPv6    fe80::5576:5284:67a5:3da9:33576 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23b7896d0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15160 ESTABLISHED      3744     store.exe      
+0x23b78a010        TCPv6    fe80::5576:5284:67a5:3da9:27768 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      4876     MSExchangeMail 
+0x23b797330        TCPv4    172.115.4.9:53208              172.115.4.4:389      ESTABLISHED      2920     Microsoft.Exch 
+0x23b79a370        TCPv6    -:0                            185b:5e61:80fa:ffff:185b:5e61:80fa:ffff:0 CLOSED           4        System         
+0x23b79b8d0        TCPv4    172.115.4.9:53230              172.115.4.4:389      ESTABLISHED      3040     Microsoft.Exch 
+0x23b7a3cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15090 ESTABLISHED      3744     store.exe      
+0x23b7b8840        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33548 ESTABLISHED      3744     store.exe      
+0x23b7c2010        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:16524 ESTABLISHED      736      svchost.exe    
+0x23b7c95a0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33592 ESTABLISHED      3744     store.exe      
+0x23d06ed50        UDPv4    0.0.0.0:0                      *:*                                   10320    EdgeTransport. 2019-08-22 16:33:28 UTC+0000
+0x23d06ed50        UDPv6    :::0                           *:*                                   10320    EdgeTransport. 2019-08-22 16:33:28 UTC+0000
+0x23d0bba80        UDPv4    127.0.0.1:50652                *:*                                   3540     WmiPrvSE.exe   2019-08-27 15:41:04 UTC+0000
+0x23d1371b0        UDPv4    127.0.0.1:53933                *:*                                   11040    MSExchangeTran 2019-08-22 16:33:01 UTC+0000
+0x23d1b6310        UDPv4    127.0.0.1:56965                *:*                                   10884    MSExchangeMail 2019-08-22 16:41:20 UTC+0000
+0x23d0e55a0        TCPv4    0.0.0.0:15037                  0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23d0e55a0        TCPv6    :::15037                       :::0                 LISTENING        10320    EdgeTransport. 
+0x23ce05010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15086 ESTABLISHED      3744     store.exe      
+0x23ce059d0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:16525 ESTABLISHED      3744     store.exe      
+0x23ce29cf0        TCPv4    172.115.4.9:28274              172.115.4.4:389      ESTABLISHED      4872     Microsoft.Exch 
+0x23ce44550        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15084 ESTABLISHED      3744     store.exe      
+0x23ce5f010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15170 ESTABLISHED      3744     store.exe      
+0x23ce61710        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54719 ESTABLISHED      3744     store.exe      
+0x23ce6b010        TCPv6    fe80::5576:5284:67a5:3da9:33580 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23ce76010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15050 ESTABLISHED      3744     store.exe      
+0x23cea4cf0        TCPv6    fe80::5576:5284:67a5:3da9:15072 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23cec2810        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:12080 ESTABLISHED      3744     store.exe      
+0x23cec6cf0        TCPv6    fe80::5576:5284:67a5:3da9:54719 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23ced4390        TCPv6    fe80::5576:5284:67a5:3da9:20580 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23ceeb010        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:15049 ESTABLISHED      736      svchost.exe    
+0x23cf10630        TCPv6    fe80::5576:5284:67a5:3da9:33584 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23cf1f010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15093 ESTABLISHED      3744     store.exe      
+0x23cf209f0        TCPv6    fe80::5576:5284:67a5:3da9:43586 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23cf41cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:12107 ESTABLISHED      3744     store.exe      
+0x23cf42cf0        TCPv4    172.115.4.9:22722              172.115.4.4:3268     CLOSED           3880     w3wp.exe       
+0x23cf44010        TCPv6    fe80::5576:5284:67a5:3da9:33556 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23cf4db90        TCPv6    fe80::5576:5284:67a5:3da9:33548 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23cf5b460        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33588 ESTABLISHED      3744     store.exe      
+0x23cf8bcf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20560 ESTABLISHED      3744     store.exe      
+0x23cf9b550        TCPv4    172.115.4.9:20054              172.115.4.4:3268     ESTABLISHED      10884    MSExchangeMail 
+0x23cfd9270        TCPv4    172.115.4.9:39485              172.115.4.4:389      CLOSED           336      MsExchangeFDS. 
+0x23cfe1a10        TCPv6    fe80::5576:5284:67a5:3da9:15076 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23cff4cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33583 ESTABLISHED      3744     store.exe      
+0x23cffe010        TCPv6    fe80::5576:5284:67a5:3da9:15157 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d0032d0        TCPv4    172.115.4.9:53238              172.115.4.4:389      ESTABLISHED      3040     Microsoft.Exch 
+0x23d003660        TCPv6    fe80::5576:5284:67a5:3da9:16527 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      8940     w3wp.exe       
+0x23d009990        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33573 ESTABLISHED      3744     store.exe      
+0x23d010bd0        TCPv6    fe80::5576:5284:67a5:3da9:33568 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d020470        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20570 ESTABLISHED      3744     store.exe      
+0x23d03b010        TCPv4    -:0                            56.25.2.99:0         CLOSED           4        System         
+0x23d042a80        TCPv4    172.115.4.9:20647              172.115.4.4:389      CLOSED           2616     mad.exe        
+0x23d05f790        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54718 ESTABLISHED      3744     store.exe      
+0x23d06f630        TCPv6    fe80::5576:5284:67a5:3da9:43589 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d083a50        TCPv4    172.115.4.9:53228              172.115.4.4:389      ESTABLISHED      3744     store.exe      
+0x23d092010        TCPv6    fe80::5576:5284:67a5:3da9:54756 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      2948     Microsoft.Exch 
+0x23d097cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15076 ESTABLISHED      3744     store.exe      
+0x23d0a9cf0        TCPv4    172.115.4.9:45928              172.115.4.4:389      CLOSED           8940     w3wp.exe       
+0x23d0ac010        TCPv6    fe80::5576:5284:67a5:3da9:33585 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d0b4b90        TCPv6    fe80::5576:5284:67a5:3da9:15091 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d0c5010        TCPv6    fe80::5576:5284:67a5:3da9:33583 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d1009c0        TCPv4    172.115.4.9:53229              172.115.4.4:389      ESTABLISHED      5200     MSExchangeTran 
+0x23d13c250        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33591 ESTABLISHED      3744     store.exe      
+0x23d176890        TCPv4    172.115.4.9:53215              172.115.4.4:389      ESTABLISHED      3744     store.exe      
+0x23d17f4e0        TCPv6    2002:ac73:409::ac73:409:48717  2002:ac73:405::ac73:405:445 ESTABLISHED      4        System         
+0x23d186240        TCPv6    fe80::5576:5284:67a5:3da9:30286 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d18fb40        TCPv6    fe80::5576:5284:67a5:3da9:15161 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d1976d0        TCPv6    fe80::5576:5284:67a5:3da9:33555 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d1a64f0        TCPv4    172.115.4.9:53108              172.115.4.4:389      ESTABLISHED      10320    EdgeTransport. 
+0x23d1b0cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15099 ESTABLISHED      3744     store.exe      
+0x23d1c6010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54756 ESTABLISHED      3744     store.exe      
+0x23d1ca7c0        TCPv6    fe80::5576:5284:67a5:3da9:33560 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d1da010        TCPv6    fe80::5576:5284:67a5:3da9:54724 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d43e1b0        UDPv4    127.0.0.1:54856                *:*                                   10320    EdgeTransport. 2019-08-22 16:33:02 UTC+0000
+0x23da61690        UDPv4    0.0.0.0:0                      *:*                                   3876     mmc.exe        2019-08-22 15:49:24 UTC+0000
+0x23da61690        UDPv6    :::0                           *:*                                   3876     mmc.exe        2019-08-22 15:49:24 UTC+0000
+0x23dacc9e0        UDPv4    0.0.0.0:0                      *:*                                   10320    EdgeTransport. 2019-08-22 16:33:27 UTC+0000
+0x23daf9570        UDPv4    0.0.0.0:0                      *:*                                   10320    EdgeTransport. 2019-08-22 16:33:27 UTC+0000
+0x23daf9570        UDPv6    :::0                           *:*                                   10320    EdgeTransport. 2019-08-22 16:33:27 UTC+0000
+0x23db20b40        UDPv4    0.0.0.0:5355                   *:*                                   1016     svchost.exe    2019-08-27 13:51:11 UTC+0000
+0x23db20b40        UDPv6    :::5355                        *:*                                   1016     svchost.exe    2019-08-27 13:51:11 UTC+0000
+0x23d4b86b0        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        2112     svchost.exe    
+0x23d5e6ef0        TCPv4    0.0.0.0:15190                  0.0.0.0:0            LISTENING        10884    MSExchangeMail 
+0x23db74b80        TCPv4    0.0.0.0:993                    0.0.0.0:0            LISTENING        2592     Microsoft.Exch 
+0x23d210010        TCPv6    fe80::5576:5284:67a5:3da9:31299 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      11652    w3wp.exe       
+0x23d212cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15107 ESTABLISHED      3744     store.exe      
+0x23d217950        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:27768 ESTABLISHED      736      svchost.exe    
+0x23d223410        TCPv4    172.115.4.9:64705              172.115.4.4:389      CLOSED           3744     store.exe      
+0x23d23e5b0        TCPv6    fe80::5576:5284:67a5:3da9:15154 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d243590        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15176 ESTABLISHED      3744     store.exe      
+0x23d27acf0        TCPv6    fe80::5576:5284:67a5:3da9:15088 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d27c2b0        TCPv6    fe80::5576:5284:67a5:3da9:9624 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4832     Microsoft.Exch 
+0x23d28e010        TCPv6    fe80::5576:5284:67a5:3da9:80   fe80::5576:5284:67a5:3da9:16558 ESTABLISHED      4        System         
+0x23d28e9f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:39230 ESTABLISHED      3744     store.exe      
+0x23d299010        TCPv4    172.115.4.9:53271              172.115.4.4:3268     CLOSED           6528     Microsoft.Exch 
+0x23d2ca5d0        TCPv6    -:0                            3819:263:80fa:ffff:3819:263:80fa:ffff:0 CLOSED           4872     Microsoft.Exch 
+0x23d2ff2d0        TCPv4    172.115.4.9:17472              172.115.4.12:51422   ESTABLISHED      10824    TaniumClient.e 
+0x23d3247f0        TCPv4    172.115.4.9:45345              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23d345010        TCPv4    172.115.4.9:53226              172.115.4.4:389      ESTABLISHED      336      MsExchangeFDS. 
+0x23d3a6010        TCPv4    172.115.4.9:53241              172.115.4.4:389      CLOSED           2616     mad.exe        
+0x23d4042d0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15072 ESTABLISHED      3744     store.exe      
+0x23d40dba0        TCPv6    fe80::5576:5284:67a5:3da9:54738 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d414cf0        TCPv6    fe80::5576:5284:67a5:3da9:20581 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d425cf0        TCPv4    172.115.4.9:43098              172.115.4.4:3268     CLOSED           2616     mad.exe        
+0x23d430cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43590 ESTABLISHED      3744     store.exe      
+0x23d443010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15161 ESTABLISHED      3744     store.exe      
+0x23d446ba0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15105 ESTABLISHED      3744     store.exe      
+0x23d44c250        TCPv6    fe80::5576:5284:67a5:3da9:54710 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d44ccf0        TCPv4    172.115.4.9:24884              172.115.4.4:389      CLOSED           10884    MSExchangeMail 
+0x23d47c010        TCPv6    fe80::5576:5284:67a5:3da9:15103 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d492cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54710 ESTABLISHED      3744     store.exe      
+0x23d49bcf0        TCPv6    fe80::5576:5284:67a5:3da9:15084 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d4db010        TCPv4    172.115.4.9:53105              172.115.4.4:389      ESTABLISHED      3880     w3wp.exe       
+0x23d4db690        TCPv6    fe80::5576:5284:67a5:3da9:15160 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d4ffcf0        TCPv6    fe80::5576:5284:67a5:3da9:33562 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d510820        TCPv6    fe80::5576:5284:67a5:3da9:43600 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d54e990        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:27783 ESTABLISHED      736      svchost.exe    
+0x23d554180        TCPv6    fe80::5576:5284:67a5:3da9:33567 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d55a440        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15111 ESTABLISHED      3744     store.exe      
+0x23d56f010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15101 ESTABLISHED      3744     store.exe      
+0x23d572010        TCPv6    fe80::5576:5284:67a5:3da9:33563 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d586500        TCPv4    -:0                            56.25.2.99:0         CLOSED           4        System         
+0x23d58ccf0        TCPv6    fe80::5576:5284:67a5:3da9:33590 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23d5a84f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15056 ESTABLISHED      3744     store.exe      
+0x23d5aa480        TCPv6    -:0                            181b:1163:80fa:ffff:181b:1163:80fa:ffff:0 CLOSED           6528     Microsoft.Exch 
+0x23d5ba800        TCPv6    fe80::5576:5284:67a5:3da9:15073 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23d5bbcf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43585 ESTABLISHED      3744     store.exe      
+0x23d5bccf0        TCPv4    172.115.4.9:28304              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23d5f1cf0        TCPv6    fe80::5576:5284:67a5:3da9:15168 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23da16cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15109 ESTABLISHED      3744     store.exe      
+0x23da17820        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15073 ESTABLISHED      3744     store.exe      
+0x23da3dcf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:45924 ESTABLISHED      3744     store.exe      
+0x23da672f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33578 ESTABLISHED      3744     store.exe      
+0x23da7fba0        TCPv4    172.115.4.9:22749              172.115.4.4:3268     ESTABLISHED      2920     Microsoft.Exch 
+0x23da9ecf0        TCPv6    fe80::5576:5284:67a5:3da9:12079 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      6528     Microsoft.Exch 
+0x23daa0010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15103 ESTABLISHED      3744     store.exe      
+0x23daab010        TCPv6    fe80::5576:5284:67a5:3da9:15051 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23daafcf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20579 ESTABLISHED      3744     store.exe      
+0x23dab5cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54714 ESTABLISHED      3744     store.exe      
+0x23dab9cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43584 ESTABLISHED      3744     store.exe      
+0x23dafa790        TCPv4    172.115.4.9:53234              172.115.4.4:389      ESTABLISHED      11652    w3wp.exe       
+0x23dafe7e0        TCPv6    fe80::5576:5284:67a5:3da9:15163 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23db0a010        TCPv4    172.115.4.9:27782              172.115.4.7:17472    ESTABLISHED      10824    TaniumClient.e 
+0x23db12b40        TCPv6    fe80::5576:5284:67a5:3da9:12107 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23db21b40        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43592 ESTABLISHED      3744     store.exe      
+0x23db297f0        TCPv4    172.115.4.9:22806              172.115.4.4:389      ESTABLISHED      8940     w3wp.exe       
+0x23db57cf0        TCPv6    fe80::5576:5284:67a5:3da9:27769 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4876     MSExchangeMail 
+0x23db5dcf0        TCPv6    fe80::5576:5284:67a5:3da9:20560 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23db61010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:45958 ESTABLISHED      3744     store.exe      
+0x23db65010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33590 ESTABLISHED      3744     store.exe      
+0x23dba6010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:62042 ESTABLISHED      3744     store.exe      
+0x23dbc8cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33582 ESTABLISHED      3744     store.exe      
+0x23dbdd6f0        TCPv6    fe80::5576:5284:67a5:3da9:12081 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23dbf8cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43593 ESTABLISHED      3744     store.exe      
+0x23dbfacf0        TCPv4    -:0                            104.192.216.98:0     CLOSED           10824    TaniumClient.e 
+0x23dc6bb90        UDPv4    127.0.0.1:63281                *:*                                   872      svchost.exe    2019-08-19 14:44:05 UTC+0000
+0x23ddfc540        UDPv4    127.0.0.1:59560                *:*                                   2592     Microsoft.Exch 2019-08-19 18:00:16 UTC+0000
+0x23de2d7e0        UDPv4    127.0.0.1:56507                *:*                                   4832     Microsoft.Exch 2019-08-19 14:07:54 UTC+0000
+0x23def5320        UDPv4    127.0.0.1:52694                *:*                                   6528     Microsoft.Exch 2019-08-19 18:00:00 UTC+0000
+0x23df4b9e0        UDPv4    127.0.0.1:59153                *:*                                   5200     MSExchangeTran 2019-08-19 14:08:19 UTC+0000
+0x23e02a890        UDPv4    127.0.0.1:60306                *:*                                   1692     msexchangerepl 2019-08-19 14:06:50 UTC+0000
+0x23e09a9e0        UDPv4    127.0.0.1:51718                *:*                                   3744     store.exe      2019-08-19 14:04:06 UTC+0000
+0x23e0f9ec0        UDPv4    127.0.0.1:54009                *:*                                   4540     MSExchangeMail 2019-08-19 14:05:16 UTC+0000
+0x23e10fd70        UDPv4    127.0.0.1:62846                *:*                                   4872     Microsoft.Exch 2019-08-19 14:07:25 UTC+0000
+0x23e1344c0        UDPv4    127.0.0.1:60937                *:*                                   4876     MSExchangeMail 2019-08-19 14:05:43 UTC+0000
+0x23e1653b0        UDPv4    127.0.0.1:49744                *:*                                   3536     Microsoft.Exch 2019-08-19 14:06:19 UTC+0000
+0x23e2234f0        UDPv4    0.0.0.0:0                      *:*                                   3328     svchost.exe    2019-08-19 13:59:58 UTC+0000
+0x23e2eb500        UDPv4    127.0.0.1:56506                *:*                                   2948     Microsoft.Exch 2019-08-19 14:07:54 UTC+0000
+0x23e3d7550        UDPv4    127.0.0.1:55402                *:*                                   336      MsExchangeFDS. 2019-08-19 14:03:58 UTC+0000
+0x23e3e3230        UDPv4    127.0.0.1:63269                *:*                                   3880     w3wp.exe       2019-08-19 14:03:01 UTC+0000
+0x23e45c470        UDPv4    0.0.0.0:0                      *:*                                   3328     svchost.exe    2019-08-19 13:59:58 UTC+0000
+0x23e45c470        UDPv6    :::0                           *:*                                   3328     svchost.exe    2019-08-19 13:59:58 UTC+0000
+0x23e4e18b0        UDPv4    127.0.0.1:63270                *:*                                   2920     Microsoft.Exch 2019-08-19 14:03:03 UTC+0000
+0x23e52b190        UDPv4    127.0.0.1:54343                *:*                                   3040     Microsoft.Exch 2019-08-19 14:03:38 UTC+0000
+0x23e53a290        UDPv4    127.0.0.1:53680                *:*                                   2616     mad.exe        2019-08-19 13:58:41 UTC+0000
+0x23dcb8c00        TCPv4    172.115.4.9:17472              0.0.0.0:0            LISTENING        10824    TaniumClient.e 
+0x23dce9b50        TCPv4    0.0.0.0:993                    0.0.0.0:0            LISTENING        2592     Microsoft.Exch 
+0x23dce9b50        TCPv6    :::993                         :::0                 LISTENING        2592     Microsoft.Exch 
+0x23dcf8cf0        TCPv4    0.0.0.0:143                    0.0.0.0:0            LISTENING        2592     Microsoft.Exch 
+0x23de83320        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        2112     svchost.exe    
+0x23de83320        TCPv6    :::3389                        :::0                 LISTENING        2112     svchost.exe    
+0x23decd3f0        TCPv4    0.0.0.0:31647                  0.0.0.0:0            LISTENING        4832     Microsoft.Exch 
+0x23defe010        TCPv4    0.0.0.0:31645                  0.0.0.0:0            LISTENING        2948     Microsoft.Exch 
+0x23df064f0        TCPv4    0.0.0.0:31683                  0.0.0.0:0            LISTENING        5200     MSExchangeTran 
+0x23df9a310        TCPv4    0.0.0.0:31683                  0.0.0.0:0            LISTENING        5200     MSExchangeTran 
+0x23df9a310        TCPv6    :::31683                       :::0                 LISTENING        5200     MSExchangeTran 
+0x23e02bef0        TCPv4    0.0.0.0:45006                  0.0.0.0:0            LISTENING        3744     store.exe      
+0x23e046550        TCPv4    0.0.0.0:808                    0.0.0.0:0            LISTENING        2696     SMSvcHost.exe  
+0x23e046550        TCPv6    :::808                         :::0                 LISTENING        2696     SMSvcHost.exe  
+0x23e06b1a0        TCPv4    0.0.0.0:6001                   0.0.0.0:0            LISTENING        4872     Microsoft.Exch 
+0x23e06b1a0        TCPv6    :::6001                        :::0                 LISTENING        4872     Microsoft.Exch 
+0x23e06c3a0        TCPv4    0.0.0.0:31627                  0.0.0.0:0            LISTENING        4872     Microsoft.Exch 
+0x23e06c3a0        TCPv6    :::31627                       :::0                 LISTENING        4872     Microsoft.Exch 
+0x23e09de00        TCPv4    0.0.0.0:31615                  0.0.0.0:0            LISTENING        1692     msexchangerepl 
+0x23e09de00        TCPv6    :::31615                       :::0                 LISTENING        1692     msexchangerepl 
+0x23e0fd170        TCPv4    0.0.0.0:31645                  0.0.0.0:0            LISTENING        2948     Microsoft.Exch 
+0x23e0fd170        TCPv6    :::31645                       :::0                 LISTENING        2948     Microsoft.Exch 
+0x23e1c2010        TCPv4    0.0.0.0:31647                  0.0.0.0:0            LISTENING        4832     Microsoft.Exch 
+0x23e1c2010        TCPv6    :::31647                       :::0                 LISTENING        4832     Microsoft.Exch 
+0x23e1dc180        TCPv4    0.0.0.0:6001                   0.0.0.0:0            LISTENING        4872     Microsoft.Exch 
+0x23e1fb110        TCPv4    0.0.0.0:64327                  0.0.0.0:0            LISTENING        1692     msexchangerepl 
+0x23e1fb110        TCPv6    :::64327                       :::0                 LISTENING        1692     msexchangerepl 
+0x23e28cce0        TCPv4    0.0.0.0:44980                  0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23e28cce0        TCPv6    :::44980                       :::0                 LISTENING        2920     Microsoft.Exch 
+0x23e34fb50        TCPv4    0.0.0.0:45006                  0.0.0.0:0            LISTENING        3744     store.exe      
+0x23e34fb50        TCPv6    :::45006                       :::0                 LISTENING        3744     store.exe      
+0x23e36de10        TCPv4    0.0.0.0:44987                  0.0.0.0:0            LISTENING        3040     Microsoft.Exch 
+0x23e3db010        TCPv4    0.0.0.0:44987                  0.0.0.0:0            LISTENING        3040     Microsoft.Exch 
+0x23e3db010        TCPv6    :::44987                       :::0                 LISTENING        3040     Microsoft.Exch 
+0x23e3dbdf0        TCPv4    0.0.0.0:31627                  0.0.0.0:0            LISTENING        4872     Microsoft.Exch 
+0x23e4cab00        TCPv4    0.0.0.0:6002                   0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23e4cab00        TCPv6    :::6002                        :::0                 LISTENING        2920     Microsoft.Exch 
+0x23e4e2810        TCPv4    0.0.0.0:45018                  0.0.0.0:0            LISTENING        4540     MSExchangeMail 
+0x23e4e2810        TCPv6    :::45018                       :::0                 LISTENING        4540     MSExchangeMail 
+0x23e549cc0        TCPv4    0.0.0.0:44873                  0.0.0.0:0            LISTENING        2616     mad.exe        
+0x23e549cc0        TCPv6    :::44873                       :::0                 LISTENING        2616     mad.exe        
+0x23e549e70        TCPv4    0.0.0.0:44873                  0.0.0.0:0            LISTENING        2616     mad.exe        
+0x23e54acb0        TCPv4    0.0.0.0:44899                  0.0.0.0:0            LISTENING        540      services.exe   
+0x23e55c8d0        TCPv4    0.0.0.0:44917                  0.0.0.0:0            LISTENING        3328     svchost.exe    
+0x23e55c8d0        TCPv6    :::44917                       :::0                 LISTENING        3328     svchost.exe    
+0x23e5ab410        TCPv4    0.0.0.0:6004                   0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23e5b31e0        TCPv4    0.0.0.0:593                    0.0.0.0:0            LISTENING        736      svchost.exe    
+0x23e5b31e0        TCPv6    :::593                         :::0                 LISTENING        736      svchost.exe    
+0x23e5b9ef0        TCPv4    127.0.0.1:17473                0.0.0.0:0            LISTENING        10824    TaniumClient.e 
+0x23e5eb040        TCPv4    0.0.0.0:25                     0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23e5eb040        TCPv6    :::25                          :::0                 LISTENING        10320    EdgeTransport. 
+0x23dc0e370        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33568 ESTABLISHED      3744     store.exe      
+0x23dc0fcf0        TCPv6    fe80::5576:5284:67a5:3da9:15105 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23dc20cf0        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:7971 ESTABLISHED      736      svchost.exe    
+0x23dc2b660        TCPv4    -:44980                        172.115.2.179:58482  CLOSED           2920     Microsoft.Exch 
+0x23dc2ecf0        TCPv6    fe80::5576:5284:67a5:3da9:33566 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dc359d0        TCPv6    fe80::5576:5284:67a5:3da9:17034 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      2948     Microsoft.Exch 
+0x23dc3dcf0        TCPv6    fe80::5576:5284:67a5:3da9:43591 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dc4d660        TCPv4    172.115.4.9:53231              172.115.4.4:389      ESTABLISHED      10884    MSExchangeMail 
+0x23dc514d0        TCPv4    -:44980                        172.115.1.158:61919  CLOSED           2920     Microsoft.Exch 
+0x23dc562e0        TCPv4    -:0                            104.192.216.98:0     CLOSED           10320    EdgeTransport. 
+0x23dc5bcf0        TCPv4    172.115.4.9:20181              172.115.4.7:17472    CLOSED           10824    TaniumClient.e 
+0x23dc687e0        TCPv4    -:0                            24.251.18.98:0       CLOSED           548      lsass.exe      
+0x23dc8c4c0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15169 ESTABLISHED      3744     store.exe      
+0x23dc9bcf0        TCPv6    fe80::5576:5284:67a5:3da9:54717 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dcaecf0        TCPv6    -:0                            181b:1163:80fa:ffff:181b:1163:80fa:ffff:0 CLOSED           4        System         
+0x23dcb47e0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:35253 ESTABLISHED      3744     store.exe      
+0x23dcd0cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33560 ESTABLISHED      3744     store.exe      
+0x23dcd9430        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54742 ESTABLISHED      3744     store.exe      
+0x23dce1010        TCPv4    172.115.4.9:45925              172.115.4.4:3268     ESTABLISHED      8940     w3wp.exe       
+0x23dd0c650        TCPv6    fe80::5576:5284:67a5:3da9:20577 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dd0fb50        TCPv6    -:0                            3819:263:80fa:ffff:3819:263:80fa:ffff:0 CLOSED           3744     store.exe      
+0x23dd20010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33576 ESTABLISHED      3744     store.exe      
+0x23dd2b620        TCPv6    fe80::5576:5284:67a5:3da9:54721 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dd35010        TCPv6    fe80::5576:5284:67a5:3da9:33569 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dd4c320        TCPv6    fe80::5576:5284:67a5:3da9:33591 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dd4f570        TCPv6    fe80::5576:5284:67a5:3da9:16524 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      8940     w3wp.exe       
+0x23dd5f2f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15163 ESTABLISHED      3744     store.exe      
+0x23dd7bcf0        TCPv4    -:0                            104.64.110.98:0      CLOSED           2920     Microsoft.Exch 
+0x23dd80270        TCPv6    fe80::5576:5284:67a5:3da9:43587 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dd9c990        TCPv4    -:0                            24.187.98.101:0      CLOSED           4        System         
+0x23dd9e8d0        TCPv6    fe80::5576:5284:67a5:3da9:12080 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23ddad7c0        TCPv6    fe80::5576:5284:67a5:3da9:54718 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23ddb43d0        TCPv4    172.115.4.9:53235              172.115.4.4:389      ESTABLISHED      2948     Microsoft.Exch 
+0x23ddb5800        TCPv6    fe80::5576:5284:67a5:3da9:16558 fe80::5576:5284:67a5:3da9:80 ESTABLISHED      1080     mmc.exe        
+0x23ddb6cf0        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:12079 ESTABLISHED      736      svchost.exe    
+0x23ddd17d0        TCPv6    fe80::5576:5284:67a5:3da9:35253 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4832     Microsoft.Exch 
+0x23ddea470        TCPv4    172.115.4.9:18151              172.115.4.4:389      CLOSED           2592     Microsoft.Exch 
+0x23ddea940        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:31299 ESTABLISHED      3744     store.exe      
+0x23de05010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33562 ESTABLISHED      3744     store.exe      
+0x23de136e0        TCPv4    -:0                            24.139.104.98:0      CLOSED           3744     store.exe      
+0x23de45cf0        TCPv6    fe80::5576:5284:67a5:3da9:31672 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      4872     Microsoft.Exch 
+0x23de54cf0        TCPv6    fe80::5576:5284:67a5:3da9:54714 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23de55150        TCPv6    fe80::5576:5284:67a5:3da9:20663 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23de617c0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15164 ESTABLISHED      3744     store.exe      
+0x23de64010        TCPv6    fe80::5576:5284:67a5:3da9:33577 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23de7ecf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:12081 ESTABLISHED      3744     store.exe      
+0x23dea18d0        TCPv6    fe80::5576:5284:67a5:3da9:43592 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dead2e0        TCPv4    -:0                            104.32.122.98:0      CLOSED           2616     mad.exe        
+0x23deb9010        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:31672 ESTABLISHED      736      svchost.exe    
+0x23deba610        TCPv4    -:0                            24.219.223.98:0      CLOSED           4        System         
+0x23dec16c0        TCPv4    172.115.4.9:22719              172.115.4.4:389      ESTABLISHED      4872     Microsoft.Exch 
+0x23ded4cf0        TCPv4    10.10.4.9:33256                10.10.254.1:61613    ESTABLISHED      11700    rubyw.exe      
+0x23def1cf0        TCPv4    172.115.4.9:33554              172.115.4.4:3268     CLOSED           4540     MSExchangeMail 
+0x23def2710        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:30288 ESTABLISHED      3744     store.exe      
+0x23def3200        TCPv4    172.115.4.9:39486              172.115.4.4:389      CLOSED           5200     MSExchangeTran 
+0x23df033d0        TCPv4    -:0                            24.11.224.98:0       CLOSED           4        System         
+0x23df1a0b0        TCPv6    fe80::5576:5284:67a5:3da9:59830 fe80::5576:5284:67a5:3da9:445 ESTABLISHED      4        System         
+0x23df21010        TCPv6    fe80::5576:5284:67a5:3da9:33574 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23df2b4c0        TCPv6    fe80::5576:5284:67a5:3da9:445  fe80::5576:5284:67a5:3da9:59830 ESTABLISHED      4        System         
+0x23df387d0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15097 ESTABLISHED      3744     store.exe      
+0x23df3dcf0        TCPv4    172.115.4.9:53239              172.115.4.4:389      ESTABLISHED      2920     Microsoft.Exch 
+0x23df4bcf0        TCPv6    fe80::5576:5284:67a5:3da9:20664 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23df51cf0        TCPv6    fe80::5576:5284:67a5:3da9:33575 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23df5f850        TCPv6    fe80::5576:5284:67a5:3da9:7971 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      4872     Microsoft.Exch 
+0x23df715b0        TCPv6    fe80::5576:5284:67a5:3da9:54736 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23df8a010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54724 ESTABLISHED      3744     store.exe      
+0x23df8b2b0        TCPv6    -:0                            6830:6465:80fa:ffff:6830:6465:80fa:ffff:0 CLOSED           4        System         
+0x23df8e010        TCPv6    -:0                            185b:5e61:80fa:ffff:185b:5e61:80fa:ffff:0 CLOSED           2616     mad.exe        
+0x23df8fb10        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33571 ESTABLISHED      3744     store.exe      
+0x23df98010        TCPv6    fe80::5576:5284:67a5:3da9:31300 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      11652    w3wp.exe       
+0x23dfb0990        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33570 ESTABLISHED      3744     store.exe      
+0x23dfbb2a0        TCPv6    fe80::5576:5284:67a5:3da9:33573 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dfbbaf0        TCPv4    172.115.4.9:35217              172.115.4.4:3268     CLOSED           4876     MSExchangeMail 
+0x23dfcaae0        TCPv4    -:0                            56.25.2.99:0         CLOSED           4        System         
+0x23dfd5b60        TCPv6    fe80::5576:5284:67a5:3da9:15167 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23dfdd7e0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:17034 ESTABLISHED      3744     store.exe      
+0x23dfdf580        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43586 ESTABLISHED      3744     store.exe      
+0x23dfdfc70        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15167 ESTABLISHED      3744     store.exe      
+0x23dfe27e0        TCPv4    -:44980                        172.115.1.55:51848   CLOSED           2920     Microsoft.Exch 
+0x23dfe2bf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54738 ESTABLISHED      3744     store.exe      
+0x23dff0010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20577 ESTABLISHED      3744     store.exe      
+0x23dff2610        TCPv6    fe80::5576:5284:67a5:3da9:33582 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23dff2a90        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33556 ESTABLISHED      3744     store.exe      
+0x23dff6010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:17032 ESTABLISHED      3744     store.exe      
+0x23dff7cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33589 ESTABLISHED      3744     store.exe      
+0x23e0313d0        TCPv4    172.115.4.9:44990              172.115.4.4:3268     CLOSED           336      MsExchangeFDS. 
+0x23e06f180        TCPv4    172.115.4.9:53248              172.115.4.4:389      ESTABLISHED      2616     mad.exe        
+0x23e071730        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33579 ESTABLISHED      3744     store.exe      
+0x23e097200        TCPv6    -:0                            188b:cc62:80fa:ffff:188b:cc62:80fa:ffff:0 CLOSED           2920     Microsoft.Exch 
+0x23e098900        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33585 ESTABLISHED      3744     store.exe      
+0x23e0cb010        TCPv4    172.115.4.9:53236              172.115.4.4:389      ESTABLISHED      2616     mad.exe        
+0x23e0e0010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33555 ESTABLISHED      3744     store.exe      
+0x23e0e13c0        TCPv6    fe80::5576:5284:67a5:3da9:15164 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e0e2620        TCPv6    fe80::5576:5284:67a5:3da9:15086 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e0f7660        TCPv4    -:0                            104.48.100.101:0     CLOSED           4        System         
+0x23e11ecf0        TCPv6    -:0                            836:c762:80fa:ffff:836:c762:80fa:ffff:0 CLOSED           3652     w3wp.exe       
+0x23e12a7c0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20663 ESTABLISHED      3744     store.exe      
+0x23e134cf0        TCPv6    fe80::5576:5284:67a5:3da9:15101 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e1644d0        TCPv6    fe80::5576:5284:67a5:3da9:33571 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e1658d0        TCPv4    172.115.4.9:48781              172.115.4.4:3268     CLOSED           1692     msexchangerepl 
+0x23e17e950        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33580 ESTABLISHED      3744     store.exe      
+0x23e190cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:30286 ESTABLISHED      3744     store.exe      
+0x23e1bf010        TCPv6    fe80::5576:5284:67a5:3da9:17031 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      2948     Microsoft.Exch 
+0x23e1c93f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33575 ESTABLISHED      3744     store.exe      
+0x23e1db810        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43587 ESTABLISHED      3744     store.exe      
+0x23e1facf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20581 ESTABLISHED      3744     store.exe      
+0x23e211600        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15154 ESTABLISHED      3744     store.exe      
+0x23e219cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43600 ESTABLISHED      3744     store.exe      
+0x23e220010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43591 ESTABLISHED      3744     store.exe      
+0x23e222cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33572 ESTABLISHED      3744     store.exe      
+0x23e23ccf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:31297 ESTABLISHED      3744     store.exe      
+0x23e259cf0        TCPv4    -:0                            24.27.17.99:0        CLOSED           4        System         
+0x23e266cf0        TCPv4    172.115.4.9:48769              172.115.4.4:389      CLOSED           3536     Microsoft.Exch 
+0x23e2999d0        TCPv6    fe80::5576:5284:67a5:3da9:15090 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e2accf0        TCPv6    -:0                            6840:6e62:80fa:ffff:6840:6e62:80fa:ffff:0 CLOSED           548      lsass.exe      
+0x23e2b3cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15168 ESTABLISHED      3744     store.exe      
+0x23e2d6cf0        TCPv6    fe80::5576:5284:67a5:3da9:35240 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4832     Microsoft.Exch 
+0x23e2d9010        TCPv6    -:0                            18db:df62:80fa:ffff:18db:df62:80fa:ffff:0 CLOSED           4        System         
+0x23e2dd010        TCPv6    fe80::5576:5284:67a5:3da9:15158 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e2e5510        TCPv6    fe80::5576:5284:67a5:3da9:43588 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e2f7010        TCPv6    fe80::5576:5284:67a5:3da9:33570 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e313cf0        TCPv4    172.115.4.9:53237              172.115.4.4:389      ESTABLISHED      4540     MSExchangeMail 
+0x23e31d9f0        TCPv6    fe80::5576:5284:67a5:3da9:31297 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      11652    w3wp.exe       
+0x23e327010        TCPv4    172.115.4.9:17354              172.115.4.4:389      CLOSED           2616     mad.exe        
+0x23e336010        TCPv6    fe80::5576:5284:67a5:3da9:20570 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e33f9f0        TCPv6    fe80::5576:5284:67a5:3da9:15099 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23e347630        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15162 ESTABLISHED      3744     store.exe      
+0x23e362cf0        TCPv4    172.115.4.9:53104              172.115.4.4:389      ESTABLISHED      3880     w3wp.exe       
+0x23e389940        TCPv4    172.115.4.9:53269              172.115.4.4:389      CLOSED           6528     Microsoft.Exch 
+0x23e3f4010        TCPv6    fe80::5576:5284:67a5:3da9:43593 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e433230        TCPv6    fe80::5576:5284:67a5:3da9:30288 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e442010        TCPv6    fe80::5576:5284:67a5:3da9:33588 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e4c0780        TCPv4    -:0                            104.16.168.98:0      CLOSED           4        System         
+0x23e4c8cf0        TCPv6    -:0                            18bb:b62:80fa:ffff:18bb:b62:80fa:ffff:0 CLOSED           4        System         
+0x23e4e1a40        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:17031 ESTABLISHED      736      svchost.exe    
+0x23e4f74f0        TCPv6    fe80::5576:5284:67a5:3da9:43590 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e521740        TCPv6    fe80::5576:5284:67a5:3da9:33578 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e531cf0        TCPv4    172.115.4.9:53251              172.115.4.4:3268     ESTABLISHED      11652    w3wp.exe       
+0x23e554ba0        TCPv4    172.115.4.9:44875              172.115.4.4:3268     CLOSED           2616     mad.exe        
+0x23e561cf0        TCPv4    -:0                            8.54.199.98:0        CLOSED           1016     svchost.exe    
+0x23e5627b0        TCPv6    -:0                            6840:6e62:80fa:ffff:6840:6e62:80fa:ffff:0 CLOSED           2920     Microsoft.Exch 
+0x23e5816f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33550 ESTABLISHED      3744     store.exe      
+0x23e596af0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:35240 ESTABLISHED      3744     store.exe      
+0x23e5c86d0        TCPv6    fe80::5576:5284:67a5:3da9:20579 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e5d5010        TCPv4    -:0                            24.139.104.98:0      CLOSED           4        System         
+0x23e5eeba0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20664 ESTABLISHED      3744     store.exe      
+0x23e5facf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15074 ESTABLISHED      3744     store.exe      
+0x23e68d630        UDPv4    127.0.0.1:60067                *:*                                   2464     MSExchangeThro 2019-08-19 13:56:01 UTC+0000
+0x23e7b9e30        UDPv4    127.0.0.1:62489                *:*                                   1016     svchost.exe    2019-08-19 13:57:01 UTC+0000
+0x23e83dc00        UDPv4    0.0.0.0:0                      *:*                                   912      svchost.exe    2019-08-19 13:48:44 UTC+0000
+0x23e854290        UDPv4    0.0.0.0:123                    *:*                                   912      svchost.exe    2019-08-19 13:57:00 UTC+0000
+0x23e854290        UDPv6    :::123                         *:*                                   912      svchost.exe    2019-08-19 13:57:00 UTC+0000
+0x23e860950        UDPv4    0.0.0.0:123                    *:*                                   912      svchost.exe    2019-08-19 13:57:00 UTC+0000
+0x23e8a77e0        UDPv4    127.0.0.1:59592                *:*                                   548      lsass.exe      2019-08-19 13:50:14 UTC+0000
+0x23e8ff590        UDPv4    0.0.0.0:0                      *:*                                   548      lsass.exe      2019-08-19 13:50:11 UTC+0000
+0x23e8ff590        UDPv6    :::0                           *:*                                   548      lsass.exe      2019-08-19 13:50:11 UTC+0000
+0x23eaa7950        UDPv4    0.0.0.0:0                      *:*                                   10320    EdgeTransport. 2019-08-22 16:33:28 UTC+0000
+0x23eaa9ec0        UDPv4    127.0.0.1:49506                *:*                                   1428     MSExchangeADTo 2019-08-19 13:46:15 UTC+0000
+0x23eb576e0        UDPv4    0.0.0.0:0                      *:*                                   912      svchost.exe    2019-08-19 13:48:44 UTC+0000
+0x23eb576e0        UDPv6    :::0                           *:*                                   912      svchost.exe    2019-08-19 13:48:44 UTC+0000
+0x23eb81cb0        UDPv4    0.0.0.0:5355                   *:*                                   1016     svchost.exe    2019-08-27 13:51:11 UTC+0000
+0x23ebeabe0        UDPv4    0.0.0.0:0                      *:*                                   548      lsass.exe      2019-08-19 13:50:11 UTC+0000
+0x23ecc7ec0        UDPv4    0.0.0.0:4500                   *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ecc7ec0        UDPv6    :::4500                        *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ed98510        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ed98510        UDPv6    :::0                           *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ef11530        UDPv4    0.0.0.0:500                    *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ef12bb0        UDPv4    0.0.0.0:500                    *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ef12bb0        UDPv6    :::500                         *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23ef13d00        UDPv4    0.0.0.0:4500                   *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23e6dcef0        TCPv4    0.0.0.0:6004                   0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23e6dcef0        TCPv6    :::6004                        :::0                 LISTENING        2920     Microsoft.Exch 
+0x23e6eebf0        TCPv4    0.0.0.0:593                    0.0.0.0:0            LISTENING        736      svchost.exe    
+0x23e735220        TCPv4    0.0.0.0:32101                  0.0.0.0:0            LISTENING        2464     MSExchangeThro 
+0x23e74c250        TCPv4    0.0.0.0:44899                  0.0.0.0:0            LISTENING        540      services.exe   
+0x23e74c250        TCPv6    :::44899                       :::0                 LISTENING        540      services.exe   
+0x23e765cd0        TCPv4    0.0.0.0:6002                   0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23e7ac410        TCPv4    0.0.0.0:45005                  0.0.0.0:0            LISTENING        3744     store.exe      
+0x23e822510        TCPv4    0.0.0.0:44917                  0.0.0.0:0            LISTENING        3328     svchost.exe    
+0x23e82a010        TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         
+0x23e82a010        TCPv6    :::5985                        :::0                 LISTENING        4        System         
+0x23e9c5010        TCPv4    0.0.0.0:32101                  0.0.0.0:0            LISTENING        2464     MSExchangeThro 
+0x23e9c5010        TCPv6    :::32101                       :::0                 LISTENING        2464     MSExchangeThro 
+0x23eaa4290        TCPv4    0.0.0.0:6009                   0.0.0.0:0            LISTENING        1428     MSExchangeADTo 
+0x23eaa4290        TCPv6    :::6009                        :::0                 LISTENING        1428     MSExchangeADTo 
+0x23eb1f010        TCPv4    0.0.0.0:45018                  0.0.0.0:0            LISTENING        4540     MSExchangeMail 
+0x23ebc37b0        TCPv4    0.0.0.0:143                    0.0.0.0:0            LISTENING        2592     Microsoft.Exch 
+0x23ebc37b0        TCPv6    :::143                         :::0                 LISTENING        2592     Microsoft.Exch 
+0x23ebc5010        TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         
+0x23ebc5010        TCPv6    :::47001                       :::0                 LISTENING        4        System         
+0x23ec878d0        TCPv4    0.0.0.0:6005                   0.0.0.0:0            LISTENING        444      wininit.exe    
+0x23ec96930        TCPv4    0.0.0.0:6005                   0.0.0.0:0            LISTENING        444      wininit.exe    
+0x23ec96930        TCPv6    :::6005                        :::0                 LISTENING        444      wininit.exe    
+0x23ecc6ef0        TCPv4    0.0.0.0:25                     0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23ecf4630        TCPv4    0.0.0.0:25                     0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23ecf4630        TCPv6    :::25                          :::0                 LISTENING        10320    EdgeTransport. 
+0x23ed1d3c0        TCPv4    0.0.0.0:15190                  0.0.0.0:0            LISTENING        10884    MSExchangeMail 
+0x23ed1d3c0        TCPv6    :::15190                       :::0                 LISTENING        10884    MSExchangeMail 
+0x23ed51e70        TCPv4    0.0.0.0:45005                  0.0.0.0:0            LISTENING        3744     store.exe      
+0x23ed51e70        TCPv6    :::45005                       :::0                 LISTENING        3744     store.exe      
+0x23ed5d380        TCPv4    0.0.0.0:808                    0.0.0.0:0            LISTENING        2696     SMSvcHost.exe  
+0x23eda8d90        TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         
+0x23eda8d90        TCPv6    :::445                         :::0                 LISTENING        4        System         
+0x23e64dcf0        TCPv6    fe80::5576:5284:67a5:3da9:54742 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e65f010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33566 ESTABLISHED      3744     store.exe      
+0x23e663010        TCPv6    fe80::5576:5284:67a5:3da9:45958 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23e66c7f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15061 ESTABLISHED      3744     store.exe      
+0x23e67a010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15159 ESTABLISHED      3744     store.exe      
+0x23e6a9cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:20580 ESTABLISHED      3744     store.exe      
+0x23e6ad7e0        TCPv6    -:0                            180b:e062:80fa:ffff:180b:e062:80fa:ffff:0 CLOSED           4        System         
+0x23e6cea40        TCPv6    fe80::5576:5284:67a5:3da9:12106 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      6528     Microsoft.Exch 
+0x23e733cf0        TCPv6    -:0                            6810:a862:80fa:ffff:6810:a862:80fa:ffff:0 CLOSED           4        System         
+0x23e7747a0        TCPv6    -:0                            98e1:8662:80fa:ffff:f054:7762:80fa:ffff:0 CLOSED           4        System         
+0x23e7e9cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:27769 ESTABLISHED      3744     store.exe      
+0x23e7eda40        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15108 ESTABLISHED      3744     store.exe      
+0x23e80d6f0        TCPv6    -:0                            7819:d61:80fa:ffff:7819:d61:80fa:ffff:0 CLOSED           1564     ruby.exe       
+0x23e836390        TCPv4    172.115.4.9:32098              172.115.4.4:3268     CLOSED           2464     MSExchangeThro 
+0x23e845890        TCPv6    -:0                            7819:d61:80fa:ffff:7819:d61:80fa:ffff:0 CLOSED           736      svchost.exe    
+0x23e8eacf0        TCPv6    fe80::5576:5284:67a5:3da9:17032 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      2948     Microsoft.Exch 
+0x23e8ff010        TCPv6    -:0                            186b:d261:80fa:ffff:186b:d261:80fa:ffff:0 CLOSED           4        System         
+0x23e9046e0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33563 ESTABLISHED      3744     store.exe      
+0x23e913cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54736 ESTABLISHED      3744     store.exe      
+0x23e937a20        TCPv6    fe80::5576:5284:67a5:3da9:43585 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23e978b30        TCPv4    -:0                            152.225.134.98:0     CLOSED           1016     svchost.exe    
+0x23e9a7cf0        TCPv6    fe80::5576:5284:67a5:3da9:33589 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23eb8f940        TCPv6    fe80::5576:5284:67a5:3da9:33587 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23eba2a90        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15051 ESTABLISHED      3744     store.exe      
+0x23eba9590        TCPv6    -:0                            6840:6e62:80fa:ffff:6840:6e62:80fa:ffff:0 CLOSED           4        System         
+0x23ebd82f0        TCPv6    fe80::5576:5284:67a5:3da9:15074 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23ecca2f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54721 ESTABLISHED      3744     store.exe      
+0x23ecd51f0        TCPv4    -:31627                        172.115.2.179:58477  CLOSED           4872     Microsoft.Exch 
+0x23ecdccf0        TCPv6    fe80::5576:5284:67a5:3da9:33550 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23ed01190        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15155 ESTABLISHED      3744     store.exe      
+0x23ed2a590        TCPv6    -:0                            6800:5f62:80fa:ffff:6800:5f62:80fa:ffff:0 CLOSED           736      svchost.exe    
+0x23ed4c010        TCPv6    -:0                            185b:5e61:80fa:ffff:185b:5e61:80fa:ffff:0 CLOSED           4        System         
+0x23ed841a0        TCPv6    -:0                            188b:6862:80fa:ffff:188b:6862:80fa:ffff:0 CLOSED           1016     svchost.exe    
+0x23ed86330        TCPv4    172.115.4.9:44886              172.115.4.4:389      CLOSED           2616     mad.exe        
+0x23eda8790        TCPv6    -:0                            7819:d61:80fa:ffff:7819:d61:80fa:ffff:0 CLOSED           736      svchost.exe    
+0x23ede5540        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33574 ESTABLISHED      3744     store.exe      
+0x23f06c200        UDPv4    10.10.4.9:137                  *:*                                   4        System         2019-08-19 13:45:01 UTC+0000
+0x23f0ab010        UDPv4    10.10.4.9:138                  *:*                                   4        System         2019-08-19 13:45:01 UTC+0000
+0x23f192640        UDPv4    0.0.0.0:0                      *:*                                   1016     svchost.exe    2019-08-19 13:57:00 UTC+0000
+0x23f192640        UDPv6    :::0                           *:*                                   1016     svchost.exe    2019-08-19 13:57:00 UTC+0000
+0x23f1a3840        UDPv4    172.115.4.9:137                *:*                                   4        System         2019-08-19 13:43:27 UTC+0000
+0x23f310410        UDPv4    127.0.0.1:49483                *:*                                   1080     mmc.exe        2019-08-22 15:05:20 UTC+0000
+0x23f45aec0        UDPv4    172.115.4.9:138                *:*                                   4        System         2019-08-19 13:43:27 UTC+0000
+0x23f466010        UDPv4    0.0.0.0:0                      *:*                                   548      lsass.exe      2019-08-19 13:45:23 UTC+0000
+0x23f4d53d0        UDPv4    0.0.0.0:0                      *:*                                   548      lsass.exe      2019-08-19 13:45:23 UTC+0000
+0x23f4d53d0        UDPv6    :::0                           *:*                                   548      lsass.exe      2019-08-19 13:45:23 UTC+0000
+0x23f543d00        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-08-19 13:45:36 UTC+0000
+0x23f0453f0        TCPv4    0.0.0.0:6008                   0.0.0.0:0            LISTENING        872      svchost.exe    
+0x23f0453f0        TCPv6    :::6008                        :::0                 LISTENING        872      svchost.exe    
+0x23f059700        TCPv4    0.0.0.0:6007                   0.0.0.0:0            LISTENING        548      lsass.exe      
+0x23f0b3360        TCPv4    0.0.0.0:80                     0.0.0.0:0            LISTENING        4        System         
+0x23f0b3360        TCPv6    :::80                          :::0                 LISTENING        4        System         
+0x23f0cc700        TCPv4    0.0.0.0:6006                   0.0.0.0:0            LISTENING        828      svchost.exe    
+0x23f0cc700        TCPv6    :::6006                        :::0                 LISTENING        828      svchost.exe    
+0x23f0cf230        TCPv4    0.0.0.0:6006                   0.0.0.0:0            LISTENING        828      svchost.exe    
+0x23f0d2a80        TCPv4    0.0.0.0:44980                  0.0.0.0:0            LISTENING        2920     Microsoft.Exch 
+0x23f10a4a0        TCPv4    0.0.0.0:6007                   0.0.0.0:0            LISTENING        548      lsass.exe      
+0x23f10a4a0        TCPv6    :::6007                        :::0                 LISTENING        548      lsass.exe      
+0x23f15d260        TCPv4    0.0.0.0:6009                   0.0.0.0:0            LISTENING        1428     MSExchangeADTo 
+0x23f18c4e0        TCPv4    0.0.0.0:6008                   0.0.0.0:0            LISTENING        872      svchost.exe    
+0x23f2f39e0        TCPv4    0.0.0.0:587                    0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23f2f39e0        TCPv6    :::587                         :::0                 LISTENING        10320    EdgeTransport. 
+0x23f307790        TCPv4    0.0.0.0:15037                  0.0.0.0:0            LISTENING        10320    EdgeTransport. 
+0x23f454ef0        TCPv4    172.115.4.9:139                0.0.0.0:0            LISTENING        4        System         
+0x23f4892b0        TCPv4    0.0.0.0:443                    0.0.0.0:0            LISTENING        4        System         
+0x23f4892b0        TCPv6    :::443                         :::0                 LISTENING        4        System         
+0x23f49d700        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        736      svchost.exe    
+0x23f49d700        TCPv6    :::135                         :::0                 LISTENING        736      svchost.exe    
+0x23f4a1180        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        736      svchost.exe    
+0x23f4d0850        TCPv4    10.10.4.9:139                  0.0.0.0:0            LISTENING        4        System         
+0x23f058010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33567 ESTABLISHED      3744     store.exe      
+0x23f088210        TCPv4    -:0                            104.0.95.98:0        CLOSED           736      svchost.exe    
+0x23f0b2a60        TCPv4    172.115.4.9:53102              172.115.4.4:3268     ESTABLISHED      10320    EdgeTransport. 
+0x23f0bfcf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54734 ESTABLISHED      3744     store.exe      
+0x23f101010        TCPv4    -:0                            248.248.211.97:0     CLOSED           548      lsass.exe      
+0x23f198870        TCPv6    -:0                            6800:cc61:80fa:ffff:6800:cc61:80fa:ffff:0 CLOSED           4        System         
+0x23f2e8820        TCPv6    fe80::5576:5284:67a5:3da9:15169 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23f302ad0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33577 ESTABLISHED      3744     store.exe      
+0x23f306330        TCPv4    172.115.4.9:53270              172.115.4.4:389      ESTABLISHED      6528     Microsoft.Exch 
+0x23f30a010        TCPv6    fe80::5576:5284:67a5:3da9:33592 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23f30cb00        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15088 ESTABLISHED      3744     store.exe      
+0x23f3169c0        TCPv4    172.115.4.9:15029              172.115.4.4:389      CLOSED           11040    MSExchangeTran 
+0x23f320460        TCPv4    -:0                            24.43.202.97:0       CLOSED           444      wininit.exe    
+0x23f328340        TCPv4    172.115.4.9:53218              172.115.4.4:389      ESTABLISHED      4832     Microsoft.Exch 
+0x23f332010        TCPv6    fe80::5576:5284:67a5:3da9:135  fe80::5576:5284:67a5:3da9:31296 ESTABLISHED      736      svchost.exe    
+0x23f33ecf0        TCPv4    -:0                            24.91.94.97:0        CLOSED           10824    TaniumClient.e 
+0x23f344010        TCPv6    fe80::5576:5284:67a5:3da9:27784 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      1692     msexchangerepl 
+0x23f34a010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:15158 ESTABLISHED      3744     store.exe      
+0x23f351010        TCPv6    fe80::5576:5284:67a5:3da9:15155 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23f35e3f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:54717 ESTABLISHED      3744     store.exe      
+0x23f35f3f0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43589 ESTABLISHED      3744     store.exe      
+0x23f35f970        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:12106 ESTABLISHED      3744     store.exe      
+0x23f369500        TCPv6    fe80::5576:5284:67a5:3da9:15170 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23f379010        TCPv6    fe80::5576:5284:67a5:3da9:31296 fe80::5576:5284:67a5:3da9:135 ESTABLISHED      11652    w3wp.exe       
+0x23f386360        TCPv4    172.115.4.9:59074              172.115.4.4:3268     ESTABLISHED      4872     Microsoft.Exch 
+0x23f6ce910        TCPv6    fe80::5576:5284:67a5:3da9:15109 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23f6f5cf0        TCPv6    fe80::5576:5284:67a5:3da9:33572 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23f7c3cf0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:43588 ESTABLISHED      3744     store.exe      
+0x23f928c30        TCPv6    -:0                            9832:c862:80fa:ffff:58fc:7f61:80fa:ffff:0 CLOSED           10824    TaniumClient.e 
+0x23fd6ba00        TCPv4    0.0.0.0:31615                  0.0.0.0:0            LISTENING        1692     msexchangerepl 
+0x23fa31930        TCPv6    fe80::5576:5284:67a5:3da9:15107 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23fd5f010        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33569 ESTABLISHED      3744     store.exe      
+0x23fd60af0        TCPv6    fe80::5576:5284:67a5:3da9:45005 fe80::5576:5284:67a5:3da9:33587 ESTABLISHED      3744     store.exe      
+0x23fd7fa60        TCPv6    fe80::5576:5284:67a5:3da9:54720 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23fd8b840        TCPv6    fe80::5576:5284:67a5:3da9:15061 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23fdaa5c0        TCPv6    fe80::5576:5284:67a5:3da9:15159 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23fdb0730        TCPv6    fe80::5576:5284:67a5:3da9:43584 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 
+0x23fdb25a0        TCPv6    fe80::5576:5284:67a5:3da9:15108 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      10320    EdgeTransport. 
+0x23fde13d0        TCPv6    fe80::5576:5284:67a5:3da9:54734 fe80::5576:5284:67a5:3da9:45005 ESTABLISHED      4872     Microsoft.Exch 

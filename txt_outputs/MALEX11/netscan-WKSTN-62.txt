@@ -1,0 +1,102 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0x49aa94b0         TCPv4    127.0.0.1:55144                127.0.0.1:49999      CLOSED           1612     java.exe       
+0x71d7d010         TCPv4    -:54697                        10.10.2.217:3128     CLOSED           5072     wsmprovhost.ex 
+0xb9766010         TCPv4    172.115.1.62:52180             172.115.4.254:5045   ESTABLISHED      1492     winlogbeat.exe 
+0x1073e4940        TCPv4    10.10.1.62:50040               10.10.1.107:3128     CLOSED           0                      
+0x139e85010        TCPv4    172.115.1.62:51897             172.115.1.142:3128   CLOSED           0                      
+0x13cda3830        TCPv4    172.115.1.62:55166             172.115.1.119:49156  CLOSED           508      lsass.exe      
+0x13ce64410        UDPv4    10.10.1.62:68                  *:*                                   768      svchost.exe    2019-09-03 18:34:54 UTC+0000
+0x13d1a91f0        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        288      svchost.exe    
+0x13d0623c0        TCPv4    127.0.0.1:52696                127.0.0.1:49999      CLOSED           1612     java.exe       
+0x13d2f9b80        TCPv4    127.0.0.1:54997                127.0.0.1:18085      CLOSED           5760     choco.exe      
+0x13d560120        TCPv4    -:52653                        10.10.5.10:389       CLOSED           988      svchost.exe    
+0x13d562cf0        TCPv4    127.0.0.1:12568                127.0.0.1:65436      CLOSED           5072     wsmprovhost.ex 
+0x13d5c7780        TCPv4    10.10.1.62:54657               10.10.200.207:5672   ESTABLISHED      1612     java.exe       
+0x13e0065c0        UDPv4    0.0.0.0:0                      *:*                                   1860     svchost.exe    2019-08-28 12:19:13 UTC+0000
+0x13e0065c0        UDPv6    :::0                           *:*                                   1860     svchost.exe    2019-08-28 12:19:13 UTC+0000
+0x13e052010        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-08-28 12:18:47 UTC+0000
+0x13e052010        UDPv6    :::0                           *:*                                   872      svchost.exe    2019-08-28 12:18:47 UTC+0000
+0x13e052830        UDPv4    0.0.0.0:123                    *:*                                   872      svchost.exe    2019-08-28 12:20:11 UTC+0000
+0x13e052ad0        UDPv4    0.0.0.0:123                    *:*                                   872      svchost.exe    2019-08-28 12:20:11 UTC+0000
+0x13e052ad0        UDPv6    :::123                         *:*                                   872      svchost.exe    2019-08-28 12:20:11 UTC+0000
+0x13e0532f0        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-08-28 12:18:47 UTC+0000
+0x13e0271f0        TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         
+0x13e0271f0        TCPv6    :::47001                       :::0                 LISTENING        4        System         
+0x13e02ac70        TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         
+0x13e02ac70        TCPv6    :::445                         :::0                 LISTENING        4        System         
+0x13e02bae0        TCPv4    0.0.0.0:63205                  0.0.0.0:0            LISTENING        500      services.exe   
+0x13e02bae0        TCPv6    :::63205                       :::0                 LISTENING        500      services.exe   
+0x13e150010        TCPv4    0.0.0.0:63206                  0.0.0.0:0            LISTENING        1860     svchost.exe    
+0x13dc95b90        TCPv4    172.115.1.62:63021             172.115.1.106:3128   CLOSED           5072     wsmprovhost.ex 
+0x13e094930        TCPv4    -:54973                        10.10.2.217:3128     CLOSED           5072     wsmprovhost.ex 
+0x13e0e8a90        TCPv6    -:0                            38a5:5f32:80fa:ffff:38a5:5f32:80fa:ffff:0 CLOSED           508      lsass.exe      
+0x13e27b010        UDPv4    0.0.0.0:0                      *:*                                   1860     svchost.exe    2019-08-28 12:19:13 UTC+0000
+0x13e3c9490        UDPv4    127.0.0.1:55716                *:*                                   988      svchost.exe    2019-08-28 12:17:47 UTC+0000
+0x13e3cdb60        UDPv4    127.0.0.1:55717                *:*                                   288      svchost.exe    2019-08-28 12:18:04 UTC+0000
+0x13e419890        UDPv4    10.10.1.62:62492               *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13e41f530        UDPv6    ::1:1900                       *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13e429890        UDPv4    172.115.1.62:1900              *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13e54bd70        UDPv4    0.0.0.0:0                      *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13e5b5bf0        UDPv4    0.0.0.0:0                      *:*                                   288      svchost.exe    2019-08-28 12:20:11 UTC+0000
+0x13e5b5bf0        UDPv6    :::0                           *:*                                   288      svchost.exe    2019-08-28 12:20:11 UTC+0000
+0x13e616b10        UDPv4    10.10.1.62:137                 *:*                                   4        System         2019-08-28 12:17:16 UTC+0000
+0x13e616ec0        UDPv4    10.10.1.62:138                 *:*                                   4        System         2019-08-28 12:17:16 UTC+0000
+0x13e66c860        UDPv4    0.0.0.0:0                      *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13e759ec0        UDPv4    0.0.0.0:0                      *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13e759ec0        UDPv6    :::0                           *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13e75c8a0        UDPv4    127.0.0.1:53765                *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13e91c390        UDPv4    172.115.1.62:137               *:*                                   4        System         2019-08-28 12:15:53 UTC+0000
+0x13e9a9910        UDPv4    172.115.1.62:138               *:*                                   4        System         2019-08-28 12:15:53 UTC+0000
+0x13ea79010        UDPv6    fe80::944:1362:d6b3:3506:62490 *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13eada6f0        UDPv4    0.0.0.0:5355                   *:*                                   288      svchost.exe    2019-09-03 12:17:20 UTC+0000
+0x13eada6f0        UDPv6    :::5355                        *:*                                   288      svchost.exe    2019-09-03 12:17:20 UTC+0000
+0x13eaf61d0        UDPv4    127.0.0.1:62494                *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13eb23ec0        UDPv6    fe80::944:1362:d6b3:3506:1900  *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13eb255f0        UDPv4    0.0.0.0:5355                   *:*                                   288      svchost.exe    2019-09-03 12:17:20 UTC+0000
+0x13eb99890        UDPv4    10.10.1.62:1900                *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13e201650        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        912      svchost.exe    
+0x13e201650        TCPv6    :::49155                       :::0                 LISTENING        912      svchost.exe    
+0x13e2f8010        TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         
+0x13e2f8010        TCPv6    :::5985                        :::0                 LISTENING        4        System         
+0x13e3ce860        TCPv4    0.0.0.0:63205                  0.0.0.0:0            LISTENING        500      services.exe   
+0x13e4a1a40        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        704      svchost.exe    
+0x13e4ab7b0        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        704      svchost.exe    
+0x13e4ab7b0        TCPv6    :::135                         :::0                 LISTENING        704      svchost.exe    
+0x13e4ba3e0        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        392      wininit.exe    
+0x13e4ba3e0        TCPv6    :::49152                       :::0                 LISTENING        392      wininit.exe    
+0x13e4bc010        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        392      wininit.exe    
+0x13e4bfe10        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        912      svchost.exe    
+0x13e4e4400        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        768      svchost.exe    
+0x13e4e5a00        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        768      svchost.exe    
+0x13e4e5a00        TCPv6    :::49153                       :::0                 LISTENING        768      svchost.exe    
+0x13e4f70d0        TCPv4    0.0.0.0:63206                  0.0.0.0:0            LISTENING        1860     svchost.exe    
+0x13e4f70d0        TCPv6    :::63206                       :::0                 LISTENING        1860     svchost.exe    
+0x13e53f9e0        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        508      lsass.exe      
+0x13e57c980        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        508      lsass.exe      
+0x13e57c980        TCPv6    :::49154                       :::0                 LISTENING        508      lsass.exe      
+0x13e61a820        TCPv4    10.10.1.62:139                 0.0.0.0:0            LISTENING        4        System         
+0x13e9a8ba0        TCPv4    172.115.1.62:139               0.0.0.0:0            LISTENING        4        System         
+0x13ea10850        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        288      svchost.exe    
+0x13ea10850        TCPv6    :::3389                        :::0                 LISTENING        288      svchost.exe    
+0x13e251720        TCPv6    -:0                            2898:eb30:80fa:ffff:2898:eb30:80fa:ffff:0 CLOSED           508      lsass.exe      
+0x13e251c20        TCPv6    -:0                            2898:eb30:80fa:ffff:2898:eb30:80fa:ffff:0 CLOSED           1492     winlogbeat.exe 
+0x13e3fa010        TCPv4    -:0                            232.229.219.49:0     CLOSED           508      lsass.exe      
+0x13e494b00        TCPv4    127.0.0.1:55137                127.0.0.1:49998      CLOSED           5760     choco.exe      
+0x13e552be0        TCPv4    -:0                            56.165.95.50:0       CLOSED           988      svchost.exe    
+0x13e568910        TCPv4    172.115.1.62:56111             172.115.4.254:8080   ESTABLISHED      1428     esensor.exe    
+0x13e596010        TCPv4    127.0.0.1:52700                127.0.0.1:49999      CLOSED           1612     java.exe       
+0x13ec649c0        UDPv4    172.115.1.62:62493             *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13ed63ce0        UDPv6    fe80::ed92:30c2:eaef:2ee6:62489 *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13edec870        UDPv6    fe80::ed92:30c2:eaef:2ee6:1900 *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13ee565a0        UDPv4    0.0.0.0:0                      *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13ee565a0        UDPv6    :::0                           *:*                                   508      lsass.exe      2019-08-28 12:17:26 UTC+0000
+0x13f3e3ec0        UDPv4    127.0.0.1:1900                 *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13ec53a00        TCPv4    -:0                            232.229.219.49:0     CLOSED           1612     java.exe       
+0x13ed549d0        TCPv4    10.10.1.62:56396               10.10.254.1:61613    ESTABLISHED      2068     rubyw.exe      
+0x13f083180        TCPv4    10.10.1.62:50156               10.10.1.107:3128     CLOSED           0                      
+0x13f8943c0        UDPv6    ::1:62491                      *:*                                   1360     svchost.exe    2019-08-28 12:34:55 UTC+0000
+0x13fd012a0        TCPv4    127.0.0.1:49998                0.0.0.0:0            LISTENING        1612     java.exe       
+0x13f67b810        TCPv4    172.115.1.62:62743             172.115.4.254:8080   CLOSE_WAIT       1428     esensor.exe    
+0x13f729010        TCPv4    127.0.0.1:52690                127.0.0.1:49999      CLOSED           1612     java.exe       
+0x13f801cf0        TCPv6    -:0                            e8e5:db31:80fa:ffff:e8e5:db31:80fa:ffff:0 CLOSED           508      lsass.exe      
+0x13fdb8380        TCPv4    10.10.1.62:56466               10.10.2.249:389      CLOSED           4384     cmd.exe        

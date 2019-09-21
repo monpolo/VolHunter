@@ -1,0 +1,129 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    244
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    344
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    388
+Command line : wininit.exe
+************************************************************************
+csrss.exe pid:    408
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    448
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    504
+Command line : C:\windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    512
+Command line : C:\windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    520
+Command line : C:\windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    616
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    696
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+************************************************************************
+LogonUI.exe pid:    780
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+svchost.exe pid:    796
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    836
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    860
+Command line : C:\windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    884
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    968
+Command line : C:\windows\system32\svchost.exe -k GPSvcGroup
+************************************************************************
+svchost.exe pid:    400
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+************************************************************************
+spoolsv.exe pid:   1056
+Command line : C:\windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1092
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+svchost.exe pid:   1252
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+************************************************************************
+esensor.exe pid:   1280
+Command line : "C:\Program Files\Endgame\esensor.exe" --config "C:\Program Files\Endgame\esensor.cfg"
+************************************************************************
+prunsrv.exe pid:   1384
+Command line : "C:\Program Files (x86)\Lincoln\LARIAT\tools\prunsrv.exe" //RS//LARIAT
+************************************************************************
+conhost.exe pid:   1416
+Command line : \??\C:\windows\system32\conhost.exe "-603593239-213746560120588209682989428771368438843-1134849737-1173539400-443678394
+************************************************************************
+taskeng.exe pid:   1432
+Command line : taskeng.exe {BAFB6337-077E-426D-9965-3382EFB1BE7D}
+************************************************************************
+rubyw.exe pid:   1536
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+java.exe pid:   1560
+Command line : 
+************************************************************************
+ruby.exe pid:   1804
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+VGAuthService. pid:   1896
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1980
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+winlogbeat.exe pid:   2016
+Command line : "C:\Program Files\Winlogbeat\winlogbeat.exe" -c "C:\Program Files\Winlogbeat\winlogbeat.yml" -path.home "C:\Program Files\Winlogbeat" -path.data "C:\ProgramData\winlogbeat" -path.logs "C:\ProgramData\winlogbeat\logs"
+************************************************************************
+svchost.exe pid:   1268
+Command line : C:\windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:   2012
+Command line : C:\windows\System32\svchost.exe -k secsvcs
+************************************************************************
+dllhost.exe pid:   2552
+Command line : C:\windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   2744
+Command line : C:\windows\System32\msdtc.exe
+************************************************************************
+WmiPrvSE.exe pid:   2356
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+************************************************************************
+GoogleUpdate.e pid:   2964
+Command line : "C:\Program Files (x86)\Google\Update\GoogleUpdate.exe" /c
+************************************************************************
+conhost.exe pid:   2908
+************************************************************************
+wsmprovhost.ex pid:   1300
+Command line : C:\windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+HOSTNAME.EXE pid:   3152
+************************************************************************
+systeminfo.exe pid:   3264
+************************************************************************
+DumpIt.exe pid:   2420
+Command line : "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Windows\CCM\Perf\VolH\Image\WKSTN-187.bin 
+************************************************************************
+conhost.exe pid:   3524
+Command line : \??\C:\windows\system32\conhost.exe "403923181-39871664-380759952471569576-514833123-1477761387-1057173205758810052
+************************************************************************
+TrustedInstall pid:   3268
+************************************************************************
+conhost.exe pid:   1964

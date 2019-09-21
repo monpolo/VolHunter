@@ -1,0 +1,59 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000013e0feb10 ruby.exe               1780 True   False  False    True   True  True    True     
+0x000000013e1a0060 vmtoolsd.exe           1444 True   False  False    True   True  True    True     
+0x000000013ec6a9c0 taskhost.exe           6244 True   False  False    True   True  True    True     
+0x000000013dc374a0 conhost.exe             348 False  False  False    True   True  False   True     
+0x000000013e14fb10 msdtc.exe              2892 True   False  False    True   True  True    False    
+0x000000013eaf9520 winlogon.exe           5952 True   False  False    True   True  True    True     
+0x000000013e564390 svchost.exe             792 True   False  False    True   True  True    True     
+0x000000013ded1b10 GoogleUpdate.e          284 True   False  False    True   True  True    True     
+0x000000013e4e4060 WmiPrvSE.exe           2700 True   False  False    True   True  True    False    
+0x000000013d632b10 unsecapp.exe           3764 True   False  False    True   True  True    True     
+0x000000013ddba290 wsmprovhost.ex         6012 True   False  False    True   True  True    True     
+0x000000013eb4a660 DumpIt.exe             5300 False  False  False    True   True  False   True     
+0x000000013e187060 VGAuthService.         2036 True   False  False    True   True  True    True     
+0x000000013e2a8520 spoolsv.exe            1104 True   False  False    True   True  True    True     
+0x000000013e675b10 svchost.exe             916 True   False  False    True   True  True    True     
+0x000000013dda5b10 vmtoolsd.exe           5904 True   False  False    True   True  True    True     
+0x000000013eb04820 taskhost.exe           5316 True   False  False    True   True  True    True     
+0x000000013dc76060 dwm.exe                6612 True   False  False    True   True  True    True     
+0x000000013e396270 esensor.exe            1352 True   False  False    True   True  True    True     
+0x000000013e1e2390 TrustedInstall         4984 True   False  False    True   True  True    True     
+0x000000013e5245d0 lsass.exe               520 True   False  False    True   True  True    False    
+0x000000013fc19b10 java.exe               1660 True   False  False    True   True  True    True     
+0x000000013f12db10 svchost.exe            2024 True   False  False    True   True  True    False    
+0x000000013e35ab10 svchost.exe            1292 True   False  False    True   True  True    True     
+0x000000013dc3bb10 explorer.exe           5872 True   False  False    True   True  True    True     
+0x000000013dcdcb10 rubyw.exe              3536 True   False  False    True   True  True    True     
+0x000000013e31e6c0 Sysmon.exe             3120 True   False  False    True   True  True    True     
+0x000000013e2feb10 svchost.exe            1132 True   False  False    True   True  True    True     
+0x000000013e4fb060 services.exe            512 True   False  False    True   True  True    False    
+0x000000013fc16910 conhost.exe            1612 True   False  False    True   True  True    True     
+0x000000013e4c0b10 lsm.exe                 528 True   False  False    True   True  True    True     
+0x000000013e01a3d0 prunsrv.exe            1468 True   False  False    True   True  True    True     
+0x000000013e2a1b10 svchost.exe             500 True   False  False    True   True  True    False    
+0x000000013e302b10 taskeng.exe            1080 True   False  False    True   True  True    True     
+0x000000013ff63b10 wininit.exe             404 True   False  False    True   True  True    True     
+0x000000013fc06b10 svchost.exe             860 True   False  False    True   True  True    True     
+0x000000013e5d5060 svchost.exe             632 True   False  False    True   True  True    True     
+0x000000013dce5b10 wsmprovhost.ex         2192 True   False  False    True   True  True    True     
+0x000000013dc8ab10 svchost.exe            3204 True   False  False    True   True  True    True     
+0x000000013e495b10 svchost.exe             708 True   False  False    True   True  True    False    
+0x000000013d827b10 svchost.exe            1764 True   False  False    True   True  True    True     
+0x000000013e6847f0 svchost.exe             884 True   False  False    True   True  True    True     
+0x000000013f091b10 dllhost.exe            2708 True   False  False    True   True  True    True     
+0x000000013e689b10 svchost.exe             972 True   False  False    True   True  True    True     
+0x000000013d86ab10 OSPPSVC.EXE             804 True   False  False    True   True  True    False    
+0x000000013feb9720 System                    4 True   False  False    True   False False   False    
+0x00000000030ca2b0 systeminfo.exe         2732 True   False  False    True   False True    False    2019-09-03 18:24:14 UTC+0000
+0x000000013e81b630 csrss.exe               352 True   False  False    True   False True    True     
+0x000000013eeb3040 smss.exe                240 True   False  False    True   False False   False    
+0x000000013ed50060 HOSTNAME.EXE           5412 True   False  False    True   False True    False    2019-09-03 18:24:10 UTC+0000
+0x000000013da8a540 NETSTAT.EXE            6856 False  False  False    True   False False   False    2019-09-03 18:35:00 UTC+0000
+0x000000013c34e460 conhost.exe            6308 False  False  False    True   False False   False    2019-09-03 18:35:00 UTC+0000
+0x000000013e1c5630 cmd.exe                5180 False  False  False    True   False False   False    2019-09-03 18:35:00 UTC+0000
+0x000000013d8eba90 csrss.exe              6332 True   False  False    True   False True    True     
+0x0000000132a90330                           0 False  False  False    False  False False   True     
+0x000000013de6db10 NETSTAT.EXE            4720 True   False  False    False  False True    False    2019-09-03 18:26:00 UTC+0000
+0x0000000003091470                      82...4 True   False  False    False  False False   False    

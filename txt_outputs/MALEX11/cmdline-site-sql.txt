@@ -1,0 +1,128 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    244
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    368
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+csrss.exe pid:    424
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    432
+Command line : wininit.exe
+************************************************************************
+winlogon.exe pid:    460
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    520
+Command line : C:\windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    528
+Command line : C:\windows\system32\lsass.exe
+************************************************************************
+svchost.exe pid:    608
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    652
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+************************************************************************
+LogonUI.exe pid:    728
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+dwm.exe pid:    748
+Command line : "dwm.exe"
+************************************************************************
+svchost.exe pid:    760
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    808
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    840
+Command line : C:\windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    928
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:    416
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+spoolsv.exe pid:   1056
+Command line : C:\windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1100
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+************************************************************************
+macmnsvc.exe pid:   1120
+Command line : "C:\Program Files\McAfee\Agent\macmnsvc.exe" /ServiceStart
+************************************************************************
+masvc.exe pid:   1232
+Command line : "C:\Program Files\McAfee\Agent\masvc.exe" /ServiceStart
+************************************************************************
+nscp.exe pid:   1340
+Command line : "C:\Program Files (x86)\NSClient++\nscp.exe" service --run --name nscp
+************************************************************************
+ruby.exe pid:   1452
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+svchost.exe pid:   1572
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+VGAuthService. pid:   1600
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1664
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+svchost.exe pid:   1920
+Command line : C:\windows\System32\svchost.exe -k termsvcs
+************************************************************************
+svchost.exe pid:   1968
+Command line : C:\windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   1240
+Command line : C:\windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   1588
+Command line : C:\windows\System32\msdtc.exe
+************************************************************************
+WmiPrvSE.exe pid:   2360
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+************************************************************************
+macompatsvc.ex pid:   2660
+Command line : "C:\Program Files\McAfee\Agent\x86\macompatsvc.exe"
+************************************************************************
+mfemactl.exe pid:   2724
+Command line : "C:\Program Files\McAfee\Agent\x86\\mfemactl.exe" --log "C:\ProgramData\McAfee\Agent\logs" --ppid 1232 --interface 4D454F57010000000000000000000000C0000000000000460000000005000000C5F989A4586CB8A9768932AA4F7FF3C204D80000D004A00A6A4932C6E4D25BCF00000000 
+************************************************************************
+ncpa_listener. pid:   2900
+Command line : "C:\Program Files (x86)\Nagios\NCPA\ncpa_listener.exe"
+************************************************************************
+ncpa_passive.e pid:   2992
+Command line : "C:\Program Files (x86)\Nagios\NCPA\ncpa_passive.exe"
+************************************************************************
+httpd.exe pid:   1428
+Command line : "c:\wamp64\bin\apache\apache2.4.35\bin\httpd.exe" -k runservice
+************************************************************************
+httpd.exe pid:   1500
+Command line : C:\wamp64\bin\apache\apache2.4.35\bin\httpd.exe -d C:/wamp64/bin/apache/apache2.4.35
+************************************************************************
+mysqld.exe pid:   2880
+Command line : c:\wamp64\bin\mariadb\mariadb10.3.9\bin\mysqld.exe wampmariadb64
+************************************************************************
+mysqld.exe pid:   2636
+Command line : c:\wamp64\bin\mysql\mysql5.7.23\bin\mysqld.exe wampmysqld64
+************************************************************************
+rubyw.exe pid:   4984
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+wsmprovhost.ex pid:   3864
+Command line : C:\windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+systeminfo.exe pid:   5112
+************************************************************************
+DumpIt.exe pid:   3768
+************************************************************************
+conhost.exe pid:    860

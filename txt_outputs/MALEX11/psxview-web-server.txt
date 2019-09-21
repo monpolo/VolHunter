@@ -1,0 +1,51 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x0000000016db7900 DumpIt.exe             1652 True   True   True     True   True  True    True     
+0x0000000101ee8780 svchost.exe             800 True   True   True     True   True  True    True     
+0x000000011a5ac080 conhost.exe            3908 True   True   True     True   True  True    True     
+0x000000013cdfb900 wininit.exe             428 True   True   True     True   True  True    True     
+0x0000000101a11080 mysqld.exe              696 True   True   True     True   True  True    False    
+0x000000011607c900 svchost.exe            1916 True   True   True     True   True  True    True     
+0x0000000101fdd900 spoolsv.exe            1084 True   True   True     True   True  True    False    
+0x00000001357fe900 svchost.exe             600 True   True   True     True   True  True    False    
+0x0000000016ddf280 conhost.exe            2160 True   True   True     True   True  True    False    
+0x00000001348bf900 ruby.exe               1348 True   True   True     True   True  True    False    
+0x000000011a435080 dllhost.exe            2164 True   True   True     True   True  True    False    
+0x0000000101b60900 rubyw.exe              1140 True   True   True     True   True  True    False    
+0x0000000101f42900 svchost.exe             844 True   True   True     True   True  True    False    
+0x0000000101ef7080 svchost.exe             872 True   True   True     True   True  True    True     
+0x00000001015d9080 VGAuthService.         1620 True   True   True     True   True  True    False    
+0x000000011a5a5900 wsmprovhost.ex          312 True   True   True     True   True  True    True     
+0x000000011a51b080 TaniumClient.e         2432 True   True   True     True   True  True    False    
+0x000000011a486900 msdtc.exe              2264 True   True   True     True   True  True    True     
+0x0000000101574280 TaniumClient.e         1472 True   True   True     True   True  True    False    
+0x0000000101a1c080 svchost.exe             572 True   True   True     True   True  True    True     
+0x00000001302fd900 mysqld.exe              684 True   True   True     True   True  True    False    
+0x00000001071e71c0 lsass.exe               532 True   True   True     True   True  True    False    
+0x00000001015aa900 svchost.exe            1556 True   True   True     True   True  True    False    
+0x0000000100b61500 svchost.exe             644 True   True   True     True   True  True    False    
+0x0000000134b4a900 httpd.exe              1128 True   True   True     True   True  True    False    
+0x0000000016dc2900 conhost.exe            3432 True   True   True     True   True  True    False    
+0x0000000101f8c080 svchost.exe             952 True   True   True     True   True  True    True     
+0x0000000134ace900 httpd.exe              1460 True   True   True     True   True  True    False    
+0x00000001070af6c0 TaniumClient.e         2948 True   True   True     True   True  True    False    
+0x0000000101ecf900 dwm.exe                 744 True   True   True     True   True  True    True     
+0x00000001071ef7c0 services.exe            520 True   True   True     True   True  True    False    
+0x0000000101ed1900 vmacthlp.exe            752 True   True   True     True   True  True    False    
+0x00000001015b9880 vmtoolsd.exe           1676 True   True   True     True   True  True    False    
+0x0000000101fd9900 svchost.exe            1120 True   True   True     True   True  True    False    
+0x000000013cd88900 winlogon.exe            452 True   True   True     True   True  True    True     
+0x000000011a515900 WmiPrvSE.exe           2468 True   True   True     True   True  True    True     
+0x0000000101e96900 LogonUI.exe             728 True   True   True     True   True  True    True     
+0x00000001160ec080 svchost.exe            1984 True   True   True     True   True  True    False    
+0x000000013563a580 csrss.exe               348 True   True   True     True   False True    True     
+0x00000001356b5080 csrss.exe               416 True   True   True     True   False True    True     
+0x0000000135213600 smss.exe                236 True   True   True     True   False False   False    
+0x000000013cc3e740 System                    4 True   True   True     True   False False   False    
+0x0000000125976a90 `B?                33...0 False  False  False    False  False False   True     
+0x0000000016dbe080 ???9                      0 True   False  False    False  False False   False    
+0x0000000101f1f900 TaniumDetectEn         3604 True   False  False    False  False True    False    2019-09-18 17:22:00 UTC+0000
+0x0000000016ade480 sppsvc.exe             3404 False  True   True     False  False False   False    
+0x0000000016cfc900 TaniumDetectEn         1320 False  True   False    False  False False   False    2019-09-18 17:16:58 UTC+0000
+0x0000000016d2b080 TrustedInstall         3256 False  True   True     False  False False   False    
+0x0000000134b80900 httpd.exe              1460 False  True   False    False  False False   False    

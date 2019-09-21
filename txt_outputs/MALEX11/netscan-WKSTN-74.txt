@@ -1,0 +1,134 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0x31626c0          TCPv4    -:50019                        -:3128               CLOSED           952      chrome.exe     
+0x1949e440         TCPv4    -:54071                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x22513340         TCPv4    -:50174                        -:3128               CLOSED           952      chrome.exe     
+0x42ed8010         TCPv4    -:54072                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x5cd473b0         TCPv4    -:54046                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x6020e510         UDPv6    fe80::b104:4dca:258f:4fdf:546  *:*                                   776      svchost.exe    2019-09-02 10:30:36 UTC+0000
+0x6964ed60         UDPv4    0.0.0.0:5355                   *:*                                   584      svchost.exe    2019-09-03 12:33:46 UTC+0000
+0x10a3fc7f0        TCPv4    172.115.1.74:52357             172.115.4.254:5045   ESTABLISHED      1264     winlogbeat.exe 
+0x10da0acf0        TCPv4    127.0.0.1:52415                127.0.0.1:18876      CLOSED           3212836864               
+0x1167756e0        TCPv4    -:54047                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x132f95a50        TCPv4    -:54070                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13a73cb20        TCPv4    10.10.1.74:60970               10.10.200.207:5672   ESTABLISHED      1680     java.exe       
+0x13cc05be0        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        584      svchost.exe    
+0x13c91ca50        TCPv4    -:54025                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13c94dba0        TCPv4    -:49555                        -:3128               CLOSED           952      chrome.exe     
+0x13c98b6e0        TCPv4    127.0.0.1:64923                127.0.0.1:49998      CLOSED           3212836864               
+0x13cf20660        TCPv4    127.0.0.1:49999                127.0.0.1:49287      CLOSED           3212836864               
+0x13cf44a70        TCPv4    172.115.1.74:53176             172.115.1.127:3128   CLOSED           952      chrome.exe     
+0x13cfa8010        TCPv4    127.0.0.1:18876                127.0.0.1:54195      CLOSED           6116     chrome.exe     
+0x13cfe9cf0        TCPv4    -:54170                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13d63dcf0        TCPv4    -:54169                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13d7594e0        TCPv4    -:54068                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13db7bec0        UDPv6    fe80::b104:4dca:258f:4fdf:546  *:*                                   776      svchost.exe    2019-09-03 18:32:28 UTC+0000
+0x13e1ac010        UDPv4    0.0.0.0:123                    *:*                                   864      svchost.exe    2019-08-28 12:36:17 UTC+0000
+0x13e1ac010        UDPv6    :::123                         *:*                                   864      svchost.exe    2019-08-28 12:36:17 UTC+0000
+0x13e1ad9b0        UDPv4    0.0.0.0:123                    *:*                                   864      svchost.exe    2019-08-28 12:36:17 UTC+0000
+0x13db637f0        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        584      svchost.exe    
+0x13db637f0        TCPv6    :::3389                        :::0                 LISTENING        584      svchost.exe    
+0x13e0cdb40        TCPv4    0.0.0.0:62651                  0.0.0.0:0            LISTENING        2108     svchost.exe    
+0x13da4fb90        TCPv4    -:49568                        -:3128               CLOSED           952      chrome.exe     
+0x13dbfb800        TCPv4    172.115.1.74:52741             172.115.4.254:8080   CLOSE_WAIT       1376     esensor.exe    
+0x13de34cf0        TCPv4    -:0                            24.251.145.50:0      CLOSED           584      svchost.exe    
+0x13e078b30        TCPv4    127.0.0.1:49397                127.0.0.1:49999      CLOSED           1680     java.exe       
+0x13e0c5630        TCPv4    172.115.1.74:50654             172.115.4.254:8080   ESTABLISHED      1376     esensor.exe    
+0x13e176010        TCPv4    127.0.0.1:54198                127.0.0.1:18876      CLOSED           3212836864               
+0x13e1e21e0        TCPv4    127.0.0.1:54194                127.0.0.1:49998      CLOSED           3212836864               
+0x13e20f010        UDPv4    172.115.1.74:56355             *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13e20f2d0        UDPv4    10.10.1.74:138                 *:*                                   4        System         2019-08-28 12:33:45 UTC+0000
+0x13e2a28e0        UDPv4    172.115.1.74:1900              *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13e2b2990        UDPv4    0.0.0.0:5355                   *:*                                   584      svchost.exe    2019-09-03 12:33:46 UTC+0000
+0x13e2b2990        UDPv6    :::5355                        *:*                                   584      svchost.exe    2019-09-03 12:33:46 UTC+0000
+0x13e2d42a0        UDPv4    0.0.0.0:0                      *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2d42a0        UDPv6    :::0                           *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2d4540        UDPv4    0.0.0.0:0                      *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2de5f0        UDPv4    0.0.0.0:0                      *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2e3ec0        UDPv4    127.0.0.1:50378                *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2eeec0        UDPv4    0.0.0.0:0                      *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e2eeec0        UDPv6    :::0                           *:*                                   512      lsass.exe      2019-08-28 12:33:50 UTC+0000
+0x13e38b010        UDPv4    0.0.0.0:0                      *:*                                   2108     svchost.exe    2019-08-28 12:36:10 UTC+0000
+0x13e45d010        UDPv4    0.0.0.0:0                      *:*                                   2108     svchost.exe    2019-08-28 12:36:10 UTC+0000
+0x13e45d010        UDPv6    :::0                           *:*                                   2108     svchost.exe    2019-08-28 12:36:10 UTC+0000
+0x13e51c9e0        UDPv6    fe80::b104:4dca:258f:4fdf:1900 *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13e55d010        UDPv4    0.0.0.0:0                      *:*                                   864      svchost.exe    2019-08-28 12:35:53 UTC+0000
+0x13e5d2cc0        UDPv4    0.0.0.0:0                      *:*                                   584      svchost.exe    2019-08-28 12:36:17 UTC+0000
+0x13e5d2cc0        UDPv6    :::0                           *:*                                   584      svchost.exe    2019-08-28 12:36:17 UTC+0000
+0x13e6b8be0        UDPv4    127.0.0.1:62763                *:*                                   584      svchost.exe    2019-08-28 12:35:11 UTC+0000
+0x13e81c9c0        UDPv4    172.115.1.74:138               *:*                                   4        System         2019-08-28 12:32:46 UTC+0000
+0x13e871b80        UDPv4    172.115.1.74:137               *:*                                   4        System         2019-08-28 12:32:46 UTC+0000
+0x13e89c200        UDPv4    10.10.1.74:137                 *:*                                   4        System         2019-08-28 12:33:45 UTC+0000
+0x13e211010        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        512      lsass.exe      
+0x13e227590        TCPv4    0.0.0.0:62648                  0.0.0.0:0            LISTENING        504      services.exe   
+0x13e227590        TCPv6    :::62648                       :::0                 LISTENING        504      services.exe   
+0x13e250570        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        512      lsass.exe      
+0x13e250570        TCPv6    :::49155                       :::0                 LISTENING        512      lsass.exe      
+0x13e2bc340        TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         
+0x13e2bc340        TCPv6    :::47001                       :::0                 LISTENING        4        System         
+0x13e2e4520        TCPv4    127.0.0.1:49998                0.0.0.0:0            LISTENING        1680     java.exe       
+0x13e370770        TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         
+0x13e370770        TCPv6    :::5985                        :::0                 LISTENING        4        System         
+0x13e4877b0        TCPv4    0.0.0.0:62651                  0.0.0.0:0            LISTENING        2108     svchost.exe    
+0x13e4877b0        TCPv6    :::62651                       :::0                 LISTENING        2108     svchost.exe    
+0x13e4e6010        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        708      svchost.exe    
+0x13e4e6010        TCPv6    :::135                         :::0                 LISTENING        708      svchost.exe    
+0x13e4eb630        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        776      svchost.exe    
+0x13e4eb630        TCPv6    :::49153                       :::0                 LISTENING        776      svchost.exe    
+0x13e504ef0        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        776      svchost.exe    
+0x13e50f1b0        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        396      wininit.exe    
+0x13e592700        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        888      svchost.exe    
+0x13e59c010        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        888      svchost.exe    
+0x13e59c010        TCPv6    :::49154                       :::0                 LISTENING        888      svchost.exe    
+0x13e638750        TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         
+0x13e638750        TCPv6    :::445                         :::0                 LISTENING        4        System         
+0x13e8128f0        TCPv4    172.115.1.74:139               0.0.0.0:0            LISTENING        4        System         
+0x13e9572d0        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        708      svchost.exe    
+0x13e9e1010        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        396      wininit.exe    
+0x13e9e1010        TCPv6    :::49152                       :::0                 LISTENING        396      wininit.exe    
+0x13e2dbc00        TCPv6    -:0                            18fb:9132:80fa:ffff:18fb:9132:80fa:ffff:0 CLOSED           512      lsass.exe      
+0x13e2e0690        TCPv4    127.0.0.1:49395                127.0.0.1:49999      CLOSED           1680     java.exe       
+0x13e2e68a0        TCPv6    -:0                            18db:ef30:80fa:ffff:18db:ef30:80fa:ffff:0 CLOSED           512      lsass.exe      
+0x13e2fccf0        TCPv6    -:0                            2897:eb30:80fa:ffff:2897:eb30:80fa:ffff:0 CLOSED           584      svchost.exe    
+0x13e305cf0        TCPv4    -:54098                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13e6b5a80        TCPv4    127.0.0.1:54244                127.0.0.1:12237      CLOSED           5356     chromedriver_w 
+0x13e9931f0        TCPv4    -:54044                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13ea08280        TCPv4    127.0.0.1:49998                127.0.0.1:54193      CLOSED           1680     java.exe       
+0x13ea7b5c0        TCPv4    -:54048                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13ea913a0        TCPv4    172.115.1.74:53110             172.115.1.127:3128   CLOSED           952      chrome.exe     
+0x13eac4140        TCPv4    -:54016                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13eb23cf0        TCPv4    -:54049                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13eb267f0        TCPv4    -:54073                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13ec33010        UDPv6    fe80::b104:4dca:258f:4fdf:56352 *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13f195590        UDPv6    fe80::fc66:834b:3d6e:828d:1900 *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13ee6ac80        TCPv4    10.10.1.74:139                 0.0.0.0:0            LISTENING        4        System         
+0x13f1f61f0        TCPv4    0.0.0.0:62648                  0.0.0.0:0            LISTENING        504      services.exe   
+0x13ec20c00        TCPv4    127.0.0.1:55432                127.0.0.1:12029      CLOSED           6116     chrome.exe     
+0x13ecfa8b0        TCPv4    127.0.0.1:54190                127.0.0.1:49998      CLOSED           3212836864               
+0x13edf06f0        TCPv4    127.0.0.1:49357                127.0.0.1:49999      CLOSED           1680     java.exe       
+0x13edfc010        TCPv4    -:50172                        -:3128               CLOSED           952      chrome.exe     
+0x13f02f190        TCPv4    127.0.0.1:54267                127.0.0.1:11530      CLOSED           2                      
+0x13f12bcf0        TCPv4    127.0.0.1:49359                127.0.0.1:49999      CLOSED           1680     java.exe       
+0x13f6248b0        UDPv6    fe80::fc66:834b:3d6e:828d:56353 *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13f70f710        UDPv4    127.0.0.1:56357                *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13f7a7970        UDPv6    ::1:56354                      *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13f938be0        UDPv4    10.10.1.74:1900                *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13f9bc010        UDPv4    10.10.1.74:56356               *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13fbfc9c0        UDPv4    127.0.0.1:1900                 *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13fc308d0        UDPv4    127.0.0.1:62762                *:*                                   988      svchost.exe    2019-08-28 12:34:14 UTC+0000
+0x13fd0f600        UDPv6    ::1:1900                       *:*                                   3376     svchost.exe    2019-08-28 12:51:37 UTC+0000
+0x13ffef730        UDPv4    0.0.0.0:0                      *:*                                   864      svchost.exe    2019-08-28 12:35:53 UTC+0000
+0x13ffef730        UDPv6    :::0                           *:*                                   864      svchost.exe    2019-08-28 12:35:53 UTC+0000
+0x13f671730        TCPv4    127.0.0.1:49394                127.0.0.1:49999      CLOSED           1680     java.exe       
+0x13f6afae0        TCPv6    2002:ac73:14a::ac73:14a:55298  2002:ac73:405::ac73:405:445 ESTABLISHED      4        System         
+0x13f7365f0        TCPv4    127.0.0.1:12237                127.0.0.1:54252      CLOSED           4880     chrome.exe     
+0x13f75cc60        TCPv4    -:54045                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13f7bc380        TCPv4    172.115.1.74:54209             172.115.1.140:135    CLOSED           512      lsass.exe      
+0x13f8c90d0        TCPv4    10.10.1.74:54423               10.10.1.138:3128     CLOSED           4880     chrome.exe     
+0x13f96f210        TCPv4    -:54069                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13f9a0250        TCPv4    -:54096                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13f9d1ae0        TCPv4    -:0                            24.251.145.50:0      CLOSED           1680     java.exe       
+0x13fa10760        TCPv4    -:54097                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13fb52010        TCPv4    -:54166                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13fbc9b30        TCPv4    -:53988                        172.115.1.126:3128   CLOSED           952      chrome.exe     
+0x13fc39010        TCPv6    -:0                            2897:eb30:80fa:ffff:2897:eb30:80fa:ffff:0 CLOSED           584      svchost.exe    
+0x13fcc99b0        TCPv4    127.0.0.1:49398                127.0.0.1:49999      CLOSED           1680     java.exe       

@@ -1,0 +1,177 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    240
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    340
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    420
+Command line : wininit.exe
+************************************************************************
+csrss.exe pid:    428
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    468
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    524
+Command line : C:\windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    532
+Command line : C:\windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    540
+Command line : C:\windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    636
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    712
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+************************************************************************
+svchost.exe pid:    808
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    856
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    880
+Command line : C:\windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    904
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:   1004
+Command line : C:\windows\system32\svchost.exe -k GPSvcGroup
+************************************************************************
+svchost.exe pid:    696
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+************************************************************************
+taskeng.exe pid:   1092
+Command line : taskeng.exe {C378A9D4-A33D-4FB6-8673-D066F94EFFF5}
+************************************************************************
+spoolsv.exe pid:   1100
+Command line : C:\windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1156
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+svchost.exe pid:   1288
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+************************************************************************
+esensor.exe pid:   1320
+Command line : "C:\Program Files\Endgame\esensor.exe" --config "C:\Program Files\Endgame\esensor.cfg"
+************************************************************************
+prunsrv.exe pid:   1508
+Command line : "C:\Program Files (x86)\Lincoln\LARIAT\tools\prunsrv.exe" //RS//LARIAT
+************************************************************************
+conhost.exe pid:   1516
+Command line : \??\C:\windows\system32\conhost.exe "-1426591220-96948194-209995092531066993198216485-1877035808-1903246394-1311615157
+************************************************************************
+rubyw.exe pid:   1548
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+java.exe pid:   1560
+Command line : 
+************************************************************************
+ruby.exe pid:   1924
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+VGAuthService. pid:   1032
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1276
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+winlogbeat.exe pid:    852
+Command line : "C:\Program Files\Winlogbeat\winlogbeat.exe" -c "C:\Program Files\Winlogbeat\winlogbeat.yml" -path.home "C:\Program Files\Winlogbeat" -path.data "C:\ProgramData\winlogbeat" -path.logs "C:\ProgramData\winlogbeat\logs"
+************************************************************************
+WmiPrvSE.exe pid:   2076
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+************************************************************************
+svchost.exe pid:   2356
+Command line : C:\windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   2452
+Command line : C:\windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   2804
+Command line : C:\windows\System32\msdtc.exe
+************************************************************************
+taskhost.exe pid:   2996
+Command line : "taskhost.exe"
+************************************************************************
+GoogleUpdate.e pid:   3112
+Command line : "C:\Program Files (x86)\Google\Update\GoogleUpdate.exe" /c
+************************************************************************
+explorer.exe pid:   3260
+Command line : C:\windows\Explorer.EXE
+************************************************************************
+cmd.exe pid:   3644
+Command line : C:\windows\system32\cmd.exe /c ""C:\Program Files (x86)\Lincoln\LARIAT\tools\lariat.cmd" "
+************************************************************************
+vmtoolsd.exe pid:   3660
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+************************************************************************
+conhost.exe pid:   3672
+Command line : \??\C:\windows\system32\conhost.exe "2067103830455189922762554324-393437401-159662670289741675813564289041475816262
+************************************************************************
+svchost.exe pid:   3924
+Command line : C:\windows\System32\svchost.exe -k secsvcs
+************************************************************************
+java.exe pid:    392
+Command line : "C:\Program Files (x86)\Lincoln\LARIAT\actuator\bin\..\..\i586-JRE\bin\java"  -DlincolnDir="C:\Users\CLYDE~1.BOY\Lincoln" -DworkDir="C:\Users\CLYDE~1.BOY\DOCUME~1" -Dlariat.auto.deploy.dir="C:\Program Files (x86)\Lincoln\LARIAT\actuator\bin\..\bundle" -cp "C:\Program Files (x86)\Lincoln\LARIAT\actuator\bin\..\lib\*" edu.mit.ll.computation.main.Main "C:\Program Files (x86)\Lincoln\LARIAT\actuator\bin\lariat.properties" 
+************************************************************************
+EXCEL.EXE pid:   3876
+Command line : "C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE" /automation -Embedding
+************************************************************************
+OUTLOOK.EXE pid:   3444
+Command line : "C:\Program Files (x86)\Microsoft Office\Office14\OUTLOOK.EXE" -Embedding
+************************************************************************
+OSPPSVC.EXE pid:   1704
+Command line : "C:\Program Files\Common Files\Microsoft Shared\OfficeSoftwareProtectionPlatform\OSPPSVC.EXE"
+************************************************************************
+svchost.exe pid:    952
+Command line : C:\windows\system32\svchost.exe -k LocalServiceAndNoImpersonation
+************************************************************************
+POWERPNT.EXE pid:   1700
+Command line : "C:\Program Files (x86)\Microsoft Office\Office14\POWERPNT.EXE" /AUTOMATION -Embedding
+************************************************************************
+splwow64.exe pid:   2088
+Command line : C:\windows\splwow64.exe 8192
+************************************************************************
+WINWORD.EXE pid:   4788
+Command line : "C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE" /Automation -Embedding
+************************************************************************
+TrustedInstall pid:   2916
+Command line : C:\windows\servicing\TrustedInstaller.exe
+************************************************************************
+taskhost.exe pid:   3288
+Command line : "taskhost.exe"
+************************************************************************
+chromedriver_w pid:   5044
+************************************************************************
+dwm.exe pid:   4132
+Command line : "C:\windows\system32\Dwm.exe"
+************************************************************************
+chrome.exe pid:   5820
+Command line : 
+************************************************************************
+chromedriver_w pid:   2956
+Command line : "C:\Program Files (x86)\Lincoln\LARIAT\tools\chromedriver_win.exe" --port=1445
+************************************************************************
+chrome.exe pid:   3160
+Command line : 
+************************************************************************
+chrome.exe pid:   3268
+Command line : "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=gpu-process --channel="3160.0.681567933\1510084311" --enable-logging --user-data-dir="C:\Users\CLYDE~1.BOY\Lincoln\chrome-profile" --supports-dual-gpus=false --gpu-driver-bug-workarounds=0,3,12,22 --gpu-vendor-id=0x15ad --gpu-device-id=0x0405 --gpu-driver-vendor="VMware, Inc." --gpu-driver-version=8.15.1.60 --user-data-dir="C:\Users\CLYDE~1.BOY\Lincoln\chrome-profile" --enable-logging --ignored=" --type=renderer " /prefetch:822062411
+************************************************************************
+chrome.exe pid:   5336
+Command line : 
+************************************************************************
+chrome.exe pid:   4772
+Command line : 
+************************************************************************
+@?64????@?64???? pid:      0

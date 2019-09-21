@@ -1,0 +1,264 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0x1049e3010        UDPv4    0.0.0.0:4500                   *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1049e3010        UDPv6    :::4500                        *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1049e3720        UDPv4    0.0.0.0:500                    *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bdf13ec0        UDPv4    0.0.0.0:49972                  *:*                                   980      svchost.exe    2019-09-19 17:37:24 UTC+0000
+0x1bde09690        TCPv4    172.115.4.15:5985              172.115.4.254:11588  CLOSED           4        System         
+0x1bde267d0        TCPv4    172.115.4.15:5985              172.115.4.254:40301  CLOSED           4        System         
+0x1bde57540        TCPv4    172.115.4.15:5985              172.115.4.254:8215   CLOSED           4        System         
+0x1be06dcf0        TCPv4    127.0.0.1:52312                127.0.0.1:8028       ESTABLISHED      1348     java.exe       
+0x1be072010        TCPv4    172.115.4.15:5985              172.115.4.254:63769  CLOSED           4        System         
+0x1be19a890        TCPv4    172.115.4.15:445               172.115.4.254:48143  ESTABLISHED      4        System         
+0x1be1b2a40        TCPv4    127.0.0.1:8027                 127.0.0.1:55664      CLOSED           2088     dcnotification 
+0x1be1b49d0        TCPv4    127.0.0.1:8028                 127.0.0.1:54457      ESTABLISHED      2260     postgres.exe   
+0x1be214cf0        TCPv4    127.0.0.1:54457                127.0.0.1:8028       ESTABLISHED      1348     java.exe       
+0x1be23f010        TCPv4    -:0                            56.187.251.5:0       CLOSED           1824     rubyw.exe      
+0x1be36fcf0        TCPv6    -:0                            38bb:fb05:80fa:ffff:38bb:fb05:80fa:ffff:0 CLOSED           1824     rubyw.exe      
+0x1be391010        TCPv4    127.0.0.1:8028                 127.0.0.1:52312      ESTABLISHED      2260     postgres.exe   
+0x1be6cd580        UDPv4    0.0.0.0:0                      *:*                                   980      svchost.exe    2019-09-16 18:15:30 UTC+0000
+0x1be6cd580        UDPv6    :::0                           *:*                                   980      svchost.exe    2019-09-16 18:15:30 UTC+0000
+0x1be958aa0        UDPv4    0.0.0.0:0                      *:*                                   4972     svchost.exe    2019-09-16 18:15:19 UTC+0000
+0x1be958aa0        UDPv6    :::0                           *:*                                   4972     svchost.exe    2019-09-16 18:15:19 UTC+0000
+0x1be958d40        UDPv4    0.0.0.0:0                      *:*                                   4972     svchost.exe    2019-09-16 18:15:19 UTC+0000
+0x1be995310        UDPv4    0.0.0.0:33848                  *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1be9b9490        UDPv4    0.0.0.0:5353                   *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1be9b9490        UDPv6    :::5353                        *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1be9b9730        UDPv4    0.0.0.0:5353                   *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1be9e25b0        UDPv4    0.0.0.0:5355                   *:*                                   980      svchost.exe    2019-09-16 18:15:30 UTC+0000
+0x1bebd1520        UDPv4    0.0.0.0:33848                  *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1bebd1520        UDPv6    :::33848                       *:*                                   2012     java.exe       2019-09-16 18:15:21 UTC+0000
+0x1beda82f0        UDPv4    0.0.0.0:5355                   *:*                                   980      svchost.exe    2019-09-16 18:15:30 UTC+0000
+0x1beda82f0        UDPv6    :::5355                        *:*                                   980      svchost.exe    2019-09-16 18:15:30 UTC+0000
+0x1be511150        TCPv4    0.0.0.0:8019                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be511150        TCPv6    :::8019                        :::0                 LISTENING        1348     java.exe       
+0x1be6f5010        TCPv4    0.0.0.0:8443                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be711890        TCPv4    0.0.0.0:8031                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be73d660        TCPv4    127.0.0.1:8005                 0.0.0.0:0            LISTENING        3064     tomcat8.exe    
+0x1be77f180        TCPv4    0.0.0.0:8031                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be77f180        TCPv6    :::8031                        :::0                 LISTENING        1348     java.exe       
+0x1be781220        TCPv4    0.0.0.0:8444                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be781220        TCPv6    :::8444                        :::0                 LISTENING        1348     java.exe       
+0x1be78b010        TCPv4    0.0.0.0:8032                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be78b010        TCPv6    :::8032                        :::0                 LISTENING        1348     java.exe       
+0x1be78b9b0        TCPv4    0.0.0.0:8032                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be78c180        TCPv4    0.0.0.0:8443                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1be78c180        TCPv6    :::8443                        :::0                 LISTENING        1348     java.exe       
+0x1be89bc30        TCPv4    0.0.0.0:49226                  0.0.0.0:0            LISTENING        484      services.exe   
+0x1be89bc30        TCPv6    :::49226                       :::0                 LISTENING        484      services.exe   
+0x1be89c860        TCPv4    0.0.0.0:3306                   0.0.0.0:0            LISTENING        3924     mysqld.exe     
+0x1be970650        TCPv4    0.0.0.0:49231                  0.0.0.0:0            LISTENING        4972     svchost.exe    
+0x1be97f010        TCPv4    0.0.0.0:49240                  0.0.0.0:0            LISTENING        2012     java.exe       
+0x1be97f010        TCPv6    :::49240                       :::0                 LISTENING        2012     java.exe       
+0x1be97fef0        TCPv4    0.0.0.0:49241                  0.0.0.0:0            LISTENING        2012     java.exe       
+0x1be97fef0        TCPv6    :::49241                       :::0                 LISTENING        2012     java.exe       
+0x1be9d5b90        TCPv4    0.0.0.0:3000                   0.0.0.0:0            LISTENING        5616     ruby.exe       
+0x1be9dda60        TCPv4    0.0.0.0:8022                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1bea0bef0        TCPv4    0.0.0.0:8019                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1bea28260        TCPv4    0.0.0.0:3700                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1bea28260        TCPv6    :::3700                        :::0                 LISTENING        1876     java.exe       
+0x1bea3a5c0        TCPv4    0.0.0.0:8282                   0.0.0.0:0            LISTENING        3064     tomcat8.exe    
+0x1bea4a010        TCPv4    0.0.0.0:8009                   0.0.0.0:0            LISTENING        3064     tomcat8.exe    
+0x1bea9b010        TCPv4    0.0.0.0:8686                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1bea9b010        TCPv6    :::8686                        :::0                 LISTENING        1876     java.exe       
+0x1beacec50        TCPv4    0.0.0.0:8585                   0.0.0.0:0            LISTENING        3820     httpd.exe      
+0x1bead6c20        TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         
+0x1bead6c20        TCPv6    :::47001                       :::0                 LISTENING        4        System         
+0x1beadd010        TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         
+0x1beadd010        TCPv6    :::5985                        :::0                 LISTENING        4        System         
+0x1beadf9b0        TCPv4    0.0.0.0:8585                   0.0.0.0:0            LISTENING        3820     httpd.exe      
+0x1beadf9b0        TCPv6    :::8585                        :::0                 LISTENING        3820     httpd.exe      
+0x1beaeb010        TCPv4    0.0.0.0:7676                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1beaeb010        TCPv6    :::7676                        :::0                 LISTENING        1876     java.exe       
+0x1bebb47a0        TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         
+0x1bebb47a0        TCPv6    :::445                         :::0                 LISTENING        4        System         
+0x1bebed630        TCPv4    0.0.0.0:49226                  0.0.0.0:0            LISTENING        484      services.exe   
+0x1bebff7a0        TCPv4    0.0.0.0:49231                  0.0.0.0:0            LISTENING        4972     svchost.exe    
+0x1bebff7a0        TCPv6    :::49231                       :::0                 LISTENING        4972     svchost.exe    
+0x1bec0dbe0        TCPv4    0.0.0.0:22                     0.0.0.0:0            LISTENING        2680     sshd.exe       
+0x1bec0ec50        TCPv4    0.0.0.0:22                     0.0.0.0:0            LISTENING        2680     sshd.exe       
+0x1bec0ec50        TCPv6    :::22                          :::0                 LISTENING        2680     sshd.exe       
+0x1bec706a0        TCPv4    0.0.0.0:9200                   0.0.0.0:0            LISTENING        1340     elasticsearch- 
+0x1bec706a0        TCPv6    :::9200                        :::0                 LISTENING        1340     elasticsearch- 
+0x1bed4e3d0        TCPv4    0.0.0.0:8484                   0.0.0.0:0            LISTENING        2012     java.exe       
+0x1bed4e3d0        TCPv6    :::8484                        :::0                 LISTENING        2012     java.exe       
+0x1bed99c50        TCPv4    0.0.0.0:8080                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1bed99c50        TCPv6    :::8080                        :::0                 LISTENING        1876     java.exe       
+0x1bedaa2b0        TCPv4    0.0.0.0:8444                   0.0.0.0:0            LISTENING        1348     java.exe       
+0x1bedd1010        TCPv4    0.0.0.0:8181                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1bedd1010        TCPv6    :::8181                        :::0                 LISTENING        1876     java.exe       
+0x1bedde3e0        TCPv4    0.0.0.0:4848                   0.0.0.0:0            LISTENING        1876     java.exe       
+0x1bedde3e0        TCPv6    :::4848                        :::0                 LISTENING        1876     java.exe       
+0x1be5205d0        TCPv4    127.0.0.1:49286                127.0.0.1:49287      ESTABLISHED      1348     java.exe       
+0x1be72a770        TCPv4    127.0.0.1:49247                127.0.0.1:49246      ESTABLISHED      3064     tomcat8.exe    
+0x1be72b010        TCPv4    127.0.0.1:49245                127.0.0.1:49244      ESTABLISHED      3064     tomcat8.exe    
+0x1be72b590        TCPv4    127.0.0.1:49244                127.0.0.1:49245      ESTABLISHED      3064     tomcat8.exe    
+0x1be72c010        TCPv4    127.0.0.1:49246                127.0.0.1:49247      ESTABLISHED      3064     tomcat8.exe    
+0x1be72c510        TCPv4    127.0.0.1:49249                127.0.0.1:49248      ESTABLISHED      3064     tomcat8.exe    
+0x1be72da90        TCPv4    127.0.0.1:49248                127.0.0.1:49249      ESTABLISHED      3064     tomcat8.exe    
+0x1be72e400        TCPv4    127.0.0.1:49250                127.0.0.1:49251      ESTABLISHED      3064     tomcat8.exe    
+0x1be72ebe0        TCPv4    127.0.0.1:49251                127.0.0.1:49250      ESTABLISHED      3064     tomcat8.exe    
+0x1be72f360        TCPv4    127.0.0.1:49253                127.0.0.1:49252      ESTABLISHED      3064     tomcat8.exe    
+0x1be730a90        TCPv4    127.0.0.1:49252                127.0.0.1:49253      ESTABLISHED      3064     tomcat8.exe    
+0x1be731390        TCPv4    127.0.0.1:49255                127.0.0.1:49254      ESTABLISHED      3064     tomcat8.exe    
+0x1be732a90        TCPv4    127.0.0.1:49254                127.0.0.1:49255      ESTABLISHED      3064     tomcat8.exe    
+0x1be733390        TCPv4    127.0.0.1:49257                127.0.0.1:49256      ESTABLISHED      3064     tomcat8.exe    
+0x1be734a90        TCPv4    127.0.0.1:49256                127.0.0.1:49257      ESTABLISHED      3064     tomcat8.exe    
+0x1be7352b0        TCPv4    127.0.0.1:49258                127.0.0.1:49259      ESTABLISHED      3064     tomcat8.exe    
+0x1be735a90        TCPv4    127.0.0.1:49259                127.0.0.1:49258      ESTABLISHED      3064     tomcat8.exe    
+0x1be738010        TCPv4    127.0.0.1:49261                127.0.0.1:49260      ESTABLISHED      3064     tomcat8.exe    
+0x1be738740        TCPv4    127.0.0.1:49260                127.0.0.1:49261      ESTABLISHED      3064     tomcat8.exe    
+0x1be73b010        TCPv4    127.0.0.1:49263                127.0.0.1:49262      ESTABLISHED      3064     tomcat8.exe    
+0x1be73ba90        TCPv4    127.0.0.1:49262                127.0.0.1:49263      ESTABLISHED      3064     tomcat8.exe    
+0x1be73c510        TCPv4    127.0.0.1:49264                127.0.0.1:49265      ESTABLISHED      3064     tomcat8.exe    
+0x1be73ccf0        TCPv4    127.0.0.1:49265                127.0.0.1:49264      ESTABLISHED      3064     tomcat8.exe    
+0x1be73e330        TCPv4    127.0.0.1:49266                127.0.0.1:49267      ESTABLISHED      3064     tomcat8.exe    
+0x1be73ecf0        TCPv4    127.0.0.1:49267                127.0.0.1:49266      ESTABLISHED      3064     tomcat8.exe    
+0x1be740510        TCPv4    127.0.0.1:49268                127.0.0.1:49269      ESTABLISHED      3064     tomcat8.exe    
+0x1be740cf0        TCPv4    127.0.0.1:49269                127.0.0.1:49268      ESTABLISHED      3064     tomcat8.exe    
+0x1be744330        TCPv4    127.0.0.1:49270                127.0.0.1:49271      ESTABLISHED      3064     tomcat8.exe    
+0x1be744cf0        TCPv4    127.0.0.1:49271                127.0.0.1:49270      ESTABLISHED      3064     tomcat8.exe    
+0x1be746010        TCPv4    127.0.0.1:49273                127.0.0.1:49272      ESTABLISHED      3064     tomcat8.exe    
+0x1be746830        TCPv4    127.0.0.1:49272                127.0.0.1:49273      ESTABLISHED      3064     tomcat8.exe    
+0x1be748010        TCPv4    127.0.0.1:49275                127.0.0.1:49274      ESTABLISHED      3064     tomcat8.exe    
+0x1be748740        TCPv4    127.0.0.1:49274                127.0.0.1:49275      ESTABLISHED      3064     tomcat8.exe    
+0x1be74a330        TCPv4    127.0.0.1:49276                127.0.0.1:49277      ESTABLISHED      3064     tomcat8.exe    
+0x1be74acf0        TCPv4    127.0.0.1:49277                127.0.0.1:49276      ESTABLISHED      3064     tomcat8.exe    
+0x1be8da990        TCPv4    127.0.0.1:49282                127.0.0.1:49281      ESTABLISHED      1348     java.exe       
+0x1be8db540        TCPv4    127.0.0.1:49281                127.0.0.1:49282      ESTABLISHED      1348     java.exe       
+0x1be8dd940        TCPv4    127.0.0.1:49284                127.0.0.1:49285      ESTABLISHED      1348     java.exe       
+0x1be8f0b90        TCPv4    127.0.0.1:49285                127.0.0.1:49284      ESTABLISHED      1348     java.exe       
+0x1be97f550        TCPv4    127.0.0.1:49235                127.0.0.1:49234      ESTABLISHED      2012     java.exe       
+0x1be98ac10        TCPv4    127.0.0.1:49238                127.0.0.1:49239      ESTABLISHED      2012     java.exe       
+0x1bea07830        TCPv4    127.0.0.1:49234                127.0.0.1:49235      ESTABLISHED      2012     java.exe       
+0x1bea1bcf0        TCPv4    127.0.0.1:49232                127.0.0.1:49233      ESTABLISHED      2012     java.exe       
+0x1bea1ea30        TCPv4    127.0.0.1:49239                127.0.0.1:49238      ESTABLISHED      2012     java.exe       
+0x1bea1f010        TCPv4    127.0.0.1:49236                127.0.0.1:49237      ESTABLISHED      2012     java.exe       
+0x1bea2b980        TCPv4    127.0.0.1:49222                127.0.0.1:49221      ESTABLISHED      1876     java.exe       
+0x1bea31010        TCPv4    127.0.0.1:49221                127.0.0.1:49222      ESTABLISHED      1876     java.exe       
+0x1bead7a20        TCPv6    -:0                            4820:4f05:80fa:ffff:4820:4f05:80fa:ffff:0 CLOSED           1        ???????       
+0x1beaec350        TCPv4    127.0.0.1:49224                127.0.0.1:49225      ESTABLISHED      1876     java.exe       
+0x1beaecbe0        TCPv4    127.0.0.1:49225                127.0.0.1:49224      ESTABLISHED      1876     java.exe       
+0x1bec0b010        TCPv4    172.115.4.15:9300              172.115.4.15:49197   ESTABLISHED      1340     elasticsearch- 
+0x1bec1a010        TCPv4    172.115.4.15:49197             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec3c630        TCPv4    172.115.4.15:49200             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec3dcf0        TCPv4    172.115.4.15:9300              172.115.4.15:49195   ESTABLISHED      1340     elasticsearch- 
+0x1bec428b0        TCPv4    172.115.4.15:49199             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec43a90        TCPv4    172.115.4.15:9300              172.115.4.15:49201   ESTABLISHED      1340     elasticsearch- 
+0x1bec44780        TCPv4    127.0.0.1:49214                127.0.0.1:49213      ESTABLISHED      2012     java.exe       
+0x1bec4bba0        TCPv4    172.115.4.15:49189             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec4c010        TCPv4    172.115.4.15:9300              172.115.4.15:49189   ESTABLISHED      1340     elasticsearch- 
+0x1bec4d9d0        TCPv4    172.115.4.15:49190             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec4e010        TCPv4    172.115.4.15:9300              172.115.4.15:49190   ESTABLISHED      1340     elasticsearch- 
+0x1bec4e660        TCPv4    172.115.4.15:49191             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec4fcf0        TCPv4    172.115.4.15:9300              172.115.4.15:49191   ESTABLISHED      1340     elasticsearch- 
+0x1bec50a10        TCPv4    172.115.4.15:49192             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec51010        TCPv4    172.115.4.15:9300              172.115.4.15:49192   ESTABLISHED      1340     elasticsearch- 
+0x1bec52010        TCPv4    172.115.4.15:49193             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec52830        TCPv4    172.115.4.15:9300              172.115.4.15:49193   ESTABLISHED      1340     elasticsearch- 
+0x1bec55450        TCPv4    172.115.4.15:49201             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec55cf0        TCPv4    172.115.4.15:9300              172.115.4.15:49200   ESTABLISHED      1340     elasticsearch- 
+0x1bec5e9e0        TCPv4    172.115.4.15:9300              172.115.4.15:49194   ESTABLISHED      1340     elasticsearch- 
+0x1bec5f010        TCPv4    172.115.4.15:49196             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bec61510        TCPv4    127.0.0.1:49204                127.0.0.1:49205      ESTABLISHED      1340     elasticsearch- 
+0x1bec61cf0        TCPv4    127.0.0.1:49205                127.0.0.1:49204      ESTABLISHED      1340     elasticsearch- 
+0x1bec622b0        TCPv4    127.0.0.1:49206                127.0.0.1:49207      ESTABLISHED      1340     elasticsearch- 
+0x1bec62a90        TCPv4    127.0.0.1:49207                127.0.0.1:49206      ESTABLISHED      1340     elasticsearch- 
+0x1bec648d0        TCPv4    127.0.0.1:49209                127.0.0.1:49208      ESTABLISHED      1340     elasticsearch- 
+0x1bec65010        TCPv4    127.0.0.1:49208                127.0.0.1:49209      ESTABLISHED      1340     elasticsearch- 
+0x1bec6c800        TCPv4    127.0.0.1:49210                127.0.0.1:49211      ESTABLISHED      1340     elasticsearch- 
+0x1bec6ccf0        TCPv4    127.0.0.1:49211                127.0.0.1:49210      ESTABLISHED      1340     elasticsearch- 
+0x1bed5aa90        TCPv4    127.0.0.1:49213                127.0.0.1:49214      ESTABLISHED      2012     java.exe       
+0x1bed92cf0        TCPv4    127.0.0.1:49215                127.0.0.1:49216      ESTABLISHED      1876     java.exe       
+0x1bed9c780        TCPv4    127.0.0.1:49237                127.0.0.1:49236      ESTABLISHED      2012     java.exe       
+0x1beda4990        TCPv4    127.0.0.1:49233                127.0.0.1:49232      ESTABLISHED      2012     java.exe       
+0x1bedb3ba0        TCPv4    127.0.0.1:49216                127.0.0.1:49215      ESTABLISHED      1876     java.exe       
+0x1bedd4a90        TCPv4    127.0.0.1:49218                127.0.0.1:49217      ESTABLISHED      1876     java.exe       
+0x1bedd5010        TCPv4    127.0.0.1:49217                127.0.0.1:49218      ESTABLISHED      1876     java.exe       
+0x1bede3a90        TCPv4    127.0.0.1:49220                127.0.0.1:49219      ESTABLISHED      1876     java.exe       
+0x1bede4010        TCPv4    127.0.0.1:49219                127.0.0.1:49220      ESTABLISHED      1876     java.exe       
+0x1bef4f1d0        UDPv4    127.0.0.1:61204                *:*                                   2260     postgres.exe   2019-09-16 18:14:38 UTC+0000
+0x1befb4500        UDPv4    0.0.0.0:54328                  *:*                                   1340     elasticsearch- 2019-09-16 18:14:40 UTC+0000
+0x1befb4500        UDPv6    :::54328                       *:*                                   1340     elasticsearch- 2019-09-16 18:14:40 UTC+0000
+0x1befbdec0        UDPv4    0.0.0.0:54328                  *:*                                   1340     elasticsearch- 2019-09-16 18:14:40 UTC+0000
+0x1bf3488c0        UDPv4    0.0.0.0:4500                   *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf34c760        UDPv4    0.0.0.0:500                    *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf34c760        UDPv6    :::500                         *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf350760        UDPv4    0.0.0.0:0                      *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf353420        UDPv4    0.0.0.0:0                      *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf353420        UDPv6    :::0                           *:*                                   840      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1bf6b6270        UDPv4    172.115.4.15:137               *:*                                   4        System         2019-09-16 18:13:59 UTC+0000
+0x1bf6b7ba0        UDPv4    172.115.4.15:138               *:*                                   4        System         2019-09-16 18:13:59 UTC+0000
+0x1bee418a0        TCPv4    0.0.0.0:49161                  0.0.0.0:0            LISTENING        1996     java.exe       
+0x1bee418a0        TCPv6    :::49161                       :::0                 LISTENING        1996     java.exe       
+0x1beea0bd0        TCPv4    0.0.0.0:8383                   0.0.0.0:0            LISTENING        2196     dcserverhttpd. 
+0x1beea0bd0        TCPv6    :::8383                        :::0                 LISTENING        2196     dcserverhttpd. 
+0x1beeac970        TCPv4    0.0.0.0:8027                   0.0.0.0:0            LISTENING        2088     dcnotification 
+0x1beedf010        TCPv4    0.0.0.0:1617                   0.0.0.0:0            LISTENING        1996     java.exe       
+0x1beedf010        TCPv6    :::1617                        :::0                 LISTENING        1996     java.exe       
+0x1beeef260        TCPv4    0.0.0.0:49163                  0.0.0.0:0            LISTENING        1996     java.exe       
+0x1beeef260        TCPv6    :::49163                       :::0                 LISTENING        1996     java.exe       
+0x1bef08450        TCPv4    0.0.0.0:8020                   0.0.0.0:0            LISTENING        2196     dcserverhttpd. 
+0x1bef0e340        TCPv4    0.0.0.0:8383                   0.0.0.0:0            LISTENING        2196     dcserverhttpd. 
+0x1bef2a830        TCPv4    0.0.0.0:8028                   0.0.0.0:0            LISTENING        2260     postgres.exe   
+0x1bef2a830        TCPv6    :::8028                        :::0                 LISTENING        2260     postgres.exe   
+0x1bef35ef0        TCPv4    0.0.0.0:8028                   0.0.0.0:0            LISTENING        2260     postgres.exe   
+0x1bef859e0        TCPv4    0.0.0.0:9300                   0.0.0.0:0            LISTENING        1340     elasticsearch- 
+0x1bef859e0        TCPv6    :::9300                        :::0                 LISTENING        1340     elasticsearch- 
+0x1bef92090        TCPv4    0.0.0.0:8020                   0.0.0.0:0            LISTENING        2196     dcserverhttpd. 
+0x1bef92090        TCPv6    :::8020                        :::0                 LISTENING        2196     dcserverhttpd. 
+0x1bf10f4a0        TCPv4    0.0.0.0:49158                  0.0.0.0:0            LISTENING        1348     java.exe       
+0x1bf10f4a0        TCPv6    :::49158                       :::0                 LISTENING        1348     java.exe       
+0x1bf10faf0        TCPv4    0.0.0.0:49158                  0.0.0.0:0            LISTENING        1348     java.exe       
+0x1bf3386c0        TCPv4    127.0.0.1:32000                0.0.0.0:0            LISTENING        1200     wrapper.exe    
+0x1bf383d10        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        492      lsass.exe      
+0x1bf386290        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        492      lsass.exe      
+0x1bf386290        TCPv6    :::49155                       :::0                 LISTENING        492      lsass.exe      
+0x1bf6f9650        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        840      svchost.exe    
+0x1bf6f9650        TCPv6    :::49154                       :::0                 LISTENING        840      svchost.exe    
+0x1bf702010        TCPv4    172.115.4.15:139               0.0.0.0:0            LISTENING        4        System         
+0x1bf784130        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        712      svchost.exe    
+0x1bf7852e0        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        712      svchost.exe    
+0x1bf7852e0        TCPv6    :::135                         :::0                 LISTENING        712      svchost.exe    
+0x1bf78c3b0        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        380      wininit.exe    
+0x1bf7913a0        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        380      wininit.exe    
+0x1bf7913a0        TCPv6    :::49152                       :::0                 LISTENING        380      wininit.exe    
+0x1bf7b2ef0        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        804      svchost.exe    
+0x1beeaccf0        TCPv4    127.0.0.1:49166                127.0.0.1:49165      ESTABLISHED      1340     elasticsearch- 
+0x1bef38500        TCPv6    -:0                            380b:8006:80fa:ffff:380b:8006:80fa:ffff:0 CLOSED           2260     postgres.exe   
+0x1bef3e010        TCPv4    127.0.0.1:49165                127.0.0.1:49166      ESTABLISHED      1340     elasticsearch- 
+0x1bef5c510        TCPv4    127.0.0.1:49167                127.0.0.1:49168      ESTABLISHED      1340     elasticsearch- 
+0x1bef5ccf0        TCPv4    127.0.0.1:49168                127.0.0.1:49167      ESTABLISHED      1340     elasticsearch- 
+0x1bef5e550        TCPv4    127.0.0.1:49170                127.0.0.1:49169      ESTABLISHED      1340     elasticsearch- 
+0x1bef5fa90        TCPv4    127.0.0.1:49169                127.0.0.1:49170      ESTABLISHED      1340     elasticsearch- 
+0x1bef62010        TCPv4    127.0.0.1:49172                127.0.0.1:49171      ESTABLISHED      1340     elasticsearch- 
+0x1bef62830        TCPv4    127.0.0.1:49171                127.0.0.1:49172      ESTABLISHED      1340     elasticsearch- 
+0x1bef6c790        TCPv4    127.0.0.1:49174                127.0.0.1:49173      ESTABLISHED      1340     elasticsearch- 
+0x1bef6e240        TCPv4    127.0.0.1:49173                127.0.0.1:49174      ESTABLISHED      1340     elasticsearch- 
+0x1bef7b510        TCPv4    127.0.0.1:49175                127.0.0.1:49176      ESTABLISHED      1340     elasticsearch- 
+0x1bef7bcf0        TCPv4    127.0.0.1:49176                127.0.0.1:49175      ESTABLISHED      1340     elasticsearch- 
+0x1bef7cb30        TCPv4    172.115.4.15:49194             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bef7d360        TCPv4    127.0.0.1:49178                127.0.0.1:49177      ESTABLISHED      1340     elasticsearch- 
+0x1bef7ea90        TCPv4    127.0.0.1:49177                127.0.0.1:49178      ESTABLISHED      1340     elasticsearch- 
+0x1bef80670        TCPv4    127.0.0.1:49180                127.0.0.1:49179      ESTABLISHED      1340     elasticsearch- 
+0x1bef81cf0        TCPv4    127.0.0.1:49179                127.0.0.1:49180      ESTABLISHED      1340     elasticsearch- 
+0x1bef83010        TCPv4    127.0.0.1:49182                127.0.0.1:49181      ESTABLISHED      1340     elasticsearch- 
+0x1bef83a90        TCPv4    127.0.0.1:49181                127.0.0.1:49182      ESTABLISHED      1340     elasticsearch- 
+0x1bef86010        TCPv4    127.0.0.1:49184                127.0.0.1:49183      ESTABLISHED      1340     elasticsearch- 
+0x1bef86830        TCPv4    127.0.0.1:49183                127.0.0.1:49184      ESTABLISHED      1340     elasticsearch- 
+0x1bef87010        TCPv4    127.0.0.1:49202                127.0.0.1:49203      ESTABLISHED      1340     elasticsearch- 
+0x1bef8f010        TCPv4    172.115.4.15:9300              172.115.4.15:49199   ESTABLISHED      1340     elasticsearch- 
+0x1befc2010        TCPv4    172.115.4.15:9300              172.115.4.15:49196   ESTABLISHED      1340     elasticsearch- 
+0x1befd09d0        TCPv4    172.115.4.15:9300              172.115.4.15:49198   ESTABLISHED      1340     elasticsearch- 
+0x1befd0cf0        TCPv4    172.115.4.15:49198             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1beff6cf0        TCPv4    172.115.4.15:49195             172.115.4.15:9300    ESTABLISHED      1340     elasticsearch- 
+0x1bf029810        TCPv4    127.0.0.1:31000                127.0.0.1:32000      ESTABLISHED      1348     java.exe       
+0x1bf02bb30        TCPv4    127.0.0.1:32000                127.0.0.1:31000      ESTABLISHED      1200     wrapper.exe    
+0x1bf02f010        TCPv6    -:0                            380b:8006:80fa:ffff:380b:8006:80fa:ffff:0 CLOSED           2260     postgres.exe   
+0x1bf100cf0        TCPv4    127.0.0.1:49287                127.0.0.1:49286      ESTABLISHED      1348     java.exe       
+0x1bf22aae0        TCPv6    -:0                            387b:4d06:80fa:ffff:387b:4d06:80fa:ffff:0 CLOSED           4        System         
+0x1bf3814b0        TCPv6    -:0                            38fb:ed05:80fa:ffff:38fb:ed05:80fa:ffff:0 CLOSED           1        ???????       
+0x1bf7819e0        TCPv4    127.0.0.1:49203                127.0.0.1:49202      ESTABLISHED      1340     elasticsearch- 
+0x1bfb4f5e0        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        840      svchost.exe    
+0x1bfca1830        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        804      svchost.exe    
+0x1bfca1830        TCPv6    :::49153                       :::0                 LISTENING        804      svchost.exe    
+0x1bfbdf010        TCPv4    172.115.4.15:55667             10.10.254.1:61613    CLOSED           1824     rubyw.exe      

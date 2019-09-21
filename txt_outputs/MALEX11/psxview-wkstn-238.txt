@@ -1,0 +1,60 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x0000000094d7b800 conhost.exe            3088 False  True   True     False  True  False   False    
+0x0000000104aa9080 lsass.exe               604 True   True   True     False  True  True    False    
+0x000000011d243800 svchost.exe            2848 True   True   True     False  True  True    False    
+0x0000000104b8f080 LogonUI.exe             960 True   True   True     False  True  True    False    
+0x0000000104a47800 svchost.exe            1020 True   True   True     False  True  True    False    
+0x0000000008c04080 wsmprovhost.ex         2612 True   True   True     False  True  True    False    
+0x000000010ed67800 vmtoolsd.exe           2080 True   True   True     False  True  True    False    
+0x000000009426d800 SearchProtocol         1776 True   True   True     False  True  True    False    
+0x0000000104b93080 dwm.exe                 952 True   True   True     False  True  True    False    
+0x0000000104a49800 svchost.exe            1012 True   True   True     False  True  True    False    
+0x000000009c72f800 MpCmdRun.exe           1004 True   True   True     False  True  True    False    
+0x0000000104d2a800 mdm.exe                1936 True   True   True     False  True  True    False    
+0x000000010ec8b800 svchost.exe            2004 True   True   True     False  True  True    False    
+0x0000000104d2c800 esensor.exe            1852 True   True   True     False  True  True    False    
+0x0000000104a28080 wininit.exe             480 True   True   True     False  True  True    False    
+0x000000013a1ed800 NisSrv.exe             3840 True   True   True     False  True  True    False    
+0x0000000094548800 SearchFilterHo          596 True   True   True     False  True  True    False    
+0x0000000123064800 WmiPrvSE.exe           3136 True   True   True     False  True  True    False    
+0x0000000104a4f800 svchost.exe             884 True   True   True     False  True  True    False    
+0x0000000094d35800 TrustedInstall         3416 False  True   True     False  True  False   False    
+0x000000011ea90800 dllhost.exe            3048 True   True   True     False  True  True    False    
+0x0000000104a51800 svchost.exe             876 True   True   True     False  True  True    False    
+0x000000013cafd080 conhost.exe            2208 True   True   True     False  True  True    False    
+0x000000010ed68540 VGAuthService.         2088 True   True   True     False  True  True    False    
+0x0000000038569800 GoogleUpdate.e         1556 True   True   True     False  True  True    False    
+0x000000013a1f4800 SearchIndexer.         3148 True   True   True     False  True  True    False    
+0x00000001230e5480 DumpIt.exe             3972 False  True   True     False  True  False   False    
+0x0000000104a20080 winlogon.exe            516 True   True   True     False  True  True    False    
+0x000000010edf44c0 svchost.exe            2652 True   True   True     False  True  True    False    
+0x0000000139f2c540 java.exe               2664 True   True   True     False  True  True    False    
+0x0000000104a57800 svchost.exe             680 True   True   True     False  True  True    False    
+0x000000009a97d800 TiWorker.exe           2600 False  True   True     False  True  False   False    
+0x000000010ed78800 MsMpEng.exe            2056 True   True   True     False  True  True    False    
+0x000000010ec84680 prunsrv.exe            2036 True   True   True     False  True  True    False    
+0x0000000104ae4080 svchost.exe             756 True   True   True     False  True  True    False    
+0x0000000104a79800 services.exe            588 True   True   True     False  True  True    False    
+0x0000000104cd6700 spoolsv.exe            1364 True   True   True     False  True  True    False    
+0x0000000104c9a800 svchost.exe            1224 True   True   True     False  True  True    False    
+0x0000000104c0a680 svchost.exe            1148 True   True   True     False  True  True    False    
+0x0000000104a4b800 svchost.exe             988 True   True   True     False  True  True    False    
+0x000000012305f440 msdtc.exe              1212 True   True   True     False  True  True    False    
+0x0000000104a41800 svchost.exe            1252 True   True   True     False  True  True    False    
+0x0000000093b27800 WmiPrvSE.exe           3412 False  True   True     False  True  False   False    
+0x0000000100144080 csrss.exe               372 True   True   True     False  False True    False    
+0x0000000094d31800 NETSTAT.EXE             348 True   True   False    False  False True    False    2019-09-19 22:33:01 UTC+0000
+0x000000013cab0040 System                    4 True   True   True     False  False False   False    
+0x000000010ed64040 MemCompression         2104 True   True   False    False  False False   False    
+0x0000000100209040 smss.exe                272 True   True   True     False  False False   False    
+0x000000010ec76800 svchost.exe            1356 True   True   False    False  False True    False    2019-09-19 22:33:25 UTC+0000
+0x00000001041e3080 smss.exe                452 True   True   False    False  False True    False    2019-09-17 21:53:46 UTC+0000
+0x00000001330a5080 csrss.exe               460 True   True   True     False  False True    False    
+0x0000000098b7e080 cmd.exe                3444 True   True   False    False  False True    False    2019-09-19 22:33:01 UTC+0000
+0x000000001e3ec400 HOSTNAME.EXE           3056 True   True   False    False  False True    False    2019-09-19 22:32:25 UTC+0000
+0x000000010ed45080 sc.exe                 3984 True   False  False    False  False True    False    2019-09-19 22:33:01 UTC+0000
+0x000000001593f080 dllhost.exe            1904 False  True   False    False  False False   False    2019-09-19 22:32:30 UTC+0000
+0x00000000914f5080 systeminfo.exe          904 False  True   False    False  False False   False    2019-09-19 22:32:30 UTC+0000
+0x000000008a725800 find.exe               2420 False  True   False    False  False False   False    2019-09-19 22:33:01 UTC+0000
+0x0000000099be7800 svchost.exe            2736 False  True   False    False  False False   False    2019-09-19 22:32:57 UTC+0000

@@ -1,0 +1,283 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    232
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    328
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    380
+Command line : wininit.exe
+************************************************************************
+csrss.exe pid:    388
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    428
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    484
+Command line : C:\Windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    492
+Command line : C:\Windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    500
+Command line : C:\Windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    596
+Command line : C:\Windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+vmacthlp.exe pid:    668
+Command line : "C:\Program Files\VMware\VMware Tools\vmacthlp.exe"
+************************************************************************
+svchost.exe pid:    712
+Command line : C:\Windows\system32\svchost.exe -k RPCSS
+************************************************************************
+LogonUI.exe pid:    788
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+svchost.exe pid:    804
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    840
+Command line : C:\Windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    880
+Command line : C:\Windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    936
+Command line : C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    980
+Command line : C:\Windows\system32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:    312
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+taskeng.exe pid:    612
+Command line : taskeng.exe {1F1B5884-FEFD-420D-9A7E-448EAB3CC6B7}
+************************************************************************
+cmd.exe pid:   1000
+Command line : cmd.exe /c "C:\Program Files\Rails_Server\start_rails_server.bat"
+************************************************************************
+conhost.exe pid:   1048
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+spoolsv.exe pid:   1152
+Command line : C:\Windows\System32\spoolsv.exe
+************************************************************************
+wrapper.exe pid:   1200
+Command line : C:\ManageEngine\DesktopCentral_Server\bin\wrapper.exe -s C:\ManageEngine\DesktopCentral_Server\conf\wrapper.conf
+************************************************************************
+conhost.exe pid:   1256
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+domain1Service pid:   1276
+Command line : C:\glassfish\glassfish4\glassfish\domains\domain1\bin\domain1Service.exe
+************************************************************************
+elasticsearch- pid:   1340
+Command line : "C:\Program Files\elasticsearch-1.1.1\bin\elasticsearch-service-x64.exe" //RS//elasticsearch-service-x64
+************************************************************************
+java.exe pid:   1348
+Command line : 
+************************************************************************
+conhost.exe pid:   1356
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+jenkins.exe pid:   1392
+Command line : "C:\Program Files\jenkins\jenkins.exe" "-ServiceExec"
+************************************************************************
+cmd.exe pid:   1408
+Command line : cmd /c ""C:/glassfish/glassfish4/glassfish/lib/nadmin.bat"  start-domain --watchdog --domaindir C:\\glassfish\\glassfish4\\glassfish\\domains domain1 "
+************************************************************************
+conhost.exe pid:   1416
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+java.exe pid:   1448
+Command line : java  -jar "C:\glassfish\glassfish4\glassfish\lib\..\modules\admin-cli.jar" start-domain --watchdog --domaindir C:\\glassfish\\glassfish4\\glassfish\\domains domain1
+************************************************************************
+conhost.exe pid:   1536
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+jmx.exe pid:   1700
+Command line : "C:\Program Files\jmx\jmx.exe" "-ServiceExec"
+************************************************************************
+ruby.exe pid:   1708
+Command line : "C:\tools\ruby23\bin\ruby.exe"  "C:\tools\ruby23\bin\rails" server
+************************************************************************
+conhost.exe pid:   1724
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+rubyw.exe pid:   1824
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+java.exe pid:   1876
+Command line : 
+************************************************************************
+conhost.exe pid:   1884
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+cmd.exe pid:   1984
+Command line : "C:\Windows\system32\cmd.exe"  /c "C:\Program Files\jmx\start_jmx.bat"
+************************************************************************
+java.exe pid:   1996
+Command line : "C:\openjdk6\openjdk-1.6.0-unofficial-b27-windows-amd64\jre\bin\java.exe"  -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1617 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false SimpleAgent
+************************************************************************
+java.exe pid:   2012
+Command line : "C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe" -jar "C:\Program Files\jenkins\jenkins.war" --httpPort=8484
+************************************************************************
+dcnotification pid:   2088
+Command line : "C:\ManageEngine\DesktopCentral_Server\bin\dcnotificationserver.exe" -k 8027
+************************************************************************
+pg_ctl.exe pid:   2096
+************************************************************************
+conhost.exe pid:   2136
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+dcserverhttpd. pid:   2196
+Command line : "C:\ManageEngine\DesktopCentral_Server\apache\bin\dcserverhttpd.exe" -k runservice
+************************************************************************
+cmd.exe pid:   2212
+Command line : CMD /C ""C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" -D "C:/ManageEngine/DesktopCentral_Server/pgsql/data" -p8028 < "nul" 2>&1"
+************************************************************************
+postgres.exe pid:   2260
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe"  -D "C:/ManageEngine/DesktopCentral_Server/pgsql/data" -p8028 
+************************************************************************
+cygrunsrv.exe pid:   2400
+Command line : "C:\Program Files\OpenSSH\bin\cygrunsrv.exe"
+************************************************************************
+postgres.exe pid:   2408
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forklog" "9284" "9288"
+************************************************************************
+cygrunsrv.exe pid:   2532
+************************************************************************
+ruby.exe pid:   2552
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+postgres.exe pid:   2560
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkboot" "9156" "-x4"
+************************************************************************
+postgres.exe pid:   2568
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkboot" "9140" "-x3"
+************************************************************************
+postgres.exe pid:   2576
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkboot" "9156" "-x5"
+************************************************************************
+postgres.exe pid:   2584
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkavlauncher" "9140"
+************************************************************************
+postgres.exe pid:   2592
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkarch" "9156"
+************************************************************************
+postgres.exe pid:   2600
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkcol" "9140"
+************************************************************************
+conhost.exe pid:   2628
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+sshd.exe pid:   2680
+Command line : "C:\Program Files\OpenSSH\usr\sbin\sshd.exe"
+************************************************************************
+dcrotatelogs.e pid:   2824
+Command line : C:\ManageEngine\DesktopCentral_Server\apache\bin\dcrotatelogs.exe -l C:/ManageEngine/DesktopCentral_Server/logs/apache_errorlog_%Y-%m-%d-%H_%M.txt 5M
+************************************************************************
+conhost.exe pid:   2832
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+dcserverhttpd. pid:   2916
+Command line : C:\ManageEngine\DesktopCentral_Server\apache\bin\dcserverhttpd.exe -d C:/ManageEngine/DesktopCentral_Server/apache
+************************************************************************
+svchost.exe pid:   2964
+Command line : C:\Windows\system32\svchost.exe -k regsvc
+************************************************************************
+tomcat8.exe pid:   3064
+Command line : "C:\Program Files\Apache Software Foundation\tomcat\apache-tomcat-8.0.33\bin\tomcat8.exe" //RS//Tomcat8
+************************************************************************
+conhost.exe pid:   2140
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+dcrotatelogs.e pid:   2152
+Command line : C:\ManageEngine\DesktopCentral_Server\apache\bin\dcrotatelogs.exe -l C:/ManageEngine/DesktopCentral_Server/logs/apache_errorlog_%Y-%m-%d-%H_%M.txt 5M
+************************************************************************
+conhost.exe pid:   2280
+Command line : \??\C:\Windows\system32\conhost.exe
+************************************************************************
+VGAuthService. pid:   2388
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   3704
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+httpd.exe pid:   3820
+Command line : "c:\wamp\bin\apache\apache2.2.21\bin\httpd.exe" -k runservice
+************************************************************************
+mysqld.exe pid:   3924
+Command line : c:\wamp\bin\mysql\mysql5.5.20\bin\mysqld.exe wampmysqld
+************************************************************************
+httpd.exe pid:   4292
+Command line : C:\wamp\bin\apache\apache2.2.21\bin\httpd.exe -d C:/wamp/bin/apache/Apache2.2.21
+************************************************************************
+svchost.exe pid:   4972
+Command line : C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   5100
+Command line : C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   3632
+Command line : C:\Windows\System32\msdtc.exe
+************************************************************************
+ruby.exe pid:   5616
+Command line : C:\tools\ruby23\bin\ruby.exe bin/rails server
+************************************************************************
+svchost.exe pid:   5608
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceAndNoImpersonation
+************************************************************************
+GoogleUpdate.e pid:     12
+Command line : "C:\Program Files (x86)\Google\Update\GoogleUpdate.exe" /c
+************************************************************************
+WmiPrvSE.exe pid:   4092
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+postgres.exe pid:   4284
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkbackend" "9112"
+************************************************************************
+postgres.exe pid:   5048
+Command line : "C:/ManageEngine/DesktopCentral_Server/pgsql/bin/postgres.exe" "--forkbackend" "168"
+************************************************************************
+wsmprovhost.ex pid:   5424
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+HOSTNAME.EXE pid:   5292
+************************************************************************
+taskkill.exe pid:   5216
+************************************************************************
+HOSTNAME.EXE pid:    472
+************************************************************************
+wsmprovhost.ex pid:    732
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+HOSTNAME.EXE pid:   1312
+************************************************************************
+taskkill.exe pid:   6140
+************************************************************************
+HOSTNAME.EXE pid:   5412
+************************************************************************
+wsmprovhost.ex pid:    604
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+TrustedInstall pid:    972
+Command line : C:\Windows\servicing\TrustedInstaller.exe
+************************************************************************
+HOSTNAME.EXE pid:   4920
+************************************************************************
+wsmprovhost.ex pid:   2924
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+HOSTNAME.EXE pid:   5676
+************************************************************************
+DumpIt.exe pid:   3044
+Command line : "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Windows\CCM\Perf\VolH\Image\web-server2.bin 
+************************************************************************
+conhost.exe pid:   5028
+Command line : \??\C:\Windows\system32\conhost.exe

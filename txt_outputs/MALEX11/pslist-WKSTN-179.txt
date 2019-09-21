@@ -1,0 +1,40 @@
+Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+------------------ -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+0xfffffa8030ec8820 System                    4      0     88      655 ------      0 2019-09-16 18:45:21 UTC+0000                                 
+0xfffffa8031f0b040 smss.exe                240      4      2       30 ------      0 2019-09-16 18:45:21 UTC+0000                                 
+0xfffffa80325b29b0 csrss.exe               344    332      9      515      0      0 2019-09-16 18:47:07 UTC+0000                                 
+0xfffffa8032580060 wininit.exe             396    332      3       77      0      0 2019-09-16 18:47:15 UTC+0000                                 
+0xfffffa8031fa8b10 csrss.exe               408    388      9       79      1      0 2019-09-16 18:47:15 UTC+0000                                 
+0xfffffa80326b09c0 winlogon.exe            460    388      4       97      1      0 2019-09-16 18:47:17 UTC+0000                                 
+0xfffffa80326b5b10 services.exe            480    396     14      243      0      0 2019-09-16 18:47:17 UTC+0000                                 
+0xfffffa80326c0b10 lsass.exe               512    396      7      629      0      0 2019-09-16 18:47:17 UTC+0000                                 
+0xfffffa80326cab10 lsm.exe                 520    396      9      188      0      0 2019-09-16 18:47:17 UTC+0000                                 
+0xfffffa80326d6b10 svchost.exe             624    480      9      357      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa803272c060 svchost.exe             700    480      7      222      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa803285eb10 svchost.exe             768    480     19      488      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa803286d930 LogonUI.exe             788    460      8      195      1      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa80326d4b10 svchost.exe             844    480     14      320      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa803289a2e0 svchost.exe             868    480     14      571      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa803289db10 svchost.exe             908    480     29      912      0      0 2019-09-16 18:47:20 UTC+0000                                 
+0xfffffa8032887740 svchost.exe             956    480      4      172      0      0 2019-09-16 18:47:21 UTC+0000                                 
+0xfffffa8030fff940 svchost.exe            1020    480     24      653      0      0 2019-09-16 18:48:34 UTC+0000                                 
+0xfffffa80328e6b10 spoolsv.exe            1104    480     13      308      0      0 2019-09-16 18:49:16 UTC+0000                                 
+0xfffffa80328e4b10 svchost.exe            1132    480     19      320      0      0 2019-09-16 18:49:16 UTC+0000                                 
+0xfffffa8032859b10 svchost.exe            1280    480     10      157      0      0 2019-09-16 18:49:25 UTC+0000                                 
+0xfffffa803285bb10 taskeng.exe            1512    908      5       96      0      0 2019-09-16 18:50:25 UTC+0000                                 
+0xfffffa8031fb7060 VGAuthService.         1740    480      4       99      0      0 2019-09-16 18:51:07 UTC+0000                                 
+0xfffffa8032464b10 vmtoolsd.exe           1860    480      9      305      0      0 2019-09-16 18:51:40 UTC+0000                                 
+0xfffffa8032a4e600 prunsrv.exe            1620    480      8       65      0      0 2019-09-16 18:52:30 UTC+0000                                 
+0xfffffa8032a34b10 conhost.exe            1664    344      2       34      0      0 2019-09-16 18:52:31 UTC+0000                                 
+0xfffffa8031ee3b10 svchost.exe             576    480      5      101      0      0 2019-09-16 18:52:34 UTC+0000                                 
+0xfffffa8032aa4b10 svchost.exe            1556    480     14      391      0      0 2019-09-16 18:52:34 UTC+0000                                 
+0xfffffa8032af0610 java.exe               2036   1620     32      411      0      1 2019-09-16 18:52:43 UTC+0000                                 
+0xfffffa8032b9c9a0 dllhost.exe            2548    480     13      198      0      0 2019-09-16 18:54:43 UTC+0000                                 
+0xfffffa8032be75a0 msdtc.exe              2824    480     12      147      0      0 2019-09-16 18:55:01 UTC+0000                                 
+0xfffffa8032bc5570 GoogleUpdate.e         2912   2684      5      130      0      1 2019-09-16 18:55:25 UTC+0000                                 
+0xfffffa8032b02b10 WmiPrvSE.exe           1768    624      8      297      0      0 2019-09-16 18:55:35 UTC+0000                                 
+0xfffffa80330dbb10 wsmprovhost.ex         1888    624     11      581      0      0 2019-09-18 17:15:00 UTC+0000                                 
+0xfffffa8031361b10 HOSTNAME.EXE           2496   1888      0 --------      0      0 2019-09-18 17:15:00 UTC+0000   2019-09-18 17:15:00 UTC+0000  
+0xfffffa80310eeb10 systeminfo.exe         1960   1888      0 --------      0      0 2019-09-18 17:15:01 UTC+0000   2019-09-18 17:17:14 UTC+0000  
+0xfffffa8032c01600 DumpIt.exe             2540   1888      3      100      0      0 2019-09-18 17:17:17 UTC+0000                                 
+0xfffffa8031541060 conhost.exe            1456    344      2       33      0      0 2019-09-18 17:17:17 UTC+0000                                 

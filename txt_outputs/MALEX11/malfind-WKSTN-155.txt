@@ -1,0 +1,354 @@
+Process: LogonUI.exe Pid: 864 Address: 0x29e0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 1, MemCommit: 1, PrivateMemory: 1, Protection: 6
+
+0x029e0000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x029e0010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x029e0020  00 00 9e 02 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x029e0030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+
+0x029e0000 0000             ADD [EAX], AL
+0x029e0002 0000             ADD [EAX], AL
+0x029e0004 0000             ADD [EAX], AL
+0x029e0006 0000             ADD [EAX], AL
+0x029e0008 0000             ADD [EAX], AL
+0x029e000a 0000             ADD [EAX], AL
+0x029e000c 0000             ADD [EAX], AL
+0x029e000e 0000             ADD [EAX], AL
+0x029e0010 0000             ADD [EAX], AL
+0x029e0012 0000             ADD [EAX], AL
+0x029e0014 0000             ADD [EAX], AL
+0x029e0016 0000             ADD [EAX], AL
+0x029e0018 0000             ADD [EAX], AL
+0x029e001a 0000             ADD [EAX], AL
+0x029e001c 0000             ADD [EAX], AL
+0x029e001e 0000             ADD [EAX], AL
+0x029e0020 0000             ADD [EAX], AL
+0x029e0022 9e               SAHF
+0x029e0023 0200             ADD AL, [EAX]
+0x029e0025 0000             ADD [EAX], AL
+0x029e0027 0000             ADD [EAX], AL
+0x029e0029 0000             ADD [EAX], AL
+0x029e002b 0000             ADD [EAX], AL
+0x029e002d 0000             ADD [EAX], AL
+0x029e002f 0000             ADD [EAX], AL
+0x029e0031 0000             ADD [EAX], AL
+0x029e0033 0000             ADD [EAX], AL
+0x029e0035 0000             ADD [EAX], AL
+0x029e0037 0000             ADD [EAX], AL
+0x029e0039 0000             ADD [EAX], AL
+0x029e003b 0000             ADD [EAX], AL
+0x029e003d 0000             ADD [EAX], AL
+0x029e003f 00               DB 0x0
+
+Process: svchost.exe Pid: 2940 Address: 0x6580000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 128, MemCommit: 1, PrivateMemory: 1, Protection: 6
+
+0x06580000  20 00 00 00 e0 ff 07 00 0c 00 00 00 01 00 07 00   ................
+0x06580010  00 42 00 30 00 70 00 60 00 50 00 c0 00 d0 00 00   .B.0.p.`.P......
+0x06580020  08 00 42 00 00 00 00 05 48 8b 45 20 48 89 c2 48   ..B.....H.E.H..H
+0x06580030  8b 45 18 48 8b 00 48 89 02 48 8b 45 20 81 00 a0   .E.H..H..H.E....
+
+0x06580000 2000             AND [EAX], AL
+0x06580002 0000             ADD [EAX], AL
+0x06580004 e0ff             LOOPNZ 0x6580005
+0x06580006 07               POP ES
+0x06580007 000c00           ADD [EAX+EAX], CL
+0x0658000a 0000             ADD [EAX], AL
+0x0658000c 0100             ADD [EAX], EAX
+0x0658000e 07               POP ES
+0x0658000f 0000             ADD [EAX], AL
+0x06580011 42               INC EDX
+0x06580012 0030             ADD [EAX], DH
+0x06580014 007000           ADD [EAX+0x0], DH
+0x06580017 60               PUSHA
+0x06580018 005000           ADD [EAX+0x0], DL
+0x0658001b c000d0           ROL BYTE [EAX], 0xd0
+0x0658001e 0000             ADD [EAX], AL
+0x06580020 0800             OR [EAX], AL
+0x06580022 42               INC EDX
+0x06580023 0000             ADD [EAX], AL
+0x06580025 0000             ADD [EAX], AL
+0x06580027 05488b4520       ADD EAX, 0x20458b48
+0x0658002c 48               DEC EAX
+0x0658002d 89c2             MOV EDX, EAX
+0x0658002f 48               DEC EAX
+0x06580030 8b4518           MOV EAX, [EBP+0x18]
+0x06580033 48               DEC EAX
+0x06580034 8b00             MOV EAX, [EAX]
+0x06580036 48               DEC EAX
+0x06580037 8902             MOV [EDX], EAX
+0x06580039 48               DEC EAX
+0x0658003a 8b4520           MOV EAX, [EBP+0x20]
+0x0658003d 81               DB 0x81
+0x0658003e 00               DB 0x0
+0x0658003f a0               DB 0xa0
+
+Process: svchost.exe Pid: 2940 Address: 0xd230000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 256, MemCommit: 1, PrivateMemory: 1, Protection: 6
+
+0x0d230000  20 00 00 00 e0 ff 0f 00 0c 00 00 00 01 00 07 00   ................
+0x0d230010  00 42 00 30 00 70 00 60 00 50 00 c0 00 d0 00 00   .B.0.p.`.P......
+0x0d230020  09 00 38 00 09 00 01 05 8b 55 18 8b 4d 54 8d 54   ..8......U..MT.T
+0x0d230030  0a fc 89 d7 b9 04 00 1a 00 ff 56 28 8b 4d 1c 89   ..........V(.M..
+
+0x0d230000 2000             AND [EAX], AL
+0x0d230002 0000             ADD [EAX], AL
+0x0d230004 e0ff             LOOPNZ 0xd230005
+0x0d230006 0f000c00         STR WORD [EAX+EAX]
+0x0d23000a 0000             ADD [EAX], AL
+0x0d23000c 0100             ADD [EAX], EAX
+0x0d23000e 07               POP ES
+0x0d23000f 0000             ADD [EAX], AL
+0x0d230011 42               INC EDX
+0x0d230012 0030             ADD [EAX], DH
+0x0d230014 007000           ADD [EAX+0x0], DH
+0x0d230017 60               PUSHA
+0x0d230018 005000           ADD [EAX+0x0], DL
+0x0d23001b c000d0           ROL BYTE [EAX], 0xd0
+0x0d23001e 0000             ADD [EAX], AL
+0x0d230020 0900             OR [EAX], EAX
+0x0d230022 3800             CMP [EAX], AL
+0x0d230024 0900             OR [EAX], EAX
+0x0d230026 01058b55188b     ADD [0x8b18558b], EAX
+0x0d23002c 4d               DEC EBP
+0x0d23002d 54               PUSH ESP
+0x0d23002e 8d540afc         LEA EDX, [EDX+ECX-0x4]
+0x0d230032 89d7             MOV EDI, EDX
+0x0d230034 b904001a00       MOV ECX, 0x1a0004
+0x0d230039 ff5628           CALL DWORD [ESI+0x28]
+0x0d23003c 8b4d1c           MOV ECX, [EBP+0x1c]
+0x0d23003f 89               DB 0x89
+
+Process: GoogleUpdate.e Pid: 2440 Address: 0x3c0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 1, MemCommit: 1, PrivateMemory: 1, Protection: 6
+
+0x003c0000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x003c0010  00 00 3c 00 00 00 00 00 00 00 00 00 00 00 00 00   ..<.............
+0x003c0020  10 00 3c 00 00 00 00 00 00 00 00 00 00 00 00 00   ..<.............
+0x003c0030  20 00 3c 00 00 00 00 00 00 00 00 00 00 00 00 00   ..<.............
+
+0x003c0000 0000             ADD [EAX], AL
+0x003c0002 0000             ADD [EAX], AL
+0x003c0004 0000             ADD [EAX], AL
+0x003c0006 0000             ADD [EAX], AL
+0x003c0008 0000             ADD [EAX], AL
+0x003c000a 0000             ADD [EAX], AL
+0x003c000c 0000             ADD [EAX], AL
+0x003c000e 0000             ADD [EAX], AL
+0x003c0010 0000             ADD [EAX], AL
+0x003c0012 3c00             CMP AL, 0x0
+0x003c0014 0000             ADD [EAX], AL
+0x003c0016 0000             ADD [EAX], AL
+0x003c0018 0000             ADD [EAX], AL
+0x003c001a 0000             ADD [EAX], AL
+0x003c001c 0000             ADD [EAX], AL
+0x003c001e 0000             ADD [EAX], AL
+0x003c0020 1000             ADC [EAX], AL
+0x003c0022 3c00             CMP AL, 0x0
+0x003c0024 0000             ADD [EAX], AL
+0x003c0026 0000             ADD [EAX], AL
+0x003c0028 0000             ADD [EAX], AL
+0x003c002a 0000             ADD [EAX], AL
+0x003c002c 0000             ADD [EAX], AL
+0x003c002e 0000             ADD [EAX], AL
+0x003c0030 2000             AND [EAX], AL
+0x003c0032 3c00             CMP AL, 0x0
+0x003c0034 0000             ADD [EAX], AL
+0x003c0036 0000             ADD [EAX], AL
+0x003c0038 0000             ADD [EAX], AL
+0x003c003a 0000             ADD [EAX], AL
+0x003c003c 0000             ADD [EAX], AL
+0x003c003e 0000             ADD [EAX], AL
+
+Process: wsmprovhost.ex Pid: 3300 Address: 0xb30000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 2, PrivateMemory: 1, Protection: 6
+
+0x00b30000  00 00 00 00 00 00 00 00 34 5b 70 ed ff 51 00 01   ........4[p..Q..
+0x00b30010  ee ff ee ff 00 00 00 00 28 01 b3 00 00 00 00 00   ........(.......
+0x00b30020  28 01 b3 00 00 00 00 00 00 00 b3 00 00 00 00 00   (...............
+0x00b30030  00 00 b3 00 00 00 00 00 80 00 00 00 00 00 00 00   ................
+
+0x00b30000 0000             ADD [EAX], AL
+0x00b30002 0000             ADD [EAX], AL
+0x00b30004 0000             ADD [EAX], AL
+0x00b30006 0000             ADD [EAX], AL
+0x00b30008 345b             XOR AL, 0x5b
+0x00b3000a 70ed             JO 0xb2fff9
+0x00b3000c ff5100           CALL DWORD [ECX+0x0]
+0x00b3000f 01ee             ADD ESI, EBP
+0x00b30011 ff               DB 0xff
+0x00b30012 ee               OUT DX, AL
+0x00b30013 ff00             INC DWORD [EAX]
+0x00b30015 0000             ADD [EAX], AL
+0x00b30017 0028             ADD [EAX], CH
+0x00b30019 01b300000000     ADD [EBX+0x0], ESI
+0x00b3001f 0028             ADD [EAX], CH
+0x00b30021 01b300000000     ADD [EBX+0x0], ESI
+0x00b30027 0000             ADD [EAX], AL
+0x00b30029 00b300000000     ADD [EBX+0x0], DH
+0x00b3002f 0000             ADD [EAX], AL
+0x00b30031 00b300000000     ADD [EBX+0x0], DH
+0x00b30037 008000000000     ADD [EAX+0x0], AL
+0x00b3003d 0000             ADD [EAX], AL
+0x00b3003f 00               DB 0x0
+
+Process: wsmprovhost.ex Pid: 3300 Address: 0x15e0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 2, PrivateMemory: 1, Protection: 6
+
+0x015e0000  00 00 00 00 00 00 00 00 b1 f6 36 a2 71 37 00 01   ..........6.q7..
+0x015e0010  ee ff ee ff 00 00 00 00 28 01 5e 01 00 00 00 00   ........(.^.....
+0x015e0020  28 01 5e 01 00 00 00 00 00 00 5e 01 00 00 00 00   (.^.......^.....
+0x015e0030  00 00 5e 01 00 00 00 00 80 00 00 00 00 00 00 00   ..^.............
+
+0x015e0000 0000             ADD [EAX], AL
+0x015e0002 0000             ADD [EAX], AL
+0x015e0004 0000             ADD [EAX], AL
+0x015e0006 0000             ADD [EAX], AL
+0x015e0008 b1f6             MOV CL, 0xf6
+0x015e000a 36a271370001     MOV [SS:0x1003771], AL
+0x015e0010 ee               OUT DX, AL
+0x015e0011 ff               DB 0xff
+0x015e0012 ee               OUT DX, AL
+0x015e0013 ff00             INC DWORD [EAX]
+0x015e0015 0000             ADD [EAX], AL
+0x015e0017 0028             ADD [EAX], CH
+0x015e0019 015e01           ADD [ESI+0x1], EBX
+0x015e001c 0000             ADD [EAX], AL
+0x015e001e 0000             ADD [EAX], AL
+0x015e0020 2801             SUB [ECX], AL
+0x015e0022 5e               POP ESI
+0x015e0023 0100             ADD [EAX], EAX
+0x015e0025 0000             ADD [EAX], AL
+0x015e0027 0000             ADD [EAX], AL
+0x015e0029 005e01           ADD [ESI+0x1], BL
+0x015e002c 0000             ADD [EAX], AL
+0x015e002e 0000             ADD [EAX], AL
+0x015e0030 0000             ADD [EAX], AL
+0x015e0032 5e               POP ESI
+0x015e0033 0100             ADD [EAX], EAX
+0x015e0035 0000             ADD [EAX], AL
+0x015e0037 008000000000     ADD [EAX+0x0], AL
+0x015e003d 0000             ADD [EAX], AL
+0x015e003f 00               DB 0x0
+
+Process: wsmprovhost.ex Pid: 3300 Address: 0x198a0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 41, PrivateMemory: 1, Protection: 6
+
+0x198a0000  00 00 00 00 00 00 00 00 48 ff 7e e0 c9 c3 00 01   ........H.~.....
+0x198a0010  ee ff ee ff 00 00 00 00 28 01 8a 19 00 00 00 00   ........(.......
+0x198a0020  28 01 8a 19 00 00 00 00 00 00 8a 19 00 00 00 00   (...............
+0x198a0030  00 00 8a 19 00 00 00 00 80 00 00 00 00 00 00 00   ................
+
+0x198a0000 0000             ADD [EAX], AL
+0x198a0002 0000             ADD [EAX], AL
+0x198a0004 0000             ADD [EAX], AL
+0x198a0006 0000             ADD [EAX], AL
+0x198a0008 48               DEC EAX
+0x198a0009 ff               DB 0xff
+0x198a000a 7ee0             JLE 0x1989ffec
+0x198a000c c9               LEAVE
+0x198a000d c3               RET
+0x198a000e 0001             ADD [ECX], AL
+0x198a0010 ee               OUT DX, AL
+0x198a0011 ff               DB 0xff
+0x198a0012 ee               OUT DX, AL
+0x198a0013 ff00             INC DWORD [EAX]
+0x198a0015 0000             ADD [EAX], AL
+0x198a0017 0028             ADD [EAX], CH
+0x198a0019 018a19000000     ADD [EDX+0x19], ECX
+0x198a001f 0028             ADD [EAX], CH
+0x198a0021 018a19000000     ADD [EDX+0x19], ECX
+0x198a0027 0000             ADD [EAX], AL
+0x198a0029 008a19000000     ADD [EDX+0x19], CL
+0x198a002f 0000             ADD [EAX], AL
+0x198a0031 008a19000000     ADD [EDX+0x19], CL
+0x198a0037 008000000000     ADD [EAX+0x0], AL
+0x198a003d 0000             ADD [EAX], AL
+0x198a003f 00               DB 0x0
+
+Process: wsmprovhost.ex Pid: 3300 Address: 0x7fffff00000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 2, PrivateMemory: 1, Protection: 6
+
+0x7fffff00000  d8 ff ff ff ff ff ff ff 08 00 00 00 00 00 00 00   ................
+0x7fffff00010  01 00 00 00 00 00 00 00 00 02 0e 03 38 00 00 00   ............8...
+0x7fffff00020  68 41 b8 07 0c 00 00 00 28 8b e6 f2 fe 07 00 00   hA......(.......
+0x7fffff00030  00 10 7b f2 fe 07 00 00 c8 41 87 f2 fe 07 00 00   ..{......A......
+
+0xfff00000 d8ff             FDIVR ST0, ST7
+0xfff00002 ff               DB 0xff
+0xfff00003 ff               DB 0xff
+0xfff00004 ff               DB 0xff
+0xfff00005 ff               DB 0xff
+0xfff00006 ff               DB 0xff
+0xfff00007 ff08             DEC DWORD [EAX]
+0xfff00009 0000             ADD [EAX], AL
+0xfff0000b 0000             ADD [EAX], AL
+0xfff0000d 0000             ADD [EAX], AL
+0xfff0000f 0001             ADD [ECX], AL
+0xfff00011 0000             ADD [EAX], AL
+0xfff00013 0000             ADD [EAX], AL
+0xfff00015 0000             ADD [EAX], AL
+0xfff00017 0000             ADD [EAX], AL
+0xfff00019 020e             ADD CL, [ESI]
+0xfff0001b 0338             ADD EDI, [EAX]
+0xfff0001d 0000             ADD [EAX], AL
+0xfff0001f 006841           ADD [EAX+0x41], CH
+0xfff00022 b8070c0000       MOV EAX, 0xc07
+0xfff00027 0028             ADD [EAX], CH
+0xfff00029 8be6             MOV ESP, ESI
+0xfff0002b f2fe07           INC BYTE [EDI]
+0xfff0002e 0000             ADD [EAX], AL
+0xfff00030 0010             ADD [EAX], DL
+0xfff00032 7bf2             JNP 0xfff00026
+0xfff00034 fe07             INC BYTE [EDI]
+0xfff00036 0000             ADD [EAX], AL
+0xfff00038 c84187f2         ENTER 0x8741, 0xf2
+0xfff0003c fe07             INC BYTE [EDI]
+0xfff0003e 0000             ADD [EAX], AL
+
+Process: wsmprovhost.ex Pid: 3300 Address: 0x7ffffef0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 1, PrivateMemory: 1, Protection: 6
+
+0x7ffffef0000  00 00 00 00 00 00 00 00 78 0d 00 00 00 00 00 00   ........x.......
+0x7ffffef0010  0c 00 00 00 49 c7 c2 00 00 00 00 48 b8 80 1a a7   ....I......H....
+0x7ffffef0020  f4 fe 07 00 00 ff e0 49 c7 c2 01 00 00 00 48 b8   .......I......H.
+0x7ffffef0030  80 1a a7 f4 fe 07 00 00 ff e0 49 c7 c2 02 00 00   ..........I.....
+
+0xffef0000 0000             ADD [EAX], AL
+0xffef0002 0000             ADD [EAX], AL
+0xffef0004 0000             ADD [EAX], AL
+0xffef0006 0000             ADD [EAX], AL
+0xffef0008 780d             JS 0xffef0017
+0xffef000a 0000             ADD [EAX], AL
+0xffef000c 0000             ADD [EAX], AL
+0xffef000e 0000             ADD [EAX], AL
+0xffef0010 0c00             OR AL, 0x0
+0xffef0012 0000             ADD [EAX], AL
+0xffef0014 49               DEC ECX
+0xffef0015 c7c200000000     MOV EDX, 0x0
+0xffef001b 48               DEC EAX
+0xffef001c b8801aa7f4       MOV EAX, 0xf4a71a80
+0xffef0021 fe07             INC BYTE [EDI]
+0xffef0023 0000             ADD [EAX], AL
+0xffef0025 ffe0             JMP EAX
+0xffef0027 49               DEC ECX
+0xffef0028 c7c201000000     MOV EDX, 0x1
+0xffef002e 48               DEC EAX
+0xffef002f b8801aa7f4       MOV EAX, 0xf4a71a80
+0xffef0034 fe07             INC BYTE [EDI]
+0xffef0036 0000             ADD [EAX], AL
+0xffef0038 ffe0             JMP EAX
+0xffef003a 49               DEC ECX
+0xffef003b c7               DB 0xc7
+0xffef003c c20200           RET 0x2
+0xffef003f 00               DB 0x0
+

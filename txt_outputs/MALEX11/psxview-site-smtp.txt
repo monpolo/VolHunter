@@ -1,0 +1,47 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000001f030900 conhost.exe              80 False  True   True     True   True  False   True     
+0x000000010befb900 svchost.exe            1524 True   True   True     True   True  True    True     
+0x000000010bf59900 ruby.exe               1440 True   True   True     True   True  True    True     
+0x0000000107103900 svchost.exe             640 True   True   True     True   True  True    False    
+0x000000001f146080 DumpIt.exe             3036 False  True   True     True   True  False   True     
+0x000000013557c900 svchost.exe             596 True   True   True     True   True  True    True     
+0x000000010be1e900 svchost.exe            1096 True   True   True     True   True  True    True     
+0x0000000116f74080 msdtc.exe              2352 True   True   True     True   True  True    True     
+0x0000000116ef9900 svchost.exe            1272 True   True   True     True   True  True    False    
+0x0000000130de1900 wsmprovhost.ex         1396 False  True   True     True   True  False   True     
+0x000000013555c080 wininit.exe             424 True   True   True     True   True  True    True     
+0x000000001f129900 TiWorker.exe           2420 False  True   True     True   True  False   False    
+0x00000001070f9900 svchost.exe             792 True   True   True     True   True  True    True     
+0x0000000122e11900 WmiPrvSE.exe           2600 True   True   True     True   True  True    True     
+0x0000000107385900 svchost.exe            1076 True   True   True     True   True  True    True     
+0x00000001072e6900 svchost.exe             408 True   True   True     True   True  True    True     
+0x0000000019b31080 w3wp.exe                 84 True   True   True     True   True  True    True     
+0x000000010042a080 winlogon.exe            452 True   True   True     True   True  True    True     
+0x0000000116ff0300 dllhost.exe            2180 True   True   True     True   True  True    True     
+0x000000001bd6b540 TrustedInstall         1476 False  True   True     True   True  False   True     
+0x000000010be144c0 esensor.exe            1112 True   True   True     True   True  True    True     
+0x000000001ee36780 WmiPrvSE.exe           3032 False  True   True     True   True  False   True     
+0x000000010be45440 rubyw.exe              1240 True   True   True     True   True  True    True     
+0x000000010701f480 lsass.exe               528 True   True   True     True   True  True    False    
+0x00000001073e4540 spoolsv.exe            1044 True   True   True     True   True  True    True     
+0x00000001071cc900 svchost.exe             940 True   True   True     True   True  True    True     
+0x00000001070e3080 dwm.exe                 728 True   True   True     True   True  True    True     
+0x000000010bff46c0 vmtoolsd.exe           1636 True   True   True     True   True  True    True     
+0x00000001071b1900 svchost.exe             884 True   True   True     True   True  True    True     
+0x0000000107107080 LogonUI.exe             720 True   True   True     True   True  True    True     
+0x000000010bef3900 svchost.exe            1684 True   True   True     True   True  True    True     
+0x0000000107029900 services.exe            516 True   True   True     True   True  True    False    
+0x0000000116e74900 svchost.exe            1324 True   True   True     True   True  True    True     
+0x000000010714a080 vmacthlp.exe            744 True   True   True     True   True  True    True     
+0x000000010be56900 inetinfo.exe           1188 True   True   True     True   True  True    True     
+0x00000001070f7900 svchost.exe             860 True   True   True     True   True  True    True     
+0x000000010bf98900 VGAuthService.         1540 True   True   True     True   True  True    True     
+0x00000001355927c0 csrss.exe               352 True   True   True     True   False True    True     
+0x00000001354da080 csrss.exe               416 True   True   True     True   False True    True     
+0x000000013cc3e740 System                    4 True   True   True     True   False False   False    
+0x0000000100d024c0 smss.exe                240 True   True   True     True   False False   False    
+0x000000003e352080 wsmprovhost.ex         2000 True   False  False    False  False True    False    2019-09-19 18:12:56 UTC+0000
+0x0000000134aea400 f?                  124049 True   False  False    False  False False   False    
+0x000000001f145900 systeminfo.exe         2540 False  True   False    False  False False   False    2019-09-19 18:13:21 UTC+0000
+0x000000001f146900 conhost.exe            2612 False  True   False    False  False False   False    2019-09-19 18:13:21 UTC+0000

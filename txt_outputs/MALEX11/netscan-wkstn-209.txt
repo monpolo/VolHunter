@@ -1,0 +1,111 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0xd30856ca7450     UDPv4    0.0.0.0:5353                   *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd30856caead0     UDPv4    0.0.0.0:0                      *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd30856caead0     UDPv6    :::0                           *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd30856d2fb30     UDPv4    0.0.0.0:3389                   *:*                                   972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd30856d2fb30     UDPv6    :::3389                        *:*                                   972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd3085726dca0     UDPv4    0.0.0.0:0                      *:*                                   964      svchost.exe    2019-09-19 22:42:31 UTC+0000
+0xd3085726dca0     UDPv6    :::0                           *:*                                   964      svchost.exe    2019-09-19 22:42:31 UTC+0000
+0xd30856c258d0     TCPv4    0.0.0.0:49666                  0.0.0.0:0            LISTENING        964      svchost.exe    2019-09-16 18:36:46 UTC+0000
+0xd30856cec2e0     TCPv4    0.0.0.0:49668                  0.0.0.0:0            LISTENING        592      lsass.exe      2019-09-16 18:36:46 UTC+0000
+0xd3085710f8f0     TCPv4    10.10.2.209:52055              10.10.254.1:61613    ESTABLISHED      2152     rubyw.exe      2019-09-17 22:11:32 UTC+0000
+0xd308573e22b0     TCPv4    172.115.2.209:60415            172.115.4.254:5045   ESTABLISHED      1596     winlogbeat.exe 2019-09-19 13:32:46 UTC+0000
+0xd308574d8010     TCPv4    127.0.0.1:49779                127.0.0.1:49999      CLOSED           2564     java.exe       2019-09-19 22:41:20 UTC+0000
+0xd308575dca70     TCPv4    172.115.2.209:5985             172.115.4.254:5440   CLOSED           4        System         2019-09-19 22:31:13 UTC+0000
+0xd30857bc8d50     UDPv4    0.0.0.0:123                    *:*                                   332      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd30857bc8d50     UDPv6    :::123                         *:*                                   332      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd308585537d0     TCPv4    127.0.0.1:49755                127.0.0.1:49999      CLOSED           2564     java.exe       2019-09-19 22:38:46 UTC+0000
+0xd308587177f0     UDPv4    172.115.2.209:138              *:*                                   4        System         2019-09-16 18:36:32 UTC+0000
+0xd30858782010     UDPv4    172.115.2.209:137              *:*                                   4        System         2019-09-16 18:36:32 UTC+0000
+0xd30858c6a9c0     UDPv4    0.0.0.0:0                      *:*                                   592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858c6a9c0     UDPv6    :::0                           *:*                                   592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858cb1d90     UDPv4    0.0.0.0:0                      *:*                                   592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858da7af0     UDPv4    0.0.0.0:0                      *:*                                   592      lsass.exe      2019-09-16 19:44:50 UTC+0000
+0xd30858da7af0     UDPv6    :::0                           *:*                                   592      lsass.exe      2019-09-16 19:44:50 UTC+0000
+0xd30858715d50     TCPv4    172.115.2.209:139              0.0.0.0:0            LISTENING        4        System         2019-09-16 18:36:32 UTC+0000
+0xd3085896eec0     TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        732      svchost.exe    2019-09-16 18:36:37 UTC+0000
+0xd308589c1ec0     TCPv4    0.0.0.0:49664                  0.0.0.0:0            LISTENING        472      wininit.exe    2019-09-16 18:36:37 UTC+0000
+0xd308589c2510     TCPv4    0.0.0.0:49664                  0.0.0.0:0            LISTENING        472      wininit.exe    2019-09-16 18:36:37 UTC+0000
+0xd308589c2510     TCPv6    :::49664                       :::0                 LISTENING        472      wininit.exe    2019-09-16 18:36:37 UTC+0000
+0xd308589c98f0     TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        732      svchost.exe    2019-09-16 18:36:37 UTC+0000
+0xd308589c98f0     TCPv6    :::135                         :::0                 LISTENING        732      svchost.exe    2019-09-16 18:36:37 UTC+0000
+0xd30858c91e20     TCPv4    0.0.0.0:49669                  0.0.0.0:0            LISTENING        592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858c91e20     TCPv6    :::49669                       :::0                 LISTENING        592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858caadb0     TCPv4    0.0.0.0:49669                  0.0.0.0:0            LISTENING        592      lsass.exe      2019-09-16 18:36:53 UTC+0000
+0xd30858df6260     TCPv4    127.0.0.1:49768                127.0.0.1:49999      CLOSED           2564     java.exe       2019-09-19 22:40:14 UTC+0000
+0xd308594b4520     UDPv4    127.0.0.1:60336                *:*                                   964      svchost.exe    2019-09-16 20:13:23 UTC+0000
+0xd3085955ca80     UDPv4    0.0.0.0:0                      *:*                                   332      svchost.exe    2019-09-16 18:36:41 UTC+0000
+0xd3085955e010     UDPv4    0.0.0.0:5355                   *:*                                   972      svchost.exe    2019-09-19 18:37:26 UTC+0000
+0xd30859561a30     UDPv4    0.0.0.0:0                      *:*                                   332      svchost.exe    2019-09-16 18:36:41 UTC+0000
+0xd30859561a30     UDPv6    :::0                           *:*                                   332      svchost.exe    2019-09-16 18:36:41 UTC+0000
+0xd308595b4e40     UDPv4    0.0.0.0:123                    *:*                                   332      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xd30859671ad0     UDPv4    0.0.0.0:3389                   *:*                                   972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd3085972a010     UDPv4    0.0.0.0:0                      *:*                                   2564     java.exe       2019-09-19 22:39:41 UTC+0000
+0xd3085972a010     UDPv6    :::0                           *:*                                   2564     java.exe       2019-09-19 22:39:41 UTC+0000
+0xd30859825900     UDPv4    0.0.0.0:0                      *:*                                   592      lsass.exe      2019-09-16 19:44:50 UTC+0000
+0xd30859950d20     UDPv4    0.0.0.0:4500                   *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd30859950d20     UDPv6    :::4500                        *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd308599699a0     UDPv4    0.0.0.0:0                      *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd30859979990     UDPv4    0.0.0.0:4500                   *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd30859986d20     UDPv4    0.0.0.0:500                    *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd30859986d20     UDPv6    :::500                         *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd3085998b7b0     UDPv4    0.0.0.0:500                    *:*                                   964      svchost.exe    2019-09-16 18:37:10 UTC+0000
+0xd308594713b0     TCPv4    10.10.2.209:139                0.0.0.0:0            LISTENING        4        System         2019-09-16 18:37:38 UTC+0000
+0xd3085958bec0     TCPv4    0.0.0.0:49665                  0.0.0.0:0            LISTENING        344      svchost.exe    2019-09-16 18:36:39 UTC+0000
+0xd3085958cd20     TCPv4    0.0.0.0:49665                  0.0.0.0:0            LISTENING        344      svchost.exe    2019-09-16 18:36:39 UTC+0000
+0xd3085958cd20     TCPv6    :::49665                       :::0                 LISTENING        344      svchost.exe    2019-09-16 18:36:39 UTC+0000
+0xd30859602a30     TCPv4    0.0.0.0:49667                  0.0.0.0:0            LISTENING        1372     spoolsv.exe    2019-09-16 18:36:46 UTC+0000
+0xd30859602a30     TCPv6    :::49667                       :::0                 LISTENING        1372     spoolsv.exe    2019-09-16 18:36:46 UTC+0000
+0xd30859610c20     TCPv4    0.0.0.0:49666                  0.0.0.0:0            LISTENING        964      svchost.exe    2019-09-16 18:36:46 UTC+0000
+0xd30859610c20     TCPv6    :::49666                       :::0                 LISTENING        964      svchost.exe    2019-09-16 18:36:46 UTC+0000
+0xd30859677340     TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd308596941f0     TCPv4    0.0.0.0:49668                  0.0.0.0:0            LISTENING        592      lsass.exe      2019-09-16 18:36:46 UTC+0000
+0xd308596941f0     TCPv6    :::49668                       :::0                 LISTENING        592      lsass.exe      2019-09-16 18:36:46 UTC+0000
+0xd3085969a190     TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd3085969a190     TCPv6    :::3389                        :::0                 LISTENING        972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xd308596ab010     TCPv4    0.0.0.0:49667                  0.0.0.0:0            LISTENING        1372     spoolsv.exe    2019-09-16 18:36:46 UTC+0000
+0xd308598b6ab0     TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         2019-09-16 18:37:03 UTC+0000
+0xd308598b6ab0     TCPv6    :::47001                       :::0                 LISTENING        4        System         2019-09-16 18:37:03 UTC+0000
+0xd308599a69e0     TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         2019-09-16 18:37:09 UTC+0000
+0xd308599a69e0     TCPv6    :::5985                        :::0                 LISTENING        4        System         2019-09-16 18:37:09 UTC+0000
+0xd30859a95c50     UDPv4    0.0.0.0:0                      *:*                                   964      svchost.exe    2019-09-16 18:37:13 UTC+0000
+0xd30859a95c50     UDPv6    :::0                           *:*                                   964      svchost.exe    2019-09-16 18:37:13 UTC+0000
+0xd30859af02d0     UDPv4    127.0.0.1:1900                 *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859af06b0     TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         2019-09-16 18:37:13 UTC+0000
+0xd30859af06b0     TCPv6    :::445                         :::0                 LISTENING        4        System         2019-09-16 18:37:13 UTC+0000
+0xd30859a7b2f0     TCPv4    172.115.2.209:49713            10.10.200.208:5672   CLOSED           2564     java.exe       2019-09-19 22:34:30 UTC+0000
+0xd30859b1ba00     TCPv4    0.0.0.0:49677                  0.0.0.0:0            LISTENING        576      services.exe   2019-09-16 18:37:18 UTC+0000
+0xd30859b2e8e0     TCPv4    0.0.0.0:49677                  0.0.0.0:0            LISTENING        576      services.exe   2019-09-16 18:37:18 UTC+0000
+0xd30859b2e8e0     TCPv6    :::49677                       :::0                 LISTENING        576      services.exe   2019-09-16 18:37:18 UTC+0000
+0xd30859b71520     UDPv4    127.0.0.1:63441                *:*                                   592      lsass.exe      2019-09-16 19:44:46 UTC+0000
+0xd30859b772e0     UDPv4    0.0.0.0:5050                   *:*                                   332      svchost.exe    2019-09-16 18:39:19 UTC+0000
+0xd30859ba3ac0     TCPv4    0.0.0.0:49680                  0.0.0.0:0            LISTENING        1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859d23420     UDPv4    127.0.0.1:64135                *:*                                   972      svchost.exe    2019-09-17 06:37:26 UTC+0000
+0xd30859d42bd0     UDPv4    0.0.0.0:0                      *:*                                   1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859d42bd0     UDPv6    :::0                           *:*                                   1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859d42ec0     UDPv4    0.0.0.0:0                      *:*                                   1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859d3f2b0     TCPv4    0.0.0.0:49680                  0.0.0.0:0            LISTENING        1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859d3f2b0     TCPv6    :::49680                       :::0                 LISTENING        1992     svchost.exe    2019-09-16 18:37:34 UTC+0000
+0xd30859de0ba0     UDPv6    ::1:56212                      *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e28010     UDPv4    172.115.2.209:1900             *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e2f1b0     UDPv4    172.115.2.209:56213            *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e2f4a0     UDPv6    ::1:1900                       *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e31820     UDPv4    10.10.2.209:56214              *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e32010     UDPv4    127.0.0.1:56215                *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e3cca0     UDPv4    10.10.2.209:1900               *:*                                   1256     svchost.exe    2019-09-16 18:38:15 UTC+0000
+0xd30859e6d2f0     UDPv4    10.10.2.209:137                *:*                                   4        System         2019-09-16 18:37:38 UTC+0000
+0xd30859f1f3e0     UDPv4    10.10.2.209:138                *:*                                   4        System         2019-09-16 18:37:38 UTC+0000
+0xd30859f34460     UDPv4    0.0.0.0:0                      *:*                                   2564     java.exe       2019-09-19 22:34:43 UTC+0000
+0xd30859f34460     UDPv6    :::0                           *:*                                   2564     java.exe       2019-09-19 22:34:43 UTC+0000
+0xd30859f19670     TCPv6    7f00:1:ffff:ffff:98f0:1e58:8d3:ffff:49998 :::0                 LISTENING        2564     java.exe       2019-09-16 18:38:05 UTC+0000
+0xf80062a21d50     UDPv4    0.0.0.0:123                    *:*                                   332      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xf80062a21d50     UDPv6    :::123                         *:*                                   332      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xf80062b56ca0     UDPv4    0.0.0.0:0                      *:*                                   964      svchost.exe    2019-09-19 22:42:31 UTC+0000
+0xf80062b56ca0     UDPv6    :::0                           *:*                                   964      svchost.exe    2019-09-19 22:42:31 UTC+0000
+0xfc00000a7450     UDPv4    0.0.0.0:5353                   *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xfc00000aead0     UDPv4    0.0.0.0:0                      *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xfc00000aead0     UDPv6    :::0                           *:*                                   972      svchost.exe    2019-09-16 18:37:38 UTC+0000
+0xfc000012fb30     UDPv4    0.0.0.0:3389                   *:*                                   972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xfc000012fb30     UDPv6    :::3389                        *:*                                   972      svchost.exe    2019-09-16 18:36:47 UTC+0000
+0xfc00000258d0     TCPv4    0.0.0.0:49666                  0.0.0.0:0            LISTENING        964      svchost.exe    2019-09-16 18:36:46 UTC+0000
+0xfc00000ec2e0     TCPv4    0.0.0.0:49668                  0.0.0.0:0            LISTENING        592      lsass.exe      2019-09-16 18:36:46 UTC+0000

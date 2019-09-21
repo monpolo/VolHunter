@@ -1,0 +1,103 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x00000001bf35cb30 cmd.exe                1408 True   True   True     True   True  True    True     
+0x00000001bf25e600 conhost.exe            1048 True   True   True     True   True  True    True     
+0x00000001be05cb30 wsmprovhost.ex         5424 True   True   True     True   True  True    True     
+0x00000001bef8c400 postgres.exe           2592 True   True   True     True   True  True    True     
+0x00000001beeb7b30 dcserverhttpd.         2196 True   True   True     True   True  True    True     
+0x00000001bfbc1060 postgres.exe           5048 True   True   True     True   True  True    True     
+0x00000001bec324a0 tomcat8.exe            3064 True   True   True     True   True  True    True     
+0x00000001bf06eb30 conhost.exe            1884 True   True   True     True   True  True    True     
+0x00000001bf39eb30 jmx.exe                1700 True   True   True     True   True  True    True     
+0x00000001bea25b30 httpd.exe              4292 True   True   True     True   True  True    True     
+0x00000001befa9b30 postgres.exe           2568 True   True   True     True   True  True    True     
+0x00000001bec147d0 svchost.exe            2964 True   True   True     True   True  True    False    
+0x00000001bf6dfb30 lsass.exe               492 True   True   True     True   True  True    False    
+0x00000001bf2ef410 wrapper.exe            1200 True   True   True     True   True  True    True     
+0x00000001bf340b30 elasticsearch-         1340 True   True   True     True   True  True    True     
+0x00000001beea6a30 postgres.exe           2260 True   True   True     True   True  True    True     
+0x00000001bf30c290 conhost.exe            1256 True   True   True     True   True  True    True     
+0x00000001bf6e2b30 lsm.exe                 500 True   True   True     True   True  True    False    
+0x00000001bf7dcb30 svchost.exe             936 True   True   True     True   True  True    True     
+0x00000001bec68910 conhost.exe            2140 True   True   True     True   True  True    True     
+0x00000001bde88b30 TrustedInstall          972 True   True   True     True   True  True    True     
+0x00000001be8d8520 GoogleUpdate.e           12 True   True   True     True   True  True    True     
+0x00000001bf04d060 rubyw.exe              1824 True   True   True     True   True  True    True     
+0x00000001bf360820 conhost.exe            1416 True   True   True     True   True  True    True     
+0x00000001bf72bb30 svchost.exe             596 True   True   True     True   True  True    True     
+0x00000001bf2b2b30 spoolsv.exe            1152 True   True   True     True   True  True    True     
+0x00000001befa5b30 postgres.exe           2584 True   True   True     True   True  True    True     
+0x00000001beac3060 svchost.exe            5608 True   True   True     True   True  True    True     
+0x00000001bf7a6b30 svchost.exe             804 True   True   True     True   True  True    True     
+0x00000001bf366920 java.exe               1448 True   True   True     True   True  True    True     
+0x00000001bee9ab30 conhost.exe            2136 True   True   True     True   True  True    True     
+0x00000001bf767b30 svchost.exe             712 True   True   True     True   True  True    False    
+0x00000001bf7bbb30 svchost.exe             840 True   True   True     True   True  True    True     
+0x00000001bef8db30 ruby.exe               2552 True   True   True     True   True  True    True     
+0x00000001bdfc8b30 wsmprovhost.ex         2924 True   True   True     True   True  True    True     
+0x00000001bf349b30 jenkins.exe            1392 True   True   True     True   True  True    True     
+0x00000001bf7cbb30 svchost.exe             880 True   True   True     True   True  True    True     
+0x00000001be5a6b30 ruby.exe               5616 True   True   True     True   True  True    True     
+0x00000001bec79b30 dcrotatelogs.e         2152 True   True   True     True   True  True    True     
+0x00000001bec7bb30 conhost.exe            2280 True   True   True     True   True  True    True     
+0x00000001bedc6600 httpd.exe              3820 True   True   True     True   True  True    True     
+0x00000001bf22bb30 svchost.exe             312 True   True   True     True   True  True    True     
+0x00000001bee647c0 java.exe               2012 True   True   True     True   True  True    True     
+0x00000001befd4590 conhost.exe            2628 True   True   True     True   True  True    True     
+0x00000001bf0fab30 java.exe               1996 True   True   True     True   True  True    True     
+0x00000001bee13290 dcnotification         2088 True   True   True     True   True  True    True     
+0x00000001bea4f060 mysqld.exe             3924 True   True   True     True   True  True    True     
+0x00000001bdfc7060 conhost.exe            5028 True   True   True     True   True  True    True     
+0x00000001bef91060 postgres.exe           2576 True   True   True     True   True  True    True     
+0x00000001befacb30 dcrotatelogs.e         2824 True   True   True     True   True  True    True     
+0x00000001bf0d7b30 java.exe               1876 True   True   True     True   True  True    True     
+0x00000001bf00eb30 ruby.exe               1708 True   True   True     True   True  True    True     
+0x00000001befaa950 postgres.exe           2600 True   True   True     True   True  True    True     
+0x00000001bf7efb30 svchost.exe             980 True   True   True     True   True  True    False    
+0x00000001bf68c250 wininit.exe             380 True   True   True     True   True  True    True     
+0x00000001beed0b30 cmd.exe                2212 True   True   True     True   True  True    True     
+0x00000001be6ceb30 msdtc.exe              3632 True   True   True     True   True  True    False    
+0x00000001bf190b30 postgres.exe           2408 True   True   True     True   True  True    True     
+0x00000001befd1b30 sshd.exe               2680 True   True   True     True   True  True    True     
+0x00000001beff46c0 conhost.exe            2832 True   True   True     True   True  True    True     
+0x00000001be963060 postgres.exe           4284 True   True   True     True   True  True    True     
+0x00000001be41a330 WmiPrvSE.exe           4092 True   True   True     True   True  True    False    
+0x00000001bf11eb30 cmd.exe                1984 True   True   True     True   True  True    True     
+0x00000001bf7035e0 vmacthlp.exe            668 True   True   True     True   True  True    True     
+0x00000001bde52060 wsmprovhost.ex          732 True   True   True     True   True  True    True     
+0x00000001bf314b30 domain1Service         1276 True   True   True     True   True  True    True     
+0x00000001bec00b30 dcserverhttpd.         2916 True   True   True     True   True  True    True     
+0x00000001bf6a28d0 services.exe            484 True   True   True     True   True  True    False    
+0x00000001bef3b060 cygrunsrv.exe          2400 True   True   True     True   True  True    True     
+0x00000001be94bb30 svchost.exe            4972 True   True   True     True   True  True    False    
+0x00000001bf296b30 conhost.exe            1356 True   True   True     True   True  True    True     
+0x00000001bec86b30 VGAuthService.         2388 True   True   True     True   True  True    True     
+0x00000001bf6a9b30 winlogon.exe            428 True   True   True     True   True  True    True     
+0x00000001bf39b060 conhost.exe            1536 True   True   True     True   True  True    True     
+0x00000001bde73960 wsmprovhost.ex          604 True   True   True     True   True  True    True     
+0x00000001bed4a630 vmtoolsd.exe           3704 True   True   True     True   True  True    True     
+0x00000001bdc18b30 DumpIt.exe             3044 True   True   True     True   True  True    True     
+0x00000001bef97220 postgres.exe           2560 True   True   True     True   True  True    True     
+0x00000001bf019b30 conhost.exe            1724 True   True   True     True   True  True    True     
+0x00000001bf2302e0 taskeng.exe             612 True   True   True     True   True  True    True     
+0x00000001bf25ab30 cmd.exe                1000 True   True   True     True   True  True    True     
+0x00000001bf340060 java.exe               1348 True   True   True     True   True  True    True     
+0x00000001be9fc060 dllhost.exe            5100 True   True   True     True   True  True    True     
+0x00000001bf79cb30 LogonUI.exe             788 True   True   True     True   True  True    True     
+0x00000001bdeaf060 taskkill.exe           6140 True   True   False    True   False True    False    2019-09-19 17:32:32 UTC+0000
+0x00000001048f2040 System                    4 True   True   True     True   False False   False    
+0x00000001bdef3060 taskkill.exe           5216 True   True   False    True   False True    False    2019-09-19 15:59:33 UTC+0000
+0x00000001bf693b30 csrss.exe               388 True   True   True     True   False True    True     
+0x00000001bdebab30 HOSTNAME.EXE            472 True   True   False    True   False True    False    2019-09-19 15:59:33 UTC+0000
+0x00000001bde8b060 HOSTNAME.EXE           1312 True   True   False    True   False True    False    2019-09-19 17:32:32 UTC+0000
+0x00000001bef9f060 cygrunsrv.exe          2532 True   True   False    True   False True    False    2019-09-16 18:14:42 UTC+0000
+0x00000001bded7760 HOSTNAME.EXE           5412 True   True   False    True   False True    False    2019-09-19 17:32:32 UTC+0000
+0x00000001bdfc7b30 HOSTNAME.EXE           5676 True   True   False    True   False True    False    2019-09-19 17:36:47 UTC+0000
+0x00000001bdefd060 HOSTNAME.EXE           5292 True   True   False    True   False True    False    2019-09-19 15:59:32 UTC+0000
+0x00000001bfb46780 csrss.exe               328 True   True   True     True   False True    True     
+0x00000001bee925f0 pg_ctl.exe             2096 True   True   False    True   False True    False    2019-09-16 18:14:36 UTC+0000
+0x00000001bfd951f0 smss.exe                232 True   True   True     True   False False   False    
+0x00000001bdee1360 HOSTNAME.EXE           4920 True   True   False    True   False True    False    2019-09-19 17:33:37 UTC+0000
+0x00000001bd4c5b30 postgres.exe           5644 False  True   False    False  False False   False    2019-09-16 19:47:41 UTC+0000
+0x00000001bdbfab30 postgres.exe           5568 False  True   False    False  False False   False    2019-09-17 03:11:09 UTC+0000
+0x00000001bde319d0                         504 False  False  True     False  False False   False    

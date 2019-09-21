@@ -1,0 +1,107 @@
+Offset(P)          Proto    Local Address                  Foreign Address      State            Pid      Owner          Created
+0x78a68b0          UDPv4    0.0.0.0:0                      *:*                                   952      svchost.exe    2019-09-18 06:13:50 UTC+0000
+0x78a68b0          UDPv6    :::0                           *:*                                   952      svchost.exe    2019-09-18 06:13:50 UTC+0000
+0x121cec50         TCPv4    0.0.0.0:3306                   0.0.0.0:0            LISTENING        696      mysqld.exe     
+0x121cec50         TCPv6    :::3306                        :::0                 LISTENING        696      mysqld.exe     
+0x16add4d0         UDPv4    0.0.0.0:0                      *:*                                   532      lsass.exe      2019-09-18 17:17:30 UTC+0000
+0x16b602f0         UDPv4    0.0.0.0:0                      *:*                                   3816                    2019-09-18 17:17:30 UTC+0000
+0x16b602f0         UDPv6    :::0                           *:*                                   3816                    2019-09-18 17:17:30 UTC+0000
+0x16bc83c0         UDPv4    0.0.0.0:0                      *:*                                   952      svchost.exe    2019-09-18 17:17:30 UTC+0000
+0x16bc83c0         UDPv6    :::0                           *:*                                   952      svchost.exe    2019-09-18 17:17:30 UTC+0000
+0x16cc6ec0         UDPv4    0.0.0.0:0                      *:*                                   952      svchost.exe    2019-09-18 06:13:50 UTC+0000
+0x16a3d7f0         TCPv4    172.115.4.12:5985              172.115.4.254:17194  CLOSED           4        System         
+0x16d03780         TCPv4    172.115.4.12:51281             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x16db5d10         TCPv4    172.115.4.12:51313             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x16dbd3c0         TCPv4    172.115.4.12:51314             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x16dda2e0         TCPv4    172.115.4.12:51296             172.115.4.4:445      CLOSED           4        System         
+0x10151d570        UDPv4    127.0.0.1:16400                *:*                                   844      svchost.exe    2019-09-16 18:13:54 UTC+0000
+0x101595c50        UDPv6    fe80::858c:9a27:5dfa:742c:49280 *:*                                   800      svchost.exe    2019-09-18 17:19:03 UTC+0000
+0x1015c65d0        TCPv4    172.115.4.12:51318             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x101aa4170        UDPv4    0.0.0.0:0                      *:*                                   1984     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x101aa6ec0        UDPv4    127.0.0.1:16400                *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101ab2010        UDPv4    0.0.0.0:0                      *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101ab2010        UDPv6    :::0                           *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101ab4650        UDPv4    0.0.0.0:0                      *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101b12b40        UDPv4    0.0.0.0:0                      *:*                                   1984     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x101b12b40        UDPv6    :::0                           *:*                                   1984     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x101b37010        UDPv4    0.0.0.0:0                      *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101b37160        UDPv4    0.0.0.0:0                      *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101b37160        UDPv6    :::0                           *:*                                   532      lsass.exe      2019-09-16 18:13:49 UTC+0000
+0x101b59a10        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101b59a10        UDPv6    :::0                           *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101e2fbe0        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101e2fbe0        UDPv6    :::0                           *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101e30010        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101e30010        UDPv6    :::0                           *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101e66010        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101f9cec0        UDPv4    10.10.4.12:65                  *:*                                   4        System         2019-09-16 18:13:47 UTC+0000
+0x101fd4140        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101fd4870        UDPv4    0.0.0.0:0                      *:*                                   844      svchost.exe    2019-09-16 18:13:49 UTC+0000
+0x101fe2d60        UDPv4    127.0.0.1:16400                *:*                                   952      svchost.exe    2019-09-16 18:13:50 UTC+0000
+0x101a232a0        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        844      svchost.exe    
+0x101a232a0        TCPv6    :::49154                       :::0                 LISTENING        844      svchost.exe    
+0x101a27b40        TCPv4    0.0.0.0:49154                  0.0.0.0:0            LISTENING        844      svchost.exe    
+0x101aaf2c0        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        532      lsass.exe      
+0x101aaf2c0        TCPv6    :::49155                       :::0                 LISTENING        532      lsass.exe      
+0x101aaf7f0        TCPv4    0.0.0.0:49155                  0.0.0.0:0            LISTENING        532      lsass.exe      
+0x101b12c90        TCPv4    0.0.0.0:63426                  0.0.0.0:0            LISTENING        1984     svchost.exe    
+0x101b12c90        TCPv6    :::63426                       :::0                 LISTENING        1984     svchost.exe    
+0x101b1aab0        TCPv4    0.0.0.0:63426                  0.0.0.0:0            LISTENING        1984     svchost.exe    
+0x101b40c30        TCPv4    0.0.0.0:49159                  0.0.0.0:0            LISTENING        1084     spoolsv.exe    
+0x101b40c30        TCPv6    :::49159                       :::0                 LISTENING        1084     spoolsv.exe    
+0x101b413e0        TCPv4    0.0.0.0:49159                  0.0.0.0:0            LISTENING        1084     spoolsv.exe    
+0x101b84d60        TCPv4    0.0.0.0:49179                  0.0.0.0:0            LISTENING        532      lsass.exe      
+0x101e46190        TCPv4    10.10.4.12:139                 0.0.0.0:0            LISTENING        4        System         
+0x101e79dd0        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        428      wininit.exe    
+0x101e82ed0        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        644      svchost.exe    
+0x101f43dd0        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        800      svchost.exe    
+0x101fef890        TCPv4    0.0.0.0:49179                  0.0.0.0:0            LISTENING        532      lsass.exe      
+0x101fef890        TCPv6    :::49179                       :::0                 LISTENING        532      lsass.exe      
+0x101ab13d0        TCPv6    ::1:51293                      ::1:47001            CLOSED           312      wsmprovhost.ex 
+0x101f36c00        TCPv4    172.115.4.12:51304             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x101feb2f0        TCPv4    172.115.4.12:51319             172.115.4.7:17472    CLOSED           2948     TaniumClient.e 
+0x11605bc10        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-09-16 18:14:01 UTC+0000
+0x11605bc10        UDPv6    :::0                           *:*                                   872      svchost.exe    2019-09-16 18:14:01 UTC+0000
+0x11605bec0        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-09-16 18:14:01 UTC+0000
+0x11605d720        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x1161ac950        UDPv4    0.0.0.0:0                      *:*                                   1916     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x11607eed0        TCPv4    0.0.0.0:5985                   0.0.0.0:0            LISTENING        4        System         
+0x11607eed0        TCPv6    :::5985                        :::0                 LISTENING        4        System         
+0x116093bc0        TCPv4    0.0.0.0:445                    0.0.0.0:0            LISTENING        4        System         
+0x116093bc0        TCPv6    :::445                         :::0                 LISTENING        4        System         
+0x1160bec90        TCPv4    0.0.0.0:47001                  0.0.0.0:0            LISTENING        4        System         
+0x1160bec90        TCPv6    :::47001                       :::0                 LISTENING        4        System         
+0x1160d1b00        TCPv4    0.0.0.0:63418                  0.0.0.0:0            LISTENING        520      services.exe   
+0x1160d1b00        TCPv6    :::63418                       :::0                 LISTENING        520      services.exe   
+0x1160d69d0        TCPv4    0.0.0.0:63418                  0.0.0.0:0            LISTENING        520      services.exe   
+0x1161aec10        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        1916     svchost.exe    
+0x1161aec10        TCPv6    :::3389                        :::0                 LISTENING        1916     svchost.exe    
+0x11612c790        TCPv4    172.115.4.12:51301             172.115.4.4:88       CLOSED           532      lsass.exe      
+0x11a4339c0        UDPv4    0.0.0.0:0                      *:*                                   1916     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x11a4339c0        UDPv6    :::0                           *:*                                   1916     svchost.exe    2019-09-16 18:14:02 UTC+0000
+0x11a4aa1b0        UDPv6    fe80::a554:ea86:2248:2831:209  *:*                                   800      svchost.exe    2019-09-18 17:19:03 UTC+0000
+0x11a50eec0        UDPv4    0.0.0.0:0                      *:*                                   952      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x11a50eec0        UDPv6    :::0                           *:*                                   952      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x11a59bba0        TCPv4    10.10.4.12:50145               10.10.254.1:61613    ESTABLISHED      1140     rubyw.exe      
+0x1348f7800        TCPv4    0.0.0.0:3389                   0.0.0.0:0            LISTENING        1916     svchost.exe    
+0x134ae4c80        TCPv4    0.0.0.0:80                     0.0.0.0:0            LISTENING        1128     httpd.exe      
+0x134ae5340        TCPv4    0.0.0.0:80                     0.0.0.0:0            LISTENING        1128     httpd.exe      
+0x134ae5340        TCPv6    :::80                          :::0                 LISTENING        1128     httpd.exe      
+0x134b69340        TCPv4    0.0.0.0:80                     0.0.0.0:0            LISTENING        1128     httpd.exe      
+0x134b69340        TCPv6    :::80                          :::0                 LISTENING        1128     httpd.exe      
+0x134b6ac80        TCPv4    0.0.0.0:80                     0.0.0.0:0            LISTENING        1128     httpd.exe      
+0x1349115e0        TCPv4    172.115.4.12:51320             172.115.4.4:445      CLOSED           4        System         
+0x1355e1ac0        UDPv4    172.115.4.12:16448             *:*                                   4        System         2019-09-16 18:13:37 UTC+0000
+0x13531eed0        TCPv4    0.0.0.0:3307                   0.0.0.0:0            LISTENING        684      mysqld.exe     
+0x13531eed0        TCPv6    :::3307                        :::0                 LISTENING        684      mysqld.exe     
+0x135646640        UDPv4    0.0.0.0:0                      *:*                                   872      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x135646640        UDPv6    :::0                           *:*                                   872      svchost.exe    2019-09-16 18:14:06 UTC+0000
+0x135659b80        UDPv4    172.115.4.12:16448             *:*                                   4        System         2019-09-16 18:13:37 UTC+0000
+0x1356cc930        TCPv4    0.0.0.0:49153                  0.0.0.0:0            LISTENING        800      svchost.exe    
+0x1356cc930        TCPv6    :::49153                       :::0                 LISTENING        800      svchost.exe    
+0x1356d8c30        TCPv4    0.0.0.0:49152                  0.0.0.0:0            LISTENING        428      wininit.exe    
+0x1356d8c30        TCPv6    :::49152                       :::0                 LISTENING        428      wininit.exe    
+0x1356da420        TCPv4    172.115.4.12:139               0.0.0.0:0            LISTENING        4        System         
+0x1356dd1b0        TCPv4    0.0.0.0:135                    0.0.0.0:0            LISTENING        644      svchost.exe    
+0x1356dd1b0        TCPv6    :::135                         :::0                 LISTENING        644      svchost.exe    
+0x13cc4f010        UDPv4    10.10.4.12:65                  *:*                                   4        System         2019-09-16 18:13:47 UTC+0000

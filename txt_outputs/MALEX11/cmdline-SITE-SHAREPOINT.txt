@@ -1,0 +1,161 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    268
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    372
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+csrss.exe pid:    448
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    456
+Command line : wininit.exe
+************************************************************************
+winlogon.exe pid:    492
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    552
+Command line : C:\windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    560
+Command line : C:\windows\system32\lsass.exe
+************************************************************************
+lsm.exe pid:    568
+Command line : C:\windows\system32\lsm.exe
+************************************************************************
+svchost.exe pid:    668
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    744
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+************************************************************************
+svchost.exe pid:    836
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    892
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    928
+Command line : C:\windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    988
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    148
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+************************************************************************
+LogonUI.exe pid:    452
+Command line : "LogonUI.exe" /flags:0x0
+************************************************************************
+svchost.exe pid:    420
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+spoolsv.exe pid:   1108
+Command line : C:\windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1248
+Command line : C:\windows\system32\svchost.exe -k apphost
+************************************************************************
+c2wtshost.exe pid:   1276
+Command line : "C:\Program Files\Windows Identity Foundation\v3.5\c2wtshost.exe"
+************************************************************************
+svchost.exe pid:   1388
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+************************************************************************
+inetinfo.exe pid:   1412
+Command line : C:\windows\system32\inetsrv\inetinfo.exe
+************************************************************************
+mqsvc.exe pid:   1592
+Command line : C:\windows\system32\mqsvc.exe
+************************************************************************
+sqlservr.exe pid:   1732
+Command line : "c:\Program Files\Microsoft SQL Server\MSSQL10_50.SHAREPOINT\MSSQL\Binn\sqlservr.exe" -sSHAREPOINT
+************************************************************************
+SMSvcHost.exe pid:   1980
+Command line : C:\windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe
+************************************************************************
+svchost.exe pid:   1152
+Command line : C:\windows\system32\svchost.exe -k regsvc
+************************************************************************
+OWSTIMER.EXE pid:   1916
+************************************************************************
+wsstracing.exe pid:    972
+Command line : "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\BIN\wsstracing.exe"
+************************************************************************
+sqlwriter.exe pid:    332
+Command line : "c:\Program Files\Microsoft SQL Server\90\Shared\sqlwriter.exe"
+************************************************************************
+sysmon.exe pid:    760
+Command line : C:\windows\sysmon.exe
+************************************************************************
+vmtoolsd.exe pid:   2132
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+svchost.exe pid:   2176
+Command line : C:\windows\system32\svchost.exe -k iissvcs
+************************************************************************
+SMSvcHost.exe pid:   2400
+Command line : "C:\windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe" -NetMsmqActivator
+************************************************************************
+svchost.exe pid:   2072
+Command line : C:\windows\System32\svchost.exe -k termsvcs
+************************************************************************
+svchost.exe pid:   2000
+Command line : C:\windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+dllhost.exe pid:   2004
+Command line : C:\windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   1296
+Command line : C:\windows\System32\msdtc.exe
+************************************************************************
+sppsvc.exe pid:   2816
+************************************************************************
+unsecapp.exe pid:   2392
+Command line : C:\windows\system32\wbem\unsecapp.exe -Embedding
+************************************************************************
+WmiPrvSE.exe pid:   3680
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+************************************************************************
+OWSTIMER.EXE pid:   4068
+Command line : "C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\BIN\OWSTIMER.EXE"
+************************************************************************
+WmiApSrv.exe pid:   3224
+************************************************************************
+mssearch.exe pid:   1448
+Command line : "C:\Program Files\Windows SharePoint Services\15.0\Bin\mssearch.exe"
+************************************************************************
+mssdmn.exe pid:   2516
+************************************************************************
+w3wp.exe pid:   3536
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "SecurityTokenServiceApplicationPool" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipm599608fd-43fc-4fb5-944b-6d9348991e6c -h "C:\inetpub\temp\apppools\SecurityTokenServiceApplicationPool\SecurityTokenServiceApplicationPool.config" -w "" -m 0
+************************************************************************
+w3wp.exe pid:   4252
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "094e775d2c2f484a9f917f4d898aff28" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipmcffaee20-479f-425a-a69d-24b94e15fea8 -h "C:\inetpub\temp\apppools\094e775d2c2f484a9f917f4d898aff28\094e775d2c2f484a9f917f4d898aff28.config" -w "" -m 0
+************************************************************************
+mssdmn.exe pid:   4360
+Command line : "C:\Program Files\Windows SharePoint Services\15.0\bin\mssdmn.exe" 1448 sGthrFltPipeOSearch153_ sGthrCtrlFltPipeOSearch153 4 -2147483646 "Software\Microsoft\Office Server\15.0\Search" "Mozilla/4.0 (compatible; MSIE 4.01; Windows NT; MS Search 6.0 Robot)" "C:\Program Files\Windows SharePoint Services\15.0\Data\Applications\gthrsvc" "DownLevelDaemon" 1048576000 "" "{AE6F0DA3-6C01-4091-9C34-D8CFBE729F12}"
+************************************************************************
+mssdmn.exe pid:   3632
+Command line : "C:\Program Files\Windows SharePoint Services\15.0\bin\mssdmn.exe" 1448 sGthrFltPipeOSearch154_ sGthrCtrlFltPipeOSearch154 4 -2147483646 "Software\Microsoft\Office Server\15.0\Search" "Mozilla/4.0 (compatible; MSIE 4.01; Windows NT; MS Search 6.0 Robot)" "C:\Program Files\Windows SharePoint Services\15.0\Data\Applications\gthrsvc" "DownLevelDaemon" 524288000 "" "{AE6F0DA3-6C01-4091-9C34-D8CFBE729F12}"
+************************************************************************
+w3wp.exe pid:  12476
+Command line : c:\windows\system32\inetsrv\w3wp.exe -ap "SharePoint - 80" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipm58f9ab85-bd8d-4e1c-9a30-4fcf2e6d7064 -h "C:\inetpub\temp\apppools\SharePoint - 80\SharePoint - 80.config" -w "" -m 0
+************************************************************************
+wsmprovhost.ex pid:   2148
+Command line : C:\windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+HOSTNAME.EXE pid:   3736
+************************************************************************
+systeminfo.exe pid:   7584
+************************************************************************
+TrustedInstall pid:  13512
+Command line : C:\windows\servicing\TrustedInstaller.exe
+************************************************************************
+DumpIt.exe pid:   5156
+Command line : "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Windows\CCM\Perf\VolH\Image\SITE-SHAREPOINT.bin 
+************************************************************************
+conhost.exe pid:  10824
+Command line : \??\C:\windows\system32\conhost.exe "-10661210939651657361178038260-1952497081-491913792-2045476790-1881126327-1844229601

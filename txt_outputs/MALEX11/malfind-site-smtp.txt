@@ -1,0 +1,42 @@
+Process: svchost.exe Pid: 1524 Address: 0xba4a4d0000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: PrivateMemory: 1, Protection: 6
+
+0xba4a4d0000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0xba4a4d0010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0xba4a4d0020  00 00 4d 4a ba 00 00 00 00 00 00 00 00 00 00 00   ..MJ............
+0xba4a4d0030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+
+0x4a4d0000 0000             ADD [EAX], AL
+0x4a4d0002 0000             ADD [EAX], AL
+0x4a4d0004 0000             ADD [EAX], AL
+0x4a4d0006 0000             ADD [EAX], AL
+0x4a4d0008 0000             ADD [EAX], AL
+0x4a4d000a 0000             ADD [EAX], AL
+0x4a4d000c 0000             ADD [EAX], AL
+0x4a4d000e 0000             ADD [EAX], AL
+0x4a4d0010 0000             ADD [EAX], AL
+0x4a4d0012 0000             ADD [EAX], AL
+0x4a4d0014 0000             ADD [EAX], AL
+0x4a4d0016 0000             ADD [EAX], AL
+0x4a4d0018 0000             ADD [EAX], AL
+0x4a4d001a 0000             ADD [EAX], AL
+0x4a4d001c 0000             ADD [EAX], AL
+0x4a4d001e 0000             ADD [EAX], AL
+0x4a4d0020 0000             ADD [EAX], AL
+0x4a4d0022 4d               DEC EBP
+0x4a4d0023 4a               DEC EDX
+0x4a4d0024 ba00000000       MOV EDX, 0x0
+0x4a4d0029 0000             ADD [EAX], AL
+0x4a4d002b 0000             ADD [EAX], AL
+0x4a4d002d 0000             ADD [EAX], AL
+0x4a4d002f 0000             ADD [EAX], AL
+0x4a4d0031 0000             ADD [EAX], AL
+0x4a4d0033 0000             ADD [EAX], AL
+0x4a4d0035 0000             ADD [EAX], AL
+0x4a4d0037 0000             ADD [EAX], AL
+0x4a4d0039 0000             ADD [EAX], AL
+0x4a4d003b 0000             ADD [EAX], AL
+0x4a4d003d 0000             ADD [EAX], AL
+0x4a4d003f 00               DB 0x0
+

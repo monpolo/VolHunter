@@ -1,0 +1,1515 @@
+************************************************************************
+System pid:      4
+Unable to read PEB for task.
+************************************************************************
+smss.exe pid:    252
+Command line : \SystemRoot\System32\smss.exe
+
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x0000000047cf0000            0x20000             0xffff 1970-01-01 00:00:00 UTC+0000   \SystemRoot\System32\smss.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+************************************************************************
+csrss.exe pid:    356
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x0000000049ee0000             0x6000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\csrss.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x000007fefd500000            0x13000             0xffff 2019-09-16 18:52:10 UTC+0000   C:\windows\system32\CSRSRV.dll
+0x000007fefd4e0000            0x11000                0x4 2019-09-16 18:52:10 UTC+0000   C:\windows\system32\basesrv.DLL
+0x000007fefd4a0000            0x39000                0x2 2019-09-16 18:52:11 UTC+0000   C:\windows\system32\winsrv.DLL
+0x00000000775c0000            0xfa000                0xb 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000                0xc 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000776c0000           0x11f000               0x63 2019-09-16 18:52:12 UTC+0000   C:\windows\SYSTEM32\kernel32.dll
+0x000007fefd700000            0x6a000              0x132 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007feff040000             0xe000                0x3 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x3 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000                0x5 2019-09-16 18:52:12 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefd490000             0xc000                0x1 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\sxssrv.DLL
+0x000007fefd390000            0x91000                0x1 2019-09-16 18:52:46 UTC+0000   C:\windows\system32\sxs.dll
+0x000007fefdcf0000           0x12d000                0x3 2019-09-16 18:52:55 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:52:55 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0x1 2019-09-16 18:55:57 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000                0x4 2019-09-16 18:55:57 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+************************************************************************
+csrss.exe pid:    428
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x0000000049ee0000             0x6000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\csrss.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x000007fefd500000            0x13000             0xffff 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\CSRSRV.dll
+0x000007fefd4e0000            0x11000                0x4 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\basesrv.DLL
+0x000007fefd4a0000            0x39000                0x2 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\winsrv.DLL
+0x00000000775c0000            0xfa000                0xb 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000                0xc 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000776c0000           0x11f000               0x44 2019-09-16 18:52:35 UTC+0000   C:\windows\SYSTEM32\kernel32.dll
+0x000007fefd700000            0x6a000               0xdb 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007feff040000             0xe000                0x3 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x3 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000                0x3 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefd490000             0xc000                0x1 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\sxssrv.DLL
+0x000007fefd390000            0x91000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\sxs.dll
+0x000007fefdcf0000           0x12d000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefd380000             0xf000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+************************************************************************
+wininit.exe pid:    436
+Command line : wininit.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff6d0000            0x23000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\wininit.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:52:35 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:52:36 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:52:38 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefd530000             0xf000             0xffff 2019-09-16 18:52:38 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:52:39 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:52:39 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:52:40 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefdc10000            0xdb000                0x1 2019-09-16 18:52:55 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefd320000            0x57000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\apphelp.dll
+0x000007fefd380000             0xf000                0x1 2019-09-16 18:53:22 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007feff070000            0x4d000                0x6 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0x6 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\credssp.dll
+************************************************************************
+winlogon.exe pid:    472
+Command line : winlogon.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff630000            0x72000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\winlogon.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefd450000            0x3d000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:52:37 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:52:38 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:52:38 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefdc10000            0xdb000                0x3 2019-09-16 18:52:39 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000               0x13 2019-09-16 18:52:39 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefd530000             0xf000                0x1 2019-09-16 18:52:39 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:52:40 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd320000            0x57000             0xffff 2019-09-16 18:53:53 UTC+0000   C:\windows\system32\apphelp.dll
+0x000007fefb810000             0xa000                0x1 2019-09-16 18:55:19 UTC+0000   C:\windows\system32\UXINIT.dll
+************************************************************************
+services.exe pid:    532
+Command line : C:\windows\system32\services.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ffe90000            0x53000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\services.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefd2e0000            0x25000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fefd530000             0xf000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\profapi.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefd380000             0xf000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefd140000            0x19000                0x1 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\scext.dll
+0x00000000775c0000            0xfa000               0x30 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000               0x27 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000                0xc 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0xc 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefd120000             0xb000                0x2 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\Secur32.dll
+0x000007fefd0b0000            0x67000                0x1 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\SCESRV.dll
+0x000007fefcfc0000            0x23000                0x1 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\srvcli.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:53:20 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:21 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefcef0000            0x2f000                0x1 2019-09-16 18:53:22 UTC+0000   C:\windows\system32\AUTHZ.dll
+0x000007fefc8f0000            0x39000                0x1 2019-09-16 18:53:22 UTC+0000   C:\windows\system32\UBPM.dll
+0x000007fefdc10000            0xdb000                0x8 2019-09-16 18:53:23 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefd320000            0x57000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\system32\apphelp.dll
+0x000007feff070000            0x4d000                0x6 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0x6 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefccc0000            0x55000                0x3 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefb940000            0x11000                0x1 2019-09-16 19:09:05 UTC+0000   C:\windows\system32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x1 2019-09-16 19:09:05 UTC+0000   C:\windows\system32\WINSTA.dll
+************************************************************************
+lsass.exe pid:    540
+Command line : C:\windows\system32\lsass.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff6e0000             0xc000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\lsass.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:52:56 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefd310000             0xb000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\SspiSrv.dll
+0x000007fefd160000           0x16b000               0x15 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\lsasrv.dll
+0x000007feff050000            0x1f000               0xaa 2019-09-16 18:52:59 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefd2e0000            0x25000               0x15 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fefdc10000            0xdb000               0x1a 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x00000000775c0000            0xfa000               0x40 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000               0x33 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000               0x10 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000               0x10 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefcff0000            0xbf000                0xf 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\SAMSRV.dll
+0x000007fefcfa0000            0x14000               0x17 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\cryptdll.dll
+0x000007fefd520000             0xf000               0x13 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefcf30000            0x6d000                0xc 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\wevtapi.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:52:59 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefcf20000             0x9000                0x1 2019-09-16 18:53:02 UTC+0000   C:\windows\system32\cngaudit.dll
+0x000007fefcef0000            0x2f000                0x1 2019-09-16 18:53:02 UTC+0000   C:\windows\system32\AUTHZ.dll
+0x000007fefcea0000            0x50000                0x2 2019-09-16 18:53:04 UTC+0000   C:\windows\system32\ncrypt.dll
+0x000007fefce70000            0x22000               0x19 2019-09-16 18:53:04 UTC+0000   C:\windows\system32\bcrypt.dll
+0x00000000752b0000             0x2000                0x1 2019-09-16 18:53:05 UTC+0000   C:\windows\system32\msprivs.DLL
+0x000007fefce30000            0x32000                0x1 2019-09-16 18:53:06 UTC+0000   C:\windows\system32\netjoin.dll
+0x000007fefce00000            0x24000                0x1 2019-09-16 18:53:06 UTC+0000   C:\windows\system32\negoexts.DLL
+0x000007fefd120000             0xb000                0x3 2019-09-16 18:53:06 UTC+0000   C:\windows\system32\Secur32.dll
+0x000007fefd380000             0xf000                0x6 2019-09-16 18:53:07 UTC+0000   C:\windows\system32\cryptbase.dll
+0x000007fefcd40000            0xb8000                0x2 2019-09-16 18:53:07 UTC+0000   C:\windows\system32\kerberos.DLL
+0x000007fefcd20000            0x18000                0x4 2019-09-16 18:53:07 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007feff070000            0x4d000                0xb 2019-09-16 18:53:08 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0xe 2019-09-16 18:53:09 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:53:10 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:53:11 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefcc50000            0x52000                0x6 2019-09-16 18:53:12 UTC+0000   C:\windows\system32\msv1_0.DLL
+0x000007fefcba0000            0xae000                0x2 2019-09-16 18:53:13 UTC+0000   C:\windows\system32\netlogon.DLL
+0x000007fefcb40000            0x5b000                0x3 2019-09-16 18:53:13 UTC+0000   C:\windows\system32\DNSAPI.dll
+0x000007fefcb10000            0x30000                0x2 2019-09-16 18:53:13 UTC+0000   C:\windows\system32\logoncli.dll
+0x000007fefcab0000            0x58000                0x1 2019-09-16 18:53:15 UTC+0000   C:\windows\system32\schannel.DLL
+0x000007fefd570000           0x16d000                0x2 2019-09-16 18:53:15 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefca70000            0x36000                0x1 2019-09-16 18:53:16 UTC+0000   C:\windows\system32\wdigest.DLL
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:53:18 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefca00000            0x19000                0x1 2019-09-16 18:53:18 UTC+0000   C:\windows\system32\tspkg.DLL
+0x000007fefc9b0000            0x45000                0x1 2019-09-16 18:53:19 UTC+0000   C:\windows\system32\pku2u.DLL
+0x000007fefc960000            0x4c000                0x1 2019-09-16 18:53:20 UTC+0000   C:\windows\system32\bcryptprimitives.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:53:20 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefc940000            0x12000                0x1 2019-09-16 18:53:20 UTC+0000   C:\windows\system32\efslsaext.dll
+0x000007fefc8b0000            0x3e000                0x1 2019-09-16 18:53:24 UTC+0000   C:\windows\system32\scecli.DLL
+0x000007fefc8a0000             0xb000                0x1 2019-09-16 18:53:25 UTC+0000   C:\windows\system32\rassfm.DLL
+0x000007fefd450000            0x3d000                0x1 2019-09-16 18:53:25 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:25 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:53:55 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fef8c20000            0x32000                0x1 2019-09-16 19:27:15 UTC+0000   C:\windows\system32\dssenh.dll
+0x000007fefd8b0000            0x1e000                0x1 2019-09-16 19:27:16 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x1 2019-09-16 19:27:16 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x2 2019-09-16 19:27:16 UTC+0000   C:\windows\system32\GPAPI.dll
+0x000007fefb830000            0x16000                0x1 2019-09-19 18:15:31 UTC+0000   C:\windows\system32\certpoleng.dll
+************************************************************************
+lsm.exe pid:    552
+Command line : C:\windows\system32\lsm.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ffb00000            0x57000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\lsm.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefd2d0000             0xa000             0xffff 2019-09-16 18:52:57 UTC+0000   C:\windows\system32\SYSNTFY.dll
+0x000007fefd130000             0x8000             0xffff 2019-09-16 18:52:58 UTC+0000   C:\windows\system32\WMsgAPI.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:53:22 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefc790000             0xd000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\pcwum.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefdc10000            0xdb000                0x5 2019-09-16 18:53:47 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff860000           0x203000                0x3 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x12 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x12 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000                0x4 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x4 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefc5d0000            0x2d000                0x1 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x1 2019-09-16 18:53:52 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:53:53 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007feff320000            0xd8000                0x1 2019-09-16 18:53:53 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fef8cf0000            0x11000                0x1 2019-09-16 19:04:01 UTC+0000   C:\windows\system32\lsmproxy.dll
+************************************************************************
+svchost.exe pid:    652
+Command line : C:\windows\system32\svchost.exe -k DcomLaunch
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:53:26 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefc830000            0x67000                0x1 2019-09-16 18:53:27 UTC+0000   c:\windows\system32\umpnpmgr.dll
+0x000007fefc810000            0x1f000                0x1 2019-09-16 18:53:28 UTC+0000   c:\windows\system32\SPINF.dll
+0x00000000775c0000            0xfa000               0x40 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000               0x3d 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000                0xd 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0xd 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefc7f0000            0x12000                0x1 2019-09-16 18:53:28 UTC+0000   c:\windows\system32\DEVRTL.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:53:28 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:53:29 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd8b0000            0x1e000                0x2 2019-09-16 18:53:29 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x2 2019-09-16 18:53:29 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x4 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\GPAPI.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefc7a0000            0x2c000                0x1 2019-09-16 18:53:30 UTC+0000   c:\windows\system32\umpo.dll
+0x000007fefd450000            0x3d000                0x2 2019-09-16 18:53:30 UTC+0000   c:\windows\system32\WINSTA.dll
+0x000007feff0c0000           0x1d7000                0x1 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000               0x19 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefdc10000            0xdb000               0x26 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff320000            0xd8000                0xd 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007feff860000           0x203000               0x15 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefd540000            0x1a000                0x1 2019-09-16 18:53:30 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefc790000             0xd000                0x6 2019-09-16 18:53:31 UTC+0000   C:\windows\system32\pcwum.DLL
+0x000007fefc700000            0x81000             0xffff 2019-09-16 18:53:41 UTC+0000   c:\windows\system32\rpcss.dll
+0x000007fefd2e0000            0x25000             0xffff 2019-09-16 18:53:41 UTC+0000   c:\windows\system32\SspiCli.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:42 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefd9f0000            0x99000                0x2 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefc5d0000            0x2d000                0x1 2019-09-16 18:59:40 UTC+0000   C:\windows\system32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x1 2019-09-16 18:59:40 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fef9c00000            0x34000                0x1 2019-09-16 18:59:44 UTC+0000   C:\windows\system32\wbem\wmidcprv.dll
+0x000007fef9610000            0xd4000                0x2 2019-09-16 18:59:48 UTC+0000   C:\windows\system32\wbem\FastProx.dll
+0x000007fef98a0000            0x7a000                0x5 2019-09-16 18:59:50 UTC+0000   C:\windows\system32\wbemcomn2.dll
+0x000007fefce70000            0x22000                0x4 2019-09-16 18:59:50 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007feff070000            0x4d000                0x7 2019-09-16 18:59:50 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0x4 2019-09-16 18:59:50 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefa820000            0x27000                0x2 2019-09-16 18:59:52 UTC+0000   C:\windows\system32\NTDSAPI.dll
+0x000007fef9780000             0xe000                0x1 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\wbem\wbemprox.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 19:00:06 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 19:00:06 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fef8ee0000            0x14000                0x1 2019-09-16 19:01:20 UTC+0000   C:\windows\system32\wbem\wbemsvc.dll
+0x000007fef8eb0000            0x21000                0x1 2019-09-16 19:15:22 UTC+0000   C:\windows\system32\wbem\wmiutils.dll
+0x000007fefd860000            0x3b000                0x1 2019-09-16 19:17:30 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefd570000           0x16d000                0x1 2019-09-16 19:17:30 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x2 2019-09-16 19:17:30 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefd320000            0x57000             0xffff 2019-09-16 19:26:39 UTC+0000   C:\windows\system32\apphelp.dll
+************************************************************************
+svchost.exe pid:    732
+Command line : C:\windows\system32\svchost.exe -k RPCSS
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:53:43 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:53:43 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:53:43 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:53:43 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:53:43 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefc6e0000            0x14000                0x1 2019-09-16 18:53:45 UTC+0000   c:\windows\system32\rpcepmap.dll
+0x000007fefd430000            0x14000                0x3 2019-09-16 18:53:45 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:53:45 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefd2e0000            0x25000             0xffff 2019-09-16 18:53:45 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:45 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:53:45 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefc700000            0x81000             0xffff 2019-09-16 18:53:46 UTC+0000   c:\windows\system32\rpcss.dll
+0x000007fefdc10000            0xdb000                0x4 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007feff070000            0x4d000                0x7 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0x7 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\mswsock.dll
+0x00000000775c0000            0xfa000               0x1e 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\user32.dll
+0x000007fefdf20000            0x67000               0x1b 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000                0x7 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x7 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:53:46 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:53:46 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:53:47 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefc610000            0xbb000                0x1 2019-09-16 18:53:49 UTC+0000   C:\windows\system32\FirewallAPI.dll
+0x000007fefc600000             0xc000                0x1 2019-09-16 18:53:50 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007feff860000           0x203000                0x3 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\ole32.dll
+0x000007feff320000            0xd8000                0x1 2019-09-16 18:53:56 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefb6b0000            0x53000                0x1 2019-09-16 18:54:56 UTC+0000   C:\windows\system32\fwpuclnt.dll
+************************************************************************
+svchost.exe pid:    828
+Command line : C:\windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:53:51 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0x1 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x16 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x18 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000                0x6 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x6 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:53:51 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x3 2019-09-16 18:53:51 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000               0x2d 2019-09-16 18:53:52 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefc430000           0x196000               0x2b 2019-09-16 18:53:52 UTC+0000   c:\windows\system32\wevtsvc.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\secur32.dll
+0x000007fefd2e0000            0x25000                0x3 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\credssp.dll
+0x000007feff070000            0x4d000                0xe 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000               0x1c 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefc7d0000            0x1b000                0x2 2019-09-16 18:53:55 UTC+0000   C:\windows\System32\GPAPI.dll
+0x000007fefb880000             0xa000                0x1 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\lmhsvc.dll
+0x000007fefb850000            0x27000                0x5 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x7 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\WINNSI.DLL
+0x000007fefb7b0000             0x8000                0x1 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\nrpsrv.DLL
+0x000007fefb750000            0x51000                0x1 2019-09-16 18:54:11 UTC+0000   c:\windows\system32\dhcpcore.dll
+0x000007fefcb40000            0x5b000                0x2 2019-09-16 18:54:11 UTC+0000   c:\windows\system32\DNSAPI.dll
+0x000007fefc610000            0xbb000                0x2 2019-09-16 18:54:11 UTC+0000   C:\windows\System32\firewallapi.dll
+0x000007fefc600000             0xc000                0x2 2019-09-16 18:54:11 UTC+0000   C:\windows\System32\VERSION.dll
+0x000007fefb710000            0x3b000                0x1 2019-09-16 18:54:11 UTC+0000   C:\windows\System32\dhcpcore6.dll
+0x000007fefb690000            0x11000                0x1 2019-09-16 18:54:11 UTC+0000   C:\windows\System32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 18:54:12 UTC+0000   C:\windows\System32\dhcpcsvc.DLL
+************************************************************************
+svchost.exe pid:    876
+Command line : C:\windows\system32\svchost.exe -k netsvcs
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:53:54 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000               0x58 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000              0x2f3 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000              0x391 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000               0xd0 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000               0xd0 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000               0xce 2019-09-16 18:53:54 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefc360000            0xc6000               0x86 2019-09-16 18:53:55 UTC+0000   c:\windows\system32\gpsvc.dll
+0x000007fefc7d0000            0x1b000               0x8b 2019-09-16 18:53:55 UTC+0000   c:\windows\system32\GPAPI.dll
+0x000007fefdec0000            0x52000               0x87 2019-09-16 18:53:55 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefd120000             0xb000               0x87 2019-09-16 18:53:55 UTC+0000   c:\windows\system32\Secur32.dll
+0x000007fefd2e0000            0x25000               0x13 2019-09-16 18:53:55 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefda90000             0x8000               0xb7 2019-09-16 18:53:55 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefcf30000            0x6d000               0x91 2019-09-16 18:53:55 UTC+0000   c:\windows\system32\wevtapi.dll
+0x000007fefc340000            0x16000               0x87 2019-09-16 18:53:56 UTC+0000   c:\windows\system32\NETAPI32.dll
+0x000007fefc330000             0xc000               0x8b 2019-09-16 18:53:56 UTC+0000   c:\windows\system32\netutils.dll
+0x000007fefcfc0000            0x23000               0x89 2019-09-16 18:53:56 UTC+0000   c:\windows\system32\srvcli.dll
+0x000007fefc020000            0x15000               0x88 2019-09-16 18:53:57 UTC+0000   c:\windows\system32\wkscli.dll
+0x000007fefcb10000            0x30000                0x1 2019-09-16 18:53:57 UTC+0000   C:\windows\system32\LOGONCLI.DLL
+0x000007fefd2d0000             0xa000               0x89 2019-09-16 18:53:57 UTC+0000   c:\windows\system32\SYSNTFY.dll
+0x000007fefc000000            0x15000               0x87 2019-09-16 18:53:58 UTC+0000   c:\windows\system32\nlaapi.dll
+0x000007fefbfc0000            0x37000                0x1 2019-09-16 18:54:01 UTC+0000   c:\windows\system32\profsvc.dll
+0x000007feff320000            0xd8000               0x36 2019-09-16 18:54:01 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefd8b0000            0x1e000                0x5 2019-09-16 18:54:01 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x7 2019-09-16 18:54:01 UTC+0000   C:\windows\system32\profapi.dll
+0x000007feff2a0000            0x71000                0xb 2019-09-16 18:54:01 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefbfa0000            0x19000                0x3 2019-09-16 18:54:02 UTC+0000   c:\windows\system32\ATL.DLL
+0x000007fefbd90000             0xc000                0x3 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\dsrole.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefcd20000            0x18000                0x4 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefbcb0000             0xb000                0x4 2019-09-16 18:54:04 UTC+0000   C:\windows\system32\slc.dll
+0x000007fefba70000            0x14000                0x1 2019-09-16 18:54:06 UTC+0000   c:\windows\system32\sens.dll
+0x000007feff070000            0x4d000               0x21 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefd810000            0x36000               0x25 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefb3b0000           0x112000                0x1 2019-09-16 18:54:15 UTC+0000   c:\windows\system32\schedsvc.dll
+0x000007fefc790000             0xd000                0x3 2019-09-16 18:54:17 UTC+0000   c:\windows\system32\pcwum.dll
+0x000007fefe260000           0xd89000                0x5 2019-09-16 18:54:17 UTC+0000   C:\windows\system32\SHELL32.dll
+0x000007fefcef0000            0x2f000                0x5 2019-09-16 18:54:17 UTC+0000   c:\windows\system32\AUTHZ.dll
+0x000007fefc8f0000            0x39000                0x1 2019-09-16 18:54:17 UTC+0000   c:\windows\system32\UBPM.dll
+0x000007fefb380000             0xa000                0x2 2019-09-16 18:54:18 UTC+0000   c:\windows\system32\ktmw32.dll
+0x000007fefb340000            0x35000                0x1 2019-09-16 18:54:20 UTC+0000   c:\windows\system32\XmlLite.dll
+0x000007feff0c0000           0x1d7000                0x9 2019-09-16 18:54:21 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd540000            0x1a000                0x9 2019-09-16 18:54:21 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefd860000            0x3b000                0x2 2019-09-16 18:54:21 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefd570000           0x16d000                0x6 2019-09-16 18:54:22 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0xb 2019-09-16 18:54:22 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:54:27 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefb990000            0x77000                0x1 2019-09-16 18:54:40 UTC+0000   C:\windows\system32\taskcomp.dll
+0x000007fefc600000             0xc000                0x5 2019-09-16 18:54:46 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fefc5d0000            0x2d000                0x1 2019-09-16 18:54:49 UTC+0000   C:\windows\system32\ntmarta.dll
+0x000007fefccc0000            0x55000                0x5 2019-09-16 18:54:49 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:54:49 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:54:49 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefce30000            0x32000                0x1 2019-09-16 18:54:50 UTC+0000   C:\windows\system32\netjoin.dll
+0x000007fefb940000            0x11000                0x5 2019-09-16 18:54:50 UTC+0000   C:\windows\system32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x5 2019-09-16 18:54:50 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefb8a0000            0x1d000                0x2 2019-09-16 18:55:17 UTC+0000   C:\windows\system32\SAMLIB.dll
+0x000007fef9d60000            0xd7000                0x1 2019-09-16 18:56:35 UTC+0000   c:\windows\system32\ikeext.dll
+0x000007fefb6b0000            0x53000                0x3 2019-09-16 18:56:35 UTC+0000   c:\windows\system32\fwpuclnt.dll
+0x000007fefcea0000            0x50000                0x3 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\ncrypt.dll
+0x000007fefce70000            0x22000               0x11 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fefc960000            0x4c000                0x1 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\bcryptprimitives.dll
+0x000007fefb850000            0x27000                0x8 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x9 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefb690000            0x11000                0x1 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 18:56:36 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fef9cc0000            0x3a000                0x1 2019-09-16 18:59:29 UTC+0000   c:\windows\system32\wbem\wmisvc.dll
+0x000007fef98a0000            0x7a000                0xf 2019-09-16 18:59:35 UTC+0000   C:\windows\system32\wbemcomn2.dll
+0x000007fef9800000            0x92000                0x1 2019-09-16 18:59:44 UTC+0000   c:\windows\system32\iphlpsvc.dll
+0x000007fefc610000            0xbb000                0x3 2019-09-16 18:59:45 UTC+0000   c:\windows\system32\FirewallAPI.dll
+0x000007fefb8e0000            0x11000                0x1 2019-09-16 18:59:45 UTC+0000   c:\windows\system32\rtutils.dll
+0x000007fef97b0000            0x42000                0x1 2019-09-16 18:59:47 UTC+0000   c:\windows\system32\sqmapi.dll
+0x000007fef9710000            0x47000                0x1 2019-09-16 18:59:51 UTC+0000   c:\windows\system32\WDSCORE.dll
+0x000007fef9280000            0x3d000                0x1 2019-09-16 18:59:52 UTC+0000   c:\windows\system32\srvsvc.dll
+0x000007fef9250000            0x25000                0x1 2019-09-16 18:59:55 UTC+0000   c:\windows\system32\browser.dll
+0x000007fef9c80000             0x8000                0x1 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\SSCORE.DLL
+0x000007fefb4e0000            0x50000                0x2 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\CLUSAPI.DLL
+0x000007fefcfa0000            0x14000                0x2 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\cryptdll.dll
+0x000007fef9c40000            0x19000                0x1 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\RESUTILS.DLL
+0x000007fefc7f0000            0x12000                0x6 2019-09-16 19:00:30 UTC+0000   C:\windows\system32\devrtl.DLL
+0x000007fef90b0000            0x74000                0x1 2019-09-16 19:00:31 UTC+0000   C:\windows\System32\netprofm.dll
+0x000007fef9e60000           0x1b0000                0x1 2019-09-16 19:00:32 UTC+0000   C:\windows\system32\VSSAPI.DLL
+0x000007fefa8d0000            0x17000                0x2 2019-09-16 19:00:32 UTC+0000   C:\windows\system32\VssTrace.DLL
+0x000007fefb540000            0x14000                0x1 2019-09-16 19:00:32 UTC+0000   C:\windows\system32\samcli.dll
+0x000007fefaff0000           0x12c000                0x4 2019-09-16 19:00:32 UTC+0000   C:\windows\system32\PROPSYS.dll
+0x000007fef8f90000           0x11c000                0x1 2019-09-16 19:00:43 UTC+0000   C:\windows\system32\wbem\wbemcore.dll
+0x000007fef8f20000            0x66000                0x3 2019-09-16 19:00:57 UTC+0000   C:\windows\system32\wbem\esscli.dll
+0x000007fef9610000            0xd4000                0x7 2019-09-16 19:01:01 UTC+0000   C:\windows\system32\wbem\FastProx.dll
+0x000007fefa820000            0x27000                0x5 2019-09-16 19:01:01 UTC+0000   C:\windows\system32\NTDSAPI.dll
+0x000007fef8f00000            0x1a000                0x1 2019-09-16 19:01:16 UTC+0000   C:\windows\system32\NCI.dll
+0x000007fefcb40000            0x5b000                0x1 2019-09-16 19:01:16 UTC+0000   C:\windows\system32\DNSAPI.dll
+0x000007fef8ee0000            0x14000                0x1 2019-09-16 19:01:20 UTC+0000   C:\windows\system32\wbem\wbemsvc.dll
+0x000007fefb7d0000             0x8000                0x1 2019-09-16 19:01:20 UTC+0000   C:\windows\system32\rasadhlp.dll
+0x000007fef8eb0000            0x21000                0x1 2019-09-16 19:01:24 UTC+0000   C:\windows\system32\wbem\wmiutils.dll
+0x000007fef8e50000            0x5c000                0x1 2019-09-16 19:01:33 UTC+0000   C:\windows\system32\wbem\repdrvfs.dll
+0x000007fefb590000            0x62000                0x1 2019-09-16 19:03:33 UTC+0000   C:\windows\system32\RasApi32.dll
+0x000007fefba90000            0x1c000                0x1 2019-09-16 19:03:33 UTC+0000   C:\windows\system32\rasman.dll
+0x000007fefd390000            0x91000                0x1 2019-09-16 19:03:34 UTC+0000   C:\windows\system32\SXS.DLL
+0x000007fefd320000            0x57000             0xffff 2019-09-16 19:05:26 UTC+0000   C:\windows\system32\apphelp.dll
+0x000007fef88f0000            0x17000                0x2 2019-09-16 19:06:49 UTC+0000   c:\windows\system32\certprop.dll
+0x000007fef88b0000            0x38000                0x2 2019-09-16 19:07:02 UTC+0000   c:\windows\system32\WinSCard.dll
+0x000007fefd130000             0x8000                0x3 2019-09-16 19:07:03 UTC+0000   c:\windows\system32\WMsgAPI.dll
+0x000007fef8880000            0x24000                0x1 2019-09-16 19:10:33 UTC+0000   c:\windows\system32\sessenv.dll
+0x000007fefbab0000           0x1f4000                0x2 2019-09-16 19:12:23 UTC+0000   C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\comctl32.dll
+0x000007fef8490000            0xbe000                0x1 2019-09-16 19:13:31 UTC+0000   C:\windows\system32\wbem\wmiprvsd.dll
+0x000007fef8470000            0x13000                0x2 2019-09-16 19:13:56 UTC+0000   C:\windows\system32\NCObjAPI.DLL
+0x000007fef8550000             0xc000                0x1 2019-09-16 19:14:00 UTC+0000   C:\windows\System32\npmproxy.dll
+0x000007fef83f0000            0x75000                0x1 2019-09-16 19:14:26 UTC+0000   C:\windows\system32\wbem\wbemess.dll
+0x000007fef8170000           0x27f000                0x1 2019-09-16 19:15:34 UTC+0000   c:\windows\system32\wuaueng.dll
+0x000007fefa5a0000           0x27a000                0x1 2019-09-16 19:15:39 UTC+0000   c:\windows\system32\ESENT.dll
+0x000007fefa9b0000            0x71000                0x2 2019-09-16 19:15:39 UTC+0000   c:\windows\system32\WINHTTP.dll
+0x000007fefa850000            0x65000                0x2 2019-09-16 19:15:39 UTC+0000   c:\windows\system32\webio.dll
+0x000007fefa360000            0x71000                0x1 2019-09-16 19:15:39 UTC+0000   c:\windows\system32\WINSPOOL.DRV
+0x000007fef8940000            0x1b000                0x1 2019-09-16 19:15:43 UTC+0000   c:\windows\system32\Cabinet.dll
+0x000007fef8930000             0xf000                0x1 2019-09-16 19:15:47 UTC+0000   c:\windows\system32\mspatcha.dll
+0x00000000779b0000             0x7000                0x1 2019-09-16 19:15:50 UTC+0000   C:\windows\system32\psapi.dll
+0x000007fef80f0000            0x17000                0x1 2019-09-16 19:18:16 UTC+0000   C:\windows\system32\wbem\ncprov.dll
+0x000007fef8d20000            0x7c000                0x1 2019-09-16 19:26:00 UTC+0000   C:\windows\system32\wer.dll
+0x000007fef8ba0000            0x27000                0x6 2019-09-16 19:27:51 UTC+0000   C:\windows\system32\SPPC.DLL
+0x000007fef9780000             0xe000                0x1 2019-09-16 20:45:19 UTC+0000   C:\windows\system32\wbem\wbemprox.dll
+0x000007fef91c0000            0x15000                0x1 2019-09-19 18:19:32 UTC+0000   c:\windows\system32\aelupsvc.dll
+************************************************************************
+svchost.exe pid:    924
+Command line : C:\windows\system32\svchost.exe -k LocalService
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:54:03 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0xd 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x4f 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x57 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000               0x13 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000               0x13 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0xc 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefbd20000            0x67000                0x2 2019-09-16 18:54:03 UTC+0000   c:\windows\system32\es.dll
+0x000007feff320000            0xd8000                0x8 2019-09-16 18:54:03 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:54:04 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:54:04 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:54:04 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:54:04 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefb890000             0xa000                0x1 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\nsisvc.dll
+0x000007fefda90000             0x8000               0x28 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefad50000           0x125000                0x2 2019-09-16 18:54:50 UTC+0000   c:\windows\system32\fntcache.dll
+0x000007fefd390000            0x91000                0x1 2019-09-16 18:56:23 UTC+0000   C:\windows\system32\SXS.DLL
+0x000007fef9d00000            0x60000                0x2 2019-09-16 18:59:29 UTC+0000   c:\windows\system32\w32time.dll
+0x000007fefcb10000            0x30000                0x2 2019-09-16 18:59:31 UTC+0000   c:\windows\system32\logoncli.dll
+0x000007fefcfa0000            0x14000                0x2 2019-09-16 18:59:31 UTC+0000   c:\windows\system32\cryptdll.dll
+0x000007feff070000            0x4d000               0x10 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefccc0000            0x55000                0x4 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:59:31 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:59:31 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefd8b0000            0x1e000                0x1 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x1 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x4 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\GPAPI.dll
+0x000007fefbd90000             0xc000                0x1 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\dsrole.dll
+0x000007fefd2e0000            0x25000                0x4 2019-09-16 18:59:31 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fefa020000            0x18000                0x1 2019-09-16 18:59:33 UTC+0000   C:\windows\System32\vmictimeprovider.dll
+0x000007fefcb40000            0x5b000                0x2 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\DNSAPI.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefb850000            0x27000                0x9 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x9 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefb7d0000             0x8000                0x1 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\rasadhlp.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:59:33 UTC+0000   C:\windows\system32\credssp.dll
+0x000007feff2a0000            0x71000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefc000000            0x15000                0x2 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\NLAapi.dll
+0x000007fef9760000            0x15000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\napinsp.dll
+0x000007fef96f0000             0xb000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\System32\winrnr.dll
+0x000007fefb6b0000            0x53000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\System32\fwpuclnt.dll
+0x000007fefb690000            0x11000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x2 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fef90b0000            0x74000                0x1 2019-09-16 19:13:21 UTC+0000   c:\windows\system32\netprofm.dll
+0x000007fef8550000             0xc000                0x1 2019-09-16 19:13:22 UTC+0000   C:\windows\System32\npmproxy.dll
+************************************************************************
+svchost.exe pid:    968
+Command line : C:\windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:54:06 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0x7 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x30 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x32 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000                0xb 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0xb 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x1 2019-09-16 18:54:06 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0x6 2019-09-16 18:54:06 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefba60000            0x10000                0x1 2019-09-16 18:54:06 UTC+0000   c:\windows\system32\uxsms.dll
+0x000007fefb940000            0x11000                0x1 2019-09-16 18:54:07 UTC+0000   C:\windows\System32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x1 2019-09-16 18:54:07 UTC+0000   C:\windows\System32\WINSTA.dll
+0x000007fefa3e0000            0x22000                0x1 2019-09-16 18:57:55 UTC+0000   c:\windows\system32\trkwks.dll
+0x000007fefd810000            0x36000                0x3 2019-09-16 18:57:55 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:57:55 UTC+0000   C:\windows\System32\RpcRtRemote.dll
+0x000007fefd8b0000            0x1e000                0x1 2019-09-16 19:05:07 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x1 2019-09-16 19:05:07 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x1 2019-09-16 19:05:07 UTC+0000   C:\windows\System32\GPAPI.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 19:05:07 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007feff320000            0xd8000                0x3 2019-09-16 19:05:07 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fef8980000            0x39000                0x1 2019-09-16 19:05:15 UTC+0000   c:\windows\system32\umrdp.dll
+0x000007fefa360000            0x71000                0x1 2019-09-16 19:05:15 UTC+0000   c:\windows\system32\WINSPOOL.DRV
+0x000007fefbcb0000             0xb000                0x1 2019-09-16 19:05:15 UTC+0000   c:\windows\system32\slc.dll
+0x000007fef8960000            0x13000                0x1 2019-09-16 19:05:25 UTC+0000   C:\Windows\system32\umb.dll
+0x000007fefbfa0000            0x19000                0x1 2019-09-16 19:05:25 UTC+0000   C:\Windows\system32\ATL.DLL
+0x000007feff0c0000           0x1d7000                0x1 2019-09-16 19:05:25 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd540000            0x1a000                0x1 2019-09-16 19:05:25 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefd860000            0x3b000                0x1 2019-09-16 19:05:25 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefd570000           0x16d000                0x1 2019-09-16 19:05:25 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x2 2019-09-16 19:05:25 UTC+0000   C:\windows\system32\MSASN1.dll
+************************************************************************
+svchost.exe pid:   1012
+Command line : C:\windows\system32\svchost.exe -k NetworkService
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:54:10 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000               0x18 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x67 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x72 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000               0x18 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000               0x18 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x3 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000               0x22 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff070000            0x4d000               0x21 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000               0xfa 2019-09-16 18:54:10 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefcb40000            0x5b000                0x6 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\DNSAPI.dll
+0x000007fefb7c0000             0xb000               0x66 2019-09-16 18:54:10 UTC+0000   c:\windows\system32\WINNSI.DLL
+0x000007fefb6b0000            0x53000                0xe 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\Fwpuclnt.dll
+0x000007fefd8b0000            0x1e000                0x3 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x3 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x4 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\GPAPI.dll
+0x000007fefccc0000            0x55000                0x4 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:54:12 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefb850000            0x27000               0x63 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\iphlpapi.dll
+0x000007fefb690000            0x11000                0x6 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x8 2019-09-16 18:54:12 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:54:12 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefb8c0000            0x20000                0x1 2019-09-16 18:55:14 UTC+0000   c:\windows\system32\wkssvc.dll
+0x000007fefc330000             0xc000                0x8 2019-09-16 18:55:14 UTC+0000   c:\windows\system32\netutils.dll
+0x000007fefce30000            0x32000                0x1 2019-09-16 18:55:14 UTC+0000   c:\windows\system32\netjoin.dll
+0x000007fefd2e0000            0x25000                0x6 2019-09-16 18:55:14 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fefab90000            0x33000                0x1 2019-09-16 18:55:41 UTC+0000   c:\windows\system32\cryptsvc.dll
+0x000007fefa980000            0x27000                0xc 2019-09-16 18:55:43 UTC+0000   c:\windows\system32\CRYPTNET.dll
+0x000007fefd570000           0x16d000               0x10 2019-09-16 18:55:44 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0xf 2019-09-16 18:55:44 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefdec0000            0x52000                0xd 2019-09-16 18:55:44 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefa5a0000           0x27a000                0x1 2019-09-16 18:55:53 UTC+0000   C:\windows\system32\ESENT.dll
+0x00000000779b0000             0x7000                0x1 2019-09-16 18:56:09 UTC+0000   C:\windows\system32\psapi.dll
+0x000007fef9e60000           0x1b0000                0x1 2019-09-16 18:56:16 UTC+0000   C:\windows\system32\VSSAPI.DLL
+0x000007fefbfa0000            0x19000                0x1 2019-09-16 18:56:19 UTC+0000   C:\windows\system32\ATL.DLL
+0x000007fefa8d0000            0x17000                0x2 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\VssTrace.DLL
+0x000007feff320000            0xd8000                0xb 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefb540000            0x14000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\samcli.dll
+0x000007fefb8a0000            0x1d000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\SAMLIB.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefbd20000            0x67000                0x1 2019-09-16 18:56:22 UTC+0000   C:\windows\system32\es.dll
+0x000007fefaff0000           0x12c000                0x2 2019-09-16 18:56:23 UTC+0000   C:\windows\system32\PROPSYS.dll
+0x000007fefa8f0000            0x4e000                0x1 2019-09-16 18:57:10 UTC+0000   c:\windows\system32\nlasvc.dll
+0x000007fefcf30000            0x6d000                0x9 2019-09-16 18:57:10 UTC+0000   c:\windows\system32\wevtapi.dll
+0x000007fefa560000            0x39000                0x1 2019-09-16 18:57:13 UTC+0000   c:\windows\system32\ncsi.dll
+0x000007fefa9b0000            0x71000                0x3 2019-09-16 18:57:14 UTC+0000   c:\windows\system32\WINHTTP.dll
+0x000007fefa850000            0x65000                0x3 2019-09-16 18:57:14 UTC+0000   c:\windows\system32\webio.dll
+0x000007fefd810000            0x36000                0x1 2019-09-16 18:57:14 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:57:14 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:57:14 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefb390000            0x11000                0x1 2019-09-16 18:57:15 UTC+0000   C:\windows\system32\ssdpapi.dll
+0x000007fef92c0000           0x284000                0x2 2019-09-16 18:59:29 UTC+0000   c:\windows\system32\wsmsvc.dll
+0x000007fef9920000            0x5b000                0x4 2019-09-16 18:59:35 UTC+0000   c:\windows\system32\miutils.dll
+0x000007fef9ca0000            0x20000                0x2 2019-09-16 18:59:35 UTC+0000   c:\windows\system32\mi.dll
+0x000007fefc340000            0x16000                0x2 2019-09-16 18:59:35 UTC+0000   c:\windows\system32\NETAPI32.dll
+0x000007fefcfc0000            0x23000                0x2 2019-09-16 18:59:35 UTC+0000   c:\windows\system32\srvcli.dll
+0x000007fefc020000            0x15000                0x4 2019-09-16 18:59:35 UTC+0000   c:\windows\system32\wkscli.dll
+0x000007fefbd90000             0xc000                0x2 2019-09-16 18:59:35 UTC+0000   C:\windows\system32\DSROLE.DLL
+0x000007fefe260000           0xd89000                0x1 2019-09-16 18:59:52 UTC+0000   C:\windows\system32\shell32.dll
+0x000007feff2a0000            0x71000                0x2 2019-09-16 18:59:52 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefc790000             0xd000                0x2 2019-09-16 18:59:59 UTC+0000   C:\windows\system32\pcwum.dll
+0x000007fef9c70000             0xe000                0x1 2019-09-16 19:00:05 UTC+0000   C:\windows\system32\HTTPAPI.dll
+0x000007fef9230000            0x1f000                0x1 2019-09-16 19:00:13 UTC+0000   C:\windows\system32\wevtfwd.dll
+0x000007fefce70000            0x22000                0x2 2019-09-16 19:01:25 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fefc960000            0x4c000                0x1 2019-09-16 19:01:25 UTC+0000   C:\windows\system32\bcryptprimitives.dll
+0x000007fefcb10000            0x30000                0x1 2019-09-16 19:01:25 UTC+0000   C:\windows\system32\logoncli.dll
+0x000007fefb940000            0x11000                0x1 2019-09-16 19:14:28 UTC+0000   C:\windows\system32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x1 2019-09-16 19:14:28 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefb7d0000             0x8000                0x1 2019-09-16 19:14:43 UTC+0000   C:\windows\system32\rasadhlp.dll
+0x000007fefcc50000            0x52000                0x1 2019-09-19 18:18:03 UTC+0000   C:\windows\system32\msv1_0.DLL
+0x000007fefcfa0000            0x14000                0x1 2019-09-19 18:18:03 UTC+0000   C:\windows\system32\cryptdll.dll
+0x000007fefb820000             0x9000                0x1 2019-09-19 18:18:06 UTC+0000   C:\windows\system32\wsmplpxy.dll
+0x000007fef06f0000            0x30000                0x2 2019-09-19 18:18:28 UTC+0000   c:\windows\system32\dnsrslvr.dll
+0x000007fef8140000             0x7000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\System32\dnsext.dll
+************************************************************************
+LogonUI.exe pid:    372
+Command line : "LogonUI.exe" /flags:0x0
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff110000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\LogonUI.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff860000           0x203000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefeff0000            0x2e000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefdc10000            0xdb000                0xe 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000               0x3d 2019-09-16 18:54:39 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007feff320000            0xd8000                0x9 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefbdc0000           0x1de000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\authui.dll
+0x000007fefc220000           0x10a000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\CRYPTUI.dll
+0x000007fefd570000           0x16d000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefbab0000           0x1f4000                0x6 2019-09-16 18:54:39 UTC+0000   C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007feff2a0000            0x71000                0xa 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefc1c0000            0x56000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\UxTheme.dll
+0x000007fefb120000           0x216000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.23508_none_145555328b95eaaa\gdiplus.dll
+0x000007fefc0c0000            0xf2000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\DUI70.dll
+0x000007fefc070000            0x43000                0x3 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\DUser.dll
+0x000007fefbce0000            0x3b000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\SndVolSSO.DLL
+0x000007fefc060000             0xb000                0x2 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\HID.DLL
+0x000007fefba10000            0x4b000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\System32\MMDevApi.dll
+0x000007fefaff0000           0x12c000                0x4 2019-09-16 18:54:39 UTC+0000   C:\windows\System32\PROPSYS.dll
+0x000007feff0c0000           0x1d7000                0x2 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000                0x4 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd540000            0x1a000                0x2 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefc040000            0x18000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\dwmapi.dll
+0x000007fefb340000            0x35000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\xmllite.dll
+0x000007fefae80000           0x161000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\WindowsCodecs.dll
+0x000007fefbdb0000             0x8000                0x1 2019-09-16 18:54:39 UTC+0000   C:\windows\system32\WINBRAND.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:54:41 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefbcc0000            0x18000                0x1 2019-09-16 18:54:41 UTC+0000   C:\windows\System32\VaultCredProvider.dll
+0x000007fefb940000            0x11000                0x1 2019-09-16 18:54:41 UTC+0000   C:\windows\system32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x2 2019-09-16 18:54:41 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefb900000            0x32000                0x1 2019-09-16 18:54:41 UTC+0000   C:\windows\system32\SmartcardCredentialProvider.dll
+0x000007fefd860000            0x3b000                0x1 2019-09-16 18:54:41 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefb960000            0x23000                0x1 2019-09-16 18:54:42 UTC+0000   C:\windows\system32\certCredProvider.dll
+0x000007fefb600000            0x68000                0x1 2019-09-16 18:54:44 UTC+0000   C:\windows\system32\rasplap.dll
+0x000007fefb590000            0x62000                0x1 2019-09-16 18:54:45 UTC+0000   C:\windows\system32\RASAPI32.dll
+0x000007fefba90000            0x1c000                0x1 2019-09-16 18:54:46 UTC+0000   C:\windows\system32\rasman.dll
+0x000007feff070000            0x4d000                0x1 2019-09-16 18:54:46 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0x1 2019-09-16 18:54:46 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefb8e0000            0x11000                0x1 2019-09-16 18:54:47 UTC+0000   C:\windows\system32\rtutils.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:54:48 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:54:48 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefb7e0000            0x24000                0x1 2019-09-16 18:55:21 UTC+0000   C:\windows\System32\shacct.dll
+0x000007fefb8a0000            0x1d000                0x1 2019-09-16 18:55:21 UTC+0000   C:\windows\system32\SAMLIB.dll
+************************************************************************
+svchost.exe pid:    716
+Command line : C:\windows\system32\svchost.exe -k LocalServiceNoNetwork
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:54:53 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0x9 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x5a 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x65 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000               0x18 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000               0x18 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0xd 2019-09-16 18:54:53 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefaca0000            0xb0000                0x1 2019-09-16 18:54:54 UTC+0000   c:\windows\system32\bfe.dll
+0x000007fefcef0000            0x2f000                0x4 2019-09-16 18:54:55 UTC+0000   c:\windows\system32\AUTHZ.dll
+0x000007fefbcb0000             0xb000                0x1 2019-09-16 18:54:55 UTC+0000   c:\windows\system32\slc.dll
+0x000007fefd2e0000            0x25000                0x4 2019-09-16 18:54:55 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fefc790000             0xd000                0x1 2019-09-16 18:54:56 UTC+0000   C:\windows\system32\pcwum.dll
+0x000007fefd430000            0x14000                0x2 2019-09-16 18:54:56 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefabd0000            0xce000                0x1 2019-09-16 18:55:05 UTC+0000   c:\windows\system32\mpssvc.dll
+0x000007fefc610000            0xbb000                0x4 2019-09-16 18:55:05 UTC+0000   c:\windows\system32\FirewallAPI.dll
+0x000007fefc600000             0xc000                0x6 2019-09-16 18:55:05 UTC+0000   c:\windows\system32\VERSION.dll
+0x000007fefb6b0000            0x53000                0x1 2019-09-16 18:55:05 UTC+0000   c:\windows\system32\fwpuclnt.dll
+0x000007fefda90000             0x8000               0x11 2019-09-16 18:55:05 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefd810000            0x36000                0x1 2019-09-16 18:55:05 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007feff2a0000            0x71000                0x3 2019-09-16 18:55:11 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefd8b0000            0x1e000                0x3 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x3 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x4 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\GPAPI.dll
+0x000007feff070000            0x4d000                0x8 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefb850000            0x27000                0x3 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x3 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefb690000            0x11000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:55:12 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:55:12 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefbda0000             0xa000                0x1 2019-09-16 18:55:16 UTC+0000   C:\windows\system32\wfapigp.dll
+0x000007fefc5d0000            0x2d000                0x2 2019-09-16 18:55:19 UTC+0000   C:\windows\system32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x2 2019-09-16 18:55:19 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefce70000            0x22000                0x1 2019-09-16 19:01:29 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fef8b00000            0x2c000                0x1 2019-09-16 19:08:59 UTC+0000   c:\windows\system32\dps.dll
+0x000007feff320000            0xd8000                0x4 2019-09-16 19:09:03 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 19:09:03 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fef89c0000           0x127000                0x1 2019-09-16 19:09:03 UTC+0000   C:\Windows\system32\taskschd.dll
+0x000007fef90b0000            0x74000                0x1 2019-09-16 19:13:23 UTC+0000   C:\windows\System32\netprofm.dll
+0x000007fefc000000            0x15000                0x1 2019-09-16 19:13:23 UTC+0000   C:\windows\System32\nlaapi.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 19:13:23 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 19:13:23 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fef8550000             0xc000                0x1 2019-09-16 19:13:23 UTC+0000   C:\windows\System32\npmproxy.dll
+0x000007fef8150000            0x19000                0x4 2019-09-16 19:16:10 UTC+0000   C:\windows\system32\wdi.dll
+0x000007fef7f30000             0xd000                0x1 2019-09-16 19:16:35 UTC+0000   C:\windows\system32\wdiasqmmodule.dll
+0x000007fef8cb0000            0x1d000                0x2 2019-09-16 19:26:12 UTC+0000   C:\windows\system32\radardt.dll
+0x000007fefb940000            0x11000                0x2 2019-09-16 19:26:12 UTC+0000   C:\windows\system32\WTSAPI32.dll
+************************************************************************
+spoolsv.exe pid:   1044
+Command line : C:\windows\System32\spoolsv.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff590000            0x8c000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\spoolsv.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:55:36 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:55:36 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:55:36 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefb560000            0x2c000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\POWRPROF.dll
+0x000007feff0c0000           0x1d7000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007feff860000           0x203000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefd540000            0x1a000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefcb40000            0x5b000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\DNSAPI.dll
+0x000007feff070000            0x4d000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000             0xffff 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:55:38 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x000007fefbcb0000             0xb000                0x1 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\slc.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:55:38 UTC+0000   C:\windows\System32\credssp.dll
+0x000007fefb4e0000            0x50000                0x4 2019-09-16 18:57:40 UTC+0000   C:\windows\System32\clusapi.dll
+0x000007fefcfa0000            0x14000                0x3 2019-09-16 18:57:40 UTC+0000   C:\windows\System32\cryptdll.dll
+0x000007fefb850000            0x27000                0x4 2019-09-16 18:57:40 UTC+0000   C:\windows\System32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x4 2019-09-16 18:57:40 UTC+0000   C:\windows\System32\WINNSI.DLL
+0x000007fefccc0000            0x55000                0x4 2019-09-16 18:57:41 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:57:41 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:57:41 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefb7d0000             0x8000                0x1 2019-09-16 18:57:48 UTC+0000   C:\windows\System32\rasadhlp.dll
+0x000007fefb6b0000            0x53000                0x1 2019-09-16 18:57:49 UTC+0000   C:\windows\System32\fwpuclnt.dll
+0x000007fefa430000            0xf2000                0x3 2019-09-16 18:57:51 UTC+0000   C:\windows\System32\localspl.dll
+0x000007fefa410000            0x12000                0x9 2019-09-16 18:57:53 UTC+0000   C:\windows\System32\SPOOLSS.DLL
+0x000007fefcfc0000            0x23000                0x4 2019-09-16 18:57:53 UTC+0000   C:\windows\System32\srvcli.dll
+0x000007fefd570000           0x16d000                0x7 2019-09-16 18:57:53 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x8 2019-09-16 18:57:53 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefd860000            0x3b000                0x4 2019-09-16 18:57:53 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefa360000            0x71000                0x4 2019-09-16 18:58:00 UTC+0000   C:\windows\system32\winspool.drv
+0x000007fefb4d0000            0x10000                0x1 2019-09-16 18:58:09 UTC+0000   C:\windows\System32\PrintIsolationProxy.dll
+0x000007fefa320000            0x34000                0x1 2019-09-16 18:58:09 UTC+0000   C:\windows\System32\tcpmon.dll
+0x000007fefa310000             0xb000                0x1 2019-09-16 18:58:11 UTC+0000   C:\windows\System32\snmpapi.dll
+0x000007fefa2f0000            0x14000                0x1 2019-09-16 18:58:13 UTC+0000   C:\windows\System32\wsnmp32.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 18:58:13 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefa0f0000           0x1f2000                0x1 2019-09-16 18:58:16 UTC+0000   C:\windows\System32\msxml6.dll
+0x000007feff2a0000            0x71000                0x2 2019-09-16 18:58:24 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefce70000            0x22000                0x1 2019-09-16 18:58:24 UTC+0000   C:\windows\System32\bcrypt.dll
+0x000007fefa0e0000             0xf000                0x1 2019-09-16 18:58:39 UTC+0000   C:\windows\System32\usbmon.dll
+0x000007fefa0d0000             0x7000                0x1 2019-09-16 18:58:39 UTC+0000   C:\windows\system32\wls0wndh.dll
+0x000007fefa090000            0x3a000                0x1 2019-09-16 18:58:43 UTC+0000   C:\windows\System32\WSDMon.dll
+0x000007fef9b60000            0x91000                0x1 2019-09-16 18:58:45 UTC+0000   C:\windows\System32\wsdapi.dll
+0x000007fef9a40000           0x11f000                0x1 2019-09-16 18:58:45 UTC+0000   C:\windows\System32\webservices.dll
+0x000007fefc610000            0xbb000                0x1 2019-09-16 18:58:46 UTC+0000   C:\windows\System32\FirewallAPI.dll
+0x000007fefc600000             0xc000                0x3 2019-09-16 18:58:46 UTC+0000   C:\windows\System32\VERSION.dll
+0x000007fefa050000            0x33000                0x2 2019-09-16 18:58:53 UTC+0000   C:\Windows\system32\FunDisc.dll
+0x000007fefbfa0000            0x19000                0x3 2019-09-16 18:58:53 UTC+0000   C:\Windows\system32\ATL.DLL
+0x000007fefa040000            0x10000                0x1 2019-09-16 18:58:53 UTC+0000   C:\Windows\system32\fdPnp.dll
+0x000007fefa010000             0xe000                0x1 2019-09-16 18:58:57 UTC+0000   C:\windows\system32\spool\PRTPROCS\x64\winprint.dll
+0x000007fefd8b0000            0x1e000                0x2 2019-09-16 18:58:57 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x2 2019-09-16 18:58:57 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc7d0000            0x1b000                0x3 2019-09-16 18:58:57 UTC+0000   C:\windows\System32\GPAPI.dll
+0x000007fef9980000            0xbd000                0x1 2019-09-16 18:59:01 UTC+0000   C:\windows\system32\spool\PRTPROCS\x64\TPWinPrn.dll
+0x000007fef9c60000             0x9000                0x1 2019-09-16 18:59:04 UTC+0000   C:\windows\System32\WSOCK32.dll
+0x000007fef9c40000            0x19000                0x1 2019-09-16 18:59:06 UTC+0000   C:\windows\System32\RESUTILS.dll
+0x000007fef9790000            0x1c000                0x1 2019-09-16 18:59:14 UTC+0000   C:\windows\System32\FontSub.dll
+0x000007fefc000000            0x15000                0x1 2019-09-16 18:59:14 UTC+0000   C:\windows\system32\NLAapi.dll
+0x000007fef9760000            0x15000                0x1 2019-09-16 18:59:14 UTC+0000   C:\windows\system32\napinsp.dll
+0x000007fef96f0000             0xb000                0x1 2019-09-16 18:59:16 UTC+0000   C:\windows\System32\winrnr.dll
+0x000007fefc340000            0x16000                0x1 2019-09-16 18:59:19 UTC+0000   C:\windows\System32\netapi32.dll
+0x000007fefc330000             0xc000                0x3 2019-09-16 18:59:19 UTC+0000   C:\windows\System32\netutils.dll
+0x000007fefc020000            0x15000                0x1 2019-09-16 18:59:19 UTC+0000   C:\windows\System32\wkscli.dll
+0x000007fefb540000            0x14000                0x1 2019-09-16 18:59:19 UTC+0000   C:\windows\System32\SAMCLI.DLL
+0x000007fefb8a0000            0x1d000                0x1 2019-09-16 18:59:19 UTC+0000   C:\windows\System32\SAMLIB.dll
+0x000007fefbd90000             0xc000                0x1 2019-09-16 18:59:23 UTC+0000   C:\windows\System32\dsrole.dll
+0x000007fefc7f0000            0x12000                0x1 2019-09-16 18:59:23 UTC+0000   C:\windows\System32\DEVRTL.dll
+0x000007fefc810000            0x1f000                0x1 2019-09-16 18:59:23 UTC+0000   C:\windows\System32\SPINF.dll
+0x000007fef9550000            0xbe000                0x1 2019-09-16 18:59:23 UTC+0000   C:\windows\System32\win32spl.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:59:24 UTC+0000   C:\windows\System32\CRYPTSP.dll
+0x000007fefd450000            0x3d000                0x1 2019-09-16 18:59:24 UTC+0000   C:\windows\System32\WINSTA.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:59:24 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fef9c90000             0xf000                0x1 2019-09-16 18:59:46 UTC+0000   C:\windows\System32\cscapi.dll
+************************************************************************
+svchost.exe pid:   1092
+Command line : C:\windows\System32\svchost.exe -k utcsvc
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0x3 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x23 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x27 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000                0x9 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x9 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-16 18:55:41 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0x5 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefaa30000           0x157000                0x1 2019-09-16 18:55:41 UTC+0000   c:\windows\system32\diagtrack.dll
+0x000007feff320000            0xd8000                0x1 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007feff070000            0x4d000                0xd 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000               0x18 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefce70000            0x22000                0x2 2019-09-16 18:55:41 UTC+0000   c:\windows\system32\bcrypt.dll
+0x000007feff2a0000            0x71000                0x2 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefb340000            0x35000                0x1 2019-09-16 18:55:41 UTC+0000   c:\windows\system32\XmlLite.dll
+0x000007fefa9b0000            0x71000                0x1 2019-09-16 18:55:41 UTC+0000   c:\windows\system32\WINHTTP.dll
+0x000007fefa850000            0x65000                0x1 2019-09-16 18:55:46 UTC+0000   c:\windows\system32\webio.dll
+0x000007fefd570000           0x16d000                0x1 2019-09-16 18:55:46 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x1 2019-09-16 18:55:46 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefb940000            0x11000                0x1 2019-09-16 18:55:46 UTC+0000   c:\windows\system32\WTSAPI32.dll
+0x000007fefd8b0000            0x1e000                0x1 2019-09-16 18:55:46 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x1 2019-09-16 18:55:46 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefc960000            0x4c000                0x1 2019-09-16 18:56:30 UTC+0000   C:\windows\system32\bcryptprimitives.dll
+0x000007fef9e40000            0x12000                0x1 2019-09-16 18:56:33 UTC+0000   C:\windows\system32\aepic.dll
+0x00000000752a0000             0x3000                0x1 2019-09-16 18:56:34 UTC+0000   C:\windows\system32\sfc.dll
+0x000007fefa8c0000            0x10000                0x1 2019-09-16 18:56:34 UTC+0000   C:\windows\system32\sfc_os.DLL
+0x000007fefc600000             0xc000                0x1 2019-09-16 18:56:34 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fefd2e0000            0x25000                0x3 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\SspiCli.dll
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\credssp.dll
+0x000007fefccc0000            0x55000                0x4 2019-09-16 18:56:38 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefb850000            0x27000                0x4 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x4 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\WINNSI.DLL
+0x000007fefb690000            0x11000                0x1 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 18:56:38 UTC+0000   C:\windows\System32\dhcpcsvc.DLL
+0x000007fefcb40000            0x5b000                0x2 2019-09-16 19:03:36 UTC+0000   C:\windows\System32\DNSAPI.dll
+0x000007fefb7d0000             0x8000                0x1 2019-09-16 19:04:01 UTC+0000   C:\windows\System32\rasadhlp.dll
+************************************************************************
+dns.exe pid:   1116
+Command line : C:\windows\system32\dns.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ffe70000            0xd7000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\dns.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff070000            0x4d000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\NSI.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefbd90000             0xc000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\dsrole.dll
+0x000007fefc330000             0xc000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\netutils.dll
+0x000007fefcb10000            0x30000             0xffff 2019-09-16 18:55:41 UTC+0000   C:\windows\system32\logoncli.dll
+0x000007fefb540000            0x14000             0xffff 2019-09-16 18:55:43 UTC+0000   C:\windows\system32\samcli.dll
+0x000007fefdec0000            0x52000             0xffff 2019-09-16 18:55:43 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefcb40000            0x5b000             0xffff 2019-09-16 18:55:43 UTC+0000   C:\windows\system32\DNSAPI.dll
+0x000007fefa820000            0x27000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\NTDSAPI.dll
+0x000007feff2a0000            0x71000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefb850000            0x27000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefc600000             0xc000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fefb380000             0xa000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\ktmw32.dll
+0x000007fefce70000            0x22000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fefa940000            0x3a000             0xffff 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\MPRAPI.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 18:55:45 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 18:55:57 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 18:55:57 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd380000             0xf000                0x1 2019-09-16 18:55:57 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefb690000            0x11000                0x1 2019-09-16 18:56:01 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 18:56:01 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fefccc0000            0x55000                0x3 2019-09-16 18:56:01 UTC+0000   C:\windows\system32\mswsock.dll
+0x000007fefccb0000             0x7000                0x1 2019-09-16 18:56:01 UTC+0000   C:\windows\System32\wship6.dll
+0x000007fefc6d0000             0x7000                0x1 2019-09-16 18:56:01 UTC+0000   C:\windows\System32\wshtcpip.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefcd40000            0xb8000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\kerberos.DLL
+0x000007fefcfa0000            0x14000                0x2 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\cryptdll.dll
+0x000007fefd520000             0xf000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefcc50000            0x52000                0x1 2019-09-16 18:56:21 UTC+0000   C:\windows\system32\msv1_0.DLL
+************************************************************************
+svchost.exe pid:   1464
+Command line : C:\windows\system32\svchost.exe -k regsvc
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 18:57:46 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 18:57:46 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 18:57:46 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 18:57:46 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 18:57:46 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefa530000            0x2b000                0x1 2019-09-16 18:57:52 UTC+0000   c:\windows\system32\regsvc.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 18:57:52 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 18:57:52 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 18:57:52 UTC+0000   C:\windows\system32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 18:57:52 UTC+0000   C:\windows\system32\credssp.dll
+************************************************************************
+svchost.exe pid:    268
+Command line : C:\windows\System32\svchost.exe -k termsvcs
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff400000             0xb000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\svchost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 19:03:25 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000                0x7 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000               0x22 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000               0x24 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000                0x8 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000                0x8 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x3 2019-09-16 19:03:25 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x000007fefdc10000            0xdb000                0x9 2019-09-16 19:03:25 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fef8da0000            0xaa000                0x1 2019-09-16 19:03:25 UTC+0000   c:\windows\system32\termsrv.dll
+0x000007fef9700000             0xa000                0x3 2019-09-16 19:03:33 UTC+0000   c:\windows\system32\ICAAPI.dll
+0x000007feff070000            0x4d000                0x4 2019-09-16 19:03:33 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0xb 2019-09-16 19:03:33 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefcef0000            0x2f000                0x1 2019-09-16 19:03:33 UTC+0000   c:\windows\system32\AUTHZ.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 19:03:34 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007feff320000            0xd8000                0x2 2019-09-16 19:03:34 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-16 19:03:34 UTC+0000   C:\windows\System32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-16 19:03:34 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 19:03:34 UTC+0000   C:\windows\System32\RpcRtRemote.dll
+0x000007fef8cf0000            0x11000                0x1 2019-09-16 19:03:51 UTC+0000   C:\windows\system32\lsmproxy.dll
+0x000007fefbcb0000             0xb000                0x1 2019-09-16 19:04:01 UTC+0000   C:\windows\System32\slc.dll
+0x000007fef8cd0000            0x1b000                0x2 2019-09-16 19:04:26 UTC+0000   C:\windows\System32\REGAPI.dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 19:04:28 UTC+0000   C:\windows\System32\secur32.dll
+0x000007fefd2e0000            0x25000                0x3 2019-09-16 19:04:28 UTC+0000   C:\windows\System32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 19:04:29 UTC+0000   C:\windows\System32\credssp.dll
+0x000007fef8b70000            0x2a000                0x1 2019-09-16 19:04:36 UTC+0000   C:\windows\system32\rdpcorekmts.dll
+0x000007fefb850000            0x27000                0x3 2019-09-16 19:04:36 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x3 2019-09-16 19:04:36 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefd570000           0x16d000                0x2 2019-09-16 19:04:36 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x2 2019-09-16 19:04:36 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fef8b50000            0x17000                0x1 2019-09-16 19:04:40 UTC+0000   C:\windows\System32\rdpwsx.DLL
+0x000007fef8b30000            0x16000                0x1 2019-09-16 19:04:46 UTC+0000   C:\windows\System32\tlscsp.dll
+0x000007fefc5d0000            0x2d000                0x1 2019-09-16 19:05:15 UTC+0000   C:\windows\System32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x1 2019-09-16 19:05:15 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefb690000            0x11000                0x1 2019-09-16 19:05:22 UTC+0000   C:\windows\System32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-16 19:05:22 UTC+0000   C:\windows\System32\dhcpcsvc.DLL
+0x000007fefd450000            0x3d000                0x1 2019-09-16 19:05:23 UTC+0000   C:\windows\System32\winsta.dll
+************************************************************************
+msdtc.exe pid:   1976
+Command line : C:\windows\System32\msdtc.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x000000013f4a0000            0x28000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\System32\msdtc.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007feff860000           0x203000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fef86f0000           0x185000             0xffff 2019-09-16 19:12:01 UTC+0000   C:\windows\System32\MSDTCTM.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-16 19:12:02 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-16 19:12:02 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-16 19:12:02 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fef8630000            0xbc000             0xffff 2019-09-16 19:12:02 UTC+0000   C:\windows\System32\MSDTCPRX.dll
+0x000007fef85d0000            0x60000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\MTXCLU.DLL
+0x000007feff070000            0x4d000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fefb4e0000            0x50000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\CLUSAPI.dll
+0x000007fefcfa0000            0x14000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\cryptdll.dll
+0x000007fef9c40000            0x19000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\RESUTILS.dll
+0x000007fefc600000             0xc000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\VERSION.dll
+0x000007fefce70000            0x22000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\bcrypt.dll
+0x000007fefb380000             0xa000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\ktmw32.dll
+0x000007fef85a0000            0x25000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\MSDTCLOG.dll
+0x000007fef8560000            0x3b000             0xffff 2019-09-16 19:12:11 UTC+0000   C:\windows\System32\WINMM.dll
+0x000007fef8910000            0x14000             0xffff 2019-09-16 19:12:20 UTC+0000   C:\windows\System32\XOLEHLP.dll
+0x000007fefccc0000            0x55000             0xffff 2019-09-16 19:12:20 UTC+0000   C:\windows\System32\MSWSOCK.dll
+0x000007fefcb40000            0x5b000             0xffff 2019-09-16 19:12:20 UTC+0000   C:\windows\System32\DNSAPI.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-16 19:12:21 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-16 19:12:21 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x1 2019-09-16 19:12:26 UTC+0000   C:\windows\System32\CRYPTBASE.dll
+0x0000000075020000           0x13e000                0x2 2019-09-16 19:12:26 UTC+0000   C:\windows\System32\COMRES.DLL
+0x0000000075290000             0x7000                0x1 2019-09-16 19:12:26 UTC+0000   C:\windows\System32\msdtcVSp1res.dll
+0x000007fef8110000            0x2d000                0x1 2019-09-16 19:18:07 UTC+0000   C:\windows\System32\MTxOCI.Dll
+0x000007fefd120000             0xb000                0x1 2019-09-16 19:20:00 UTC+0000   C:\windows\System32\secur32.dll
+0x000007fefd2e0000            0x25000                0x2 2019-09-16 19:20:00 UTC+0000   C:\windows\System32\SSPICLI.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-16 19:20:00 UTC+0000   C:\windows\System32\credssp.dll
+0x000007fefd430000            0x14000                0x1 2019-09-16 19:20:00 UTC+0000   C:\windows\System32\RpcRtRemote.dll
+0x000007fefc5d0000            0x2d000                0x1 2019-09-16 19:20:10 UTC+0000   C:\windows\System32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x1 2019-09-16 19:20:10 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-16 19:21:30 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefc610000            0xbb000                0x1 2019-09-16 19:21:30 UTC+0000   C:\Windows\system32\FirewallAPI.dll
+0x000007feff2a0000            0x71000                0x1 2019-09-16 19:21:46 UTC+0000   C:\windows\system32\SHLWAPI.dll
+************************************************************************
+WmiPrvSE.exe pid:   1900
+Command line : C:\windows\system32\wbem\wmiprvse.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x000000013fd80000            0x6f000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\wbem\wmiprvse.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007feff860000           0x203000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fef9610000            0xd4000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbem\FastProx.dll
+0x000007fef98a0000            0x7a000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbemcomn2.dll
+0x000007fefce70000            0x22000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007feff070000            0x4d000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\NSI.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefa820000            0x27000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\NTDSAPI.dll
+0x000007fef8470000            0x13000             0xffff 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\NCObjAPI.DLL
+0x000007fefeff0000            0x2e000                0x2 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefc5d0000            0x2d000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\ntmarta.dll
+0x000007fefdec0000            0x52000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\WLDAP32.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fef9780000             0xe000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbem\wbemprox.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fef8ee0000            0x14000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbem\wbemsvc.dll
+0x000007fef8eb0000            0x21000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbem\wmiutils.dll
+0x000007fef04f0000           0x1fa000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\wbem\cimwin32.dll
+0x000007fef04a0000            0x44000                0x1 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\framedynos.dll
+0x000007fefd2e0000            0x25000                0x4 2019-09-19 18:18:28 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fef0480000            0x20000                0x1 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\dskquota.dll
+0x000007fefc340000            0x16000                0x2 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\NETAPI32.dll
+0x000007fefc330000             0xc000                0x8 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\netutils.dll
+0x000007fefcfc0000            0x23000                0xc 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\srvcli.dll
+0x000007fefc020000            0x15000                0x7 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\wkscli.dll
+0x000007fefb540000            0x14000                0xf 2019-09-19 18:18:29 UTC+0000   C:\windows\system32\SAMCLI.DLL
+0x000007fefcb10000            0x30000                0x5 2019-09-19 18:18:29 UTC+0000   C:\windows\system32\LOGONCLI.DLL
+0x000007fefd120000             0xb000                0x2 2019-09-19 18:18:29 UTC+0000   C:\windows\System32\Secur32.dll
+0x000007feff2a0000            0x71000                0x2 2019-09-19 18:18:29 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefe260000           0xd89000                0x1 2019-09-19 18:18:29 UTC+0000   C:\windows\system32\SHELL32.dll
+0x000007fefbdb0000             0x8000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\WINBRAND.dll
+0x0000000075270000             0x3000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\SECURITY.DLL
+0x000007fefc930000             0xa000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\credssp.dll
+0x000007fefcab0000            0x58000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\schannel.DLL
+0x000007fefd570000           0x16d000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fef75b0000            0x12000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\BROWCLI.DLL
+0x000007fef8af0000             0xa000                0x4 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\SCHEDCLI.DLL
+0x000007fefbd90000             0xc000                0x2 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\DSROLE.DLL
+0x000007fef9c90000             0xf000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\cscapi.dll
+0x000007fefb940000            0x11000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\WTSAPI32.dll
+0x000007fefd450000            0x3d000                0x1 2019-09-19 18:18:39 UTC+0000   C:\windows\system32\WINSTA.dll
+0x000007fefd540000            0x1a000                0x2 2019-09-19 18:18:40 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefd810000            0x36000                0x6 2019-09-19 18:18:40 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x0000000075260000             0x3000                0x1 2019-09-19 18:18:40 UTC+0000   C:\windows\system32\WMI.DLL
+0x000007fefb560000            0x2c000                0x1 2019-09-19 18:18:40 UTC+0000   C:\windows\system32\POWRPROF.dll
+0x000007feff0c0000           0x1d7000                0x1 2019-09-19 18:18:40 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fef8d10000             0xb000                0x1 2019-09-19 18:18:41 UTC+0000   C:\windows\System32\perfos.dll
+0x000007fef07e0000            0x44000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\wbem\ntevt.dll
+0x000007fef0790000            0x4e000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\PROVTHRD.dll
+0x000007fef0770000            0x17000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\msvcirt.dll
+0x000007feef520000            0x86000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\wbemcomn.dll
+0x000007fef9c60000             0x9000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\WSOCK32.dll
+0x000007fefcf30000            0x6d000                0x1 2019-09-19 18:18:46 UTC+0000   C:\windows\system32\wevtapi.dll
+0x000007fef7f40000             0x9000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\servicing\CbsApi.dll
+0x000007fefb850000            0x27000                0x4 2019-09-19 18:19:29 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x4 2019-09-19 18:19:29 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefb690000            0x11000                0x1 2019-09-19 18:19:29 UTC+0000   C:\windows\system32\dhcpcsvc6.DLL
+0x000007fefb670000            0x18000                0x1 2019-09-19 18:19:29 UTC+0000   C:\windows\system32\dhcpcsvc.DLL
+0x000007fefcb40000            0x5b000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\DNSAPI.dll
+************************************************************************
+wsmprovhost.ex pid:   1692
+Command line : C:\windows\system32\wsmprovhost.exe -Embedding
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x000000013f0d0000             0xc000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\wsmprovhost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\USER32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\GDI32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff860000           0x203000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fef92c0000           0x284000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\WsmSvc.DLL
+0x000007fef9920000            0x5b000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\miutils.dll
+0x000007fefd570000           0x16d000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fef9ca0000            0x20000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\mi.dll
+0x000007fefc340000            0x16000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\NETAPI32.dll
+0x000007fefc330000             0xc000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\netutils.dll
+0x000007fefcfc0000            0x23000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\srvcli.dll
+0x000007fefc020000            0x15000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\wkscli.dll
+0x000007fefbd90000             0xc000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\DSROLE.DLL
+0x000007fefeff0000            0x2e000                0x4 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x2 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fefd380000             0xf000                0x2 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fefcd20000            0x18000                0x3 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefb820000             0x9000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\wsmplpxy.dll
+0x000007fefa9b0000            0x71000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\winhttp.dll
+0x000007fefa850000            0x65000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\webio.dll
+0x000007fef8c80000            0x21000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\pwrshplugin.dll
+0x000007fefbfa0000            0x19000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\ATL.DLL
+0x000007fef8010000            0x6f000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\mscoree.dll
+0x000007fef7f70000            0x98000                0x1 2019-09-19 18:18:37 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+0x000007feff2a0000            0x71000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefc600000             0xc000                0xc 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fef6c10000           0x990000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+0x000007fef7e30000            0xf7000             0xffff 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\MSVCR120_CLR0400.dll
+0x000007fef5740000          0x14c4000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\mscorlib\0b312f3f14daccc8bdc79fdcd75a45e2\mscorlib.ni.dll
+0x000007fef4b70000           0xbd0000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System\9a2715c05cb7bc5d06a7cc5801c474ca\System.ni.dll
+0x000007fef41e0000           0x98b000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Core\82c05157a6f4f6a2690055ba9d050986\System.Core.ni.dll
+0x000007fef21b0000          0x2028000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\a86698074f28597f1fc5ceabfed6fed6\System.Management.Automation.ni.dll
+0x000007fef9150000            0x16000                0x1 2019-09-19 18:18:37 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\nlssorting.dll
+0x00000000779b0000             0x7000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\psapi.dll
+0x000007fef7d90000            0x9c000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\Microsoft.Mf49f6405#\63f34843ccc6b844b495a8a1e80457a9\Microsoft.Management.Infrastructure.ni.dll
+0x000007fef1910000           0x892000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Xml\c971f0ba8d03fe3fb35b6f1de636a882\System.Xml.ni.dll
+0x000007fef7c20000           0x162000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Dired13b18a9#\ac85ae4aa8ff6e57ebca2ed2058e2548\System.DirectoryServices.ni.dll
+0x000007fef7ac0000           0x15f000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Management\e003600ead9f44a46b649542f7c07aca\System.Management.ni.dll
+0x000007fef1000000           0x90b000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Data\38fe60d801112399e578ce150d24f5a6\System.Data.ni.dll
+0x000007fef7770000           0x34d000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll
+0x000007feff070000            0x4d000                0x9 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000                0xb 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\NSI.dll
+0x000007fef8bd0000            0x50000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Numerics\e69882ec1b12350d7961be5fd846e77d\System.Numerics.ni.dll
+0x000007fef80c0000            0x2c000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Confe64a9051#\d4ca7c5a852d9e8b6b8ddd04cf61a07b\System.Configuration.Install.ni.dll
+0x000007fef7690000            0xd7000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Transactions\7994ff089eb7da4c28fb6e37af1c908d\System.Transactions.ni.dll
+0x000007fef7640000            0x4d000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\Microsoft.Net\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll
+0x000007fefe260000           0xd89000                0x4 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\shell32.dll
+0x000007fefb530000             0x3000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\api-ms-win-core-xstate-l2-1-0.dll
+0x000007fef0ef0000           0x105000                0x1 2019-09-19 18:18:37 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+0x000007fefd8b0000            0x1e000                0x2 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x3 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefd2e0000            0x25000                0x4 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\SspiCli.dll
+0x000007fef75d0000            0x62000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P6f792626#\0fc7b24ed63353ef378436ad3778407c\Microsoft.PowerShell.Security.ni.dll
+0x000007fefd120000             0xb000                0x2 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\secur32.dll
+0x000007fef0dc0000           0x121000                0x1 2019-09-19 18:18:37 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Configuration\478aa7abe92f2fd1fe94658518f5f39a\System.Configuration.ni.dll
+0x000007fefd860000            0x3b000                0x2 2019-09-19 18:18:37 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fef0ca0000           0x117000                0x3 2019-09-19 18:18:38 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\diasymreader.dll
+0x000007fefd320000            0x57000             0xffff 2019-09-19 18:18:38 UTC+0000   C:\windows\system32\apphelp.dll
+0x000007fef0960000           0x331000                0x1 2019-09-19 18:18:38 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Runteb92aa12#\8cf302fbd3a2c1b404957da062b373f1\System.Runtime.Serialization.ni.dll
+0x000007fef8090000            0x25000                0x1 2019-09-19 18:18:38 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\SMDiagnostics\f9c76a0bdb7aaf37e5514c0cfe500231\SMDiagnostics.ni.dll
+0x000007fef0860000            0xf2000                0x1 2019-09-19 18:18:38 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\System.Servd1dec626#\11b7618e5028e32574cd06bae3e1b423\System.ServiceModel.Internals.ni.dll
+0x000007feef770000           0xd0f000                0x1 2019-09-19 18:18:38 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\983fbad78790c2b963e79a3652c2f27f\Microsoft.PowerShell.Commands.Utility.ni.dll
+0x000007feef5b0000           0x1c0000                0x1 2019-09-19 18:18:38 UTC+0000   C:\windows\assembly\NativeImages_v4.0.30319_64\Microsoft.Pae3498d9#\c28e6e76c32144587c0080315f0a3586\Microsoft.PowerShell.Commands.Management.ni.dll
+0x000007fef9200000             0xc000                0x1 2019-09-19 18:19:30 UTC+0000   C:\Windows\Microsoft.NET\Framework64\v4.0.30319\wminet_utils.dll
+0x000007fef8eb0000            0x21000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\wbem\wmiutils.dll
+0x000007fef98a0000            0x7a000                0x3 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\wbemcomn2.dll
+0x000007fefce70000            0x22000                0x3 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fef9780000             0xe000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\wbem\wbemprox.dll
+0x000007fefcb40000            0x5b000                0x2 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\DNSAPI.dll
+0x000007fefb850000            0x27000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\IPHLPAPI.DLL
+0x000007fefb7c0000             0xb000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\WINNSI.DLL
+0x000007fefb7d0000             0x8000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\rasadhlp.dll
+0x000007fef8ee0000            0x14000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\wbem\wbemsvc.dll
+0x000007fef9610000            0xd4000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\wbem\fastprox.dll
+0x000007fefa820000            0x27000                0x1 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\NTDSAPI.dll
+0x000007fefaff0000           0x12c000                0x4 2019-09-19 18:19:30 UTC+0000   C:\windows\system32\PROPSYS.dll
+0x000007fefbab0000           0x1f4000                0x2 2019-09-19 18:19:30 UTC+0000   C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\comctl32.dll
+0x000007feff6d0000           0x186000                0x1 2019-09-19 18:19:31 UTC+0000   C:\Windows\system32\urlmon.dll
+0x000007fefd850000             0x4000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-ole32-l1-1-0.dll
+0x000007fefd6f0000             0x4000                0x3 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x000007fefd6e0000             0x5000                0x3 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x000007fefd8d0000             0x4000                0x3 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-user32-l1-1-0.dll
+0x000007fefd8a0000             0x4000                0x3 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-version-l1-1-0.dll
+0x000007fefd560000             0x3000                0x3 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x00000000779a0000             0x3000                0x4 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\normaliz.DLL
+0x000007fefdf90000           0x2c9000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\iertutil.dll
+0x000007feff400000           0x2c5000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\WININET.dll
+0x000007fef91f0000             0x4000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-downlevel-advapi32-l2-1-0.dll
+0x000007feff0c0000           0x1d7000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000                0x4 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd540000            0x1a000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\DEVOBJ.dll
+************************************************************************
+HOSTNAME.EXE pid:   1456
+Unable to read PEB for task.
+************************************************************************
+systeminfo.exe pid:   1888
+Unable to read PEB for task.
+************************************************************************
+TrustedInstall pid:    544
+Command line : C:\windows\servicing\TrustedInstaller.exe
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ff9c0000            0x33000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\servicing\TrustedInstaller.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff860000           0x203000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fef9710000            0x47000                0x3 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\wdscore.dll
+0x000007feff320000            0xd8000                0x7 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007fefe260000           0xd89000                0x3 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\SHELL32.dll
+0x000007feff2a0000            0x71000                0x3 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007feef3f0000           0x125000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\dbghelp.dll
+0x000007fefd380000             0xf000                0x2 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007feef2f0000            0xf3000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_6.1.7601.18766_none_675144b3de10d6f7\cbscore.dll
+0x000007fefc600000             0xc000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\VERSION.dll
+0x000007fefd570000           0x16d000                0x6 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\CRYPT32.dll
+0x000007fefd520000             0xf000                0x6 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\MSASN1.dll
+0x000007fefd860000            0x3b000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\WINTRUST.dll
+0x000007fefd8b0000            0x1e000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\USERENV.dll
+0x000007fefd530000             0xf000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\profapi.dll
+0x000007fefb380000             0xa000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\Ktmw32.dll
+0x000007feef280000            0x65000                0x1 2019-09-19 18:18:47 UTC+0000   C:\windows\system32\dpx.dll
+0x000007feeefd0000           0x2a7000                0x4 2019-09-19 18:18:47 UTC+0000   C:\windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_6.1.7601.18766_none_675144b3de10d6f7\wcp.dll
+0x000007fef0730000            0x35000                0x1 2019-09-19 18:18:49 UTC+0000   C:\windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_6.1.7601.18766_none_675144b3de10d6f7\DrUpdate.dll
+0x000007feff0c0000           0x1d7000                0x2 2019-09-19 18:18:49 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000                0x8 2019-09-19 18:18:49 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd540000            0x1a000                0x2 2019-09-19 18:18:49 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fef7f50000            0x18000                0x1 2019-09-19 18:18:49 UTC+0000   C:\windows\system32\MPR.dll
+0x000007feeefb0000            0x13000                0x1 2019-09-19 18:18:49 UTC+0000   C:\windows\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_6.1.7601.18766_none_675144b3de10d6f7\wrpint.dll
+0x000007fef8080000             0xc000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\SxsStore.dll
+0x000007fef97b0000            0x42000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\sqmapi.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fef7f40000             0x9000                0x1 2019-09-19 18:18:50 UTC+0000   C:\windows\servicing\CbsApi.dll
+************************************************************************
+DumpIt.exe pid:    496
+Command line : "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Windows\CCM\Perf\VolH\Image\dns-server.bin 
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x000000013f160000            0x81000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefc340000            0x16000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\NETAPI32.dll
+0x000007fefc330000             0xc000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\netutils.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefcfc0000            0x23000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\srvcli.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007fefc020000            0x15000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\wkscli.dll
+0x000007fefdc10000            0xdb000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\ADVAPI32.dll
+0x000007feff050000            0x1f000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\SYSTEM32\sechost.dll
+0x000007feff860000           0x203000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\USP10.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\OLEAUT32.dll
+0x000007feff070000            0x4d000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\WS2_32.dll
+0x000007fefda90000             0x8000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\NSI.dll
+0x000007feff2a0000            0x71000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\SHLWAPI.dll
+0x000007fefa9b0000            0x71000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\WINHTTP.dll
+0x000007fefa850000            0x65000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\webio.dll
+0x000007fefeff0000            0x2e000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\IMM32.DLL
+0x000007fefd8e0000           0x109000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007fef91e0000             0x3000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\api-ms-win-core-synch-l1-2-0.DLL
+0x000007fefb560000            0x2c000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\PowrProf.dll
+0x000007feff0c0000           0x1d7000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\SETUPAPI.dll
+0x000007fefd810000            0x36000                0x6 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\CFGMGR32.dll
+0x000007fefd540000            0x1a000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\DEVOBJ.dll
+0x000007fefd380000             0xf000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\CRYPTBASE.dll
+0x000007fefd9f0000            0x99000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\CLBCatQ.DLL
+0x000007fef9780000             0xe000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\wbem\wbemprox.dll
+0x000007fef98a0000            0x7a000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\wbemcomn2.dll
+0x000007fefce70000            0x22000                0x2 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\bcrypt.dll
+0x000007fefcd20000            0x18000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\CRYPTSP.dll
+0x000007fefca20000            0x47000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\rsaenh.dll
+0x000007fefd430000            0x14000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\RpcRtRemote.dll
+0x000007fef8ee0000            0x14000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\wbem\wbemsvc.dll
+0x000007fef9610000            0xd4000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\wbem\fastprox.dll
+0x000007fefa820000            0x27000                0x1 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\NTDSAPI.dll
+************************************************************************
+conhost.exe pid:   1884
+Command line : \??\C:\windows\system32\conhost.exe "-1791468671307685437477495726191123346-6562357012023966629-1172155439-911096612
+Service Pack 1
+
+Base                             Size          LoadCount LoadTime                       Path
+------------------ ------------------ ------------------ ------------------------------ ----
+0x00000000ffd60000            0x57000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\system32\conhost.exe
+0x00000000777e0000           0x1ab000             0xffff 1970-01-01 00:00:00 UTC+0000   C:\windows\SYSTEM32\ntdll.dll
+0x00000000776c0000           0x11f000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\kernel32.dll
+0x000007fefd700000            0x6a000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\KERNELBASE.dll
+0x000007fefdf20000            0x67000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\GDI32.dll
+0x00000000775c0000            0xfa000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\USER32.dll
+0x000007feff040000             0xe000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\LPK.dll
+0x000007fefdaa0000            0xca000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\USP10.dll
+0x000007fefde20000            0x9f000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\msvcrt.dll
+0x000007fefeff0000            0x2e000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\IMM32.dll
+0x000007fefd8e0000           0x109000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\MSCTF.dll
+0x000007feff860000           0x203000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\ole32.dll
+0x000007fefdcf0000           0x12d000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\RPCRT4.dll
+0x000007feff320000            0xd8000             0xffff 2019-09-19 18:19:31 UTC+0000   C:\windows\system32\OLEAUT32.dll

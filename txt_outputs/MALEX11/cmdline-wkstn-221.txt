@@ -1,0 +1,145 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    288
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    400
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+smss.exe pid:    468
+************************************************************************
+csrss.exe pid:    476
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    520
+Command line : wininit.exe
+************************************************************************
+winlogon.exe pid:    560
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    600
+Command line : C:\Windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    608
+Command line : C:\Windows\system32\lsass.exe
+************************************************************************
+svchost.exe pid:    692
+Command line : C:\Windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    744
+Command line : C:\Windows\system32\svchost.exe -k RPCSS
+************************************************************************
+svchost.exe pid:    888
+Command line : C:\Windows\System32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:    896
+Command line : C:\Windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    956
+Command line : C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+LogonUI.exe pid:   1016
+Command line : "LogonUI.exe" /flags:0x0 /state0:0xa3b0a855 /state1:0x41c64e6d
+************************************************************************
+dwm.exe pid:     76
+Command line : "dwm.exe"
+************************************************************************
+svchost.exe pid:    388
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    664
+Command line : C:\Windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:   1032
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+svchost.exe pid:   1468
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:   1540
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+spoolsv.exe pid:   1732
+Command line : C:\Windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:   1920
+Command line : C:\Windows\System32\svchost.exe -k utcsvc
+************************************************************************
+MsMpEng.exe pid:   1956
+Command line : "C:\Program Files\Windows Defender\MsMpEng.exe"
+************************************************************************
+vmtoolsd.exe pid:   2012
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+prunsrv.exe pid:   1300
+Command line : "C:\Program Files (x86)\Lincoln\LARIAT\tools\prunsrv.exe" //RS//LARIAT
+************************************************************************
+ruby.exe pid:   1528
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\ruby.exe" -rubygems "C:\Program Files\Puppet Labs\Puppet\service\daemon.rb"
+************************************************************************
+winlogbeat.exe pid:   1576
+Command line : "C:\Program Files\Winlogbeat\winlogbeat.exe" -c "C:\Program Files\Winlogbeat\winlogbeat.yml" -path.home "C:\Program Files\Winlogbeat" -path.data "C:\ProgramData\winlogbeat" -path.logs "C:\ProgramData\winlogbeat\logs"
+************************************************************************
+mdm.exe pid:   1792
+Command line : "C:\Program Files (x86)\Common Files\Microsoft Shared\VS7DEBUG\mdm.exe"
+************************************************************************
+VGAuthService. pid:   1392
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+MemCompression pid:   2052
+************************************************************************
+conhost.exe pid:   2088
+Command line : \??\C:\Windows\system32\conhost.exe 0x4
+************************************************************************
+java.exe pid:   2320
+Command line : 
+************************************************************************
+svchost.exe pid:   2756
+Command line : C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:   2872
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceAndNoImpersonation
+************************************************************************
+dllhost.exe pid:   3100
+Command line : C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+************************************************************************
+msdtc.exe pid:   3360
+Command line : C:\Windows\System32\msdtc.exe
+************************************************************************
+WmiPrvSE.exe pid:   3444
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+NisSrv.exe pid:   3968
+Command line : "C:\Program Files\Windows Defender\NisSrv.exe"
+************************************************************************
+GoogleUpdate.e pid:   3440
+Command line : "C:\Program Files (x86)\Google\Update\GoogleUpdate.exe" /c
+************************************************************************
+rubyw.exe pid:   3020
+Command line : "C:\Program Files\Puppet Labs\Puppet\sys\ruby\bin\rubyw.exe" -I"C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib;C:\Program Files\Puppet Labs\Puppet\hiera\lib;C:\Program Files\Puppet Labs\Puppet\mcollective\lib" -rubygems "C:\Program Files\Puppet Labs\Puppet\mcollective\bin\mcollectived" --daemonize
+************************************************************************
+SearchIndexer. pid:   3468
+Command line : C:\Windows\system32\SearchIndexer.exe /Embedding
+************************************************************************
+wsmprovhost.ex pid:   3228
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+conhost.exe pid:   3480
+Command line : \??\C:\Windows\system32\conhost.exe 0x4
+************************************************************************
+tasklist.exe pid:   3664
+************************************************************************
+MpCmdRun.exe pid:   3296
+Command line : "C:\Program Files\Windows Defender\\MpCmdRun.exe" SpyNetService -RestrictPrivileges -AccessKey B4967C55-902B-9385-95CE-A53C8BEB9ACF -Reinvoke
+************************************************************************
+wsmprovhost.ex pid:   2292
+Command line : C:\Windows\system32\wsmprovhost.exe -Embedding
+************************************************************************
+systeminfo.exe pid:   4092
+************************************************************************
+DumpIt.exe pid:   2544
+Command line : "C:\Windows\CCM\Perf\VolH\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Windows\CCM\Perf\VolH\Image\wkstn-221.bin 
+************************************************************************
+conhost.exe pid:    256
+Command line : \??\C:\Windows\system32\conhost.exe 0x4

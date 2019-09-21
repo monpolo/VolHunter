@@ -1,0 +1,51 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000013ee4fa00 Sysmon.exe             1880 True   False  False    True   True  True    True     
+0x000000013e8da580 winlogbeat.exe         1484 True   False  False    True   True  True    True     
+0x000000013e097670 svchost.exe            2232 True   False  False    True   True  True    True     
+0x000000013e13eb10 msdtc.exe              2548 True   False  False    True   True  True    False    
+0x000000013f150b10 TaniumClient.e         1924 True   False  False    True   True  True    True     
+0x000000013e70f190 svchost.exe             724 True   False  False    True   True  True    False    
+0x000000013fc95b10 svchost.exe            1228 True   False  False    True   True  True    True     
+0x000000013e97eb10 winlogon.exe            480 True   False  False    True   True  True    True     
+0x000000013fb53b10 wsmprovhost.ex         3352 True   False  False    True   True  True    True     
+0x000000013e350720 conhost.exe            1440 True   False  False    True   True  True    True     
+0x000000013f3ee820 svchost.exe             972 True   False  False    True   True  True    True     
+0x000000013e73cb10 svchost.exe             912 True   False  False    True   True  True    True     
+0x000000013e106b10 WmiPrvSE.exe           2980 True   False  False    True   True  True    False    
+0x000000013e75cb10 svchost.exe             380 True   False  False    True   True  True    False    
+0x000000013f197b10 VGAuthService.          300 True   False  False    True   True  True    True     
+0x000000013e3dd830 svchost.exe            2184 True   False  False    True   True  True    False    
+0x000000013e2d9b10 prunsrv.exe            1340 True   False  False    True   True  True    True     
+0x000000013e73ab10 svchost.exe             876 True   False  False    True   True  True    True     
+0x000000013e57cb10 svchost.exe             644 True   False  False    True   True  True    True     
+0x000000013efe1740 lsm.exe                 544 True   False  False    True   True  True    True     
+0x000000013fc407a0 java.exe               1508 True   False  False    True   True  True    True     
+0x000000013e751b10 LogonUI.exe             808 True   False  False    True   True  True    True     
+0x000000013e3cab10 GoogleUpdate.e         2640 True   False  False    True   True  True    True     
+0x000000013efc0b10 services.exe            528 True   False  False    True   True  True    False    
+0x000000013e761b10 svchost.exe             852 True   False  False    True   True  True    True     
+0x000000013fc4ab10 taskeng.exe            1664 True   False  False    True   True  True    True     
+0x000000013e869060 lsass.exe               536 True   False  False    True   True  True    False    
+0x000000013e28db10 esensor.exe            1272 True   False  False    True   True  True    True     
+0x000000013f8d9060 DumpIt.exe             2492 True   False  False    True   True  True    True     
+0x000000013e10c530 unsecapp.exe           1132 True   False  False    True   True  True    True     
+0x000000013ee68b10 vmtoolsd.exe           1260 True   False  False    True   True  True    True     
+0x000000013e6465f0 wininit.exe             420 True   False  False    True   True  True    True     
+0x000000013f91c060 conhost.exe            3460 True   False  False    True   True  True    True     
+0x000000013ff4ab10 svchost.exe            1088 True   False  False    True   True  True    True     
+0x000000013e74bb10 svchost.exe             788 True   False  False    True   True  True    True     
+0x000000013fc0cb10 dllhost.exe            2368 True   False  False    True   True  True    True     
+0x000000013e21cb10 spoolsv.exe            1060 True   False  False    True   True  True    True     
+0x000000013f91e060 systeminfo.exe         3812 True   False  False    True   False True    False    2019-09-18 17:15:21 UTC+0000
+0x000000013e64b4c0 csrss.exe               432 True   False  False    True   False True    True     
+0x000000013fa3c9b0 sc.exe                 1616 True   False  False    True   False True    False    2019-09-17 15:11:11 UTC+0000
+0x000000013fec86d0 System                    4 True   False  False    True   False False   False    
+0x000000013f86b060 HOSTNAME.EXE            352 True   False  False    True   False True    False    2019-09-18 17:15:06 UTC+0000
+0x000000013ef6d810 smss.exe                244 True   False  False    True   False False   False    
+0x000000013e6a0360 csrss.exe               344 True   False  False    True   False True    True     
+0x0000000079ebd128 `?                  20...2 False  False  False    False  False False   True     
+0x000000013cf17b10 find.exe               3432 False  False  False    False  False False   True     2019-09-18 18:12:00 UTC+0000
+0x000000013dd674b0 8                        0 False  False  False    False  False False   True     
+0x000000013f615530 conhost.exe            3004 True   False  False    False  False True    False    
+0x000000013f899440 TaniumClient.e         1752 True   False  False    False  False True    False    

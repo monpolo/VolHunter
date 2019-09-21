@@ -1,0 +1,42 @@
+Process: svchost.exe Pid: 1576 Address: 0x2a00000000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: PrivateMemory: 1, Protection: 6
+
+0x2a00000000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x2a00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x2a00000020  00 00 00 00 2a 00 00 00 00 00 00 00 00 00 00 00   ....*...........
+0x2a00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+
+0x00000000 0000             ADD [EAX], AL
+0x00000002 0000             ADD [EAX], AL
+0x00000004 0000             ADD [EAX], AL
+0x00000006 0000             ADD [EAX], AL
+0x00000008 0000             ADD [EAX], AL
+0x0000000a 0000             ADD [EAX], AL
+0x0000000c 0000             ADD [EAX], AL
+0x0000000e 0000             ADD [EAX], AL
+0x00000010 0000             ADD [EAX], AL
+0x00000012 0000             ADD [EAX], AL
+0x00000014 0000             ADD [EAX], AL
+0x00000016 0000             ADD [EAX], AL
+0x00000018 0000             ADD [EAX], AL
+0x0000001a 0000             ADD [EAX], AL
+0x0000001c 0000             ADD [EAX], AL
+0x0000001e 0000             ADD [EAX], AL
+0x00000020 0000             ADD [EAX], AL
+0x00000022 0000             ADD [EAX], AL
+0x00000024 2a00             SUB AL, [EAX]
+0x00000026 0000             ADD [EAX], AL
+0x00000028 0000             ADD [EAX], AL
+0x0000002a 0000             ADD [EAX], AL
+0x0000002c 0000             ADD [EAX], AL
+0x0000002e 0000             ADD [EAX], AL
+0x00000030 0000             ADD [EAX], AL
+0x00000032 0000             ADD [EAX], AL
+0x00000034 0000             ADD [EAX], AL
+0x00000036 0000             ADD [EAX], AL
+0x00000038 0000             ADD [EAX], AL
+0x0000003a 0000             ADD [EAX], AL
+0x0000003c 0000             ADD [EAX], AL
+0x0000003e 0000             ADD [EAX], AL
+
