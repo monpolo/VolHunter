@@ -14,7 +14,7 @@ A tool for volatility analysis at scale.
 - ~~Add try/except to convert.py to handle malformed artifacts in "scan" type outputs~~
 - ~~Debug dlllist parsing that incorrectly tags dlllist addresses and process names~~
 - ~~Add MITRE CAR rules into post processing script~~
-- Psxview parsing has current bug for nonstandard #s of fields found (Wkstn-80 577936 found as a process.name IN MALEX-10)
+- ~~Psxview parsing has current bug for nonstandard #s of fields found (Wkstn-80 577936 found as a process.name IN MALEX-10)~~
 - ~~Gather sample data for netscan plugin in order to improve processing logic for different output cases~~
 - Add function to include date/time field that sample was taken
 - Add further "known" and "unknown" items to tagger.py
