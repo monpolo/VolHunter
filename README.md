@@ -4,6 +4,7 @@ A tool for volatility analysis at scale.
 ![alt text](https://user-images.githubusercontent.com/39749344/59982884-6ae23a00-95de-11e9-815b-25443e51b24c.JPG)
 # TO-DOs #
 
+- Add logic to DLLLIST tagger for older (<= Win7) to check if LoadTime is NOT a parameter for parsing purposes
 - ~~Update VolHunter.psm1 Format-VHReport to reflect new plugins in use~~
 - Provide example report prior to formatting
 - Update VHSwarm to add error handling
