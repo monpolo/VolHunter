@@ -1,0 +1,70 @@
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000013e5dbb30 WmiPrvSE.exe           2032 True   True   True     True   True  True    False    
+0x000000013d802280 sshd.exe               2788 True   True   True     True   True  True    True     
+0x000000013db3cb30 cmd.exe                2544 True   True   True     True   True  True    True     
+0x000000013dd8c830 taskhost.exe           2396 True   True   True     True   True  True    True     
+0x000000013ea36740 svchost.exe             712 True   True   True     True   True  True    False    
+0x000000013db3eb30 sshd.exe                952 True   True   True     True   True  True    False    
+0x000000013ddc2930 sppsvc.exe              420 True   True   True     True   True  True    False    
+0x000000013e550590 VGAuthService.         1684 True   True   True     True   True  True    False    
+0x000000013e5366e0 sshd.exe               1616 True   True   True     True   True  True    False    
+0x000000013e866b30 ismserv.exe            1392 True   True   True     True   True  True    False    
+0x000000013db56760 DumpIt.exe             2084 True   True   True     True   True  True    True     
+0x000000013ea64b30 svchost.exe             796 True   True   True     True   True  True    True     
+0x000000013edacb30 lsm.exe                 480 True   True   True     True   True  True    False    
+0x000000013e825b30 Microsoft.Acti         1224 True   True   True     True   True  True    False    
+0x000000013e2488e0 vds.exe                2128 True   True   True     True   True  True    False    
+0x000000013ddb2100 explorer.exe           2900 True   True   True     True   True  True    True     
+0x000000013ea67b30 svchost.exe             832 True   True   True     True   True  True    True     
+0x000000013fd2eb30 certsrv.exe            1256 True   True   True     True   True  True    False    
+0x000000013e57b610 ManagementAgen         1752 True   True   True     True   True  True    False    
+0x000000013eaa9b30 svchost.exe             924 True   True   True     True   True  True    False    
+0x000000013e56ab30 vmtoolsd.exe           1724 True   True   True     True   True  True    False    
+0x000000013e844b30 dfsrs.exe              1304 True   True   True     True   True  True    False    
+0x000000013dc75060 slui.exe               1076 True   True   True     True   True  True    True     
+0x000000013eda74c0 lsass.exe               472 True   True   True     True   True  True    False    
+0x000000013e52cb30 svchost.exe            1580 True   True   True     True   True  True    False    
+0x000000013e811060 spoolsv.exe            1192 True   True   True     True   True  True    True     
+0x000000013dc32b30 msdtc.exe              2420 True   True   True     True   True  True    False    
+0x000000013ed685b0 services.exe            464 True   True   True     True   True  True    False    
+0x000000013db31b30 powershell.exe          888 True   True   True     True   True  True    True     
+0x000000013ed6e060 winlogon.exe            404 True   True   True     True   True  True    True     
+0x000000013ea12b30 svchost.exe             632 True   True   True     True   True  True    False    
+0x000000013dc05630 svchost.exe            2204 True   True   True     True   True  True    False    
+0x000000013f1ac9e0 wininit.exe             368 True   True   True     True   True  True    True     
+0x000000013db4c7c0 conhost.exe            2640 True   True   True     True   True  True    True     
+0x000000013e853060 svchost.exe            1336 True   True   True     True   True  True    False    
+0x000000013dc1f880 dllhost.exe            2292 True   True   True     True   True  True    False    
+0x000000013e876b30 ntfrs.exe              1424 True   True   True     True   True  True    False    
+0x000000013eab7b30 svchost.exe             964 True   True   True     True   True  True    False    
+0x000000013e857670 dns.exe                1356 True   True   True     True   True  True    False    
+0x000000013edd8b30 svchost.exe             328 True   True   True     True   True  True    True     
+0x000000013ea7a630 svchost.exe             876 True   True   True     True   True  True    True     
+0x000000013ddf1b30 vmtoolsd.exe           2096 True   True   True     True   True  True    True     
+0x000000013e599b30 dfssvc.exe             1788 True   True   True     True   True  True    False    
+0x000000013dd9d610 dwm.exe                1040 True   True   True     True   True  True    True     
+0x000000013db3e060 conhost.exe            3060 True   True   True     True   True  True    False    
+0x000000013f36a460 csrss.exe               308 True   True   True     True   False True    True     
+0x000000013db59b30 HOSTNAME.EXE           2052 True   True   False    True   False True    False    2019-10-18 04:58:35 UTC+0000
+0x000000013f1aa060 csrss.exe               360 True   True   True     True   False True    True     
+0x000000013da71550 sshd.exe               1604 True   True   False    True   False True    False    2019-10-18 04:58:35 UTC+0000
+0x00000000060b79e0 System                    4 True   True   True     True   False False   False    
+0x000000013fb75b30 smss.exe                224 True   True   True     True   False False   False    
+0x000000013d8a4280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d85c280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d8fe280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d880280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d8da280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d826280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d8c8280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d84a280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d8ec280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013db40130                           0 False  True   False    False  False False   False    
+0x000000013d86e280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d910280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d892280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d814280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d8b6280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013d838280 sshd.exe               2788 False  True   False    False  False False   False    
+0x000000013dae7b30                         504 False  False  True     False  False False   False    
