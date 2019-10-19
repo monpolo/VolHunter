@@ -3,35 +3,35 @@
 import json, os
 from elasticsearch import Elasticsearch, helpers
 
-def main(ip, port):
+def main(ip, port, dirpath):
     es      = set_client(ip, port)
-    records = set_records()
-    post_records(es, records)
+    records = set_records(dirpath)
+    post_records(es, records, dirpath)
 
 def set_client(ip, port):
     esclient = Elasticsearch([ip], port=port)
     testconnection(esclient)
     return esclient
 
-def set_records():
+def set_records(dirpath):
     records = []
-    path    = "./VHdata/output/"
+    path    = dirpath + "/VHdata/output/"
 
     if len(os.listdir(path)) == 0:
         print("No files found in log diretory...\n")
         exit()
 
     for log in os.listdir(path):
-        with open("./VHdata/output/" + log, 'r') as f:
+        with open(path + log, 'r') as f:
             for line in f:
                 records.append(line)
 
     print("Number of records to be indexed: ", len(records))
     return records
 
-def post_records(es, records):
-    log_path     = "./VHdata/output/"
-    process_path = "./VHdata/processed/"
+def post_records(es, records, dirpath):
+    log_path     = dirpath + "/VHdata/output/"
+    process_path = dirpath + "/VHdata/processed/"
 
     data = ({'_op_type': 'index',
              '_index': 'volhunter',

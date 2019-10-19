@@ -5,31 +5,37 @@ import jsonformat
 import encoder
 import volindexer
 import tagger
-from os import listdir
+from os import listdir, getcwd
 from os.path import isfile, join
 from elasticsearch import Elasticsearch
 
-vhfilepath = "./VHdata/gatheredlogs"
-process_folder = "./VHdata/converted/"
-output_folder = "./VHdata/output/"
+dirpath = os.getcwd()
+vhfilepath = dirpath + "/VHdata/gatheredlogs"
+process_folder = dirpath + "/VHdata/converted/"
+output_folder = dirpath + "/VHdata/output/"
 elasticIP = "192.168.131.128"
 elasticPort = "9200"
 
-def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort):
+def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort, dirpath):
     #Validate that assumed paths are correct
     correct_paths = 0
     while correct_paths != 1:
+        print "Root path " + dirpath
         print "VH data folder " + vhfilepath
         print "Processing folder " + process_folder
         print "Output folder " + output_folder
-        correct_paths = raw_input("Are these paths correct?\n1: Yes\n2: Update VH data folder\n3: Update processing folder\n4: Update output folder\n")
+        correct_paths = raw_input("Are these paths correct?\n1: Yes\n2: Update folder path\n")
         correct_paths = int(correct_paths)
         if correct_paths == 2:
-            vhfilepath = raw_input("Enter new path for VH data folder: ")
-        elif correct_paths == 3:
-    		process_folder = raw_input("Enter new path for processing folder: ")
-        elif correct_paths == 4:
-            output_folder = raw_input("Enter new path for output folder: ")
+            dirpath = raw_input("Enter new path for processing: ")
+            vhfilepath = dirpath + "/VHdata/gatheredlogs"
+            process_folder = dirpath + "/VHdata/converted/"
+            output_folder = dirpath + "/VHdata/output/"
+            #vhfilepath = raw_input("Enter new path for VH data folder: ")
+        #elif correct_paths == 3:
+    		#process_folder = raw_input("Enter new path for processing folder: ")
+        #elif correct_paths == 4:
+            #output_folder = raw_input("Enter new path for output folder: ")
         elif correct_paths == 1:
     		break
         else:
@@ -52,7 +58,7 @@ def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elas
         except Exception as e:
             print(e)
 
-    volindexer.main(elasticIP, elasticPort)
+    volindexer.main(elasticIP, elasticPort, dirpath)
     print "Files shipped. Pausing for your review..."
     print "### Ensure you have built the index in Kibana before proceeding ###"
     raw_input()
@@ -79,7 +85,7 @@ while correct_paths != 4:
     correct_paths = raw_input("Choose a function:\n1) Convert, format, ingest data to Elastic\n2) Enrich data (ensure index is built in Kibana first)\n3) Run MITRE CAR Rules\n4) Quit\n999) Delete data from VolHunter Index CAN'T UNDO\n")
     correct_paths = int(correct_paths)
     if correct_paths == 1:
-        format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort)
+        format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elasticPort, dirpath)
     elif correct_paths == 2:
         tagger.parentname(elasticIP, elasticPort)
         print "Parent process names updated. Pausing for your review..."
