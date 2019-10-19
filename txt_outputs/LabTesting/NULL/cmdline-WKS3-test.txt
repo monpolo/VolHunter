@@ -1,0 +1,132 @@
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    248
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    356
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+csrss.exe pid:    420
+Command line : %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+wininit.exe pid:    428
+Command line : wininit.exe
+************************************************************************
+winlogon.exe pid:    456
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    524
+Command line : C:\Windows\system32\services.exe
+************************************************************************
+lsass.exe pid:    532
+Command line : C:\Windows\system32\lsass.exe
+************************************************************************
+svchost.exe pid:    592
+Command line : C:\Windows\system32\svchost.exe -k DcomLaunch
+************************************************************************
+svchost.exe pid:    632
+Command line : C:\Windows\system32\svchost.exe -k RPCSS
+************************************************************************
+dwm.exe pid:    728
+Command line : "dwm.exe"
+************************************************************************
+svchost.exe pid:    744
+Command line : C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:    792
+Command line : C:\Windows\system32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:    828
+Command line : C:\Windows\system32\svchost.exe -k LocalService
+************************************************************************
+svchost.exe pid:    892
+Command line : C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted
+************************************************************************
+svchost.exe pid:    988
+Command line : C:\Windows\system32\svchost.exe -k NetworkService
+************************************************************************
+spoolsv.exe pid:    300
+Command line : C:\Windows\System32\spoolsv.exe
+************************************************************************
+svchost.exe pid:    616
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork
+************************************************************************
+dasHost.exe pid:   1132
+Command line : dashost.exe {b9df8bfd-8ada-4265-89294952060deb5b}
+************************************************************************
+sshd.exe pid:   1184
+Command line : "C:\Program Files\OpenSSH-Win64\sshd.exe"
+************************************************************************
+VGAuthService. pid:   1276
+Command line : "C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"
+************************************************************************
+vmtoolsd.exe pid:   1360
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+************************************************************************
+MsMpEng.exe pid:   1440
+Command line : "C:\Program Files\Windows Defender\MsMpEng.exe"
+************************************************************************
+svchost.exe pid:   1868
+Command line : C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted
+************************************************************************
+svchost.exe pid:   1944
+Command line : C:\Windows\system32\svchost.exe -k LocalServiceAndNoImpersonation
+************************************************************************
+msdtc.exe pid:   1540
+Command line : C:\Windows\System32\msdtc.exe
+************************************************************************
+WmiPrvSE.exe pid:   2108
+Command line : C:\Windows\system32\wbem\wmiprvse.exe
+************************************************************************
+NisSrv.exe pid:   2308
+Command line : "C:\Program Files\Windows Defender\NisSrv.exe"
+************************************************************************
+svchost.exe pid:   2624
+Command line : C:\Windows\System32\svchost.exe -k LocalServicePeerNet
+************************************************************************
+SearchIndexer. pid:   3056
+Command line : C:\Windows\system32\SearchIndexer.exe /Embedding
+************************************************************************
+wmpnetwk.exe pid:   1916
+Command line : "C:\Program Files\Windows Media Player\wmpnetwk.exe"
+************************************************************************
+taskhostex.exe pid:   2688
+Command line : taskhostex.exe 
+************************************************************************
+explorer.exe pid:   2804
+Command line : C:\Windows\Explorer.EXE
+************************************************************************
+SystemSettings pid:   2252
+Command line : "C:\Windows\ImmersiveControlPanel\SystemSettings.exe" -ServerName:microsoft.windows.immersivecontrolpanel
+************************************************************************
+vmtoolsd.exe pid:   2968
+Command line : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+************************************************************************
+WSHost.exe pid:   2452
+Command line : C:\Windows\WinStore\WSHost.exe -Embedding
+************************************************************************
+sshd.exe pid:    660
+Command line : "C:\Program Files\OpenSSH-Win64\sshd.exe" -R
+************************************************************************
+conhost.exe pid:    668
+Command line : \??\C:\Windows\system32\conhost.exe 0x4
+************************************************************************
+sshd.exe pid:   2680
+************************************************************************
+sshd.exe pid:   3404
+Command line : "C:\Program Files\OpenSSH-Win64\sshd.exe" -z
+************************************************************************
+cmd.exe pid:   1088
+Command line : "c:\windows\system32\cmd.exe" /c "powershell -c C:/Users/Administrator/Desktop/tools/postInfection.ps1 -malname test -hostname WKS3"
+************************************************************************
+powershell.exe pid:   3956
+Command line : powershell  -c C:/Users/Administrator/Desktop/tools/postInfection.ps1 -malname test -hostname WKS3
+************************************************************************
+HOSTNAME.EXE pid:   2516
+************************************************************************
+DumpIt.exe pid:    824
+Command line : "C:\Users\Administrator\Desktop\Tools\DumpIt.exe" /Q /N /J /T RAW /OUTPUT C:\Users\Administrator\Desktop\WKS3.bin 
+************************************************************************
+conhost.exe pid:   3304
+Command line : \??\C:\Windows\system32\conhost.exe 0x4
