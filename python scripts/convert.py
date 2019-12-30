@@ -2,6 +2,7 @@ from os import listdir
 import os.path
 import json
 import re
+import string
 
 def printError(errLine, errMessage, f):
 	print errMessage
@@ -51,8 +52,12 @@ def cmdline(input_path, output_path, autoDiscard):
 						proc = line.split()
 						if proc[0].rstrip() == "pid:":
 							raise ValueError('Suspected no process name found')
-						if int(proc[2].rstrip()) > 1000000:
+						if int(proc[2].rstrip()) > 500000:
 							raise ValueError('PID too high')
+						if int(proc[2].rstrip()) == 0:
+							raise ValueError('PID is zero')
+						if(not(all(c in string.printable for c in proc[0]))):
+							raise ValueError('Nonprintable name detected')
 						d['process.name'] = proc[0].rstrip()
 						d['process.pid'] = proc[2].rstrip()
 						alphaCheck = bool(re.match('^[a-zA-Z0-9 _.-]+$', d['process.name']))

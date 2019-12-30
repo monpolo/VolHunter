@@ -38,7 +38,7 @@ def format_and_ingest(vhfilepath, process_folder, output_folder, elasticIP, elas
             #output_folder = raw_input("Enter new path for output folder: ")
         elif correct_paths == 1:
     		break
-        else:
+        else:4095
     		print "You entered an invalid selection"
 
     #Convert to utf8 with Linux line endings
