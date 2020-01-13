@@ -185,7 +185,7 @@ def carRules(host, port):
 
         #CAR-2019-04-002.1 Generic Regsvr32
         if ((doc['_source']['process.pid'].lower() != "null") and (doc['_source']['process.name'].lower() != "null")):
-            print doc['_source']
+            #print doc['_source']
             if (doc['_source']['process.parent.name'].lower() == "regsvr32.exe") and (doc['_source']['process.name'].lower() == "regsvr32.exe") and ("regsvr32.exe" not in (doc['_source']['process.arguments']).lower()):
                 carUpdate("CAR-2019-04-002.1-Generic-Regsvr32", es, doc)
                 #CAR-2019-04-002.2 Regsvr32 odd children
